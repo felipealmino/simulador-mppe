@@ -1,5 +1,5 @@
 // Arquivo: questoes.js
-// Banco de Dados Oficial - Provas Reais (FCC / IBFC)
+// Banco de Dados Oficial - Provas Reais (FCC / IBFC) com Texto de Apoio
 
 // ---------------------------------------------------------
 // 1. DISCIPLINAS COMUNS (USO CRUZADO ENTRE CARGOS)
@@ -8,7 +8,8 @@
 const banco_pt = [
     { 
         topic: "Intelecção de Texto", 
-        q: "Sobre o texto 'A família dos porquês': Ao considerar os distintos empregos da palavra 'porque', o autor defende sobretudo a ideia de que:", 
+        supportText: "<b>A família dos porquês</b><br><br>A lógica costuma definir três modalidades distintas no uso do termo 'porque': o 'porque' causal ('a jarra quebrou porque caiu'); o explicativo ('recusei o doce porque desejo emagrecer'); e o indicador de argumento ('volte logo, você sabe por quê'). Mas há outros aspectos que precisam ser considerados.<br><br>Imagine, por exemplo, que alguém inconformado com a morte de uma pessoa especialmente querida exclama: 'Eu não consigo entender, isso não podia ter acontecido, por que não eu? Por que uma criatura tão jovem e cheia de vida morre assim?' Um médico solícito, se a ouvir nesse desabafo inconformado, poderá dizer-lhe: 'Sinto muito pela perda, mas eu examinei o caso de sua filha e posso dizer-lhe o que houve: ela padecia de má-formação vascular e foi vítima da ruptura da artéria carótida que irriga o lobo temporal direito.'<br><br>A explicação do médico é irretocável, mas seria a resposta ao 'por quê' do pai inconsolável? Os porquês da ciência são por vezes rasos: mapas, registros e explicações cada vez mais precisas e minuciosas da superfície causal do que acontece. Eles excluem de antemão como ilegítimos os porquês que mais importam. O 'porque' da ciência médica nem sequer arranha o 'por quê' do pai desconsolado.<br><br><i>(Adaptado de: GIANETTI, Eduardo. Trópicos utópicos. São Paulo: Companhia das Letras, 2016, p. 30-31.)</i>",
+        q: "Ao considerar os distintos empregos da palavra 'porque', o autor defende sobretudo a ideia de que:", 
         options: [
             "os distintos usos lógicos dessa palavra asseguram respostas para todas as perguntas.", 
             "as causas e explicações apontadas por esse termo esgotam suas funções na linguagem.", 
@@ -21,6 +22,7 @@ const banco_pt = [
     },
     { 
         topic: "Ortografia Oficial", 
+        supportText: "",
         q: "Com base nas regras do Novo Acordo Ortográfico da Língua Portuguesa, assinale a alternativa em que o emprego do hífen está totalmente adequado:", 
         options: [
             "auto-conhecimento e co-reflexão.", 
@@ -37,6 +39,7 @@ const banco_pt = [
 const banco_rlm = [
     { 
         topic: "Razão e Proporção", 
+        supportText: "",
         q: "Dois automóveis, A e B, percorrem a mesma estrada em sentidos opostos, ambos com velocidade constante. Os dois entram em um túnel no mesmo momento. A e B se cruzam após A percorrer 2/5 do comprimento do túnel. Nessa situação, é correto afirmar que a velocidade de B é:", 
         options: [
             "o dobro da de A.", 
@@ -50,6 +53,7 @@ const banco_rlm = [
     },
     { 
         topic: "Análise Combinatória", 
+        supportText: "",
         q: "Num restaurante você monta sua refeição escolhendo 1 proteína (4 opções), 3 acompanhamentos (8 opções), 1 sobremesa (3 opções) e 1 bebida (3 opções). Quantas refeições diferentes você pode montar?", 
         options: [
             "360", 
@@ -66,6 +70,7 @@ const banco_rlm = [
 const banco_info = [
     { 
         topic: "Navegadores", 
+        supportText: "",
         q: "Para acessar a página pela qual será possível encontrar a opção que permitirá limpar os dados de navegação do Google Chrome, basta digitar, na linha de endereço do navegador, o comando:", 
         options: [
             "google://settings/", 
@@ -79,6 +84,7 @@ const banco_info = [
     },
     { 
         topic: "Sistemas Operacionais", 
+        supportText: "",
         q: "No ambiente Microsoft Windows, para criar uma pasta rapidamente, basta:", 
         options: [
             "pressionar Ctrl + P no local desejado.", 
@@ -95,6 +101,7 @@ const banco_info = [
 const banco_legis_mppe = [
     { 
         topic: "Lei Orgânica Estadual (LC 12/94)", 
+        supportText: "",
         q: "De acordo com a LC 12/1994, o Corregedor Geral do Ministério Público:", 
         options: [
             "será eleito pelo Colégio de Procuradores.", 
@@ -108,6 +115,7 @@ const banco_legis_mppe = [
     },
     { 
         topic: "Lei Orgânica Nacional (8.625/93)", 
+        supportText: "",
         q: "José integra, como membro nato, e preside o Colégio de Procuradores de Justiça e o Conselho Superior do MP. De acordo com a Lei 8.625/93, José é o:", 
         options: [
             "Procurador-Geral de Justiça, a quem compete propor ação civil para decretação da perda do cargo de membro vitalício.", 
@@ -128,6 +136,7 @@ const banco_legis_mppe = [
 const banco_const = [
     { 
         topic: "Direitos e Garantias Fundamentais", 
+        supportText: "",
         q: "Segundo a Constituição Federal, NÃO haverá penas: I. de caráter perpétuo. II. de perda de bens. III. de banimento. IV. cruéis. V. de interdição temporária de direitos. Está correto o que se afirma APENAS em:", 
         options: ["I, II e III.", "II e IV.", "I, IV e V.", "II, III e V.", "I, III e IV."], 
         answer: 4, 
@@ -135,6 +144,7 @@ const banco_const = [
     },
     { 
         topic: "Organização dos Poderes", 
+        supportText: "",
         q: "É da competência exclusiva do Congresso Nacional:", 
         options: [
             "julgar anualmente as contas prestadas pelo Presidente da República e apreciar relatórios de execução.", 
@@ -151,6 +161,7 @@ const banco_const = [
 const banco_adm = [
     { 
         topic: "Licitações e Contratos", 
+        supportText: "",
         q: "Uma auditoria identificou aquisição de software mediante pregão presencial. Não houve irregularidade no valor e houve ampla disputa. A auditoria opinou pela irregularidade por inaplicabilidade do pregão. Essa análise:", 
         options: [
             "procede, sendo vedada a utilização do pregão para bens de informática.", 
@@ -164,6 +175,7 @@ const banco_adm = [
     },
     { 
         topic: "Organização Administrativa", 
+        supportText: "",
         q: "Os órgãos públicos que integram a organização administrativa, na qualidade de 'centros de competência':", 
         options: [
             "responsabilizam-se exclusiva e pessoalmente pelas consequências.", 
@@ -180,6 +192,7 @@ const banco_adm = [
 const banco_civil = [
     { 
         topic: "Pessoas Naturais (Domicílio)", 
+        supportText: "",
         q: "Luísa possui residências, com ânimo definitivo, nas cidades de São Paulo, Rio de Janeiro e Belo Horizonte, nas quais alternadamente vive. Luísa possui domicílio em:", 
         options: [
             "São Paulo, apenas.", 
@@ -193,6 +206,7 @@ const banco_civil = [
     },
     { 
         topic: "Pessoas Jurídicas (Fundações)", 
+        supportText: "",
         q: "Para instituir uma fundação, Ricardo deverá promover dotação especial de bens livres. De acordo com o Código Civil, o ato de criação poderá ser realizado:", 
         options: [
             "por instrumento particular apenas.", 
@@ -209,6 +223,7 @@ const banco_civil = [
 const banco_proc_civil = [
     { 
         topic: "Petição Inicial", 
+        supportText: "",
         q: "Em regra, caberá ao autor deduzir pedido determinado. Admite-se, porém, a formulação de pedido genérico:", 
         options: [
             "quando não for possível determinar, desde logo, as consequências do ato ou do fato.", 
@@ -222,6 +237,7 @@ const banco_proc_civil = [
     },
     { 
         topic: "Sentença", 
+        supportText: "",
         q: "Nas causas que dispensem a fase instrutória, o juiz julgará liminarmente improcedente o pedido que contrariar:", 
         options: [
             "súmula do STF ou do STJ, desde que já tenha havido a citação do réu.", 
@@ -238,6 +254,7 @@ const banco_proc_civil = [
 const banco_penal = [
     { 
         topic: "Crimes contra a Adm. Pública", 
+        supportText: "",
         q: "Gonçalo, funcionário público, em razão da função, exige para si vantagem indevida, não chegando, entretanto, a recebê-la. Tal conduta caracteriza o crime de:", 
         options: [
             "corrupção passiva consumada.", 
@@ -251,6 +268,7 @@ const banco_penal = [
     },
     { 
         topic: "Crimes contra a Pessoa", 
+        supportText: "",
         q: "A pena no homicídio culposo é aumentada de 1/3: I. se resulta de inobservância de regra técnica; II. se deixa de prestar socorro; III. se foge para evitar prisão em flagrante; IV. vítima maior de 60 anos.", 
         options: ["I, II e IV.", "II, III e IV.", "I, II e III.", "II, III e V.", "I, III e V."], 
         answer: 2, 
@@ -261,6 +279,7 @@ const banco_penal = [
 const banco_proc_penal = [
     { 
         topic: "Princípios Fundamentais", 
+        supportText: "",
         q: "O princípio do Direito Processual Penal que impede a criação de tribunais de exceção refere-se ao princípio:", 
         options: ["do contraditório.", "da verdade real.", "da oficiosidade.", "do juiz natural.", "da indisponibilidade."], 
         answer: 3, 
@@ -268,6 +287,7 @@ const banco_proc_penal = [
     },
     { 
         topic: "Sentença", 
+        supportText: "",
         q: "À luz do que dispõe o Código de Processo Penal sobre a sentença:", 
         options: [
             "qualquer das partes poderá pedir embargos no prazo de 5 dias.", 
@@ -288,6 +308,7 @@ const banco_proc_penal = [
 const banco_noc_adm = [
     { 
         topic: "Planejamento e Indicadores", 
+        supportText: "",
         q: "O Balanced Scorecard (BSC) é uma metodologia que prioriza o equilíbrio organizacional a partir das perspectivas: I. financeira; II. de processos internos; III. de clientes; IV. de aprendizado e crescimento.", 
         options: ["I, II, III e IV.", "I, III e V.", "I, II, III e V.", "I e III.", "II e III."], 
         answer: 0, 
@@ -295,6 +316,7 @@ const banco_noc_adm = [
     },
     { 
         topic: "Gestão de Pessoas", 
+        supportText: "",
         q: "A consultoria afirmou que, considerando a natural aversão ao trabalho, os empregados necessitam de direção e controle. Essa premissa denota a:", 
         options: [
             "Teoria da Hierarquia de Maslow.", 
@@ -315,6 +337,7 @@ const banco_noc_adm = [
 const banco_gov_ti = [
     { 
         topic: "Frameworks ITIL e COBIT", 
+        supportText: "",
         q: "Considere: ( ) ITIL 4 introduz o Sistema de Valor de Serviço (SVS). ( ) No COBIT 2019, o domínio APO12 orienta sobre gestão de riscos. ( ) O uso de metodologias híbridas em projetos públicos visa conciliar licitações com agilidade. A sequência correta é:", 
         options: ["V - F - V.", "F - V - F.", "V - V - V.", "F - F - F.", "V - F - F."], 
         answer: 2, 
@@ -325,6 +348,7 @@ const banco_gov_ti = [
 const banco_seg_ti = [
     { 
         topic: "Criptografia", 
+        supportText: "",
         q: "No contexto da criptografia, o algoritmo ____ é um exemplo de cifragem simétrica, amplamente utilizado para confidencialidade, substituindo o antigo DES.", 
         options: ["RSA", "AES", "SHA-2", "HMAC", "MD5"], 
         answer: 1, 
@@ -335,6 +359,7 @@ const banco_seg_ti = [
 const banco_eng_soft_ia = [
     { 
         topic: "IA e Modelos Generativos", 
+        supportText: "",
         q: "A combinação entre grandes modelos de linguagem (LLMs) e recuperação de informação viabilizou sistemas mais atualizados, como o RAG. Assinale a correta:", 
         options: [
             "A Engenharia de Prompt modifica os pesos da rede neural do modelo.", 
@@ -351,6 +376,7 @@ const banco_eng_soft_ia = [
 const banco_infra_bd = [
     { 
         topic: "Modelagem e Banco de Dados", 
+        supportText: "",
         q: "Com relação à Normalização, I. Unificação de tabelas; II. A 1FN exige que todas as colunas tenham apenas valores atômicos; III. A 3FN elimina a maioria das anomalias e é o padrão comum.", 
         options: ["I e II apenas.", "II e III apenas.", "II apenas.", "I, II e III.", "I e III apenas."], 
         answer: 1, 
