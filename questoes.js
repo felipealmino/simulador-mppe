@@ -6,21 +6,7 @@
 // ---------------------------------------------------------
 
 const banco_pt = [
-    { 
-        topic: "Intelecção de Texto", 
-        supportText: "<b>A família dos porquês</b><br><br>A lógica costuma definir três modalidades distintas no uso do termo 'porque': o 'porque' causal ('a jarra quebrou porque caiu'); o explicativo ('recusei o doce porque desejo emagrecer'); e o indicador de argumento ('volte logo, você sabe por quê'). Mas há outros aspectos que precisam ser considerados.<br><br>Imagine, por exemplo, que alguém inconformado com a morte de uma pessoa especialmente querida exclama: 'Eu não consigo entender, isso não podia ter acontecido, por que não eu? Por que uma criatura tão jovem e cheia de vida morre assim?' Um médico solícito, se a ouvir nesse desabafo inconformado, poderá dizer-lhe: 'Sinto muito pela perda, mas eu examinei o caso de sua filha e posso dizer-lhe o que houve: ela padecia de má-formação vascular e foi vítima da ruptura da artéria carótida que irriga o lobo temporal direito.'<br><br>A explicação do médico é irretocável, mas seria a resposta ao 'por quê' do pai inconsolável? Os porquês da ciência são por vezes rasos: mapas, registros e explicações cada vez mais precisas e minuciosas da superfície causal do que acontece. Eles excluem de antemão como ilegítimos os porquês que mais importam. O 'porque' da ciência médica nem sequer arranha o 'por quê' do pai desconsolado.<br><br><i>(Adaptado de: GIANETTI, Eduardo. Trópicos utópicos. São Paulo: Companhia das Letras, 2016, p. 30-31.)</i>",
-        q: "Ao considerar os distintos empregos da palavra 'porque', o autor defende sobretudo a ideia de que:", 
-        options: [
-            "os distintos usos lógicos dessa palavra asseguram respostas para todas as perguntas.", 
-            "as causas e explicações apontadas por esse termo esgotam suas funções na linguagem.", 
-            "o campo aberto pelas interrogações humanas vai muito além das respostas dadas pela ciência.", 
-            "a ciência se vale dessa palavra tanto para interrogar como para explicar o inexplicável.", 
-            "a razão de ser dessa palavra é expressar a curiosidade diante dos fenômenos naturais."
-        ], 
-        answer: 2, 
-        disclaimer: "O texto afirma categoricamente que 'os porquês da ciência são por vezes rasos' e 'nem sequer arranham os porquês que mais importam'." 
-    },
-    { 
+       { 
         topic: "Ortografia Oficial", 
         supportText: "",
         q: "Com base nas regras do Novo Acordo Ortográfico da Língua Portuguesa, assinale a alternativa em que o emprego do hífen está totalmente adequado:", 
