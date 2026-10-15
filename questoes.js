@@ -6,7 +6,7 @@
 // ---------------------------------------------------------
 
 const banco_pt = [
-       { 
+    { 
         topic: "Ortografia Oficial", 
         supportText: "",
         q: "Com base nas regras do Novo Acordo Ortográfico da Língua Portuguesa, assinale a alternativa em que o emprego do hífen está totalmente adequado:", 
@@ -19,7 +19,7 @@ const banco_pt = [
         ], 
         answer: 1, 
         disclaimer: "Pelo novo acordo, prefixos terminados em vogal unem-se sem hífen à palavra seguinte se esta começar por consoante diferente de 'r' ou 's' (autoavaliação, coexistência)." 
-    }
+    }, // <-- VÍRGULA CORRIGIDA AQUI
     { 
         topic: "Concordância Verbal", 
         supportText: "",
@@ -92,7 +92,7 @@ const banco_rlm = [
         ], 
         answer: 1, 
         disclaimer: "Acompanhamentos: Combinação de 8 elementos tomados 3 a 3 = 56. Multiplicando pelas demais opções: 4 * 56 * 3 * 3 = 2016." 
-    }
+    }, // <-- VÍRGULA CORRIGIDA AQUI
     { 
         topic: "Lógica de Argumentação", 
         supportText: "",
@@ -196,7 +196,7 @@ const banco_legis_mppe = [
         ], 
         answer: 0, 
         disclaimer: "A presidência dos órgãos colegiados do MP (Colégio e Conselho) é atribuição legal inerente ao cargo de Procurador-Geral de Justiça." 
-    }
+    }, // <-- VÍRGULA CORRIGIDA AQUI
     { 
         topic: "Estatuto da Pessoa com Deficiência (Lei 13.146/15)", 
         supportText: "",
@@ -361,7 +361,7 @@ const banco_civil = [
         ], 
         answer: 3, 
         disclaimer: "A fundação cria-se por escritura pública ou por testamento, através de dotação especial de bens (Art. 62, CC)." 
-    }
+    }, // <-- VÍRGULA CORRIGIDA AQUI
     { 
         topic: "Fatos Jurídicos (Estado de Necessidade)", 
         supportText: "",
