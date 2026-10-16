@@ -13,6 +13,10 @@
         .bubble.active { ring: 2px; ring-offset: 2px; ring-color: #3b82f6; font-weight: bold; transform: scale(1.1); }
         .toggle-checkbox:checked { right: 0; border-color: #68D391; }
         .toggle-checkbox:checked + .toggle-label { background-color: #68D391; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen text-gray-800">
@@ -27,7 +31,7 @@
     <main class="max-w-6xl mx-auto px-4 py-8">
         
         <!-- ESTÁGIO 1: CONFIGURAÇÃO -->
-        <div id="setup-screen" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 max-w-2xl mx-auto">
+        <div id="setup-screen" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 max-w-3xl mx-auto">
             <h2 class="text-2xl font-bold text-gray-800 mb-2">Configure o seu treino</h2>
             <p class="text-gray-500 mb-8">Defina os parâmetros do seu caderno de questões.</p>
             
@@ -42,7 +46,7 @@
 
             <div class="mb-6">
                 <label class="block text-sm font-bold text-gray-700 mb-3">Distribuição de Questões por Disciplina:</label>
-                <!-- Container Dinâmico de Disciplinas -->
+                <!-- Container Dinâmico de Disciplinas com Contadores -->
                 <div id="subjects-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- Injetado via JS -->
                 </div>
@@ -79,10 +83,17 @@
                         <span id="question-topic" class="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider hidden sm:inline-block">Tópico</span>
                     </div>
                 </div>
-                <p id="question-text" class="text-gray-800 mb-8 text-lg leading-relaxed"></p>
-                <div id="options-container" class="space-y-3">
-                    <!-- Alternativas injetadas via JS -->
+                
+                <div id="support-text-container" class="mb-6 p-5 bg-gray-50 border-l-4 border-blue-400 text-sm text-gray-700 rounded-r-lg hidden overflow-y-auto max-h-64 custom-scrollbar leading-relaxed">
+                    <!-- Texto injetado via JS -->
                 </div>
+
+                <p id="question-text" class="text-gray-800 mb-8 text-lg font-medium leading-relaxed"></p>
+                
+                <div id="options-container">
+                    <!-- Alternativas injetadas via JS (Múltipla Escolha ou Certo/Errado) -->
+                </div>
+                
                 <div class="mt-10 flex justify-between pt-6 border-t border-gray-100">
                     <button id="btn-prev" class="px-6 py-2 border border-gray-300 font-medium rounded-lg text-gray-600 hover:bg-gray-50 transition hidden">Anterior</button>
                     <button id="btn-next" class="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition ml-auto">Próxima</button>
@@ -132,7 +143,7 @@
                     <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     Raio-X Granular por Tópico
                 </h3>
-                <ul id="performance-list" class="space-y-3 mb-6 max-h-64 overflow-y-auto pr-2">
+                <ul id="performance-list" class="space-y-3 mb-6 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
                     <!-- Itens de desempenho injetados via JS -->
                 </ul>
                 
@@ -215,7 +226,6 @@
             review: document.getElementById('review-screen')
         };
 
-        // Renderiza os inputs baseados no cargo
         function updateSubjectsGrid() {
             const role = document.getElementById('cargo-select').value;
             const subjects = syllabusByRole[role];
@@ -224,21 +234,25 @@
             container.innerHTML = '';
             
             subjects.forEach(subject => {
+                // Checa a quantidade real de questões disponíveis no banco desacoplado
+                const available = (typeof mockDB !== 'undefined' && mockDB[subject]) ? mockDB[subject].length : 0;
+                
                 container.innerHTML += `
                     <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                        <label class="block text-xs font-semibold text-gray-600 mb-1" title="${subject}">
-                            ${subject.length > 28 ? subject.substring(0, 25) + '...' : subject}
-                        </label>
-                        <input type="number" data-subject="${subject}" min="0" max="50" value="0" class="subject-input w-full rounded bg-white p-2 border border-gray-300 outline-none focus:border-blue-500">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-xs font-semibold text-gray-600" title="${subject}">
+                                ${subject.length > 25 ? subject.substring(0, 22) + '...' : subject}
+                            </label>
+                            <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">${available} disp.</span>
+                        </div>
+                        <input type="number" data-subject="${subject}" min="0" value="0" class="subject-input w-full rounded bg-white p-2 border border-gray-300 outline-none focus:border-blue-500">
                     </div>
                 `;
             });
         }
 
-        // Listener para o Select de Cargo
         document.getElementById('cargo-select').addEventListener('change', updateSubjectsGrid);
         
-        // Timer Toggle
         document.getElementById('timer-toggle').addEventListener('change', function() {
             document.getElementById('timer-minutes').disabled = !this.checked;
         });
@@ -280,12 +294,15 @@
             
             inputs.forEach(input => {
                 const subject = input.getAttribute('data-subject');
-                const count = parseInt(input.value) || 0;
+                const requestedCount = parseInt(input.value) || 0;
                 
-                // Valida se o banco de dados tem a disciplina (Proteção para banco incompleto)
-                if (count > 0) {
+                if (requestedCount > 0) {
                     if (typeof mockDB !== 'undefined' && mockDB[subject]) {
-                        let subQs = [...mockDB[subject]].sort(() => 0.5 - Math.random()).slice(0, count);
+                        // LÓGICA DE TRAVA DINÂMICA: Limita o solicitado ao que existe no banco
+                        const availableCount = mockDB[subject].length;
+                        const finalCount = Math.min(requestedCount, availableCount);
+                        
+                        let subQs = [...mockDB[subject]].sort(() => 0.5 - Math.random()).slice(0, finalCount);
                         subQs.forEach(q => q.subject = subject);
                         generatedQuestions.push(...subQs);
                     } else {
@@ -295,7 +312,7 @@
             });
 
             if(generatedQuestions.length === 0) {
-                alert("Nenhuma questão localizada. Selecione uma quantidade maior que 0 para as matérias cadastradas no seu banco de dados.");
+                alert("Nenhuma questão localizada. Verifique se o banco de dados possui questões cadastradas para as quantidades solicitadas.");
                 return;
             }
 
@@ -325,191 +342,35 @@
             document.getElementById('question-number').innerText = `Questão ${state.currentIndex + 1}`;
             document.getElementById('question-subject').innerText = q.subject;
             document.getElementById('question-topic').innerText = q.topic;
+            
+            const supportTextContainer = document.getElementById('support-text-container');
+            if (q.supportText) {
+                supportTextContainer.innerHTML = q.supportText;
+                supportTextContainer.classList.remove('hidden');
+            } else {
+                supportTextContainer.classList.add('hidden');
+                supportTextContainer.innerHTML = '';
+            }
+
             document.getElementById('question-text').innerText = q.q;
             
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = '';
             
-            q.options.forEach((opt, index) => {
-                const btn = document.createElement('button');
-                btn.className = `option-btn w-full text-left p-4 rounded-lg border border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition ${state.answers[state.currentIndex] === index ? 'selected' : ''}`;
-                btn.innerHTML = `<span class="font-bold text-gray-500 mr-2">${String.fromCharCode(65 + index)})</span> ${opt}`;
-                btn.onclick = () => selectOption(index);
-                optionsContainer.appendChild(btn);
-            });
-
-            document.getElementById('btn-prev').classList.toggle('hidden', state.currentIndex === 0);
-            
-            if (state.currentIndex === state.questions.length - 1) {
-                document.getElementById('btn-next').classList.add('hidden');
-                document.getElementById('btn-finish').classList.remove('hidden');
+            // RENDENRIZAÇÃO CONDICIONAL: Certo/Errado vs Múltipla Escolha
+            if (q.type === 'ce' || q.type === 'vf') {
+                optionsContainer.className = 'grid grid-cols-2 gap-4 mt-4';
+                q.options.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    const isSelected = state.answers[state.currentIndex] === index;
+                    btn.className = `option-btn w-full text-center py-6 px-4 rounded-xl border-2 hover:border-blue-400 hover:bg-blue-50 transition ${isSelected ? 'selected border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}`;
+                    btn.innerHTML = `<span class="font-black text-gray-700 text-lg uppercase tracking-widest">${opt}</span>`;
+                    btn.onclick = () => selectOption(index);
+                    optionsContainer.appendChild(btn);
+                });
             } else {
-                document.getElementById('btn-next').classList.remove('hidden');
-                document.getElementById('btn-finish').classList.add('hidden');
-            }
-
-            updateCounters();
-        }
-
-        function selectOption(index) {
-            state.answers[state.currentIndex] = index;
-            renderQuestion(); 
-            renderGrid();
-        }
-
-        function renderGrid() {
-            const grid = document.getElementById('question-grid');
-            grid.innerHTML = '';
-            state.questions.forEach((_, index) => {
-                const isAnswered = state.answers[index] !== null;
-                const isActive = index === state.currentIndex;
-                const bubble = document.createElement('div');
-                bubble.className = `bubble w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-xs font-semibold text-gray-600 ${isAnswered ? 'answered' : ''} ${isActive ? 'active' : ''}`;
-                bubble.innerText = index + 1;
-                bubble.onclick = () => {
-                    state.currentIndex = index;
-                    renderQuestion();
-                };
-                grid.appendChild(bubble);
-            });
-        }
-
-        function updateCounters() {
-            const answered = state.answers.filter(a => a !== null).length;
-            document.getElementById('answered-count').innerText = answered;
-            document.getElementById('total-count').innerText = state.questions.length;
-        }
-
-        function finishQuiz(force = false) {
-            const unanswered = state.answers.filter(a => a === null).length;
-            if (!force && unanswered > 0) {
-                if(!confirm(`Existem ${unanswered} questões sem resposta. Deseja finalizar mesmo assim?`)) return;
-            }
-
-            clearInterval(state.timerInterval);
-
-            let correctTotal = 0;
-            const perfByTopic = {};
-
-            state.questions.forEach((q, index) => {
-                const key = `${q.subject} | ${q.topic}`;
-                if(!perfByTopic[key]) perfByTopic[key] = { subject: q.subject, topic: q.topic, total: 0, correct: 0 };
-                
-                perfByTopic[key].total++;
-                if (state.answers[index] === q.answer) {
-                    correctTotal++;
-                    perfByTopic[key].correct++;
-                }
-            });
-
-            document.getElementById('final-score').innerText = `${Math.round((correctTotal / state.questions.length) * 100)}%`;
-            document.getElementById('correct-count').innerText = correctTotal;
-            document.getElementById('total-questions').innerText = state.questions.length;
-
-            const list = document.getElementById('performance-list');
-            list.innerHTML = '';
-            
-            let weakest = { topic: "Nenhum", subject: "-", rate: 101, total: 0 };
-
-            for (const [key, data] of Object.entries(perfByTopic)) {
-                const rate = (data.correct / data.total) * 100;
-                
-                if (rate < weakest.rate || (rate === weakest.rate && data.total > weakest.total)) {
-                    weakest = { topic: data.topic, subject: data.subject, rate: rate, total: data.total };
-                }
-                
-                list.innerHTML += `
-                    <li class="flex justify-between items-center bg-white p-3 border border-gray-100 rounded-lg shadow-sm">
-                        <div class="flex flex-col">
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">${data.subject}</span>
-                            <span class="font-semibold text-gray-700">${data.topic}</span>
-                        </div>
-                        <span class="text-sm font-bold px-3 py-1 rounded-full ${rate >= 70 ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}">${data.correct}/${data.total} (${Math.round(rate)}%)</span>
-                    </li>`;
-            }
-
-            if (correctTotal === state.questions.length && state.questions.length > 0) {
-                document.getElementById('bottleneck-container').classList.add('hidden');
-                document.getElementById('success-container').classList.remove('hidden');
-                document.getElementById('btn-show-review').classList.add('hidden');
-            } else {
-                document.getElementById('bottleneck-container').classList.remove('hidden');
-                document.getElementById('success-container').classList.add('hidden');
-                document.getElementById('btn-show-review').classList.remove('hidden');
-                document.getElementById('weakest-topic').innerText = weakest.topic;
-                document.getElementById('weakest-subject-name').innerText = weakest.subject;
-                buildReviewScreen();
-            }
-
-            switchScreen('result');
-        }
-
-        function buildReviewScreen() {
-            const container = document.getElementById('review-container');
-            container.innerHTML = '';
-
-            state.questions.forEach((q, index) => {
-                const userAnswer = state.answers[index];
-                if (userAnswer !== q.answer) {
-                    let optionsHTML = '';
-                    
-                    q.options.forEach((opt, optIdx) => {
-                        let styling = "bg-gray-50 border-gray-200 text-gray-600";
-                        let icon = "";
-
-                        if (optIdx === q.answer) {
-                            styling = "bg-green-50 border-green-400 text-green-800 font-medium";
-                            icon = `<svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
-                        } else if (optIdx === userAnswer) {
-                            styling = "bg-red-50 border-red-400 text-red-800 font-medium";
-                            icon = `<svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-                        }
-
-                        optionsHTML += `
-                            <div class="p-3 mb-2 rounded-lg border flex items-center ${styling}">
-                                ${icon}
-                                <span class="font-bold mr-2">${String.fromCharCode(65 + optIdx)})</span> ${opt}
-                            </div>
-                        `;
-                    });
-
-                    container.innerHTML += `
-                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                            <div class="flex items-center gap-2 mb-4">
-                                <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">${q.subject}</span>
-                                <span class="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">${q.topic}</span>
-                            </div>
-                            <p class="text-gray-800 mb-6 font-medium">${index + 1}. ${q.q}</p>
-                            <div class="mb-6">
-                                ${optionsHTML}
-                            </div>
-                            <div class="p-4 bg-indigo-50 border-l-4 border-indigo-400 rounded-r-lg">
-                                <h4 class="text-xs font-bold text-indigo-800 uppercase tracking-wider mb-1">Fundamento</h4>
-                                <p class="text-sm text-indigo-900">${q.disclaimer || 'Gabarito da banca.'}</p>
-                            </div>
-                        </div>
-                    `;
-                }
-            });
-        }
-
-        // Inicialização
-        document.getElementById('btn-start').onclick = initQuiz;
-        document.getElementById('btn-next').onclick = () => { if(state.currentIndex < state.questions.length - 1) { state.currentIndex++; renderQuestion(); renderGrid(); } };
-        document.getElementById('btn-prev').onclick = () => { if(state.currentIndex > 0) { state.currentIndex--; renderQuestion(); renderGrid(); } };
-        document.getElementById('btn-finish').onclick = () => finishQuiz(false);
-        
-        document.getElementById('btn-restart').onclick = () => {
-            clearInterval(state.timerInterval);
-            switchScreen('setup');
-        };
-
-        document.getElementById('btn-show-review').onclick = () => switchScreen('review');
-        document.getElementById('btn-close-review').onclick = () => switchScreen('result');
-
-        // Carrega a grid inicial
-        window.onload = updateSubjectsGrid;
-
-    </script>
-</body>
-</html>
+                optionsContainer.className = 'space-y-3 mt-4';
+                q.options.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = `option-btn w-full text-left p-4 rounded-lg border border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition ${state.answers[state.currentIndex] === index ? 'selected' : ''}`;
+                    btn.innerHTML = `<span class="font-bold text-gray-500 mr-2">${String.
