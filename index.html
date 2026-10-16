@@ -234,18 +234,16 @@
             container.innerHTML = '';
             
             subjects.forEach(subject => {
-                // Checa a quantidade real de questões disponíveis no banco desacoplado
-                const available = (typeof mockDB !== 'undefined' && mockDB[subject]) ? mockDB[subject].length : 0;
-                
+                const availableCount = (typeof mockDB !== 'undefined' && mockDB[subject]) ? mockDB[subject].length : 0;
                 container.innerHTML += `
                     <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
                         <div class="flex justify-between items-center mb-1">
-                            <label class="block text-xs font-semibold text-gray-600" title="${subject}">
-                                ${subject.length > 25 ? subject.substring(0, 22) + '...' : subject}
+                            <label class="block text-xs font-semibold text-gray-600 truncate" title="${subject}">
+                                ${subject}
                             </label>
-                            <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">${available} disp.</span>
+                            <span class="text-[10px] font-bold px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded">${availableCount} disp.</span>
                         </div>
-                        <input type="number" data-subject="${subject}" min="0" value="0" class="subject-input w-full rounded bg-white p-2 border border-gray-300 outline-none focus:border-blue-500">
+                        <input type="number" data-subject="${subject}" min="0" value="0" placeholder="Máx: ${availableCount}" class="subject-input w-full rounded bg-white p-2 border border-gray-300 outline-none focus:border-blue-500">
                     </div>
                 `;
             });
