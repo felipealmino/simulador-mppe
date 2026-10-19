@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPPE | Painel de Contribuição e Validação</title>
+    <title>MPPE | Painel de Contribuição</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Importa o banco atual para checar duplicidades -->
     <script src="questoes.js"></script>
 </head>
 <body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
@@ -21,10 +20,10 @@
     </header>
 
     <!-- Conteúdo Principal -->
-    <main class="flex-1 max-w-4xl w-full mx-auto p-6">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
-            <h1 class="text-xl font-bold text-slate-900 mb-1">CONTRIBUA</h1>
-            <p class="text-xs text-slate-500 mb-6">Cole o texto completo da prova abaixo. Não precisa se preocupar com formatação. Basta copiar e colar o conteúdo total da prova.</p>
+    <main class="flex-1 max-w-4xl w-full mx-auto p-6 flex items-center justify-center">
+        <div id="card-formulario" class="w-full bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h1 class="text-xl font-bold text-slate-900 mb-1">Contribuir com Questões (MPPE)</h1>
+            <p class="text-xs text-slate-500 mb-6">Cole o texto bruto da prova abaixo. O sistema fará a limpeza automática do OCR e enviará o conteúdo formatado para a nossa curadoria.</p>
 
             <!-- Seleção de Cargo Alvo -->
             <div class="mb-4">
@@ -37,31 +36,28 @@
             </div>
 
             <!-- Área de Texto Bruto -->
-            <div class="mb-4">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Texto Bruto Completo da Prova:</label>
+            <div class="mb-6">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Texto Bruto da Prova:</label>
                 <textarea id="input-texto-bruto" rows="10" placeholder="Cole aqui o texto copiado do PDF..." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono outline-none focus:border-blue-600"></textarea>
             </div>
 
-            <button id="btn-processar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm">
-                ENVIAR
+            <button id="btn-enviar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm">
+                Enviar Contribuição
             </button>
         </div>
 
-        <!-- Área de Resultados / Código Gerado -->
-        <div id="card-resultado" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
-            <h2 class="text-lg font-bold text-slate-900 mb-2">Relatório de Processamento</h2>
-            <div id="status-validacao" class="mb-4 text-xs font-semibold p-3 rounded-lg"></div>
-
-            <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Bloco JS Gerado (Pronto para copiar e colar no questoes.js):</label>
-            <textarea id="output-codigo" readonly rows="10" class="w-full p-3 bg-slate-950 text-emerald-400 font-mono text-xs rounded-xl outline-none mb-4"></textarea>
-
-            <button id="btn-copiar" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-5 rounded-xl text-xs transition">
-                Copiar Bloco Completo
-            </button>
+        <!-- Mensagem de Sucesso (Oculta Inicialmente) -->
+        <div id="card-sucesso" class="w-full bg-white p-12 rounded-2xl shadow-sm border border-slate-200 text-center hidden">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">✓</div>
+            <h2 class="text-xl font-bold text-slate-900 mb-2">Contribuição Enviada com Sucesso!</h2>
+            <p class="text-xs text-slate-500 mb-6">Muito obrigado! O texto foi processado, limpo e encaminhado para a nossa base de dados.</p>
+            <a href="index.html" class="inline-block bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl text-xs transition">
+                Voltar ao Simulador
+            </a>
         </div>
     </main>
 
-    <!-- Script de Limpeza de OCR e Processamento -->
+    <!-- Script de Processamento, Limpeza de OCR e Envio via Webhook -->
     <script>
         const topicosEdital = [
             "licitações", "atos administrativos", "contratos", "sintaxe", 
@@ -72,11 +68,8 @@
         function sanitizarOCR(texto) {
             if (!texto) return "";
             return texto
-                // Remove cabeçalhos típicos de OCR corrompidos
                 .replace(/Caderno de Prova[\s\S]*?(?=\b(?:questão|\d{1,2}\s*[\-\.\)]))/gi, '')
-                // Corrige hifenização de quebra de linha (ex: "entendi- mento" -> "entendimento")
                 .replace(/([a-zA-ZÀ-ÿ])-[\s\r\n]+([a-zA-ZÀ-ÿ])/g, '$1$2')
-                // Padroniza quebras de linha excessivas e espaços múltiplos
                 .replace(/[\r\n]+/g, ' ')
                 .replace(/\s{2,}/g, ' ')
                 .trim();
@@ -86,23 +79,24 @@
             return texto.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, ' ').trim();
         }
 
-        document.getElementById('btn-processar').addEventListener('click', () => {
+        document.getElementById('btn-enviar').addEventListener('click', async () => {
             const cargo = document.getElementById('input-cargo').value;
             const textoBruto = document.getElementById('input-texto-bruto').value.trim();
 
             if (!textoBruto) {
-                alert("Cole o texto bruto da prova!");
+                alert("Por favor, cole o texto bruto da prova antes de enviar.");
                 return;
             }
 
-            // 1. Aplica a limpeza de OCR no texto inteiro antes de fatiar
-            const textoLimpo = sanitizarOCR(textoBruto);
+            const btn = document.getElementById('btn-enviar');
+            btn.innerText = "Processando e Enviando...";
+            btn.disabled = true;
 
-            // 2. Fatiamento inteligente baseado no início da questão (ex: "43.", "44 -")
+            // 1. Limpeza de OCR e fatiamento
+            const textoLimpo = sanitizarOCR(textoBruto);
             const blocosBrutos = textoLimpo.split(/(?=\b\d{1,2}\s*[\-\.\)])/g).filter(b => b.trim().length > 20);
             
             let questoesProcessadas = [];
-            let rejeitadasDuplicadas = 0;
 
             blocosBrutos.forEach(bloco => {
                 const ehVF = /certo|errado/i.test(bloco) && !/alternativa [a-d]/i.test(bloco);
@@ -117,50 +111,48 @@
                     q: bloco.trim(),
                     options: ehVF ? [] : ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
                     answer: 0,
-                    disclaimer: "Extraído, limpo de OCR e validado automaticamente."
+                    disclaimer: "Extraído e limpo via painel de contribuição."
                 };
 
-                let duplicada = false;
-                const enunciadoNovo = normalizar(novaQuestao.q);
-
-                if (typeof mockDB !== 'undefined') {
-                    Object.keys(mockDB).forEach(disc => {
-                        mockDB[disc].forEach(qExistente => {
-                            if (normalizar(qExistente.q) === enunciadoNovo) {
-                                duplicada = true;
-                            }
-                        });
-                    });
-                }
-
-                if (questoesProcessadas.some(q => normalizar(q.q) === enunciadoNovo)) {
-                    duplicada = true;
-                }
-
-                if (duplicada) {
-                    rejeitadasDuplicadas++;
-                } else {
+                // Checa duplicidade interna no lote
+                if (!questoesProcessadas.some(q => normalizar(q.q) === normalizar(novaQuestao.q))) {
                     questoesProcessadas.push(novaQuestao);
                 }
             });
 
-            const cardRes = document.getElementById('card-resultado');
-            const statusDiv = document.getElementById('status-validacao');
-            const outputCod = document.getElementById('output-codigo');
+            // Prepara o payload para envio ao Webhook (Formspree)
+            const codigoFormatado = JSON.stringify(questoesProcessadas, null, 4);
+            const dadosEnvio = {
+                cargo: cargo,
+                total_questoes: questoesProcessadas.length,
+                codigo_json: codigoFormatado
+            };
 
-            cardRes.classList.remove('hidden');
+            try {
+                // URL GERADA NO FORMSPREE
+                const response = await fetch('https://formspree.io/f/mppqeydl', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(dadosEnvio)
+                });
 
-            statusDiv.className = "mb-4 text-xs font-semibold p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200";
-            statusDiv.innerText = `✓ OCR limpo e processamento concluído! ${questoesProcessadas.length} questões extraídas. (${rejeitadasDuplicadas} duplicadas ignoradas).`;
-
-            outputCod.value = JSON.stringify(questoesProcessadas, null, 4);
-        });
-
-        document.getElementById('btn-copiar').addEventListener('click', () => {
-            const outputCod = document.getElementById('output-codigo');
-            outputCod.select();
-            document.execCommand('copy');
-            alert("Bloco limpo de questões copiado!");
+                if (response.ok) {
+                    document.getElementById('card-formulario').classList.add('hidden');
+                    document.getElementById('card-sucesso').classList.remove('hidden');
+                } else {
+                    alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+                    btn.innerText = "Enviar Contribuição";
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                alert("Erro de conexão ao enviar os dados.");
+                btn.innerText = "Enviar Contribuição";
+                btn.disabled = false;
+            }
         });
     </script>
 </body>
