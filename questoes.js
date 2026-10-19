@@ -1648,9 +1648,31 @@ const banco_infra_bd = [
 // ---------------------------------------------------------
 // 5. MAPEAMENTO OFICIAL DO SIMULADOR (CHAVES EXATAS)
 // ---------------------------------------------------------
+// =========================================================
+// BANCOS DE QUESTÕES
+// =========================================================
+// Estas declarações evitam ReferenceError nos bancos que
+// ainda não possuem questões cadastradas neste arquivo.
+//
+// ATENÇÃO: os arrays vazios não contêm questões.
+// Será necessário preenchê-los posteriormente.
+
+const banco_rlm = [];
+const banco_legis_mppe = [];
+const banco_const = [];
+const banco_adm = [];
+const banco_civil = [];
+const banco_proc_civil = [];
+const banco_penal = [];
+const banco_proc_penal = [];
+const banco_noc_adm = [];
+
+// =========================================================
+// CATÁLOGO DE QUESTÕES
+// =========================================================
 
 const mockDB = {
-    // Matérias Transversais (Todos)
+    // Matérias comuns
     "Língua Portuguesa": banco_pt,
     "Matemática e RLM": banco_rlm,
     "Matemática e Raciocínio Lógico": banco_rlm,
@@ -1658,7 +1680,7 @@ const mockDB = {
     "Legislação Aplicada ao MPPE": banco_legis_mppe,
     "Informática": banco_info,
 
-    // Matérias Jurídicas (Técnico e Analista Jurídico)
+    // Matérias jurídicas
     "Direito Constitucional": banco_const,
     "Direito Administrativo": banco_adm,
     "Direito Civil": banco_civil,
@@ -1666,12 +1688,19 @@ const mockDB = {
     "Direito Penal": banco_penal,
     "Direito Processual Penal": banco_proc_penal,
 
-    // Específica (Técnico)
+    // Matéria específica do cargo de Técnico
     "Noções de Administração": banco_noc_adm,
 
-    // Específicas (Analista de Sistemas)
+    // Matérias específicas de TI
     "Governança em TI": banco_gov_ti,
     "Segurança, Risco e Continuidade": banco_seg_ti,
-    "Engenharia de Software, DevOps e Ciência de Dados": banco_eng_soft_ia,
+    "Engenharia de Software, DevOps e Ciência de Dados":
+        banco_eng_soft_ia,
     "Infraestrutura e Banco de Dados": banco_infra_bd
+};
+
+// Disponibiliza o catálogo para scripts que utilizem window.mockDB.
+if (typeof window !== "undefined") {
+    window.mockDB = mockDB;
+}
 };
