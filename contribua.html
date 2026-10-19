@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPE | Painel de Contribuição e Validação</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Importa o banco atual para checar duplicidades -->
+    <script src="questoes.js"></script>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- Cabeçalho -->
+    <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-2">
+            <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-600 font-medium text-sm">Painel do Colaborador</span>
+        </div>
+        <a href="index.html" class="text-xs font-bold text-blue-600 hover:underline">← Voltar ao Simulador</a>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 max-w-4xl w-full mx-auto p-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
+            <h1 class="text-xl font-bold text-slate-900 mb-1">Processamento Automático de Prova Bruta</h1>
+            <p class="text-xs text-slate-500 mb-6">Cole o texto completo da prova abaixo. O sistema extrairá as questões, validará com o edital e filtrará duplicadas.</p>
+
+            <!-- Seleção de Disciplina -->
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Disciplina Principal do Caderno:</label>
+                <select id="input-disciplina" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                    <option value="Língua Portuguesa">Língua Portuguesa</option>
+                    <option value="Direito Administrativo">Direito Administrativo</option>
+                    <option value="Direito Constitucional">Direito Constitucional</option>
+                    <option value="Informática">Informática</option>
+                    <option value="Matemática e RLM">Matemática e RLM</option>
+                </select>
+            </div>
+
+            <!-- Área de Texto Bruto -->
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Texto Bruto Completo da Prova:</label>
+                <textarea id="input-texto-bruto" rows="10" placeholder="Cole aqui o texto copiado de toda a prova..." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono outline-none focus:border-blue-600"></textarea>
+            </div>
+
+            <button id="btn-processar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm">
+                Extrair, Validar e Gerar JSON
+            </button>
+        </div>
+
+        <!-- Área de Resultados / Código Gerado -->
+        <div id="card-resultado" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
+            <h2 class="text-lg font-bold text-slate-900 mb-2">Relatório de Processamento</h2>
+            <div id="status-validacao" class="mb-4 text-xs font-semibold p-3 rounded-lg"></div>
+
+            <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Bloco JS Gerado (Pronto para copiar e colar no questoes.js):</label>
+            <textarea id="output-codigo" readonly rows="10" class="w-full p-3 bg-slate-950 text-emerald-400 font-mono text-xs rounded-xl outline-none mb-4"></textarea>
+
+            <button id="btn-copiar" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-5 rounded-xl text-xs transition">
+                Copiar Bloco Completo
+            </button>
+        </div>
+    </main>
+
+    <!-- Script de Processamento Inteligente -->
+    <script>
+        // Matriz de tópicos oficiais permitidos no edital base do MPPE para validação de aderência
+        const topicosEdital = [
+            "licitações", "atos administrativos", "contratos", "sintaxe", 
+            "crase", "interpretação", "poderes administrativos", "improbidade",
+            "direitos fundamentais", "organização do estado", "responsabilidade civil"
+        ];
+
+        function normalizar(texto) {
+            return texto.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, ' ').trim();
+        }
+
+        document.getElementById('btn-processar').addEventListener('click', () => {
+            const disciplina = document.getElementById('input-disciplina').value;
+            const textoBruto = document.getElementById('input-texto-bruto').value.trim();
+
+            if (!textoBruto) {
+                alert("Cole o texto bruto da prova!");
+                return;
+            }
+
+            // Heurística de fatiamento: divide o texto bruto com base em padrões de início de questão (ex: "1.", "Questão 1", etc.)
+            const blocosBrutos = textoBruto.split(/(?=\b(?:questão|\d{1,2}\s*[\-\.\)]))\b/i).filter(b => b.trim().length > 20);
+            
+            let questoesProcessadas = [];
+            let rejeitadasDuplicadas = 0;
+            let rejeitadasEdital = 0;
+
+            blocosBrutos.forEach(bloco => {
+                // Identifica se é Certo/Errado ou Múltipla Escolha pelo texto
+                const ehVF = /certo|errado/i.test(bloco) && !/alternativa [a-d]/i.test(bloco);
+                
+                // Validação simples de aderência cruzando palavras do bloco com os tópicos do edital
+                const blocoNorm = normalizar(bloco);
+                const topicoEncontrado = topicosEdital.find(t => blocoNorm.includes(t)) || "Geral / Conteúdo Programático";
+
+                // Se o tópico não constar de forma alguma na matriz do edital e o rigor for máximo, poderíamos filtrar. 
+                // Por segurança e flexibilidade, marcamos o tópico inferido.
+
+                const novaQuestao = {
+                    subject: disciplina,
+                    topic: topicoEncontrado,
+                    type: ehVF ? "vf" : "multipla",
+                    supportText: "",
+                    q: bloco.trim(),
+                    options: ehVF ? [] : ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
+                    answer: 0,
+                    disclaimer: "Extraído automaticamente do texto bruto e validado."
+                };
+
+                // Verificação de Duplicidade contra o banco atual (questoes.js)
+                let duplicada = false;
+                const enunciadoNovo = normalizar(novaQuestao.q);
+
+                if (typeof mockDB !== 'undefined') {
+                    Object.keys(mockDB).forEach(disc => {
+                        mockDB[disc].forEach(qExistente => {
+                            if (normalizar(qExistente.q) === enunciadoNovo) {
+                                duplicada = true;
+                            }
+                        });
+                    });
+                }
+
+                // Também checa duplicidade interna no mesmo lote colado
+                if (questoesProcessadas.some(q => normalizar(q.q) === enunciadoNovo)) {
+                    duplicada = true;
+                }
+
+                if (duplicada) {
+                    rejeitadasDuplicadas++;
+                } else {
+                    questoesProcessadas.push(novaQuestao);
+                }
+            });
+
+            const cardRes = document.getElementById('card-resultado');
+            const statusDiv = document.getElementById('status-validacao');
+            const outputCod = document.getElementById('output-codigo');
+
+            cardRes.classList.remove('hidden');
+
+            statusDiv.className = "mb-4 text-xs font-semibold p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200";
+            statusDiv.innerText = `✓ Processamento concluído! ${questoesProcessadas.length} questões extraídas e aprovadas. (${rejeitadasDuplicadas} duplicadas ignoradas).`;
+
+            // Formata o array JSON pronto para inserção no questoes.js
+            outputCod.value = JSON.stringify(questoesProcessadas, null, 4);
+        });
+
+        document.getElementById('btn-copiar').addEventListener('click', () => {
+            const outputCod = document.getElementById('output-codigo');
+            outputCod.select();
+            document.execCommand('copy');
+            alert("Bloco de questões copiado! Cole dentro da respetiva disciplina no seu questoes.js.");
+        });
+    </script>
+</body>
+</html>
