@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPPE | Painel de Contribuição</title>
+    <title>MPPE | Painel de Envio de Questões</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="questoes.js"></script>
 </head>
@@ -14,7 +14,7 @@
         <div class="flex items-center space-x-2">
             <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
             <span class="text-slate-300">|</span>
-            <span class="text-slate-600 font-medium text-sm">Painel do Colaborador</span>
+            <span class="text-slate-600 font-medium text-sm">Painel de Envio de Questões</span>
         </div>
         <a href="index.html" class="text-xs font-bold text-blue-600 hover:underline">← Voltar ao Simulador</a>
     </header>
@@ -22,8 +22,8 @@
     <!-- Conteúdo Principal -->
     <main class="flex-1 max-w-4xl w-full mx-auto p-6 flex items-center justify-center">
         <div id="card-formulario" class="w-full bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h1 class="text-xl font-bold text-slate-900 mb-1">Contribuir com Questões (MPPE)</h1>
-            <p class="text-xs text-slate-500 mb-6">Cole o texto bruto da prova abaixo. O sistema fará a limpeza automática do OCR e enviará o conteúdo formatado para a nossa curadoria.</p>
+            <h1 class="text-xl font-bold text-slate-900 mb-1">ENVIE SUAS QUESTÕES</h1>
+            <p class="text-xs text-slate-500 mb-6">Cole o texto bruto da prova abaixo. Não precisa se preocupar com a formatação.</p>
 
             <!-- Seleção de Cargo Alvo -->
             <div class="mb-4">
@@ -37,7 +37,7 @@
 
             <!-- Área de Texto Bruto -->
             <div class="mb-6">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Texto Bruto da Prova:</label>
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Texto da Prova:</label>
                 <textarea id="input-texto-bruto" rows="10" placeholder="Cole aqui o texto copiado do PDF..." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono outline-none focus:border-blue-600"></textarea>
             </div>
 
