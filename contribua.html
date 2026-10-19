@@ -23,7 +23,7 @@
     <!-- Conteúdo Principal -->
     <main class="flex-1 max-w-4xl w-full mx-auto p-6">
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
-            <h1 class="text-xl font-bold text-slate-900 mb-1">Contribua com questões</h1>
+            <h1 class="text-xl font-bold text-slate-900 mb-1">CONTRIBUA</h1>
             <p class="text-xs text-slate-500 mb-6">Cole o texto completo da prova abaixo. Não precisa se preocupar com formatação. Basta copiar e colar o conteúdo total da prova.</p>
 
             <!-- Seleção de Cargo Alvo -->
@@ -39,11 +39,11 @@
             <!-- Área de Texto Bruto -->
             <div class="mb-4">
                 <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Texto Bruto Completo da Prova:</label>
-                <textarea id="input-texto-bruto" rows="10" placeholder="Cole aqui o texto copiado de toda a prova..." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono outline-none focus:border-blue-600"></textarea>
+                <textarea id="input-texto-bruto" rows="10" placeholder="Cole aqui o texto copiado do PDF (com possíveis falhas de OCR)..." class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs font-mono outline-none focus:border-blue-600"></textarea>
             </div>
 
             <button id="btn-processar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm">
-                Extrair, Validar e Gerar JSON
+                ENVIAR
             </button>
         </div>
 
@@ -61,13 +61,26 @@
         </div>
     </main>
 
-    <!-- Script de Processamento Inteligente -->
+    <!-- Script de Limpeza de OCR e Processamento -->
     <script>
         const topicosEdital = [
             "licitações", "atos administrativos", "contratos", "sintaxe", 
             "crase", "interpretação", "poderes administrativos", "improbidade",
             "direitos fundamentais", "organização do estado", "responsabilidade civil"
         ];
+
+        function sanitizarOCR(texto) {
+            if (!texto) return "";
+            return texto
+                // Remove cabeçalhos típicos de OCR corrompidos
+                .replace(/Caderno de Prova[\s\S]*?(?=\b(?:questão|\d{1,2}\s*[\-\.\)]))/gi, '')
+                // Corrige hifenização de quebra de linha (ex: "entendi- mento" -> "entendimento")
+                .replace(/([a-zA-ZÀ-ÿ])-[\s\r\n]+([a-zA-ZÀ-ÿ])/g, '$1$2')
+                // Padroniza quebras de linha excessivas e espaços múltiplos
+                .replace(/[\r\n]+/g, ' ')
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+        }
 
         function normalizar(texto) {
             return texto.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, ' ').trim();
@@ -82,7 +95,11 @@
                 return;
             }
 
-            const blocosBrutos = textoBruto.split(/(?=\b(?:questão|\d{1,2}\s*[\-\.\)]))\b/i).filter(b => b.trim().length > 20);
+            // 1. Aplica a limpeza de OCR no texto inteiro antes de fatiar
+            const textoLimpo = sanitizarOCR(textoBruto);
+
+            // 2. Fatiamento inteligente baseado no início da questão (ex: "43.", "44 -")
+            const blocosBrutos = textoLimpo.split(/(?=\b\d{1,2}\s*[\-\.\)])/g).filter(b => b.trim().length > 20);
             
             let questoesProcessadas = [];
             let rejeitadasDuplicadas = 0;
@@ -100,7 +117,7 @@
                     q: bloco.trim(),
                     options: ehVF ? [] : ["Alternativa A", "Alternativa B", "Alternativa C", "Alternativa D"],
                     answer: 0,
-                    disclaimer: "Extraído automaticamente do texto bruto e validado."
+                    disclaimer: "Extraído, limpo de OCR e validado automaticamente."
                 };
 
                 let duplicada = false;
@@ -134,7 +151,7 @@
             cardRes.classList.remove('hidden');
 
             statusDiv.className = "mb-4 text-xs font-semibold p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200";
-            statusDiv.innerText = `✓ Processamento concluído! ${questoesProcessadas.length} questões extraídas para o cargo selecionado. (${rejeitadasDuplicadas} duplicadas ignoradas).`;
+            statusDiv.innerText = `✓ OCR limpo e processamento concluído! ${questoesProcessadas.length} questões extraídas. (${rejeitadasDuplicadas} duplicadas ignoradas).`;
 
             outputCod.value = JSON.stringify(questoesProcessadas, null, 4);
         });
@@ -143,7 +160,7 @@
             const outputCod = document.getElementById('output-codigo');
             outputCod.select();
             document.execCommand('copy');
-            alert("Bloco de questões copiado!");
+            alert("Bloco limpo de questões copiado!");
         });
     </script>
 </body>
