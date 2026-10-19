@@ -26,15 +26,13 @@
             <h1 class="text-xl font-bold text-slate-900 mb-1">Processamento Automático de Prova Bruta</h1>
             <p class="text-xs text-slate-500 mb-6">Cole o texto completo da prova abaixo. O sistema extrairá as questões, validará com o edital e filtrará duplicadas.</p>
 
-            <!-- Seleção de Disciplina -->
+            <!-- Seleção de Cargo Alvo -->
             <div class="mb-4">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Disciplina Principal do Caderno:</label>
-                <select id="input-disciplina" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
-                    <option value="Língua Portuguesa">Língua Portuguesa</option>
-                    <option value="Direito Administrativo">Direito Administrativo</option>
-                    <option value="Direito Constitucional">Direito Constitucional</option>
-                    <option value="Informática">Informática</option>
-                    <option value="Matemática e RLM">Matemática e RLM</option>
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Cargo Alvo:</label>
+                <select id="input-cargo" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                    <option value="Técnico Ministerial - Área Administrativa">Técnico Ministerial - Área Administrativa</option>
+                    <option value="Analista Ministerial - Direito">Analista Ministerial - Direito</option>
+                    <option value="Analista Ministerial - Área Especializada">Analista Ministerial - Área Especializada</option>
                 </select>
             </div>
 
@@ -65,7 +63,6 @@
 
     <!-- Script de Processamento Inteligente -->
     <script>
-        // Matriz de tópicos oficiais permitidos no edital base do MPPE para validação de aderência
         const topicosEdital = [
             "licitações", "atos administrativos", "contratos", "sintaxe", 
             "crase", "interpretação", "poderes administrativos", "improbidade",
@@ -77,7 +74,7 @@
         }
 
         document.getElementById('btn-processar').addEventListener('click', () => {
-            const disciplina = document.getElementById('input-disciplina').value;
+            const cargo = document.getElementById('input-cargo').value;
             const textoBruto = document.getElementById('input-texto-bruto').value.trim();
 
             if (!textoBruto) {
@@ -85,26 +82,18 @@
                 return;
             }
 
-            // Heurística de fatiamento: divide o texto bruto com base em padrões de início de questão (ex: "1.", "Questão 1", etc.)
             const blocosBrutos = textoBruto.split(/(?=\b(?:questão|\d{1,2}\s*[\-\.\)]))\b/i).filter(b => b.trim().length > 20);
             
             let questoesProcessadas = [];
             let rejeitadasDuplicadas = 0;
-            let rejeitadasEdital = 0;
 
             blocosBrutos.forEach(bloco => {
-                // Identifica se é Certo/Errado ou Múltipla Escolha pelo texto
                 const ehVF = /certo|errado/i.test(bloco) && !/alternativa [a-d]/i.test(bloco);
-                
-                // Validação simples de aderência cruzando palavras do bloco com os tópicos do edital
                 const blocoNorm = normalizar(bloco);
                 const topicoEncontrado = topicosEdital.find(t => blocoNorm.includes(t)) || "Geral / Conteúdo Programático";
 
-                // Se o tópico não constar de forma alguma na matriz do edital e o rigor for máximo, poderíamos filtrar. 
-                // Por segurança e flexibilidade, marcamos o tópico inferido.
-
                 const novaQuestao = {
-                    subject: disciplina,
+                    cargoAlvo: cargo,
                     topic: topicoEncontrado,
                     type: ehVF ? "vf" : "multipla",
                     supportText: "",
@@ -114,7 +103,6 @@
                     disclaimer: "Extraído automaticamente do texto bruto e validado."
                 };
 
-                // Verificação de Duplicidade contra o banco atual (questoes.js)
                 let duplicada = false;
                 const enunciadoNovo = normalizar(novaQuestao.q);
 
@@ -128,7 +116,6 @@
                     });
                 }
 
-                // Também checa duplicidade interna no mesmo lote colado
                 if (questoesProcessadas.some(q => normalizar(q.q) === enunciadoNovo)) {
                     duplicada = true;
                 }
@@ -147,9 +134,8 @@
             cardRes.classList.remove('hidden');
 
             statusDiv.className = "mb-4 text-xs font-semibold p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200";
-            statusDiv.innerText = `✓ Processamento concluído! ${questoesProcessadas.length} questões extraídas e aprovadas. (${rejeitadasDuplicadas} duplicadas ignoradas).`;
+            statusDiv.innerText = `✓ Processamento concluído! ${questoesProcessadas.length} questões extraídas para o cargo selecionado. (${rejeitadasDuplicadas} duplicadas ignoradas).`;
 
-            // Formata o array JSON pronto para inserção no questoes.js
             outputCod.value = JSON.stringify(questoesProcessadas, null, 4);
         });
 
@@ -157,7 +143,7 @@
             const outputCod = document.getElementById('output-codigo');
             outputCod.select();
             document.execCommand('copy');
-            alert("Bloco de questões copiado! Cole dentro da respetiva disciplina no seu questoes.js.");
+            alert("Bloco de questões copiado!");
         });
     </script>
 </body>
