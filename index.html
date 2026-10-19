@@ -1,25 +1,9 @@
 <!DOCTYPE html>
-<!-- Cabeçalho -->
-    <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-sm">
-        <div class="flex items-center space-x-2">
-            <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
-            <span class="text-slate-300">|</span>
-            <span class="text-slate-600 font-medium text-sm">Simulador Estratégico</span>
-        </div>
-        <div class="flex items-center space-x-4">
-            <!-- Link de Acesso à Página de Contribuição -->
-            <a href="contribua.html" class="text-xs font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition">
-                + Contribuir / Adicionar Prova
-            </a>
-            <span class="text-xs text-slate-400 font-medium">Desenvolvido por Felipe Almino</span>
-        </div>
-    </header>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPPE | Simulador Estratégico</title>
-    <!-- Tailwind CSS -->
+    <title>MPPE | Simulador de Estudos</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="questoes.js"></script>
 </head>
@@ -30,281 +14,198 @@
         <div class="flex items-center space-x-2">
             <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
             <span class="text-slate-300">|</span>
-            <span class="text-slate-600 font-medium text-sm">Simulador Estratégico</span>
+            <span class="text-slate-600 font-medium text-sm">Simulador de Questões</span>
         </div>
-        <span class="text-xs text-slate-400 font-medium">Desenvolvido por Felipe Almino</span>
+        <a href="contribua.html" class="text-xs font-bold text-blue-600 hover:underline">Painel de Contribuição →</a>
     </header>
 
-    <!-- Conteúdo Principal / Configuração do Treino -->
-    <main class="flex-1 flex items-center justify-center p-6">
-        <div id="card-config" class="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <div class="mb-6 pb-4 border-b border-slate-100">
-                <h1 class="text-2xl font-bold text-slate-900">Configure o seu treino</h1>
-                <p class="text-sm text-slate-500 mt-1">Defina os parâmetros do seu caderno de questões.</p>
-            </div>
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 max-w-4xl w-full mx-auto p-6">
+        
+        <!-- Bloco de Configuração do Treino -->
+        <div id="painel-config" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
+            <h1 class="text-xl font-bold text-slate-900 mb-1">Configure o seu treino</h1>
+            <p class="text-xs text-slate-500 mb-6">Defina os parâmetros do seu caderno de questões.</p>
 
-            <!-- Cargo Alvo -->
-            <div class="mb-5">
-                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Cargo Alvo:</label>
-                <select id="cargo-alvo" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl outline-none focus:border-blue-600 text-sm font-medium text-slate-700">
-                    <option value="tecnico_adm">Técnico Ministerial - Área Administrativa</option>
-                    <option value="analista_direito">Analista Ministerial - Direito</option>
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Cargo Alvo:</label>
+                <select id="select-cargo" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                    <option value="Tecnico">Técnico Ministerial - Área Administrativa</option>
+                    <option value="AnalistaJuridico">Analista Ministerial - Direito</option>
+                    <option value="AnalistaTI">Analista Ministerial - Especializada (Sistemas / TI)</option>
                 </select>
             </div>
 
-            <!-- Quantidade de Questões -->
-            <div class="mb-5">
-                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Quantidade de Questões:</label>
-                <input type="number" id="input-qtd-questoes" value="10" min="1" max="100" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl outline-none focus:border-blue-600 text-sm font-medium text-slate-700">
-            </div>
-
-            <!-- Distribuição de Questões por Disciplina -->
-            <div class="mb-6">
-                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Distribuição de Questões por Disciplina:</label>
-                <div id="container-disciplinas" class="space-y-2 max-h-48 overflow-y-auto pr-1">
-                    <!-- Injetado via script -->
-                </div>
-            </div>
-
-            <!-- Modo Simulado (Com Tempo) -->
-            <div class="mb-8 p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
-                <div>
-                    <h2 class="text-sm font-bold text-slate-800">Modo Simulado Real (Com Tempo)</h2>
-                    <p class="text-xs text-slate-500">Estabelece um cronômetro e finaliza automaticamente ao esgotar.</p>
-                </div>
-                <div class="flex items-center space-x-3">
-                    <input type="number" id="tempo-simulado" value="30" min="5" max="300" class="w-16 p-2 text-center bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-700 outline-none">
-                    <span class="text-xs font-bold text-slate-500">min.</span>
-                    <input type="checkbox" id="toggle-tempo" class="w-5 h-5 accent-blue-600 rounded cursor-pointer" checked>
-                </div>
-            </div>
-
-            <!-- Botão Gerar Caderno -->
-            <button id="btn-gerar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition shadow-sm text-sm tracking-wide">
-                Gerar Caderno de Questões
+            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm mt-4">
+                Iniciar Simulador
             </button>
         </div>
 
-        <!-- Área da Prova / Oculta Inicialmente -->
-        <div id="card-prova" class="w-full max-w-3xl bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
-            <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-100">
-                <div>
-                    <span id="prova-disciplina" class="text-xs font-bold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md">Disciplina</span>
-                    <h2 id="prova-progresso" class="text-sm font-semibold text-slate-500 mt-2">Questão 1 de 10</h2>
-                </div>
-                <div id="cronometro-box" class="text-sm font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg">
-                    ⏱️ <span id="tempo-restante">30:00</span>
-                </div>
+        <!-- Bloco de Resposta às Questões (Oculto inicialmente) -->
+        <div id="painel-quiz" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
+            <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
+                <span id="contador-questoes" class="text-xs font-semibold text-slate-500">Questão 1 de X</span>
             </div>
 
-            <!-- Enunciado e Texto de Apoio -->
-            <div id="area-conteudo-questao" class="mb-6 space-y-4">
-                <!-- Injetado dinamicamente -->
+            <p id="texto-suporte" class="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl mb-4 font-mono hidden"></p>
+            
+            <h2 id="enunciado-questao" class="text-sm font-bold text-slate-900 mb-6 leading-relaxed"></h2>
+
+            <div id="container-alternativas" class="space-y-3 mb-6">
+                <!-- Alternativas injetadas via JS -->
             </div>
 
-            <!-- Navegação da Prova -->
-            <div class="flex justify-between items-center pt-4 border-t border-slate-100">
-                <button id="btn-anterior" class="px-4 py-2 border border-slate-300 text-slate-600 rounded-lg text-sm font-semibold hover:bg-slate-50 transition">Anterior</button>
-                <button id="btn-proxima" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition shadow-sm">Próxima Questão</button>
+            <!-- Caixa de Feedback e Disclaimer -->
+            <div id="painel-feedback" class="p-4 rounded-xl mb-6 hidden">
+                <p id="texto-feedback" class="text-xs font-bold mb-1"></p>
+                <p id="texto-disclaimer" class="text-xs text-slate-600 italic"></p>
+            </div>
+
+            <div class="flex justify-end">
+                <button id="btn-proxima" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-6 rounded-xl text-xs transition hidden">
+                    Próxima Questão →
+                </button>
             </div>
         </div>
 
-        <!-- Área de Relatório Final / Oculta Inicialmente -->
-        <div id="card-resultado" class="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
-            <div class="mb-6 pb-4 border-b border-slate-100 text-center">
-                <h1 class="text-2xl font-bold text-slate-900">Desempenho no Simulado</h1>
-                <p class="text-sm text-slate-500 mt-1">Confira o balanço geral do seu treino estratégico.</p>
-            </div>
-
-            <div class="grid grid-cols-3 gap-4 mb-8 text-center">
-                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                    <span class="block text-xs font-bold text-slate-400 uppercase">Total</span>
-                    <span id="res-total" class="text-2xl font-extrabold text-slate-800">0</span>
-                </div>
-                <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200">
-                    <span class="block text-xs font-bold text-emerald-600 uppercase">Acertos</span>
-                    <span id="res-acertos" class="text-2xl font-extrabold text-emerald-700">0</span>
-                </div>
-                <div class="p-4 bg-rose-50 rounded-xl border border-rose-200">
-                    <span class="block text-xs font-bold text-rose-600 uppercase">Erros</span>
-                    <span id="res-erros" class="text-2xl font-extrabold text-rose-700">0</span>
-                </div>
-            </div>
-
-            <div class="mb-8 p-6 bg-blue-50/50 rounded-xl border border-blue-100 text-center">
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">Aproveitamento Geral</span>
-                <span id="res-porcentagem" class="text-4xl font-extrabold text-blue-900">0%</span>
-            </div>
-
-            <button onclick="location.reload()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition shadow-sm text-sm tracking-wide">
-                Novo Simulado
-            </button>
-        </div>
     </main>
 
-    <!-- Script de Controle -->
+    <!-- Script de Execução do Simulador -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const containerDisciplinas = document.getElementById('container-disciplinas');
-            
-            if (typeof mockDB !== 'undefined') {
-                Object.keys(mockDB).forEach(disciplina => {
-                    const total = mockDB[disciplina].length;
-                    const div = document.createElement('div');
-                    div.className = "flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200";
-                    div.innerHTML = `
-                        <div class="flex items-center space-x-3">
-                            <input type="checkbox" id="disc_${disciplina}" value="${disciplina}" class="w-4 h-4 accent-blue-600 rounded cursor-pointer" ${total > 0 ? 'checked' : ''}>
-                            <label for="disc_${disciplina}" class="text-sm font-semibold text-slate-700 cursor-pointer">${disciplina}</label>
-                        </div>
-                        <span class="text-xs font-bold text-slate-500 bg-slate-200/70 px-2.5 py-1 rounded-full">${total} q.</span>
-                    `;
-                    containerDisciplinas.appendChild(div);
-                });
+        let questoesAtivas = [];
+        let indiceAtual = 0;
+        let acertos = 0;
+
+        document.getElementById('btn-iniciar').addEventListener('click', () => {
+            const cargo = document.getElementById('select-cargo').value;
+            questoesAtivas = [];
+
+            // Seleciona as bases de acordo com o cargo escolhido
+            if (cargo === 'Tecnico') {
+                questoesAtivas = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_noc_adm];
+            } else if (cargo === 'AnalistaJuridico') {
+                questoesAtivas = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_const, ...banco_adm, ...banco_civil, ...banco_proc_civil, ...banco_penal, ...banco_proc_penal];
+            } else if (cargo === 'AnalistaTI') {
+                questoesAtivas = [...banco_pt, ...banco_rlm, ...banco_legis_mppe, ...banco_gov_ti, ...banco_seg_ti, ...banco_eng_soft_ia, ...banco_infra_bd];
             }
 
-            document.getElementById('btn-gerar').addEventListener('click', () => {
-                const checkedDisciplinas = Array.from(document.querySelectorAll('#container-disciplinas input[type="checkbox"]:checked'))
-                    .map(cb => cb.value);
+            if (questoesAtivas.length === 0) {
+                alert("Nenhuma questão encontrada para este perfil.");
+                return;
+            }
 
-                if (checkedDisciplinas.length === 0) {
-                    alert("Selecione pelo menos uma disciplina!");
-                    return;
-                }
+            // Embaralha as questões para o simulador
+            questoesAtivas.sort(() => Math.random() - 0.5);
+            indiceAtual = 0;
+            acertos = 0;
 
-                let pool = [];
-                checkedDisciplinas.forEach(disc => {
-                    if (mockDB[disc]) pool.push(...mockDB[disc]);
-                });
+            document.getElementById('painel-config').classList.add('hidden');
+            document.getElementById('painel-quiz').classList.remove('hidden');
 
-                if (pool.length === 0) {
-                    alert("As disciplinas selecionadas não possuem questões cadastradas.");
-                    return;
-                }
-
-                // Embaralha e limita à quantidade escolhida
-                pool.sort(() => Math.random() - 0.5);
-                const qtdDesejada = parseInt(document.getElementById('input-qtd-questoes').value) || 10;
-                const questoesSelecionadas = pool.slice(0, qtdDesejada);
-
-                document.getElementById('card-config').classList.add('hidden');
-                document.getElementById('card-prova').classList.remove('hidden');
-
-                iniciarSimulado(questoesSelecionadas);
-            });
+            carregarQuestao();
         });
 
-        function iniciarSimulado(questoes) {
-            let indiceAtual = 0;
-            let respostasUsuario = {};
-            const areaConteudo = document.getElementById('area-conteudo-questao');
-            const txtDisciplina = document.getElementById('prova-disciplina');
-            const txtProgresso = document.getElementById('prova-progresso');
-            const btnProxima = document.getElementById('btn-proxima');
-            const btnAnterior = document.getElementById('btn-anterior');
-
-            function mostrarQuestao(indice) {
-                const q = questoes[indice];
-                txtDisciplina.innerText = q.subject;
-                txtProgresso.innerText = `Questão ${indice + 1} de ${questoes.length}`;
-
-                const jaRespondido = respostasUsuario[indice] !== undefined;
-
-                let htmlOpcoes = '';
-                if (q.type === 'vf') {
-                    htmlOpcoes = `
-                        <div class="grid grid-cols-2 gap-4 mt-4">
-                            <button onclick="responder(${indice}, 0)" class="opcao-btn py-3 px-4 border rounded-xl font-bold transition text-sm ${jaRespondido ? (q.answer === 0 ? 'bg-emerald-100 border-emerald-400 text-emerald-900' : 'bg-slate-100 border-slate-300 text-slate-500 opacity-60') : 'border-blue-200 bg-blue-50/50 hover:bg-blue-100 text-blue-900'}" ${jaRespondido ? 'disabled' : ''}>CERTO</button>
-                            <button onclick="responder(${indice}, 1)" class="opcao-btn py-3 px-4 border rounded-xl font-bold transition text-sm ${jaRespondido ? (q.answer === 1 ? 'bg-emerald-100 border-emerald-400 text-emerald-900' : 'bg-slate-100 border-slate-300 text-slate-500 opacity-60') : 'border-red-200 bg-red-50/50 hover:bg-red-100 text-red-900'}" ${jaRespondido ? 'disabled' : ''}>ERRADO</button>
-                        </div>
-                    `;
-                } else {
-                    htmlOpcoes = q.options.map((opt, i) => {
-                        let estilo = "border-slate-200 hover:bg-slate-50 text-slate-700";
-                        if (jaRespondido) {
-                            if (i === q.answer) estilo = "bg-emerald-100 border-emerald-400 text-emerald-900 font-semibold";
-                            else if (respostasUsuario[indice] === i) estilo = "bg-rose-100 border-rose-400 text-rose-900 font-semibold";
-                            else estilo = "border-slate-200 opacity-50 text-slate-500";
-                        }
-                        return `
-                            <label class="flex items-start p-3.5 border ${estilo} rounded-xl cursor-pointer transition mb-2">
-                                <input type="radio" name="pergunta_${indice}" value="${i}" class="mt-1 mr-3 accent-blue-600" ${jaRespondido ? 'disabled' : ''} ${respostasUsuario[indice] === i ? 'checked' : ''} onclick="responder(${indice}, ${i})">
-                                <span class="text-sm">${opt}</span>
-                            </label>
-                        `;
-                    }).join('');
-                }
-
-                let feedbackHtml = '';
-                if (jaRespondido) {
-                    const acertou = respostasUsuario[indice] === q.answer;
-                    feedbackHtml = `
-                        <div class="mt-4 p-4 rounded-xl border ${acertou ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-rose-50 border-rose-200 text-rose-900'}">
-                            <span class="font-bold block text-sm mb-1">${acertou ? '✓ Resposta Correta!' : '✕ Resposta Incorreta!'}</span>
-                            <p class="text-xs leading-relaxed opacity-90">${q.disclaimer || 'Sem fundamentação cadastrada.'}</p>
-                        </div>
-                    `;
-                }
-
-                const textoApoioHtml = q.supportText ? `
-                    <div class="p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-xl text-xs text-slate-700 leading-relaxed italic">
-                        ${q.supportText}
+        function carregarQuestao() {
+            if (indiceAtual >= questoesAtivas.length) {
+                document.getElementById('painel-quiz').innerHTML = `
+                    <div class="text-center py-8">
+                        <h2 class="text-xl font-bold text-slate-900 mb-2">Simulado Concluído!</h2>
+                        <p class="text-xs text-slate-500 mb-6">Você respondeu a todas as questões selecionadas para este treino.</p>
+                        <a href="index.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-xl text-xs">Reiniciar Treino</a>
                     </div>
-                ` : '';
-
-                areaConteudo.innerHTML = `
-                    ${textoApoioHtml}
-                    <p class="text-sm font-semibold text-slate-900 leading-relaxed">${q.q}</p>
-                    <div class="space-y-2 mt-4">${htmlOpcoes}</div>
-                    ${feedbackHtml}
                 `;
-
-                btnAnterior.disabled = indice === 0;
-                btnAnterior.style.opacity = indice === 0 ? '0.5' : '1';
-                btnProxima.innerText = indice === questoes.length - 1 ? 'Finalizar Prova' : 'Próxima Questão';
+                return;
             }
 
-            window.responder = function(indice, escolha) {
-                if (respostasUsuario[indice] !== undefined) return; // Impede alterar após responder
-                respostasUsuario[indice] = escolha;
-                mostrarQuestao(indice);
-            };
+            const q = questoesAtivas[indiceAtual];
+            document.getElementById('contador-questoes').innerText = `Questão ${indiceAtual + 1} de ${questoesAtivas.length}`;
+            document.getElementById('badge-materia').innerText = q.topic || 'Geral';
+            
+            const suporteEl = document.getElementById('texto-suporte');
+            if (q.supportText && q.supportText.trim() !== "") {
+                suporteEl.innerHTML = q.supportText;
+                suporteEl.classList.remove('hidden');
+            } else {
+                suporteEl.classList.add('hidden');
+            }
 
-            btnProxima.onclick = () => {
-                if (indiceAtual < questoes.length - 1) {
-                    indiceAtual++;
-                    mostrarQuestao(indiceAtual);
-                } else {
-                    // Cálculo do resultado final
-                    let acertos = 0;
-                    let erros = 0;
-                    questoes.forEach((q, idx) => {
-                        if (respostasUsuario[idx] === q.answer) acertos++;
-                        else erros++;
-                    });
+            document.getElementById('enunciado-questao').innerHTML = q.q;
 
-                    const total = questoes.length;
-                    const percentual = Math.round((acertos / total) * 100);
+            const container = document.getElementById('container-alternativas');
+            container.innerHTML = '';
 
-                    document.getElementById('card-prova').classList.add('hidden');
-                    document.getElementById('card-resultado').classList.remove('hidden');
+            const feedbackEl = document.getElementById('painel-feedback');
+            feedbackEl.classList.add('hidden');
+            document.getElementById('btn-proxima').classList.add('hidden');
 
-                    document.getElementById('res-total').innerText = total;
-                    document.getElementById('res-acertos').innerText = acertos;
-                    document.getElementById('res-erros').innerText = erros;
-                    document.getElementById('res-porcentagem').innerText = `${percentual}%`;
-                }
-            };
-
-            btnAnterior.onclick = () => {
-                if (indiceAtual > 0) {
-                    indiceAtual--;
-                    mostrarQuestao(indiceAtual);
-                }
-            };
-
-            mostrarQuestao(indiceAtual);
+            if (q.type === 'vf' || (q.options && q.options.length === 2 && q.options.includes("Certo"))) {
+                // Questão de Certo / Errado
+                ['Certo', 'Errado'].forEach((opt, idx) => {
+                    const btn = criarBotaoAlternativa(opt, idx, q);
+                    container.appendChild(btn);
+                });
+            } else {
+                // Questão de Múltipla Escolha
+                q.options.forEach((opt, idx) => {
+                    const btn = criarBotaoAlternativa(opt, idx, q);
+                    container.appendChild(btn);
+                });
+            }
         }
+
+        function criarBotaoAlternativa(texto, idx, q) {
+            const btn = document.createElement('button');
+            btn.className = "w-full text-left p-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs transition font-medium flex items-center space-x-3 cursor-pointer";
+            btn.innerHTML = `<span class="w-6 h-6 flex items-center justify-center rounded-lg bg-slate-200 font-bold text-[10px] text-slate-600">${String.fromCharCode(65 + idx)}</span> <span>${texto}</span>`;
+            
+            btn.addEventListener('click', () => verificarResposta(idx, q.answer, q.disclaimer, btn));
+            return btn;
+        }
+
+        function verificarResposta(escolhida, correta, disclaimer, btnSelecionado) {
+            const botoes = document.getElementById('container-alternativas').children;
+            for (let b of botoes) {
+                b.disabled = true;
+                b.classList.remove('hover:bg-slate-100', 'cursor-pointer');
+            }
+
+            const feedbackEl = document.getElementById('painel-feedback');
+            const textoFeedback = document.getElementById('texto-feedback');
+            const textoDisclaimer = document.getElementById('texto-disclaimer');
+
+            feedbackEl.classList.remove('hidden');
+            document.getElementById('btn-proxima').classList.remove('hidden');
+
+            if (escolhida === correta) {
+                btnSelecionado.classList.remove('bg-slate-50', 'border-slate-200');
+                btnSelecionado.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
+                feedbackEl.className = "p-4 rounded-xl mb-6 bg-emerald-50 border border-emerald-200";
+                textoFeedback.className = "text-xs font-bold mb-1 text-emerald-800";
+                textoFeedback.innerText = "✓ Resposta Correta!";
+                acertos++;
+            } else {
+                btnSelecionado.classList.remove('bg-slate-50', 'border-slate-200');
+                btnSelecionado.classList.add('bg-rose-50', 'border-rose-300', 'text-rose-900');
+                
+                // Destaca a correta
+                if (botoes[correta]) {
+                    botoes[correta].classList.remove('bg-slate-50', 'border-slate-200');
+                    botoes[correta].classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
+                }
+
+                feedbackEl.className = "p-4 rounded-xl mb-6 bg-rose-50 border border-rose-200";
+                textoFeedback.className = "text-xs font-bold mb-1 text-rose-800";
+                textoFeedback.innerText = "✕ Resposta Incorreta.";
+            }
+
+            textoDisclaimer.innerText = disclaimer ? `Fundamentação: ${disclaimer}` : "Sem fundamentação cadastrada para esta questão.";
+        }
+
+        document.getElementById('btn-proxima').addEventListener('click', () => {
+            indiceAtual++;
+            carregarQuestao();
+        });
     </script>
 </body>
 </html>
