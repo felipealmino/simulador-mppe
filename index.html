@@ -36,7 +36,29 @@
                 </select>
             </div>
 
-            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm mt-4">
+            <div class="mb-6">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Filtrar Matéria (Opcional):</label>
+                <select id="select-materia" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                    <option value="todas">Todas as matérias do cargo</option>
+                    <option value="Língua Portuguesa">Língua Portuguesa</option>
+                    <option value="Matemática e Raciocínio Lógico">Matemática e Raciocínio Lógico</option>
+                    <option value="Legislação MPPE">Legislação MPPE</option>
+                    <option value="Informática">Informática</option>
+                    <option value="Direito Constitucional">Direito Constitucional</option>
+                    <option value="Direito Administrativo">Direito Administrativo</option>
+                    <option value="Direito Civil">Direito Civil</option>
+                    <option value="Direito Processual Civil">Direito Processual Civil</option>
+                    <option value="Direito Penal">Direito Penal</option>
+                    <option value="Direito Processual Penal">Direito Processual Penal</option>
+                    <option value="Noções de Administração">Noções de Administração</option>
+                    <option value="Governança em TI">Governança em TI</option>
+                    <option value="Segurança, Risco e Continuidade">Segurança, Risco e Continuidade</option>
+                    <option value="Engenharia de Software, DevOps e Ciência de Dados">Engenharia de Software, DevOps e Ciência de Dados</option>
+                    <option value="Infraestrutura e Banco de Dados">Infraestrutura e Banco de Dados</option>
+                </select>
+            </div>
+
+            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm mt-2">
                 Iniciar Simulador
             </button>
         </div>
@@ -45,7 +67,10 @@
         <div id="painel-quiz" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
             <div class="flex justify-between items-center mb-4 border-b pb-3">
                 <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
-                <span id="contador-questoes" class="text-xs font-semibold text-slate-500">Questão 1 de X</span>
+                <div class="flex items-center space-x-4">
+                    <span id="cronometro" class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-lg">Tempo: 00:00</span>
+                    <span id="contador-questoes" class="text-xs font-semibold text-slate-500">Questão 1 de X</span>
+                </div>
             </div>
 
             <p id="texto-suporte" class="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl mb-4 font-mono hidden"></p>
@@ -76,22 +101,32 @@
         let questoesAtivas = [];
         let indiceAtual = 0;
         let acertos = 0;
+        let tempoSegundos = 0;
+        let timerInterval = null;
 
         document.getElementById('btn-iniciar').addEventListener('click', () => {
             const cargo = document.getElementById('select-cargo').value;
-            questoesAtivas = [];
+            const materiaFiltro = document.getElementById('select-materia').value;
+            let baseQuestoes = [];
 
             // Seleciona as bases de acordo com o cargo escolhido
             if (cargo === 'Tecnico') {
-                questoesAtivas = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_noc_adm];
+                baseQuestoes = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_noc_adm];
             } else if (cargo === 'AnalistaJuridico') {
-                questoesAtivas = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_const, ...banco_adm, ...banco_civil, ...banco_proc_civil, ...banco_penal, ...banco_proc_penal];
+                baseQuestoes = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_const, ...banco_adm, ...banco_civil, ...banco_proc_civil, ...banco_penal, ...banco_proc_penal];
             } else if (cargo === 'AnalistaTI') {
-                questoesAtivas = [...banco_pt, ...banco_rlm, ...banco_legis_mppe, ...banco_gov_ti, ...banco_seg_ti, ...banco_eng_soft_ia, ...banco_infra_bd];
+                baseQuestoes = [...banco_pt, ...banco_rlm, ...banco_legis_mppe, ...banco_gov_ti, ...banco_seg_ti, ...banco_eng_soft_ia, ...banco_infra_bd];
+            }
+
+            // Aplica o filtro de matéria se selecionada uma específica
+            if (materiaFiltro !== 'todas') {
+                questoesAtivas = baseQuestoes.filter(q => q.topic && q.topic.toLowerCase().includes(materiaFiltro.toLowerCase()));
+            } else {
+                questoesAtivas = [...baseQuestoes];
             }
 
             if (questoesAtivas.length === 0) {
-                alert("Nenhuma questão encontrada para este perfil.");
+                alert("Nenhuma questão encontrada para este filtro/perfil.");
                 return;
             }
 
@@ -103,11 +138,23 @@
             document.getElementById('painel-config').classList.add('hidden');
             document.getElementById('painel-quiz').classList.remove('hidden');
 
+            // Inicia o cronômetro
+            tempoSegundos = 0;
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                tempoSegundos++;
+                let min = Math.floor(tempoSegundos / 60).toString().padStart(2, '0');
+                let seg = (tempoSegundos % 60).toString().padStart(2, '0');
+                const cronEl = document.getElementById('cronometro');
+                if(cronEl) cronEl.innerText = `Tempo: ${min}:${seg}`;
+            }, 1000);
+
             carregarQuestao();
         });
 
         function carregarQuestao() {
             if (indiceAtual >= questoesAtivas.length) {
+                clearInterval(timerInterval);
                 document.getElementById('painel-quiz').innerHTML = `
                     <div class="text-center py-8">
                         <h2 class="text-xl font-bold text-slate-900 mb-2">Simulado Concluído!</h2>
