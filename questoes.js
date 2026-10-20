@@ -1703,4 +1703,3 @@ const mockDB = {
 if (typeof window !== "undefined") {
     window.mockDB = mockDB;
 }
-};
