@@ -1,173 +1,154 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPPE | Simulador de Estudos</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="questoes.js"></script>
-</head>
-<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
+<script>
+        // Mapeamento das matérias disponíveis por perfil de cargo
+        const materiasPorCargo = {
+            Tecnico: [
+                { id: "banco_pt", nome: "Língua Portuguesa" },
+                { id: "banco_rlm", nome: "Matemática e RLM" },
+                { id: "banco_info", nome: "Informática" },
+                { id: "banco_legis_mppe", nome: "Legislação MPPE" },
+                { id: "banco_noc_adm", nome: "Noções de Administração" }
+            ],
+            AnalistaJuridico: [
+                { id: "banco_pt", nome: "Língua Portuguesa" },
+                { id: "banco_rlm", nome: "Matemática e RLM" },
+                { id: "banco_info", nome: "Informática" },
+                { id: "banco_legis_mppe", nome: "Legislação MPPE" },
+                { id: "banco_const", nome: "Direito Constitucional" },
+                { id: "banco_adm", nome: "Direito Administrativo" },
+                { id: "banco_civil", nome: "Direito Civil" },
+                { id: "banco_proc_civil", nome: "Direito Processual Civil" },
+                { id: "banco_penal", nome: "Direito Penal" },
+                { id: "banco_proc_penal", nome: "Direito Processual Penal" }
+            ],
+            AnalistaTI: [
+                { id: "banco_pt", nome: "Língua Portuguesa" },
+                { id: "banco_rlm", nome: "Matemática e RLM" },
+                { id: "banco_legis_mppe", nome: "Legislação MPPE" },
+                { id: "banco_gov_ti", nome: "Governança em TI" },
+                { id: "banco_seg_ti", nome: "Segurança, Risco e Continuidade" },
+                { id: "banco_eng_soft_ia", nome: "Engenharia de Software e IA" },
+                { id: "banco_infra_bd", nome: "Infraestrutura e Banco de Dados" }
+            ]
+        };
 
-    <!-- Cabeçalho -->
-    <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-sm">
-        <div class="flex items-center space-x-2">
-            <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
-            <span class="text-slate-300">|</span>
-            <span class="text-slate-600 font-medium text-sm">Simulador de Questões</span>
-        </div>
-        <a href="contribua.html" class="text-xs font-bold text-blue-600 hover:underline">Envie Suas Questões →</a>
-    </header>
+        const referenciasBancos = {
+            banco_pt: typeof banco_pt !== 'undefined' ? banco_pt : [],
+            banco_rlm: typeof banco_rlm !== 'undefined' ? banco_rlm : [],
+            banco_info: typeof banco_info !== 'undefined' ? banco_info : [],
+            banco_legis_mppe: typeof banco_legis_mppe !== 'undefined' ? banco_legis_mppe : [],
+            banco_const: typeof banco_const !== 'undefined' ? banco_const : [],
+            banco_adm: typeof banco_adm !== 'undefined' ? banco_adm : [],
+            banco_civil: typeof banco_civil !== 'undefined' ? banco_civil : [],
+            banco_proc_civil: typeof banco_proc_civil !== 'undefined' ? banco_proc_civil : [],
+            banco_penal: typeof banco_penal !== 'undefined' ? banco_penal : [],
+            banco_proc_penal: typeof banco_proc_penal !== 'undefined' ? banco_proc_penal : [],
+            banco_noc_adm: typeof banco_noc_adm !== 'undefined' ? banco_noc_adm : [],
+            banco_gov_ti: typeof banco_gov_ti !== 'undefined' ? banco_gov_ti : [],
+            banco_seg_ti: typeof banco_seg_ti !== 'undefined' ? banco_seg_ti : [],
+            banco_eng_soft_ia: typeof banco_eng_soft_ia !== 'undefined' ? banco_eng_soft_ia : [],
+            banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
+        };
 
-    <!-- Conteúdo Principal -->
-    <main class="flex-1 max-w-4xl w-full mx-auto p-6">
-        
-        <!-- Bloco de Configuração do Treino -->
-        <div id="painel-config" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
-            <h1 class="text-xl font-bold text-slate-900 mb-1">Configure o seu treino</h1>
-            <p class="text-xs text-slate-500 mb-6">Defina os parâmetros do seu caderno de questões.</p>
-
-            <div class="mb-4">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Cargo Alvo:</label>
-                <select id="select-cargo" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
-                    <option value="Tecnico">Técnico Ministerial - Área Administrativa</option>
-                    <option value="AnalistaJuridico">Analista Ministerial - Direito</option>
-                    <option value="AnalistaTI">Analista Ministerial - Especializada (Sistemas / TI)</option>
-                </select>
-            </div>
-
-            <div class="mb-6">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Filtrar Matéria (Opcional):</label>
-                <select id="select-materia" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
-                    <option value="todas">Todas as matérias do cargo</option>
-                    <option value="Língua Portuguesa">Língua Portuguesa</option>
-                    <option value="Matemática e Raciocínio Lógico">Matemática e Raciocínio Lógico</option>
-                    <option value="Legislação MPPE">Legislação MPPE</option>
-                    <option value="Informática">Informática</option>
-                    <option value="Direito Constitucional">Direito Constitucional</option>
-                    <option value="Direito Administrativo">Direito Administrativo</option>
-                    <option value="Direito Civil">Direito Civil</option>
-                    <option value="Direito Processual Civil">Direito Processual Civil</option>
-                    <option value="Direito Penal">Direito Penal</option>
-                    <option value="Direito Processual Penal">Direito Processual Penal</option>
-                    <option value="Noções de Administração">Noções de Administração</option>
-                    <option value="Governança em TI">Governança em TI</option>
-                    <option value="Segurança, Risco e Continuidade">Segurança, Risco e Continuidade</option>
-                    <option value="Engenharia de Software, DevOps e Ciência de Dados">Engenharia de Software, DevOps e Ciência de Dados</option>
-                    <option value="Infraestrutura e Banco de Dados">Infraestrutura e Banco de Dados</option>
-                </select>
-            </div>
-
-            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm mt-2">
-                Iniciar Simulador
-            </button>
-        </div>
-
-        <!-- Bloco de Resposta às Questões (Oculto inicialmente) -->
-        <div id="painel-quiz" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
-            <div class="flex justify-between items-center mb-4 border-b pb-3">
-                <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
-                <div class="flex items-center space-x-4">
-                    <span id="cronometro" class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-lg">Tempo: 00:00</span>
-                    <span id="contador-questoes" class="text-xs font-semibold text-slate-500">Questão 1 de X</span>
-                </div>
-            </div>
-
-            <p id="texto-suporte" class="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl mb-4 font-mono hidden"></p>
-            
-            <h2 id="enunciado-questao" class="text-sm font-bold text-slate-900 mb-6 leading-relaxed"></h2>
-
-            <div id="container-alternativas" class="space-y-3 mb-6">
-                <!-- Alternativas injetadas via JS -->
-            </div>
-
-            <!-- Caixa de Feedback e Disclaimer -->
-            <div id="painel-feedback" class="p-4 rounded-xl mb-6 hidden">
-                <p id="texto-feedback" class="text-xs font-bold mb-1"></p>
-                <p id="texto-disclaimer" class="text-xs text-slate-600 italic"></p>
-            </div>
-
-            <div class="flex justify-end">
-                <button id="btn-proxima" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-6 rounded-xl text-xs transition hidden">
-                    Próxima Questão →
-                </button>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Script de Execução do Simulador -->
-    <script>
         let questoesAtivas = [];
         let indiceAtual = 0;
         let acertos = 0;
-        let tempoSegundos = 0;
+        let estatisticasRespostas = []; // Armazena { materia, acertou: true/false }
+        let tempoRestanteSegundos = 0;
         let timerInterval = null;
 
-        document.getElementById('btn-iniciar').addEventListener('click', () => {
+        // Atualiza os checkboxes de matérias ao mudar o cargo
+        function atualizarCheckboxesMaterias() {
             const cargo = document.getElementById('select-cargo').value;
-            const materiaFiltro = document.getElementById('select-materia').value;
-            let baseQuestoes = [];
+            const container = document.getElementById('container-materias-checkboxes');
+            container.innerHTML = '';
 
-            // Seleciona as bases de acordo com o cargo escolhido
-            if (cargo === 'Tecnico') {
-                baseQuestoes = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_noc_adm];
-            } else if (cargo === 'AnalistaJuridico') {
-                baseQuestoes = [...banco_pt, ...banco_rlm, ...banco_info, ...banco_legis_mppe, ...banco_const, ...banco_adm, ...banco_civil, ...banco_proc_civil, ...banco_penal, ...banco_proc_penal];
-            } else if (cargo === 'AnalistaTI') {
-                baseQuestoes = [...banco_pt, ...banco_rlm, ...banco_legis_mppe, ...banco_gov_ti, ...banco_seg_ti, ...banco_eng_soft_ia, ...banco_infra_bd];
-            }
+            const lista = materiasPorCargo[cargo] || [];
+            lista.forEach(mat => {
+                const label = document.createElement('label');
+                label.className = "flex items-center space-x-2 text-xs font-medium text-slate-700 cursor-pointer p-1 hover:bg-slate-100 rounded-lg";
+                label.innerHTML = `
+                    <input type="checkbox" name="materia-filtro" value="${mat.id}" checked class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                    <span>${mat.nome}</span>
+                `;
+                container.appendChild(label);
+            });
+        }
 
-            // Aplica o filtro de matéria se selecionada uma específica
-            if (materiaFiltro !== 'todas') {
-                questoesAtivas = baseQuestoes.filter(q => q.topic && q.topic.toLowerCase().includes(materiaFiltro.toLowerCase()));
-            } else {
-                questoesAtivas = [...baseQuestoes];
-            }
+        document.getElementById('select-cargo').addEventListener('change', atualizarCheckboxesMaterias);
+        window.addEventListener('DOMContentLoaded', atualizarCheckboxesMaterias);
 
-            if (questoesAtivas.length === 0) {
-                alert("Nenhuma questão encontrada para este filtro/perfil.");
+        // Iniciar Simulado
+        document.getElementById('btn-iniciar').addEventListener('click', () => {
+            const checkboxes = document.querySelectorAll('input[name="materia-filtro"]:checked');
+            if (checkboxes.length === 0) {
+                alert("Selecione pelo menos uma matéria para o seu simulado.");
                 return;
             }
 
-            // Embaralha as questões para o simulador
-            questoesAtivas.sort(() => Math.random() - 0.5);
+            let baseQuestoes = [];
+            checkboxes.forEach(cb => {
+                const idBanco = cb.value;
+                const nomeMateria = materiasPorCargo[document.getElementById('select-cargo').value].find(m => m.id === idBanco)?.nome || idBanco;
+                
+                if (referenciasBancos[idBanco] && Array.isArray(referenciasBancos[idBanco])) {
+                    // Adiciona a tag da matéria em cada objeto de questão para rastreio posterior
+                    const qComMateria = referenciasBancos[idBanco].map(q => ({ ...q, materiaOrigem: nomeMateria }));
+                    baseQuestoes = baseQuestoes.concat(qComMateria);
+                }
+            });
+
+            if (baseQuestoes.length === 0) {
+                alert("Não há questões cadastradas para as matérias selecionadas.");
+                return;
+            }
+
+            // Embaralha e limita à quantidade escolhida
+            baseQuestoes.sort(() => Math.random() - 0.5);
+            const qtdDesejada = parseInt(document.getElementById('input-qtd-questoes').value) || 10;
+            questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
+
             indiceAtual = 0;
             acertos = 0;
+            estatisticasRespostas = [];
+
+            // Configura o Cronômetro Regressivo
+            const minutosDesejados = parseInt(document.getElementById('input-tempo-minutos').value) || 30;
+            tempoRestanteSegundos = minutosDesejados * 60;
 
             document.getElementById('painel-config').classList.add('hidden');
             document.getElementById('painel-quiz').classList.remove('hidden');
 
-            // Inicia o cronômetro
-            tempoSegundos = 0;
             clearInterval(timerInterval);
             timerInterval = setInterval(() => {
-                tempoSegundos++;
-                let min = Math.floor(tempoSegundos / 60).toString().padStart(2, '0');
-                let seg = (tempoSegundos % 60).toString().padStart(2, '0');
-                const cronEl = document.getElementById('cronometro');
-                if(cronEl) cronEl.innerText = `Tempo: ${min}:${seg}`;
+                tempoRestanteSegundos--;
+                if (tempoRestanteSegundos <= 0) {
+                    clearInterval(timerInterval);
+                    alert("O tempo de prova esgotou!");
+                    finalizarSimulado();
+                    return;
+                }
+                atualizarDisplayCronometro();
             }, 1000);
 
             carregarQuestao();
         });
 
+        function atualizarDisplayCronometro() {
+            let min = Math.floor(tempoRestanteSegundos / 60).toString().padStart(2, '0');
+            let seg = (tempoRestanteSegundos % 60).toString().padStart(2, '0');
+            const cronEl = document.getElementById('cronometro');
+            if (cronEl) cronEl.innerText = `Tempo Restante: ${min}:${seg}`;
+        }
+
         function carregarQuestao() {
             if (indiceAtual >= questoesAtivas.length) {
-                clearInterval(timerInterval);
-                document.getElementById('painel-quiz').innerHTML = `
-                    <div class="text-center py-8">
-                        <h2 class="text-xl font-bold text-slate-900 mb-2">Simulado Concluído!</h2>
-                        <p class="text-xs text-slate-500 mb-6">Você respondeu a todas as questões selecionadas para este treino.</p>
-                        <a href="index.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-xl text-xs">Reiniciar Treino</a>
-                    </div>
-                `;
+                finalizarSimulado();
                 return;
             }
 
             const q = questoesAtivas[indiceAtual];
             document.getElementById('contador-questoes').innerText = `Questão ${indiceAtual + 1} de ${questoesAtivas.length}`;
-            document.getElementById('badge-materia').innerText = q.topic || 'Geral';
+            document.getElementById('badge-materia').innerText = `${q.materiaOrigem} (${q.topic || 'Geral'})`;
             
             const suporteEl = document.getElementById('texto-suporte');
             if (q.supportText && q.supportText.trim() !== "") {
@@ -187,13 +168,11 @@
             document.getElementById('btn-proxima').classList.add('hidden');
 
             if (q.type === 'vf' || (q.options && q.options.length === 2 && q.options.includes("Certo"))) {
-                // Questão de Certo / Errado
                 ['Certo', 'Errado'].forEach((opt, idx) => {
                     const btn = criarBotaoAlternativa(opt, idx, q);
                     container.appendChild(btn);
                 });
             } else {
-                // Questão de Múltipla Escolha
                 q.options.forEach((opt, idx) => {
                     const btn = criarBotaoAlternativa(opt, idx, q);
                     container.appendChild(btn);
@@ -206,16 +185,19 @@
             btn.className = "w-full text-left p-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs transition font-medium flex items-center space-x-3 cursor-pointer";
             btn.innerHTML = `<span class="w-6 h-6 flex items-center justify-center rounded-lg bg-slate-200 font-bold text-[10px] text-slate-600">${String.fromCharCode(65 + idx)}</span> <span>${texto}</span>`;
             
-            btn.addEventListener('click', () => verificarResposta(idx, q.answer, q.disclaimer, btn));
+            btn.addEventListener('click', () => verificarResposta(idx, q.answer, q.disclaimer, btn, q.materiaOrigem));
             return btn;
         }
 
-        function verificarResposta(escolhida, correta, disclaimer, btnSelecionado) {
+        function verificarResposta(escolhida, correta, disclaimer, btnSelecionado, materia) {
             const botoes = document.getElementById('container-alternativas').children;
             for (let b of botoes) {
                 b.disabled = true;
                 b.classList.remove('hover:bg-slate-100', 'cursor-pointer');
             }
+
+            const acertou = (escolhida === correta);
+            estatisticasRespostas.push({ materia: materia, acertou: acertou });
 
             const feedbackEl = document.getElementById('painel-feedback');
             const textoFeedback = document.getElementById('texto-feedback');
@@ -224,7 +206,7 @@
             feedbackEl.classList.remove('hidden');
             document.getElementById('btn-proxima').classList.remove('hidden');
 
-            if (escolhida === correta) {
+            if (acertou) {
                 btnSelecionado.classList.remove('bg-slate-50', 'border-slate-200');
                 btnSelecionado.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
                 feedbackEl.className = "p-4 rounded-xl mb-6 bg-emerald-50 border border-emerald-200";
@@ -235,7 +217,6 @@
                 btnSelecionado.classList.remove('bg-slate-50', 'border-slate-200');
                 btnSelecionado.classList.add('bg-rose-50', 'border-rose-300', 'text-rose-900');
                 
-                // Destaca a correta
                 if (botoes[correta]) {
                     botoes[correta].classList.remove('bg-slate-50', 'border-slate-200');
                     botoes[correta].classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
@@ -253,6 +234,68 @@
             indiceAtual++;
             carregarQuestao();
         });
+
+        function finalizarSimulado() {
+            clearInterval(timerInterval);
+            
+            // Agrupa erros por matéria para identificar a maior dificuldade
+            let desempenhoPorMateria = {};
+            estatisticasRespostas.forEach(item => {
+                if (!desempenhoPorMateria[item.materia]) {
+                    desempenhoPorMateria[item.materia] = { total: 0, erros: 0 };
+                }
+                desempenhoPorMateria[item.materia].total++;
+                if (!item.acertou) {
+                    desempenhoPorMateria[item.materia].erros++;
+                }
+            });
+
+            // Encontra a matéria com mais erros (maior dificuldade)
+            let maiorDificuldade = "Nenhuma registrada";
+            let maxErros = -1;
+            for (let mat in desempenhoPorMateria) {
+                if (desempenhoPorMateria[mat].erros > maxErros) {
+                    maxErros = desempenhoPorMateria[mat].erros;
+                    maiorDificuldade = mat;
+                }
+            }
+
+            const percentual = ((acertos / questoesAtivas.length) * 100).toFixed(1);
+
+            let relatorioHTML = `<ul class="space-y-2 mb-6 text-left">`;
+            for (let mat in desempenhoPorMateria) {
+                let d = desempenhoPorMateria[mat];
+                let percMat = (((d.total - d.erros) / d.total) * 100).toFixed(0);
+                relatorioHTML += `<li class="text-xs bg-slate-50 p-2.5 rounded-lg flex justify-between items-center border border-slate-100">
+                    <span class="font-semibold text-slate-700">${mat}</span>
+                    <span class="text-slate-600">${d.total - d.erros} acertos de ${d.total} (${percMat}%)</span>
+                </li>`;
+            }
+            relatorioHTML += `</ul>`;
+
+            document.getElementById('painel-quiz').innerHTML = `
+                <div class="text-center py-6">
+                    <h2 class="text-xl font-bold text-slate-900 mb-1">Simulado Concluído!</h2>
+                    <p class="text-xs text-slate-500 mb-6">Confira o seu desempenho analítico detalhado.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+                            <span class="block text-2xl font-black text-blue-700">${acertos} / ${questoesAtivas.length}</span>
+                            <span class="text-[11px] font-bold text-blue-800 uppercase">Acertos (${percentual}%)</span>
+                        </div>
+                        <div class="bg-rose-50 border border-rose-200 p-4 rounded-xl">
+                            <span class="block text-sm font-bold text-rose-800 mt-1">${maiorDificuldade}</span>
+                            <span class="text-[11px] font-bold text-rose-700 uppercase">Maior Dificuldade</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xs font-bold text-slate-700 uppercase mb-2 text-left">Desempenho por Matéria:</h3>
+                    ${relatorioHTML}
+
+                    <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-xs transition shadow-sm">
+                        Novo Simulado
+                    </a>
+                </div>
+            `;
+        }
     </script>
-</body>
-</html>
