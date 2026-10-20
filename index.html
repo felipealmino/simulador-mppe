@@ -364,22 +364,61 @@
 
             const percentual = ((acertos / questoesAtivas.length) * 100).toFixed(1);
 
-            let relatorioHTML = `<ul class="space-y-2 mb-6 text-left">`;
+            // Monta o relatório analítico por matéria
+            let relatorioMatériasHTML = `<ul class="space-y-2 mb-6 text-left">`;
             for (let mat in desempenhoPorMateria) {
                 let d = desempenhoPorMateria[mat];
                 let acertosMat = d.total - d.erros;
                 let percMat = ((acertosMat / d.total) * 100).toFixed(0);
-                relatorioHTML += `<li class="text-xs bg-slate-50 p-2.5 rounded-lg flex justify-between items-center border border-slate-100">
+                relatorioMatériasHTML += `<li class="text-xs bg-slate-50 p-2.5 rounded-lg flex justify-between items-center border border-slate-100">
                     <span class="font-semibold text-slate-700">${mat}</span>
                     <span class="text-slate-600">${acertosMat} acertos de ${d.total} (${percMat}%)</span>
                 </li>`;
             }
-            relatorioHTML += `</ul>`;
+            relatorioMatériasHTML += `</ul>`;
 
+            // Monta a revisão detalhada questão por questão com explicações e disclaimers
+            let revisaoHTML = `<div class="mt-6 space-y-4 text-left border-t pt-6">
+                <h3 class="text-xs font-bold text-slate-800 uppercase mb-3">Revisão Detalhada e Explicação dos Erros:</h3>`;
+
+            questoesAtivas.forEach((q, idx) => {
+                const escolhida = respostasUsuario[idx];
+                const correta = q.answer;
+                const acertou = (escolhida === correta);
+                
+                const alternativas = (q.type === 'vf' || (q.options && q.options.length === 2 && q.options.includes("Certo")))
+                    ? ['Certo', 'Errado'] 
+                    : q.options;
+
+                const textoEscolha = escolhida !== undefined ? alternativas[escolhida] : "Não respondida";
+                const textoCorreta = alternativas[correta];
+
+                revisaoHTML += `
+                    <div class="p-4 rounded-xl border ${acertou ? 'bg-emerald-50/40 border-emerald-200' : 'bg-rose-50/40 border-rose-200'}">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded ${acertou ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+                                Questão ${idx + 1} - ${acertou ? 'Correta ✓' : 'Incorreta ✕'}
+                            </span>
+                            <span class="text-[10px] text-slate-500 font-medium">${q.materiaOrigem} (${q.topic || 'Geral'})</span>
+                        </div>
+                        <p class="text-xs font-bold text-slate-900 mb-2 leading-relaxed">${q.q}</p>
+                        <div class="text-[11px] space-y-1 mb-3">
+                            <p class="${acertou ? 'text-emerald-700 font-semibold' : 'text-rose-700 font-semibold'}">Sua resposta: ${textoEscolha}</p>
+                            ${!acertou ? `<p class="text-emerald-700 font-semibold">Resposta correta: ${textoCorreta}</p>` : ''}
+                        </div>
+                        <div class="text-[11px] text-slate-700 bg-white p-3 rounded-lg border border-slate-200 shadow-xs">
+                            <strong class="text-slate-900">Fundamentação / Explicação:</strong> ${q.disclaimer || 'Sem fundamentação cadastrada para esta questão.'}
+                        </div>
+                    </div>
+                `;
+            });
+            revisaoHTML += `</div>`;
+
+            // Renderiza o painel final completo
             document.getElementById('painel-quiz').innerHTML = `
                 <div class="text-center py-6">
                     <h2 class="text-xl font-bold text-slate-900 mb-1">Simulado Concluído!</h2>
-                    <p class="text-xs text-slate-500 mb-6">Aqui está o seu resumo de desempenho oficial.</p>
+                    <p class="text-xs text-slate-500 mb-6">Confira o seu resumo de desempenho e a correção detalhada abaixo.</p>
                     
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl">
@@ -392,12 +431,16 @@
                         </div>
                     </div>
 
-                    <h3 class="text-xs font-bold text-slate-700 uppercase mb-2 text-left">Desempenho Detalhado por Matéria:</h3>
-                    ${relatorioHTML}
+                    <h3 class="text-xs font-bold text-slate-700 uppercase mb-2 text-left">Desempenho Geral por Matéria:</h3>
+                    ${relatorioMatériasHTML}
 
-                    <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-xs transition shadow-sm">
-                        Novo Simulado
-                    </a>
+                    ${revisaoHTML}
+
+                    <div class="mt-8">
+                        <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-xs transition shadow-sm">
+                            Realizar Novo Simulado
+                        </a>
+                    </div>
                 </div>
             `;
         }
