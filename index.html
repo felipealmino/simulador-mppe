@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPPE | Simulador de Estudos</title>
+    <title>MP/TJ | Simulador de Estudos</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="questoes.js"></script>
 </head>
@@ -12,7 +12,7 @@
     <!-- Cabeçalho -->
     <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-sm">
         <div class="flex items-center space-x-2">
-            <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
+            <span class="font-extrabold text-blue-900 text-lg tracking-tight">MP/TJ</span>
             <span class="text-slate-300">|</span>
             <span class="text-slate-600 font-medium text-sm">Simulador de Questões</span>
         </div>
@@ -24,16 +24,16 @@
         
         <!-- Bloco de Configuração do Treino -->
         <div id="painel-config" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
-            <h1 class="text-xl font-bold text-slate-900 mb-1">Configure o seu simulador</h1>
+            <h1 class="text-xl font-bold text-slate-900 mb-1">Configure o seu Simulado</h1>
             <p class="text-xs text-slate-500 mb-6">Personalize as matérias, quantidade de questões e o tempo de prova.</p>
 
             <!-- Seleção de Cargo Alvo -->
             <div class="mb-4">
                 <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Cargo Alvo / Perfil:</label>
                 <select id="select-cargo" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
-                    <option value="Tecnico">Técnico Ministerial - Área Administrativa</option>
-                    <option value="AnalistaJuridico">Analista Ministerial - Direito</option>
-                    <option value="AnalistaTI">Analista Ministerial - Especializada (Sistemas / TI)</option>
+                    <option value="Tecnico">Técnico - Área Administrativa</option>
+                    <option value="AnalistaJuridico">Analista - Direito</option>
+                    <option value="AnalistaTI">Analista - Especializada (Sistemas / TI)</option>
                 </select>
             </div>
 
@@ -65,7 +65,12 @@
         <!-- Bloco de Resposta às Questões (Oculto inicialmente) -->
         <div id="painel-quiz" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
             <div class="flex justify-between items-center mb-4 border-b pb-3">
-                <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
+                <div class="flex items-center space-x-3">
+                    <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
+                    <button id="btn-desistir" class="text-[11px] font-bold text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-3 py-1 rounded-lg transition cursor-pointer">
+                        ✕ Desistir / Encerrar
+                    </button>
+                </div>
                 <div class="flex items-center space-x-4">
                     <span id="cronometro" class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-lg">Tempo: 00:00</span>
                     <span id="contador-questoes" class="text-xs font-semibold text-slate-500">Questão 1 de X</span>
@@ -80,14 +85,9 @@
                 <!-- Alternativas injetadas via JS -->
             </div>
 
-            <!-- Caixa de Feedback e Disclaimer -->
-            <div id="painel-feedback" class="p-4 rounded-xl mb-6 hidden">
-                <p id="texto-feedback" class="text-xs font-bold mb-1"></p>
-                <p id="texto-disclaimer" class="text-xs text-slate-600 italic"></p>
-            </div>
-
-            <div class="flex justify-end">
-                <button id="btn-proxima" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-6 rounded-xl text-xs transition hidden">
+            <div class="flex justify-between items-center">
+                <span id="aviso-marcada" class="text-[11px] font-medium text-amber-600 hidden">✓ Resposta registrada para esta questão. Você pode alterar ou avançar.</span>
+                <button id="btn-proxima" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-xl text-xs transition shadow-sm ml-auto cursor-pointer">
                     Próxima Questão →
                 </button>
             </div>
@@ -151,8 +151,7 @@
 
         let questoesAtivas = [];
         let indiceAtual = 0;
-        let acertos = 0;
-        let estatisticasRespostas = [];
+        let respostasUsuario = {}; // Armazena a resposta escolhida pelo usuário por índice da questão
         let tempoRestanteSegundos = 0;
         let timerInterval = null;
 
@@ -202,8 +201,7 @@
             questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
 
             indiceAtual = 0;
-            acertos = 0;
-            estatisticasRespostas = [];
+            respostasUsuario = {};
 
             const minutosDesejados = parseInt(document.getElementById('input-tempo-minutos').value) || 30;
             tempoRestanteSegundos = minutosDesejados * 60;
@@ -256,21 +254,30 @@
             const container = document.getElementById('container-alternativas');
             container.innerHTML = '';
 
-            const feedbackEl = document.getElementById('painel-feedback');
-            feedbackEl.classList.add('hidden');
-            document.getElementById('btn-proxima').classList.add('hidden');
+            const avisoMarcada = document.getElementById('aviso-marcada');
+            avisoMarcada.classList.add('hidden');
 
-            if (q.type === 'vf' || (q.options && q.options.length === 2 && q.options.includes("Certo"))) {
-                ['Certo', 'Errado'].forEach((opt, idx) => {
-                    const btn = criarBotaoAlternativa(opt, idx, q);
-                    container.appendChild(btn);
-                });
+            // Altera o texto do botão na última questão
+            const btnProxima = document.getElementById('btn-proxima');
+            if (indiceAtual === questoesAtivas.length - 1) {
+                btnProxima.innerText = "Finalizar e Ver Resultado 🏁";
             } else {
-                q.options.forEach((opt, idx) => {
-                    const btn = criarBotaoAlternativa(opt, idx, q);
-                    container.appendChild(btn);
-                });
+                btnProxima.innerText = "Próxima Questão →";
             }
+
+            const alternativas = (q.type === 'vf' || (q.options && q.options.length === 2 && q.options.includes("Certo")))
+                ? ['Certo', 'Errado'] 
+                : q.options;
+
+            alternativas.forEach((opt, idx) => {
+                const btn = criarBotaoAlternativa(opt, idx, q);
+                // Se o usuário já havia respondido esta questão anteriormente, destaca a escolha
+                if (respostasUsuario[indiceAtual] === idx) {
+                    marcarBotaoSelecionado(btn);
+                    avisoMarcada.classList.remove('hidden');
+                }
+                container.appendChild(btn);
+            });
         }
 
         function criarBotaoAlternativa(texto, idx, q) {
@@ -278,49 +285,24 @@
             btn.className = "w-full text-left p-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs transition font-medium flex items-center space-x-3 cursor-pointer";
             btn.innerHTML = `<span class="w-6 h-6 flex items-center justify-center rounded-lg bg-slate-200 font-bold text-[10px] text-slate-600">${String.fromCharCode(65 + idx)}</span> <span>${texto}</span>`;
             
-            btn.addEventListener('click', () => verificarResposta(idx, q.answer, q.disclaimer, btn, q.materiaOrigem));
+            btn.addEventListener('click', () => {
+                respostasUsuario[indiceAtual] = idx;
+                
+                // Atualiza visualmente os botões da questão
+                const botoes = document.getElementById('container-alternativas').children;
+                for (let b of botoes) {
+                    b.classList.remove('bg-blue-50', 'border-blue-400', 'text-blue-900', 'ring-2', 'ring-blue-400');
+                    b.classList.add('bg-slate-50', 'border-slate-200');
+                }
+                marcarBotaoSelecionado(btn);
+                document.getElementById('aviso-marcada').classList.remove('hidden');
+            });
             return btn;
         }
 
-        function verificarResposta(escolhida, correta, disclaimer, btnSelecionado, materia) {
-            const botoes = document.getElementById('container-alternativas').children;
-            for (let b of botoes) {
-                b.disabled = true;
-                b.classList.remove('hover:bg-slate-100', 'cursor-pointer');
-            }
-
-            const acertou = (escolhida === correta);
-            estatisticasRespostas.push({ materia: materia, acertou: acertou });
-
-            const feedbackEl = document.getElementById('painel-feedback');
-            const textoFeedback = document.getElementById('texto-feedback');
-            const textoDisclaimer = document.getElementById('texto-disclaimer');
-
-            feedbackEl.classList.remove('hidden');
-            document.getElementById('btn-proxima').classList.remove('hidden');
-
-            if (acertou) {
-                btnSelecionado.classList.remove('bg-slate-50', 'border-slate-200');
-                btnSelecionado.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
-                feedbackEl.className = "p-4 rounded-xl mb-6 bg-emerald-50 border border-emerald-200";
-                textoFeedback.className = "text-xs font-bold mb-1 text-emerald-800";
-                textoFeedback.innerText = "✓ Resposta Correta!";
-                acertos++;
-            } else {
-                btnSelecionado.classList.remove('bg-slate-50', 'border-slate-200');
-                btnSelecionado.classList.add('bg-rose-50', 'border-rose-300', 'text-rose-900');
-                
-                if (botoes[correta]) {
-                    botoes[correta].classList.remove('bg-slate-50', 'border-slate-200');
-                    botoes[correta].classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
-                }
-
-                feedbackEl.className = "p-4 rounded-xl mb-6 bg-rose-50 border border-rose-200";
-                textoFeedback.className = "text-xs font-bold mb-1 text-rose-800";
-                textoFeedback.innerText = "✕ Resposta Incorreta.";
-            }
-
-            textoDisclaimer.innerText = disclaimer ? `Fundamentação: ${disclaimer}` : "Sem fundamentação cadastrada para esta questão.";
+        function marcarBotaoSelecionado(btn) {
+            btn.classList.remove('bg-slate-50', 'border-slate-200');
+            btn.classList.add('bg-blue-50', 'border-blue-400', 'text-blue-900', 'ring-2', 'ring-blue-400');
         }
 
         document.getElementById('btn-proxima').addEventListener('click', () => {
@@ -328,17 +310,35 @@
             carregarQuestao();
         });
 
+        // Botão Desistir
+        document.getElementById('btn-desistir').addEventListener('click', () => {
+            if (confirm("Deseja realmente desistir do simulado atual e voltar ao início?")) {
+                clearInterval(timerInterval);
+                document.getElementById('painel-quiz').classList.add('hidden');
+                document.getElementById('painel-config').classList.remove('hidden');
+            }
+        });
+
         function finalizarSimulado() {
             clearInterval(timerInterval);
             
+            let acertos = 0;
             let desempenhoPorMateria = {};
-            estatisticasRespostas.forEach(item => {
-                if (!desempenhoPorMateria[item.materia]) {
-                    desempenhoPorMateria[item.materia] = { total: 0, erros: 0 };
+
+            questoesAtivas.forEach((q, idx) => {
+                const escolhida = respostasUsuario[idx];
+                const correta = q.answer;
+                const acertou = (escolhida === correta);
+
+                if (acertou) acertos++;
+
+                const mat = q.materiaOrigem || "Geral";
+                if (!desempenhoPorMateria[mat]) {
+                    desempenhoPorMateria[mat] = { total: 0, erros: 0 };
                 }
-                desempenhoPorMateria[item.materia].total++;
-                if (!item.acertou) {
-                    desempenhoPorMateria[item.materia].erros++;
+                desempenhoPorMateria[mat].total++;
+                if (!acertou) {
+                    desempenhoPorMateria[mat].erros++;
                 }
             });
 
@@ -356,10 +356,11 @@
             let relatorioHTML = `<ul class="space-y-2 mb-6 text-left">`;
             for (let mat in desempenhoPorMateria) {
                 let d = desempenhoPorMateria[mat];
-                let percMat = (((d.total - d.erros) / d.total) * 100).toFixed(0);
+                let acertosMat = d.total - d.erros;
+                let percMat = ((acertosMat / d.total) * 100).toFixed(0);
                 relatorioHTML += `<li class="text-xs bg-slate-50 p-2.5 rounded-lg flex justify-between items-center border border-slate-100">
                     <span class="font-semibold text-slate-700">${mat}</span>
-                    <span class="text-slate-600">${d.total - d.erros} acertos de ${d.total} (${percMat}%)</span>
+                    <span class="text-slate-600">${acertosMat} acertos de ${d.total} (${percMat}%)</span>
                 </li>`;
             }
             relatorioHTML += `</ul>`;
@@ -367,12 +368,12 @@
             document.getElementById('painel-quiz').innerHTML = `
                 <div class="text-center py-6">
                     <h2 class="text-xl font-bold text-slate-900 mb-1">Simulado Concluído!</h2>
-                    <p class="text-xs text-slate-500 mb-6">Confira o seu desempenho analítico detalhado.</p>
+                    <p class="text-xs text-slate-500 mb-6">Aqui está o seu resumo de desempenho oficial.</p>
                     
                     <div class="grid grid-cols-2 gap-4 mb-6">
                         <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl">
                             <span class="block text-2xl font-black text-blue-700">${acertos} / ${questoesAtivas.length}</span>
-                            <span class="text-[11px] font-bold text-blue-800 uppercase">Acertos (${percentual}%)</span>
+                            <span class="text-[11px] font-bold text-blue-800 uppercase">Percentual de Acertos (${percentual}%)</span>
                         </div>
                         <div class="bg-rose-50 border border-rose-200 p-4 rounded-xl">
                             <span class="block text-sm font-bold text-rose-800 mt-1">${maiorDificuldade}</span>
@@ -380,7 +381,7 @@
                         </div>
                     </div>
 
-                    <h3 class="text-xs font-bold text-slate-700 uppercase mb-2 text-left">Desempenho por Matéria:</h3>
+                    <h3 class="text-xs font-bold text-slate-700 uppercase mb-2 text-left">Desempenho Detalhado por Matéria:</h3>
                     ${relatorioHTML}
 
                     <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-xs transition shadow-sm">
