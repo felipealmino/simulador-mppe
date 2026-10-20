@@ -1,5 +1,102 @@
-<script>
-        // Mapeamento das matérias disponíveis por perfil de cargo
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPE | Simulador de Estudos</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="questoes.js"></script>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- Cabeçalho -->
+    <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-2">
+            <span class="font-extrabold text-blue-900 text-lg tracking-tight">MPPE</span>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-600 font-medium text-sm">Simulador de Questões</span>
+        </div>
+        <a href="contribua.html" class="text-xs font-bold text-blue-600 hover:underline">Envie Suas Questões →</a>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 max-w-4xl w-full mx-auto p-6">
+        
+        <!-- Bloco de Configuração do Treino -->
+        <div id="painel-config" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
+            <h1 class="text-xl font-bold text-slate-900 mb-1">Configure o seu simulador</h1>
+            <p class="text-xs text-slate-500 mb-6">Personalize as matérias, quantidade de questões e o tempo de prova.</p>
+
+            <!-- Seleção de Cargo Alvo -->
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Cargo Alvo / Perfil:</label>
+                <select id="select-cargo" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                    <option value="Tecnico">Técnico Ministerial - Área Administrativa</option>
+                    <option value="AnalistaJuridico">Analista Ministerial - Direito</option>
+                    <option value="AnalistaTI">Analista Ministerial - Especializada (Sistemas / TI)</option>
+                </select>
+            </div>
+
+            <!-- Seleção de Matérias (Múltipla Escolha com Checkboxes) -->
+            <div class="mb-4">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Matérias para o Treino:</label>
+                <div id="container-materias-checkboxes" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 p-3.5 bg-slate-50 border border-slate-200 rounded-xl max-h-48 overflow-y-auto">
+                    <!-- Gerado dinamicamente via JS de acordo com o cargo -->
+                </div>
+            </div>
+
+            <!-- Configurações de Questões e Tempo -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Quantidade de Questões:</label>
+                    <input type="number" id="input-qtd-questoes" value="10" min="1" max="100" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Tempo de Prova (Minutos):</label>
+                    <input type="number" id="input-tempo-minutos" value="30" min="1" max="300" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                </div>
+            </div>
+
+            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm">
+                Iniciar Simulado com Cronômetro
+            </button>
+        </div>
+
+        <!-- Bloco de Resposta às Questões (Oculto inicialmente) -->
+        <div id="painel-quiz" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden">
+            <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
+                <div class="flex items-center space-x-4">
+                    <span id="cronometro" class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-lg">Tempo: 00:00</span>
+                    <span id="contador-questoes" class="text-xs font-semibold text-slate-500">Questão 1 de X</span>
+                </div>
+            </div>
+
+            <p id="texto-suporte" class="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl mb-4 font-mono hidden"></p>
+            
+            <h2 id="enunciado-questao" class="text-sm font-bold text-slate-900 mb-6 leading-relaxed"></h2>
+
+            <div id="container-alternativas" class="space-y-3 mb-6">
+                <!-- Alternativas injetadas via JS -->
+            </div>
+
+            <!-- Caixa de Feedback e Disclaimer -->
+            <div id="painel-feedback" class="p-4 rounded-xl mb-6 hidden">
+                <p id="texto-feedback" class="text-xs font-bold mb-1"></p>
+                <p id="texto-disclaimer" class="text-xs text-slate-600 italic"></p>
+            </div>
+
+            <div class="flex justify-end">
+                <button id="btn-proxima" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 px-6 rounded-xl text-xs transition hidden">
+                    Próxima Questão →
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script de Execução do Simulador -->
+    <script>
         const materiasPorCargo = {
             Tecnico: [
                 { id: "banco_pt", nome: "Língua Portuguesa" },
@@ -31,35 +128,10 @@
             ]
         };
 
-        const referenciasBancos = {
-            banco_pt: typeof banco_pt !== 'undefined' ? banco_pt : [],
-            banco_rlm: typeof banco_rlm !== 'undefined' ? banco_rlm : [],
-            banco_info: typeof banco_info !== 'undefined' ? banco_info : [],
-            banco_legis_mppe: typeof banco_legis_mppe !== 'undefined' ? banco_legis_mppe : [],
-            banco_const: typeof banco_const !== 'undefined' ? banco_const : [],
-            banco_adm: typeof banco_adm !== 'undefined' ? banco_adm : [],
-            banco_civil: typeof banco_civil !== 'undefined' ? banco_civil : [],
-            banco_proc_civil: typeof banco_proc_civil !== 'undefined' ? banco_proc_civil : [],
-            banco_penal: typeof banco_penal !== 'undefined' ? banco_penal : [],
-            banco_proc_penal: typeof banco_proc_penal !== 'undefined' ? banco_proc_penal : [],
-            banco_noc_adm: typeof banco_noc_adm !== 'undefined' ? banco_noc_adm : [],
-            banco_gov_ti: typeof banco_gov_ti !== 'undefined' ? banco_gov_ti : [],
-            banco_seg_ti: typeof banco_seg_ti !== 'undefined' ? banco_seg_ti : [],
-            banco_eng_soft_ia: typeof banco_eng_soft_ia !== 'undefined' ? banco_eng_soft_ia : [],
-            banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
-        };
-
-        let questoesAtivas = [];
-        let indiceAtual = 0;
-        let acertos = 0;
-        let estatisticasRespostas = []; // Armazena { materia, acertou: true/false }
-        let tempoRestanteSegundos = 0;
-        let timerInterval = null;
-
-        // Atualiza os checkboxes de matérias ao mudar o cargo
         function atualizarCheckboxesMaterias() {
             const cargo = document.getElementById('select-cargo').value;
             const container = document.getElementById('container-materias-checkboxes');
+            if (!container) return;
             container.innerHTML = '';
 
             const lista = materiasPorCargo[cargo] || [];
@@ -77,7 +149,13 @@
         document.getElementById('select-cargo').addEventListener('change', atualizarCheckboxesMaterias);
         window.addEventListener('DOMContentLoaded', atualizarCheckboxesMaterias);
 
-        // Iniciar Simulado
+        let questoesAtivas = [];
+        let indiceAtual = 0;
+        let acertos = 0;
+        let estatisticasRespostas = [];
+        let tempoRestanteSegundos = 0;
+        let timerInterval = null;
+
         document.getElementById('btn-iniciar').addEventListener('click', () => {
             const checkboxes = document.querySelectorAll('input[name="materia-filtro"]:checked');
             if (checkboxes.length === 0) {
@@ -85,13 +163,30 @@
                 return;
             }
 
+            const referenciasBancos = {
+                banco_pt: typeof banco_pt !== 'undefined' ? banco_pt : [],
+                banco_rlm: typeof banco_rlm !== 'undefined' ? banco_rlm : [],
+                banco_info: typeof banco_info !== 'undefined' ? banco_info : [],
+                banco_legis_mppe: typeof banco_legis_mppe !== 'undefined' ? banco_legis_mppe : [],
+                banco_const: typeof banco_const !== 'undefined' ? banco_const : [],
+                banco_adm: typeof banco_adm !== 'undefined' ? banco_adm : [],
+                banco_civil: typeof banco_civil !== 'undefined' ? banco_civil : [],
+                banco_proc_civil: typeof banco_proc_civil !== 'undefined' ? banco_proc_civil : [],
+                banco_penal: typeof banco_penal !== 'undefined' ? banco_penal : [],
+                banco_proc_penal: typeof banco_proc_penal !== 'undefined' ? banco_proc_penal : [],
+                banco_noc_adm: typeof banco_noc_adm !== 'undefined' ? banco_noc_adm : [],
+                banco_gov_ti: typeof banco_gov_ti !== 'undefined' ? banco_gov_ti : [],
+                banco_seg_ti: typeof banco_seg_ti !== 'undefined' ? banco_seg_ti : [],
+                banco_eng_soft_ia: typeof banco_eng_soft_ia !== 'undefined' ? banco_eng_soft_ia : [],
+                banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
+            };
+
             let baseQuestoes = [];
             checkboxes.forEach(cb => {
                 const idBanco = cb.value;
                 const nomeMateria = materiasPorCargo[document.getElementById('select-cargo').value].find(m => m.id === idBanco)?.nome || idBanco;
                 
                 if (referenciasBancos[idBanco] && Array.isArray(referenciasBancos[idBanco])) {
-                    // Adiciona a tag da matéria em cada objeto de questão para rastreio posterior
                     const qComMateria = referenciasBancos[idBanco].map(q => ({ ...q, materiaOrigem: nomeMateria }));
                     baseQuestoes = baseQuestoes.concat(qComMateria);
                 }
@@ -102,7 +197,6 @@
                 return;
             }
 
-            // Embaralha e limita à quantidade escolhida
             baseQuestoes.sort(() => Math.random() - 0.5);
             const qtdDesejada = parseInt(document.getElementById('input-qtd-questoes').value) || 10;
             questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
@@ -111,7 +205,6 @@
             acertos = 0;
             estatisticasRespostas = [];
 
-            // Configura o Cronômetro Regressivo
             const minutosDesejados = parseInt(document.getElementById('input-tempo-minutos').value) || 30;
             tempoRestanteSegundos = minutosDesejados * 60;
 
@@ -238,7 +331,6 @@
         function finalizarSimulado() {
             clearInterval(timerInterval);
             
-            // Agrupa erros por matéria para identificar a maior dificuldade
             let desempenhoPorMateria = {};
             estatisticasRespostas.forEach(item => {
                 if (!desempenhoPorMateria[item.materia]) {
@@ -250,7 +342,6 @@
                 }
             });
 
-            // Encontra a matéria com mais erros (maior dificuldade)
             let maiorDificuldade = "Nenhuma registrada";
             let maxErros = -1;
             for (let mat in desempenhoPorMateria) {
@@ -299,3 +390,5 @@
             `;
         }
     </script>
+</body>
+</html>
