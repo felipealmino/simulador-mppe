@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP/TJ | Simulador de Estudos</title>
+    <title>MP/TJ | Estudo Reverso</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="questoes.js"></script>
 </head>
@@ -25,7 +25,7 @@
         <!-- Bloco de Configuração do Treino -->
         <div id="painel-config" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-6">
             <h1 class="text-xl font-bold text-slate-900 mb-1">Configure o seu Simulado</h1>
-            <p class="text-xs text-slate-500 mb-6">Personalize as matérias, quantidade de questões e o tempo de prova.</p>
+            <p class="text-xs text-slate-500 mb-6">Personalize as matérias, a quantidade de questões por disciplina e o tempo de prova.</p>
 
             <!-- Seleção de Cargo Alvo -->
             <div class="mb-4">
@@ -37,19 +37,19 @@
                 </select>
             </div>
 
-            <!-- Seleção de Matérias (Múltipla Escolha com Checkboxes) -->
+            <!-- Seleção de Matérias e Quantidades -->
             <div class="mb-4">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Matérias para o Treino:</label>
-                <div id="container-materias-checkboxes" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 p-3.5 bg-slate-50 border border-slate-200 rounded-xl max-h-48 overflow-y-auto">
+                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Matérias e Quantidade de Questões:</label>
+                <div id="container-materias-checkboxes" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 p-3.5 bg-slate-50 border border-slate-200 rounded-xl max-h-64 overflow-y-auto">
                     <!-- Gerado dinamicamente via JS de acordo com o cargo -->
                 </div>
             </div>
 
-            <!-- Configurações de Questões e Tempo -->
+            <!-- Configurações de Questões Totais e Tempo -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div>
-                    <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Quantidade de Questões:</label>
-                    <input type="number" id="input-qtd-questoes" value="10" min="1" max="100" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Total de Questões Selecionadas:</label>
+                    <input type="number" id="input-qtd-questoes" value="0" readonly class="w-full p-3 bg-slate-100 border border-slate-300 rounded-xl text-sm text-slate-600 font-bold outline-none cursor-not-allowed">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Tempo de Prova (Minutos):</label>
@@ -57,8 +57,8 @@
                 </div>
             </div>
 
-            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm">
-                Iniciar Simulado com Cronômetro
+            <button id="btn-iniciar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition text-sm shadow-sm cursor-pointer">
+                Iniciar Simulado
             </button>
         </div>
 
@@ -68,7 +68,7 @@
                 <div class="flex items-center space-x-3">
                     <span id="badge-materia" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Matéria</span>
                     <button id="btn-desistir" class="text-[11px] font-bold text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-3 py-1 rounded-lg transition cursor-pointer">
-                        ✕ Desistir / Encerrar
+                        ✕ Desistir
                     </button>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -94,13 +94,13 @@
         </div>
 
     </main>
-<!-- Rodapé com Autoria -->
+
+    <!-- Rodapé com Autoria -->
     <footer class="w-full bg-white border-t border-slate-200 px-6 py-4 text-center text-xs text-slate-500">
         Simulador MP/TJ &bull; Elaborado por Felipe Almino
     </footer>
 
     <!-- Script de Execução do Simulador -->
-
     <script>
         const materiasPorCargo = {
             Tecnico: [
@@ -139,6 +139,45 @@
             ]
         };
 
+        const obterBanco = (id) => ({
+            banco_pt: typeof banco_pt !== 'undefined' ? banco_pt : [],
+            banco_rlm: typeof banco_rlm !== 'undefined' ? banco_rlm : [],
+            banco_info: typeof banco_info !== 'undefined' ? banco_info : [],
+            banco_legis_mppe: typeof banco_legis_mppe !== 'undefined' ? banco_legis_mppe : [],
+            banco_const: typeof banco_const !== 'undefined' ? banco_const : [],
+            banco_adm: typeof banco_adm !== 'undefined' ? banco_adm : [],
+            banco_civil: typeof banco_civil !== 'undefined' ? banco_civil : [],
+            banco_proc_civil: typeof banco_proc_civil !== 'undefined' ? banco_proc_civil : [],
+            banco_penal: typeof banco_penal !== 'undefined' ? banco_penal : [],
+            banco_proc_penal: typeof banco_proc_penal !== 'undefined' ? banco_proc_penal : [],
+            banco_noc_adm: typeof banco_noc_adm !== 'undefined' ? banco_noc_adm : [],
+            banco_gov_ti: typeof banco_gov_ti !== 'undefined' ? banco_gov_ti : [],
+            banco_seg_ti: typeof banco_seg_ti !== 'undefined' ? banco_seg_ti : [],
+            banco_eng_soft_ia: typeof banco_eng_soft_ia !== 'undefined' ? banco_eng_soft_ia : [],
+            banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
+        }[id] || []);
+
+        function atualizarTotalQuestoes() {
+            let total = 0;
+            document.querySelectorAll('input[name="materia-filtro"]:checked').forEach(cb => {
+                const qtdInput = document.getElementById(`qtd-${cb.value}`);
+                if (qtdInput) {
+                    const max = parseInt(qtdInput.max, 10) || 0;
+                    let val = parseInt(qtdInput.value, 10) || 0;
+                    if (val > max) {
+                        val = max;
+                        qtdInput.value = max;
+                    } else if (val < 0) {
+                        val = 0;
+                        qtdInput.value = 0;
+                    }
+                    total += val;
+                }
+            });
+            const totalEl = document.getElementById('input-qtd-questoes');
+            if (totalEl) totalEl.value = total;
+        }
+
         function atualizarCheckboxesMaterias() {
             const cargo = document.getElementById('select-cargo').value;
             const container = document.getElementById('container-materias-checkboxes');
@@ -147,14 +186,37 @@
 
             const lista = materiasPorCargo[cargo] || [];
             lista.forEach(mat => {
-                const label = document.createElement('label');
-                label.className = "flex items-center space-x-2 text-xs font-medium text-slate-700 cursor-pointer p-1 hover:bg-slate-100 rounded-lg";
-                label.innerHTML = `
-                    <input type="checkbox" name="materia-filtro" value="${mat.id}" checked class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
-                    <span>${mat.nome}</span>
+                const totalDisponivel = obterBanco(mat.id).length;
+                const temQuestoes = totalDisponivel > 0;
+                const qtdPadrao = temQuestoes ? Math.min(5, totalDisponivel) : 0;
+
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between text-xs font-medium text-slate-700 p-1.5 hover:bg-slate-100 rounded-lg border border-transparent hover:border-slate-200 transition";
+                div.innerHTML = `
+                    <label class="flex items-center space-x-2 cursor-pointer flex-1 mr-2">
+                        <input type="checkbox" name="materia-filtro" value="${mat.id}" ${temQuestoes ? 'checked' : 'disabled'} class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                        <span>${mat.nome} <span class="text-[10px] text-slate-400">(${totalDisponivel} disp.)</span></span>
+                    </label>
+                    <input type="number" id="qtd-${mat.id}" value="${qtdPadrao}" min="1" max="${totalDisponivel}" ${temQuestoes ? '' : 'disabled'} class="w-16 p-1 text-center bg-white border border-slate-300 rounded-md text-xs outline-none focus:border-blue-600 disabled:bg-slate-100 disabled:text-slate-400">
                 `;
-                container.appendChild(label);
+                container.appendChild(div);
+
+                const checkbox = div.querySelector('input[type="checkbox"]');
+                const numInput = div.querySelector('input[type="number"]');
+
+                checkbox.addEventListener('change', () => {
+                    numInput.disabled = !checkbox.checked;
+                    if (checkbox.checked && (parseInt(numInput.value, 10) || 0) === 0) {
+                        numInput.value = Math.min(5, totalDisponivel);
+                    }
+                    atualizarTotalQuestoes();
+                });
+
+                numInput.addEventListener('input', atualizarTotalQuestoes);
+                numInput.addEventListener('change', atualizarTotalQuestoes);
             });
+
+            atualizarTotalQuestoes();
         }
 
         document.getElementById('select-cargo').addEventListener('change', atualizarCheckboxesMaterias);
@@ -162,7 +224,7 @@
 
         let questoesAtivas = [];
         let indiceAtual = 0;
-        let respostasUsuario = {}; // Armazena a resposta escolhida pelo usuário por índice da questão
+        let respostasUsuario = {};
         let tempoRestanteSegundos = 0;
         let timerInterval = null;
 
@@ -173,56 +235,46 @@
                 return;
             }
 
-            const referenciasBancos = {
-                banco_pt: typeof banco_pt !== 'undefined' ? banco_pt : [],
-                banco_rlm: typeof banco_rlm !== 'undefined' ? banco_rlm : [],
-                banco_info: typeof banco_info !== 'undefined' ? banco_info : [],
-                banco_legis_mppe: typeof banco_legis_mppe !== 'undefined' ? banco_legis_mppe : [],
-                banco_const: typeof banco_const !== 'undefined' ? banco_const : [],
-                banco_adm: typeof banco_adm !== 'undefined' ? banco_adm : [],
-                banco_civil: typeof banco_civil !== 'undefined' ? banco_civil : [],
-                banco_proc_civil: typeof banco_proc_civil !== 'undefined' ? banco_proc_civil : [],
-                banco_penal: typeof banco_penal !== 'undefined' ? banco_penal : [],
-                banco_proc_penal: typeof banco_proc_penal !== 'undefined' ? banco_proc_penal : [],
-                banco_noc_adm: typeof banco_noc_adm !== 'undefined' ? banco_noc_adm : [],
-                banco_gov_ti: typeof banco_gov_ti !== 'undefined' ? banco_gov_ti : [],
-                banco_seg_ti: typeof banco_seg_ti !== 'undefined' ? banco_seg_ti : [],
-                banco_eng_soft_ia: typeof banco_eng_soft_ia !== 'undefined' ? banco_eng_soft_ia : [],
-                banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
-            };
-
             let baseQuestoes = [];
+            const cargoAtual = document.getElementById('select-cargo').value;
+
             checkboxes.forEach(cb => {
                 const idBanco = cb.value;
-                const nomeMateria = materiasPorCargo[document.getElementById('select-cargo').value].find(m => m.id === idBanco)?.nome || idBanco;
+                const qtdDesejadaMateria = parseInt(document.getElementById(`qtd-${idBanco}`)?.value, 10) || 0;
+                if (qtdDesejadaMateria <= 0) return;
+
+                const nomeMateria = materiasPorCargo[cargoAtual].find(m => m.id === idBanco)?.nome || idBanco;
+                const bancoOriginal = obterBanco(idBanco);
                 
-                if (referenciasBancos[idBanco] && Array.isArray(referenciasBancos[idBanco])) {
-                    const qComMateria = referenciasBancos[idBanco].map(q => ({ ...q, materiaOrigem: nomeMateria }));
-                    baseQuestoes = baseQuestoes.concat(qComMateria);
+                if (Array.isArray(bancoOriginal) && bancoOriginal.length > 0) {
+                    const qComMateria = bancoOriginal.map(q => ({ ...q, materiaOrigem: nomeMateria }));
+                    
+                    // Algoritmo Fisher-Yates para sorteio uniforme dentro de cada matéria
+                    for (let i = qComMateria.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [qComMateria[i], qComMateria[j]] = [qComMateria[j], qComMateria[i]];
+                    }
+                    
+                    baseQuestoes = baseQuestoes.concat(qComMateria.slice(0, qtdDesejadaMateria));
                 }
             });
 
             if (baseQuestoes.length === 0) {
-                alert("Não há questões cadastradas para as matérias selecionadas.");
+                alert("Informe uma quantidade válida de questões para as matérias selecionadas.");
                 return;
             }
 
-           for (let i = baseQuestoes.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [baseQuestoes[i], baseQuestoes[j]] = [baseQuestoes[j], baseQuestoes[i]];
-}
-const qtdDesejada = parseInt(document.getElementById('input-qtd-questoes').value) || 10;
-questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
-
+            questoesAtivas = baseQuestoes;
             indiceAtual = 0;
             respostasUsuario = {};
 
-            const minutosDesejados = parseInt(document.getElementById('input-tempo-minutos').value) || 30;
+            const minutosDesejados = parseInt(document.getElementById('input-tempo-minutos').value, 10) || 30;
             tempoRestanteSegundos = minutosDesejados * 60;
 
             document.getElementById('painel-config').classList.add('hidden');
             document.getElementById('painel-quiz').classList.remove('hidden');
 
+            atualizarDisplayCronometro();
             clearInterval(timerInterval);
             timerInterval = setInterval(() => {
                 tempoRestanteSegundos--;
@@ -271,7 +323,6 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
             const avisoMarcada = document.getElementById('aviso-marcada');
             avisoMarcada.classList.add('hidden');
 
-            // Altera o texto do botão na última questão
             const btnProxima = document.getElementById('btn-proxima');
             if (indiceAtual === questoesAtivas.length - 1) {
                 btnProxima.innerText = "Finalizar e Ver Resultado 🏁";
@@ -285,7 +336,6 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
 
             alternativas.forEach((opt, idx) => {
                 const btn = criarBotaoAlternativa(opt, idx, q);
-                // Se o usuário já havia respondido esta questão anteriormente, destaca a escolha
                 if (respostasUsuario[indiceAtual] === idx) {
                     marcarBotaoSelecionado(btn);
                     avisoMarcada.classList.remove('hidden');
@@ -302,7 +352,6 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
             btn.addEventListener('click', () => {
                 respostasUsuario[indiceAtual] = idx;
                 
-                // Atualiza visualmente os botões da questão
                 const botoes = document.getElementById('container-alternativas').children;
                 for (let b of botoes) {
                     b.classList.remove('bg-blue-50', 'border-blue-400', 'text-blue-900', 'ring-2', 'ring-blue-400');
@@ -324,7 +373,6 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
             carregarQuestao();
         });
 
-        // Botão Desistir
         document.getElementById('btn-desistir').addEventListener('click', () => {
             if (confirm("Deseja realmente desistir do simulado atual e voltar ao início?")) {
                 clearInterval(timerInterval);
@@ -367,7 +415,6 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
 
             const percentual = ((acertos / questoesAtivas.length) * 100).toFixed(1);
 
-            // Monta o relatório analítico por matéria
             let relatorioMatériasHTML = `<ul class="space-y-2 mb-6 text-left">`;
             for (let mat in desempenhoPorMateria) {
                 let d = desempenhoPorMateria[mat];
@@ -380,7 +427,6 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
             }
             relatorioMatériasHTML += `</ul>`;
 
-            // Monta a revisão detalhada questão por questão com explicações e disclaimers
             let revisaoHTML = `<div class="mt-6 space-y-4 text-left border-t pt-6">
                 <h3 class="text-xs font-bold text-slate-800 uppercase mb-3">Revisão Detalhada e Explicação dos Erros:</h3>`;
 
@@ -410,14 +456,13 @@ questoesAtivas = baseQuestoes.slice(0, qtdDesejada);
                             ${!acertou ? `<p class="text-emerald-700 font-semibold">Resposta correta: ${textoCorreta}</p>` : ''}
                         </div>
                         <div class="text-[11px] text-slate-700 bg-white p-3 rounded-lg border border-slate-200 shadow-xs">
-                            <strong class="text-slate-900">Fundamentação / Explicação:</strong> ${q.disclaimer || 'Sem fundamentação cadastrada para esta questão.'}
+                            <strong class="text-slate-900">Veje bem:</strong> ${q.disclaimer || 'Sem fundamentação cadastrada para esta questão.'}
                         </div>
                     </div>
                 `;
             });
             revisaoHTML += `</div>`;
 
-            // Renderiza o painel final completo
             document.getElementById('painel-quiz').innerHTML = `
                 <div class="text-center py-6">
                     <h2 class="text-xl font-bold text-slate-900 mb-1">Simulado Concluído!</h2>
