@@ -1657,15 +1657,577 @@ const banco_infra_bd = [
 // ATENÇÃO: os arrays vazios não contêm questões.
 // Será necessário preenchê-los posteriormente.
 
-const banco_rlm = [];
-const banco_legis_mppe = [];
-const banco_const = [];
-const banco_adm = [];
-const banco_civil = [];
-const banco_proc_civil = [];
-const banco_penal = [];
-const banco_proc_penal = [];
-const banco_noc_adm = [];
+const banco_rlm = [
+    {
+        topic: "Equivalência e Negação Lógica",
+        supportText: "",
+        q: "A negação lógica da proposição condicional 'Se o processo é eletrônico, então a intimação é automática' é logicamente equivalente a:",
+        options: [
+            "Se o processo não é eletrônico, então a intimação não é automática.",
+            "O processo não é eletrônico ou a intimação não é automática.",
+            "O processo é eletrônico e a intimação não é automática.",
+            "Se a intimação não é automática, então o processo não é eletrônico.",
+            "O processo não é eletrônico e a intimação é automática."
+        ],
+        answer: 2,
+        disclaimer: "A negação da condicional (P -> Q) segue a regra da 'MANÉ' (Mantém a primeira E Nega a segunda): P ^ ~Q ('O processo é eletrônico e a intimação não é automática')."
+    },
+    {
+        topic: "Equivalência Lógica (Contrapositiva)",
+        supportText: "",
+        q: "Considere verdadeira a afirmação: 'Todo analista de sistemas sabe programar em Python'. A partir dessa premissa, conclui-se corretamente que:",
+        options: [
+            "Quem sabe programar em Python é analista de sistemas.",
+            "Se Carlos não sabe programar em Python, então ele não é analista de sistemas.",
+            "Se Carlos não é analista de sistemas, então ele não sabe programar em Python.",
+            "Nenhum programador de Python ocupa outro cargo.",
+            "Algum analista de sistemas não sabe programar em Python."
+        ],
+        answer: 1,
+        disclaimer: "Todo A é B equivale à condicional (A -> B). Pela equivalência contrapositiva (~B -> ~A), se alguém não pertence ao conjunto de quem programa em Python, necessariamente não é analista de sistemas."
+    },
+    {
+        topic: "Porcentagem e Variação Percentual",
+        supportText: "",
+        q: "O acervo de processos pendentes de um cartório judicial sofreu um aumento de 20% no primeiro semestre e, sobre o novo total, uma redução de 20% no segundo semestre. Em relação ao acervo inicial do ano, o número final de processos:",
+        options: [
+            "permaneceu exatamente igual.",
+            "aumentou 4%.",
+            "diminuiu 4%.",
+            "diminuiu 2%.",
+            "aumentou 2%."
+        ],
+        answer: 2,
+        disclaimer: "Multiplicando os fatores de variação: 1,20 x 0,80 = 0,96, o que corresponde a 96% do valor inicial (uma redução acumulada de 4%)."
+    },
+    {
+        topic: "Matemática Financeira (Juros Compostos)",
+        supportText: "",
+        q: "Um capital de R$ 10.000,00 é aplicado no regime de juros compostos à taxa de 10% ao mês durante 2 meses. O montante final acumulado ao término desse período será de:",
+        options: [
+            "R$ 12.000,00.",
+            "R$ 12.100,00.",
+            "R$ 11.000,00.",
+            "R$ 12.200,00.",
+            "R$ 12.500,00."
+        ],
+        answer: 1,
+        disclaimer: "No regime de juros compostos, M = C * (1 + i)^t -> M = 10.000 * (1,10)^2 = 10.000 * 1,21 = R$ 12.100,00."
+    },
+    {
+        topic: "Análise Combinatória e Probabilidade",
+        type: "vf",
+        supportText: "",
+        q: "Em uma comissão formada por 5 servidores distintos, o número de maneiras diferentes de escolher 1 Presidente e 1 Secretário é igual a 20.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. Como a ordem importa (cargos distintos), trata-se de um Arranjo de 5 elementos tomados 2 a 2: 5 x 4 = 20 maneiras distintas."
+    }
+];
+
+const banco_legis_mppe = [
+    {
+        topic: "Princípios Institucionais do Ministério Público",
+        supportText: "",
+        q: "De acordo com a Lei Orgânica do Ministério Público (Lei nº 8.625/1993 e LC Estadual nº 12/1994), são princípios institucionais do Ministério Público:",
+        options: [
+            "a hierarquia administrativa, a subordinação ao Poder Judiciário e a vitaliciedade.",
+            "a unidade, a indivisibilidade e a independência funcional.",
+            "a oralidade, a concentração dos atos e a inércia jurisdicional.",
+            "a autotutela, a vinculação ao Poder Executivo e a impessoalidade.",
+            "a divisibilidade, a delegabilidade irrestrita e o sigilo absoluto."
+        ],
+        answer: 1,
+        disclaimer: "Conforme o art. 127, § 1º da CF/88 e o art. 1º, parágrafo único da LONMP/LOMPPE, são princípios institucionais do MP a unidade, a indivisibilidade e a independência funcional."
+    },
+    {
+        topic: "Órgãos da Administração Superior do MPPE",
+        supportText: "",
+        q: "Segundo a Lei Complementar Estadual nº 12/1994 (Lei Orgânica do MPPE), NÃO constitui órgão da Administração Superior do Ministério Público, sendo classificado como órgão de execução:",
+        options: [
+            "a Procuradoria-Geral de Justiça.",
+            "o Colégio de Procuradores de Justiça.",
+            "o Conselho Superior do Ministério Público.",
+            "a Corregedoria-Geral do Ministério Público.",
+            "os Promotores de Justiça."
+        ],
+        answer: 4,
+        disclaimer: "Os Promotores de Justiça (assim como os Procuradores de Justiça, o PGJ e o Conselho Superior em certas matérias) são órgãos de execução. A Administração Superior compõe-se da PGJ, Colégio de Procuradores, Conselho Superior e Corregedoria-Geral."
+    },
+    {
+        topic: "Garantias e Vedações dos Membros do MP",
+        supportText: "",
+        q: "Aos membros do Ministério Público é constitucionalmente e legalmente vedado:",
+        options: [
+            "exercer o magistério público ou privado, ainda que haja compatibilidade de horários.",
+            "exercer a advocacia e receber, a qualquer título e sob qualquer pretexto, honorários, percentagens ou custas processuais.",
+            "instaurar inquérito civil e promover a ação civil pública.",
+            "requisitar diligências investigatórias e a instauração de inquérito policial.",
+            "gozar de inamovibilidade, salvo por motivo de interesse público."
+        ],
+        answer: 1,
+        disclaimer: "Nos termos do art. 128, § 5º, II da CF/88 e da Lei Orgânica do MP, é vedado aos membros do MP receber honorários, percentagens ou custas processuais, bem como exercer a advocacia."
+    },
+    {
+        topic: "Conselho Superior do Ministério Público",
+        type: "vf",
+        supportText: "",
+        q: "Compete ao Conselho Superior do Ministério Público rever o arquivamento de inquérito civil ou de peças de informação, na forma da lei.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. A homologação ou rejeição da promoção de arquivamento de inquérito civil é atribuição típica do Conselho Superior do Ministério Público (art. 30 da Lei nº 8.625/1993)."
+    },
+    {
+        topic: "Corregedoria-Geral do MP",
+        type: "vf",
+        supportText: "",
+        q: "A Corregedoria-Geral do Ministério Público é o órgão orientador e fiscalizador das atividades funcionais e da conduta dos membros do Ministério Público, sendo o Corregedor-Geral eleito pelo Colégio de Procuradores de Justiça dentre os Procuradores de Justiça.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. O Corregedor-Geral é eleito pelo Colégio de Procuradores de Justiça dentre os integrantes da segunda instância (Procuradores de Justiça) para mandato de dois anos."
+    }
+];
+
+const banco_const = [
+    {
+        topic: "Direitos e Garantias Fundamentais (Art. 5º da CF/88)",
+        supportText: "",
+        q: "Acerca dos direitos e deveres individuais e coletivos previstos no artigo 5º da Constituição Federal de 1988, assinale a alternativa correta:",
+        options: [
+            "A casa é asilo inviolável do indivíduo, ninguém nela podendo penetrar sem consentimento do morador, salvo em caso de flagrante delito ou desastre, ou para prestar socorro, ou, durante a noite, por determinação judicial.",
+            "É plena a liberdade de associação para fins lícitos, inclusive a de caráter paramilitar.",
+            "As associações só poderão ser compulsoriamente dissolvidas ou ter suas atividades suspensas por decisão judicial, exigindo-se, no primeiro caso (dissolução compulsória), o trânsito em julgado.",
+            "A prática do racismo constitui crime afiançável e imprescritível, sujeito à pena de detenção.",
+            "Conceder-se-á habeas data sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção."
+        ],
+        answer: 2,
+        disclaimer: "Conforme o art. 5º, XIX da CF/88, a suspensão de atividades de associação exige decisão judicial, mas a dissolução compulsória exige decisão judicial transitada em julgado. (Mandado judicial domiciliar só durante o dia; racismo é inafiançável e sujeito a reclusão)."
+    },
+    {
+        topic: "Administração Pública Constitucional (Art. 37 da CF/88)",
+        supportText: "",
+        q: "Segundo as disposições constitucionais sobre a Administração Pública (art. 37 da CF/88), é correto afirmar que:",
+        options: [
+            "o prazo de validade do concurso público será de até quatro anos, prorrogável uma vez, por igual período.",
+            "os cargos em comissão destinam-se apenas às atribuições de direção, chefia e assessoramento, devendo ser preenchidos por servidores de carreira nos casos, condições e percentuais mínimos previstos em lei.",
+            "é permitida a acumulação remunerada de três cargos públicos de professor, desde que haja compatibilidade de horários.",
+            "a proibição de acumular cargos estende-se apenas à administração direta, não alcançando as sociedades de economia mista e empresas públicas.",
+            "as funções de confiança podem ser exercidas por pessoas estranhas ao quadro efetivo da Administração."
+        ],
+        answer: 1,
+        disclaimer: "Nos termos do art. 37, V da CF/88, as funções de confiança são exclusivas de servidores ocupantes de cargo efetivo, e os cargos em comissão (livre nomeação e exoneração) devem observar percentuais mínimos para servidores de carreira, destinando-se apenas à direção, chefia e assessoramento."
+    },
+    {
+        topic: "Poder Judiciário e Conselho Nacional de Justiça (CNJ)",
+        supportText: "",
+        q: "A respeito do Conselho Nacional de Justiça (CNJ), nos termos do art. 103-B da Constituição Federal, assinale a alternativa correta:",
+        options: [
+            "O CNJ exerce jurisdição em todo o território nacional e pode reformar sentenças judiciais de mérito proferidas por juízes estaduais.",
+            "Compete ao CNJ o controle da atuação administrativa e financeira do Poder Judiciário e do cumprimento dos deveres funcionais dos juízes.",
+            "O CNJ é presidido pelo Ministro mais antigo do Superior Tribunal de Justiça (STJ).",
+            "Junto ao CNJ oficiará apenas o Advogado-Geral da União, sem participação do Procurador-Geral da República.",
+            "O CNJ pode determinar a perda do cargo de magistrado vitalício independentemente de sentença judicial transitada em julgado."
+        ],
+        answer: 1,
+        disclaimer: "O CNJ é órgão do Poder Judiciário com atuação estritamente administrativa, financeira e disciplinar (art. 103-B, § 4º da CF/88), não possuindo competência jurisdicional. É presidido pelo Presidente do STF."
+    },
+    {
+        topic: "Tratados Internacionais de Direitos Humanos",
+        type: "vf",
+        supportText: "",
+        q: "Os tratados e convenções internacionais sobre direitos humanos que forem aprovados, em cada Casa do Congresso Nacional, em dois turnos, por três quintos dos votos dos respectivos membros, serão equivalentes às emendas constitucionais.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. É a literalidade do art. 5º, § 3º da CF/88 (incluído pela EC nº 45/2004). Caso não passem por esse rito qualificado, possuem status supralegal (STF)."
+    },
+    {
+        topic: "Defensoria Pública na Constituição",
+        type: "vf",
+        supportText: "",
+        q: "Às Defensorias Públicas Estaduais e da União são asseguradas autonomia funcional e administrativa e a iniciativa de sua proposta orçamentária dentro dos limites estabelecidos na lei de diretrizes orçamentárias.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. O art. 134, §§ 2º e 3º da CF/88 assegura expressamente a autonomia funcional, administrativa e a iniciativa orçamentária às Defensorias Públicas."
+    }
+];
+
+const banco_adm = [
+    {
+        topic: "Atos Administrativos (Atributos e Extinção)",
+        supportText: "",
+        q: "Quando a Administração Pública retira do mundo jurídico um ato administrativo válido e legítimo por motivos de conveniência e oportunidade, respeitando os direitos adquiridos e produzindo efeitos prospectivos (ex nunc), ocorre a:",
+        options: [
+            "Anulação.",
+            "Revogação.",
+            "Cassação.",
+            "Caducidade.",
+            "Convalidação."
+        ],
+        answer: 1,
+        disclaimer: "A revogação recai sobre atos válidos e discricionários que se tornaram inconvenientes ou inoportunos (efeitos ex nunc). A anulação recai sobre atos ilegais (efeitos ex tunc)."
+    },
+    {
+        topic: "Nova Lei de Licitações (Lei nº 14.133/2021)",
+        supportText: "",
+        q: "De acordo com a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), são modalidades de licitação previstas na referida norma, EXCETO:",
+        options: [
+            "Pregão.",
+            "Concorrência.",
+            "Diálogo Competitivo.",
+            "Tomada de Preços.",
+            "Leilão."
+        ],
+        answer: 3,
+        disclaimer: "A Lei nº 14.133/2021 extinguiu as modalidades Tomada de Preços e Convite (bem como o RDC), mantendo 5 modalidades: Pregão, Concorrência, Concurso, Leilão e a novidade Diálogo Competitivo (art. 28)."
+    },
+    {
+        topic: "Improbidade Administrativa (Lei nº 8.429/1992 atualizada)",
+        supportText: "",
+        q: "Com base na Lei de Improbidade Administrativa (Lei nº 8.429/1992, com a redação dada pela Lei nº 14.230/2021), assinale a alternativa correta:",
+        options: [
+            "Os atos de improbidade administrativa que causam prejuízo ao erário admitem a modalidade culposa em casos de imprudência grave.",
+            "Configura-se o ato de improbidade administrativa exclusivamente mediante a comprovação de conduta dolosa com fim de obter proveito ou benefício indevido, não mais existindo a modalidade culposa.",
+            "O mero exercício da função ou desempenho de competências públicas, sem comprovação de ato doloso com fim ilícito, basta para configurar responsabilidade objetiva por improbidade.",
+            "As sanções de improbidade prescrevem em 20 anos a contar da posse do agente público.",
+            "A ação de improbidade administrativa comporta transação, exceto por meio de acordo de não persecução cível."
+        ],
+        answer: 1,
+        disclaimer: "A reforma promovida pela Lei nº 14.230/2021 extinguiu a modalidade culposa em todas as espécies de atos de improbidade administrativa (arts. 9º, 10 e 11), exigindo sempre o dolo específico."
+    },
+    {
+        topic: "Responsabilidade Civil do Estado",
+        type: "vf",
+        supportText: "",
+        q: "Nos termos do art. 37, § 6º da Constituição Federal, as pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. O Estado e as prestadoras de serviços públicos respondem objetivamente (Teoria do Risco Administrativo) perante terceiros, cabendo ação regressiva subjetiva (mediante dolo ou culpa) contra o agente causador."
+    },
+    {
+        topic: "Poderes da Administração Pública",
+        type: "vf",
+        supportText: "",
+        q: "O Poder de Polícia administrativo possui como atributos a discricionariedade, a autoexecutoriedade e a coercibilidade, sendo que a autoexecutoriedade está presente em absolutamente todos os atos de polícia, inclusive na cobrança forçada de multas não pagas sem necessidade de execução fiscal.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Errado. Embora a autoexecutoriedade seja atributo do poder de polícia, ela não está presente em todos os atos: a cobrança coativa de multas administrativas não pagas exige intervenção do Poder Judiciário (execução fiscal)."
+    }
+];
+
+const banco_civil = [
+    {
+        topic: "Lei de Introdução às Normas do Direito Brasileiro (LINDB)",
+        supportText: "",
+        q: "De acordo com o Decreto-Lei nº 4.657/1942 (LINDB), salvo disposição contrária, a lei começa a vigorar em todo o país:",
+        options: [
+            "na data exata de sua publicação no Diário Oficial.",
+            "trinta dias depois de oficialmente publicada.",
+            "quarenta e cinco dias depois de oficialmente publicada.",
+            "sessenta dias depois de sancionada pelo Chefe do Executivo.",
+            "noventa dias após a promulgação legislativa."
+        ],
+        answer: 2,
+        disclaimer: "Conforme o art. 1º da LINDB, salvo disposição contrária expressa na própria lei, a vacatio legis padrão no território nacional é de 45 (quarenta e cinco) dias após a publicação oficial (e de 3 meses nos Estados estrangeiros quando admitida)."
+    },
+    {
+        topic: "Parte Geral do Código Civil (Defeitos do Negócio Jurídico)",
+        supportText: "",
+        q: "Segundo o Código Civil (Lei nº 10.406/2002), quando uma pessoa, sob premente necessidade, ou por inexperiência, se obriga a prestação manifestamente desproporcional ao valor da prestação oposta, configura-se o defeito do negócio jurídico denominado:",
+        options: [
+            "Simulação.",
+            "Lesão.",
+            "Estado de Perigo.",
+            "Fraude contra Credores.",
+            "Coação Moral."
+        ],
+        answer: 1,
+        disclaimer: "Nos termos do art. 157 do Código Civil, ocorre a Lesão quando uma pessoa, sob premente necessidade ou por inexperiência, assume obrigação manifestamente desproporcional. É causa de anulabilidade do negócio jurídico."
+    },
+    {
+        topic: "Prescrição e Decadência",
+        supportText: "",
+        q: "A respeito dos institutos da prescrição e da decadência no Código Civil Brasileiro, assinale a alternativa correta:",
+        options: [
+            "Os prazos prescricionais podem ser livremente alterados por acordo entre as partes contratantes.",
+            "A prescrição, quando consumada, extingue a pretensão, e o seu prazo geral ordinário é de 10 (dez) anos quando a lei não lhe haja fixado prazo menor.",
+            "A decadência convencional pode ser conhecida de ofício pelo juiz em qualquer grau de jurisdição.",
+            "Correm normalmente os prazos de prescrição entre ascendentes e descendentes durante o poder familiar.",
+            "A pretensão de reparação civil prescreve em 5 (cinco) anos, conforme o Código Civil."
+        ],
+        answer: 1,
+        disclaimer: "Pelo art. 189 do CC, violado o direito, nasce para o titular a pretensão, a qual se extingue pela prescrição. O prazo geral (art. 205) é de 10 anos, e o de reparação civil no CC (art. 206, § 3º, V) é de 3 anos."
+    },
+    {
+        topic: "Responsabilidade Civil",
+        type: "vf",
+        supportText: "",
+        q: "Haverá obrigação de reparar o dano, independentemente de culpa, nos casos especificados em lei, ou quando a atividade normalmente desenvolvida pelo autor do dano implicar, por sua natureza, risco para os direitos de outrem.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. Trata-se da cláusula geral de responsabilidade civil objetiva pelo risco da atividade, expressamente consagrada no art. 927, parágrafo único, do Código Civil."
+    },
+    {
+        topic: "Impenhorabilidade do Bem de Família (Lei nº 8.009/1990)",
+        type: "vf",
+        supportText: "",
+        q: "Segundo entendimento sumulado do Superior Tribunal de Justiça (STJ), o imóvel residencial do devedor que esteja locado a terceiros perde a proteção da impenhorabilidade do bem de família, ainda que a renda obtida com a locação seja revertida para a subsistência ou moradia de sua família.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Errado. Pela Súmula 486 do STJ, 'É impenhorável o único imóvel residencial do devedor que esteja locado a terceiros, desde que a renda obtida com a locação seja revertida para a subsistência ou a moradia da sua família'."
+    }
+];
+
+const banco_proc_civil = [
+    {
+        topic: "Tutelas Provisórias (CPC/2015)",
+        supportText: "",
+        q: "Nos termos do Código de Processo Civil (Lei nº 13.105/2015), a tutela provisória que independe da demonstração de perigo de dano ou de risco ao resultado útil do processo, sendo concedida, por exemplo, quando ficar caracterizado o abuso do direito de defesa ou o manifesto propósito protelatório da parte, denomina-se:",
+        options: [
+            "Tutela cautelar antecedente.",
+            "Tutela antecipada antecedente.",
+            "Tutela da evidência.",
+            "Tutela inibitória de urgência.",
+            "Arresto executivo."
+        ],
+        answer: 2,
+        disclaimer: "Conforme o art. 311 do CPC, a tutela da evidência será concedida independentemente da demonstração de perigo de dano ou de risco ao resultado útil do processo."
+    },
+    {
+        topic: "Prazos Processuais e Fazenda Pública / MP / Defensoria",
+        supportText: "",
+        q: "Segundo o Código de Processo Civil de 2015, gozam de prazo em dobro para todas as suas manifestações processuais (salvo quando a lei estabelecer, de forma expressa, prazo próprio):",
+        options: [
+            "apenas a Fazenda Pública Federal.",
+            "o Ministério Público, a Advocacia Pública e a Defensoria Pública.",
+            "qualquer parte que litigue sob o pálio da gratuidade da justiça, mesmo representada por advogado particular.",
+            "as empresas públicas e sociedades de economia mista que exploram atividade econômica.",
+            "os litisconsortes com procuradores distintos em processos integralmente eletrônicos."
+        ],
+        answer: 1,
+        disclaimer: "O CPC/2015 assegura a prerrogativa de prazo em dobro ao Ministério Público (art. 180), à Advocacia Pública (art. 183) e à Defensoria Pública (art. 186). O prazo em dobro para litisconsortes não se aplica aos processos em autos eletrônicos (art. 229, § 2º)."
+    },
+    {
+        topic: "Recursos no Processo Civil",
+        supportText: "",
+        q: "No sistema recursal do CPC/2015, excetuados os embargos de declaração (cujo prazo é de 5 dias úteis), o prazo unificado para interpor e para responder aos recursos cíveis (como Apelação, Agravo de Instrumento, Recurso Especial e Recurso Extraordinário) é de:",
+        options: [
+            "8 (oito) dias corridos.",
+            "10 (dez) dias úteis.",
+            "15 (quinze) dias úteis.",
+            "15 (quinze) dias corridos.",
+            "30 (trinta) dias úteis."
+        ],
+        answer: 2,
+        disclaimer: "Nos termos do art. 1.003, § 5º c/c art. 219 do CPC/2015, excetuados os embargos de declaração (5 dias), o prazo para interpor os recursos e para responder-lhes é de 15 (quinze) dias úteis."
+    },
+    {
+        topic: "Estabilização da Tutela Antecipada Antecedente",
+        type: "vf",
+        supportText: "",
+        q: "A tutela antecipada concedida em caráter antecedente torna-se estável se da decisão que a conceder não for interposto o respectivo recurso (agravo de instrumento), extinguindo-se o processo sem que essa estabilidade produza coisa julgada material.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. Conforme o art. 304, caput e § 6º do CPC, a ausência de recurso contra a tutela antecipada antecedente gera sua estabilização, mas a decisão que concede a tutela não fará coisa julgada, podendo qualquer das partes demandar a revisão no prazo decadencial de 2 anos."
+    },
+    {
+        topic: "Remessa Necessária",
+        type: "vf",
+        supportText: "",
+        q: "Está sujeita ao duplo grau de jurisdição obrigatório (remessa necessária) toda e qualquer sentença proferida contra o Estado da Paraíba, ainda que a condenação seja de valor certo e líquido equivalente a 10 (dez) salários-mínimos.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Errado. Pelo art. 496, § 3º, II do CPC, não se aplica a remessa necessária quando a condenação ou o proveito econômico obtido na causa for de valor certo e líquido inferior a 500 salários-mínimos para os Estados."
+    }
+];
+
+const banco_penal = [
+    {
+        topic: "Aplicação da Lei Penal no Tempo",
+        supportText: "",
+        q: "A respeito da eficácia da lei penal no tempo, nos termos do art. 2º e 3º do Código Penal, assinale a alternativa correta:",
+        options: [
+            "A lei penal mais grave aplica-se aos fatos anteriores à sua vigência se ainda não houver sentença transitada em julgado.",
+            "A lei posterior, que de qualquer modo favorecer o agente, aplica-se aos fatos anteriores, ainda que decididos por sentença condenatória transitada em julgado.",
+            "A lei excepcional ou temporária perde completamente sua eficácia sobre os fatos praticados durante sua vigência assim que se encerra o período de sua duração.",
+            "No crime permanente, aplica-se sempre a lei vigente no momento do início da execução, mesmo que sobrevenha lei mais grave antes da cessação da permanência.",
+            "A abolitio criminis faz cessar a execução da pena, mas mantém intactos todos os efeitos penais secundários da condenação."
+        ],
+        answer: 1,
+        disclaimer: "Pelo art. 2º, parágrafo único do Código Penal, a novatio legis in mellius retroage para beneficiar o réu, alcançando inclusive fatos já cobertos pelo trânsito em julgado. Já na Súmula 711 do STF, a lei mais grave aplica-se ao crime continuado ou permanente se sua vigência é anterior à cessação."
+    },
+    {
+        topic: "Crimes contra a Administração Pública",
+        supportText: "",
+        q: "O funcionário público que exige, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida, pratica o crime de:",
+        options: [
+            "Corrupção passiva (art. 317 do CP).",
+            "Peculato-desvio (art. 312 do CP).",
+            "Concussão (art. 316 do CP).",
+            "Prevaricação (art. 319 do CP).",
+            "Excesso de exação (art. 316, § 1º do CP)."
+        ],
+        answer: 2,
+        disclaimer: "O núcleo verbal 'exigir' vantagem indevida em razão da função caracteriza o delito de Concussão (art. 316 do CP). Na corrupção passiva (art. 317), os verbos são 'solicitar ou receber', ou 'aceitar promessa'."
+    },
+    {
+        topic: "Teoria do Crime (Excludentes de Ilicitude)",
+        supportText: "",
+        q: "Segundo o artigo 23 do Código Penal, são causas excludentes de ilicitude (antijuridicidade), EXCETO:",
+        options: [
+            "Estado de necessidade.",
+            "Legítima defesa.",
+            "Estrito cumprimento de dever legal.",
+            "Exercício regular de direito.",
+            "Coação moral irresistível."
+        ],
+        answer: 4,
+        disclaimer: "A coação moral irresistível (junto com a obediência hierárquica, art. 22 do CP) é causa excludente da CULPABILIDADE (por inexigibilidade de conduta diversa), e não da ilicitude."
+    },
+    {
+        topic: "Desistência Voluntária e Arrependimento Eficaz",
+        type: "vf",
+        supportText: "",
+        q: "Nos termos do art. 15 do Código Penal (ponte de ouro), o agente que, voluntariamente, desiste de prosseguir na execução ou impede que o resultado se produza, só responde pelos atos já praticados, afastando-se a punição pela tentativa.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. Na desistência voluntária e no arrependimento eficaz (art. 15 do CP), exclui-se a tipicidade da tentativa do crime inicialmente visado, respondendo o agente apenas pelos atos efetivamente praticados."
+    },
+    {
+        topic: "Princípio da Insignificância em Crimes contra a Administração",
+        type: "vf",
+        supportText: "",
+        q: "Segundo a Súmula 599 do Superior Tribunal de Justiça, o princípio da insignificância é inaplicável aos crimes contra a Administração Pública, pois a norma visa resguardar também a moralidade administrativa.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. A Súmula 599 do STJ dispõe expressamente: 'O princípio da insignificância é inaplicável aos crimes contra a administração pública'."
+    }
+];
+
+const banco_proc_penal = [
+    {
+        topic: "Inquérito Policial",
+        supportText: "",
+        q: "Sobre as características e regras do Inquérito Policial no Código de Processo Penal, assinale a alternativa correta:",
+        options: [
+            "O inquérito policial é peça indispensável para o oferecimento da denúncia pelo Ministério Público em qualquer infração penal.",
+            "A autoridade policial poderá mandar arquivar autos de inquérito caso verifique de plano a atipicidade do fato.",
+            "É direito do defensor, no interesse do representado, ter amplo acesso aos elementos de prova que, já documentados em procedimento investigatório realizado por órgão com competência de polícia judiciária, digam respeito ao exercício do direito de defesa (Súmula Vinculante 14).",
+            "O inquérito policial possui natureza contraditória plena, sendo nulo o indiciamento realizado sem prévia oitiva de testemunhas de defesa.",
+            "Nos crimes de ação penal pública incondicionada, o inquérito policial somente pode ser iniciado mediante requerimento formal da vítima."
+        ],
+        answer: 2,
+        disclaimer: "A Súmula Vinculante 14 do STF garante ao advogado acesso às diligências já documentadas no inquérito. O IP é dispensável (se o MP já tiver justa causa), inquisitivo e indisponível (o delegado jamais pode arquivar autos de IP - art. 17 do CPP)."
+    },
+    {
+        topic: "Acordo de Não Persecução Penal (ANPP - Art. 28-A do CPP)",
+        supportText: "",
+        q: "De acordo com o art. 28-A do Código de Processo Penal (incluído pelo Pacote Anticrime - Lei nº 13.964/2019), não sendo caso de arquivamento e tendo o investigado confessado formal e circunstancialmente a prática de infração penal sem violência ou grave ameaça, o Ministério Público poderá propor Acordo de Não Persecução Penal desde que a pena mínima cominada seja:",
+        options: [
+            "inferior a 1 (um) ano.",
+            "inferior a 2 (dois) anos.",
+            "inferior a 4 (quatro) anos.",
+            "igual ou inferior a 4 (quatro) anos.",
+            "inferior a 8 (oito) anos."
+        ],
+        answer: 2,
+        disclaimer: "Nos termos do art. 28-A, caput, do CPP, o ANPP é cabível para infrações penais cometidas sem violência ou grave ameaça e com pena mínima inferior a 4 (quatro) anos."
+    },
+    {
+        topic: "Provas no Processo Penal (Cadeia de Custódia)",
+        supportText: "",
+        q: "Segundo o artigo 158-A do Código de Processo Penal, o conjunto de todos os procedimentos utilizados para manter e documentar a história cronológica do vestígio coletado em locais ou em vítimas de crimes, para rastrear sua posse e manuseio a partir de seu reconhecimento até o descarte, denomina-se:",
+        options: [
+            "Exame de corpo de delito indireto.",
+            "Cadeia de custódia.",
+            "Acareação pericial.",
+            "Incidente de falsidade documental.",
+            "Auto de apreensão circunstanciado."
+        ],
+        answer: 1,
+        disclaimer: "Trata-se da definição legal exata de Cadeia de Custódia, introduzida no art. 158-A do CPP pela Lei nº 13.964/2019."
+    },
+    {
+        topic: "Prisões e Medidas Cautelares",
+        type: "vf",
+        supportText: "",
+        q: "Com as alterações promovidas pela Lei nº 13.964/2019 no Código de Processo Penal, é vedado ao juiz decretar a prisão preventiva de ofício, tanto na fase de investigação quanto no curso da ação penal, dependendo sempre de requerimento do Ministério Público, do querelante ou do assistente, ou de representação da autoridade policial.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. Nos termos do art. 311 do CPP atualizado e da jurisprudência consolidada do STF e STJ, não cabe mais prisão preventiva decretada de ofício pelo magistrado em nenhuma fase da persecução penal."
+    },
+    {
+        topic: "Provas Ilícitas e Teoria da Fonte Independente",
+        type: "vf",
+        supportText: "",
+        q: "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas, assim entendidas as obtidas em violação a normas constitucionais ou legais, bem como as provas derivadas das ilícitas, salvo quando não evidenciado o nexo de causalidade entre umas e outras, ou quando as derivadas puderem ser obtidas por uma fonte independente das primeiras.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. É a literalidade do art. 157, caput e § 1º do Código de Processo Penal."
+    }
+];
+
+const banco_noc_adm = [
+    {
+        topic: "Processo Organizacional (Funções Administrativas)",
+        supportText: "",
+        q: "Dentro do processo administrativo clássico (PODC - Planejamento, Organização, Direção e Controle), a função administrativa responsável por definir objetivos futuros, estabelecer metas e traçar os meios e recursos necessários para alcançá-los é:",
+        options: [
+            "o Controle.",
+            "a Direção.",
+            "a Organização.",
+            "o Planejamento.",
+            "a Departamentalização."
+        ],
+        answer: 3,
+        disclaimer: "O Planejamento é a primeira função administrativa, voltada à definição de objetivos e à escolha antecipada do curso de ação para alcançá-los."
+    },
+    {
+        topic: "Gestão da Qualidade (Ciclo PDCA e Ferramentas)",
+        supportText: "",
+        q: "Na Gestão da Qualidade, a ferramenta gráfica baseada no princípio de que a grande maioria dos problemas (cerca de 80%) decorre de um pequeno número de causas fundamentais (cerca de 20%), permitindo priorizar as ações corretivas mais relevantes, é o:",
+        options: [
+            "Diagrama de Pareto.",
+            "Fluxograma de Processo.",
+            "Histograma.",
+            "Folha de Verificação.",
+            "Matriz GUT."
+        ],
+        answer: 0,
+        disclaimer: "O Diagrama de Pareto aplica a relação 80/20 (Vilfredo Pareto / Joseph Juran) em um gráfico de barras ordenadas para destacar as causas vitais que geram a maior parte dos defeitos ou problemas."
+    },
+    {
+        topic: "Administração de Recursos Materiais (Curva ABC)",
+        supportText: "",
+        q: "Na gestão de estoques pelo método da Curva ABC (ou classificação ABC), os itens classificados na 'Classe A' caracterizam-se por apresentarem:",
+        options: [
+            "grande quantidade física em estoque e baixíssimo valor financeiro agregado.",
+            "pequena quantidade de itens no estoque, porém altíssima representatividade no valor financeiro total investido, exigindo controle rigoroso.",
+            "itens obsoletos ou inservíveis destinados ao desfazimento.",
+            "importância financeira e quantidade física exatamente intermediárias.",
+            "materiais de escritório de baixíssimo custo unitário que dispensam inventário."
+        ],
+        answer: 1,
+        disclaimer: "Na Curva ABC, os itens Classe A representam a menor parcela quantitativa (cerca de 20% dos itens), mas concentram a maior parte do valor financeiro do estoque (cerca de 80% do valor total)."
+    },
+    {
+        topic: "Gestão de Pessoas (Motivação e Liderança)",
+        type: "vf",
+        supportText: "",
+        q: "Na Teoria dos Dois Fatores de Frederick Herzberg, os fatores higiênicos (extrínsecos, como salário, condições físicas de trabalho e benefícios), quando ótimos, evitam a insatisfação dos colaboradores, mas não garantem por si sós a motivação intrínseca duradoura, a qual decorre dos fatores motivacionais (ligados ao conteúdo do cargo, realização e reconhecimento).",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. Para Herzberg, fatores higiênicos apenas previnem a insatisfação (vão da insatisfação à não-insatisfação), enquanto os fatores motivacionais (intrínsecos ao trabalho) promovem a satisfação e motivação."
+    },
+    {
+        topic: "Gestão por Processos (BPM e BPMN)",
+        type: "vf",
+        supportText: "",
+        q: "Na notação BPMN (Business Process Model and Notation), os elementos gráficos em formato de losango (diamante) utilizados para controlar a divergência e a convergência do fluxo de sequência (decisões, desvios condicionais ou caminhos paralelos) são denominados Gateways.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Correto. No BPMN, círculos representam Eventos, retângulos de cantos arredondados representam Atividades/Tarefas e losangos representam Gateways (decisões/controle de fluxo)."
+    }
+];
 
 // =========================================================
 // CATÁLOGO DE QUESTÕES
