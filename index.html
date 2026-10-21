@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <p id="texto-suporte" class="text-xs text-slate-600 bg-slate-50 p-4 rounded-xl mb-4 font-mono hidden"></p>
+            <div id="texto-suporte" class="text-xs text-slate-700 bg-slate-50 p-4 rounded-xl mb-4 leading-relaxed border border-slate-200 max-h-64 overflow-y-auto hidden"></div>
             
             <h2 id="enunciado-questao" class="text-sm font-bold text-slate-900 mb-6 leading-relaxed"></h2>
 
@@ -92,6 +92,9 @@
                 </button>
             </div>
         </div>
+
+        <!-- Bloco de Resultado Final (Separado para preservar o DOM do Quiz) -->
+        <div id="painel-resultado" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden"></div>
 
     </main>
 
@@ -156,6 +159,40 @@
             banco_eng_soft_ia: typeof banco_eng_soft_ia !== 'undefined' ? banco_eng_soft_ia : [],
             banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
         }[id] || []);
+
+        // Vincula automaticamente os textos-base às questões dependentes antes de embaralhar
+        function vincularTextosBase(idBanco, listaQuestoes) {
+            const copia = listaQuestoes.map(q => ({ ...q }));
+            if (idBanco !== 'banco_pt') return copia;
+
+            const intervalosTextoBase = [
+                [9, 16],  // Crônica de Rachel de Queiroz
+                [17, 18], // Poema 'Vela' (Sophia de Mello Breyner)
+                [19, 23], // Crônica 'Beijinho, beijinho' (Verissimo)
+                [24, 28], // Texto de Rafael Brisque Neiva
+                [29, 38], // Conto 'A velha contrabandista' (Stanislaw Ponte Preta)
+                [39, 48], // Texto sobre 'récorde' (Sérgio Rodrigues)
+                [49, 58], // Crônica 'No ônibus' (Carlos Drummond de Andrade)
+                [59, 65], // Texto 1 (José Manuel Diogo)
+                [66, 76]  // Texto 2 (Clécio Branco)
+            ];
+
+            intervalosTextoBase.forEach(([inicio, fim]) => {
+                if (!copia[inicio] || !copia[inicio].supportText) return;
+                const textoPrincipal = copia[inicio].supportText;
+
+                for (let idx = inicio + 1; idx <= fim && idx < copia.length; idx++) {
+                    const trechoFilho = (copia[idx].supportText || "").trim();
+                    if (!trechoFilho || trechoFilho.length < 120) {
+                        copia[idx].supportText = trechoFilho
+                            ? `${textoPrincipal}<hr class="my-3 border-slate-200"><div class="font-semibold text-slate-900">${trechoFilho}</div>`
+                            : textoPrincipal;
+                    }
+                }
+            });
+
+            return copia;
+        }
 
         function atualizarTotalQuestoes() {
             let total = 0;
@@ -244,7 +281,7 @@
                 if (qtdDesejadaMateria <= 0) return;
 
                 const nomeMateria = materiasPorCargo[cargoAtual].find(m => m.id === idBanco)?.nome || idBanco;
-                const bancoOriginal = obterBanco(idBanco);
+                const bancoOriginal = vincularTextosBase(idBanco, obterBanco(idBanco));
                 
                 if (Array.isArray(bancoOriginal) && bancoOriginal.length > 0) {
                     const qComMateria = bancoOriginal.map(q => ({ ...q, materiaOrigem: nomeMateria }));
@@ -272,6 +309,7 @@
             tempoRestanteSegundos = minutosDesejados * 60;
 
             document.getElementById('painel-config').classList.add('hidden');
+            document.getElementById('painel-resultado').classList.add('hidden');
             document.getElementById('painel-quiz').classList.remove('hidden');
 
             atualizarDisplayCronometro();
@@ -310,6 +348,7 @@
             const suporteEl = document.getElementById('texto-suporte');
             if (q.supportText && q.supportText.trim() !== "") {
                 suporteEl.innerHTML = q.supportText;
+                suporteEl.scrollTop = 0;
                 suporteEl.classList.remove('hidden');
             } else {
                 suporteEl.classList.add('hidden');
@@ -377,9 +416,18 @@
             if (confirm("Deseja realmente desistir do simulado atual e voltar ao início?")) {
                 clearInterval(timerInterval);
                 document.getElementById('painel-quiz').classList.add('hidden');
+                document.getElementById('painel-resultado').classList.add('hidden');
                 document.getElementById('painel-config').classList.remove('hidden');
             }
         });
+
+        function voltarAoInicio() {
+            clearInterval(timerInterval);
+            document.getElementById('painel-quiz').classList.add('hidden');
+            document.getElementById('painel-resultado').classList.add('hidden');
+            document.getElementById('painel-config').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         function finalizarSimulado() {
             clearInterval(timerInterval);
@@ -463,7 +511,8 @@
             });
             revisaoHTML += `</div>`;
 
-            document.getElementById('painel-quiz').innerHTML = `
+            const painelResultado = document.getElementById('painel-resultado');
+            painelResultado.innerHTML = `
                 <div class="text-center py-6">
                     <h2 class="text-xl font-bold text-slate-900 mb-1">Simulado Concluído!</h2>
                     <p class="text-xs text-slate-500 mb-6">Confira o seu resumo de desempenho e a correção detalhada abaixo.</p>
@@ -485,12 +534,16 @@
                     ${revisaoHTML}
 
                     <div class="mt-8">
-                        <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-xs transition shadow-sm">
+                        <button type="button" onclick="voltarAoInicio()" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-xs transition shadow-sm cursor-pointer">
                             Realizar Novo Simulado
-                        </a>
+                        </button>
                     </div>
                 </div>
             `;
+
+            document.getElementById('painel-quiz').classList.add('hidden');
+            painelResultado.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
