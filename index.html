@@ -37,9 +37,14 @@
                 </select>
             </div>
 
-            <!-- Seleção de Matérias e Quantidades -->
+            <!-- Seleção de Matérias e Quantidades com Botão de Marcar/Desmarcar Todos -->
             <div class="mb-4">
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Matérias e Quantidade de Questões:</label>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="block text-xs font-bold text-slate-600 uppercase">Matérias e Quantidade de Questões:</label>
+                    <button type="button" id="btn-selecionar-todos" class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition cursor-pointer">
+                        Selecionar / Desmarcar Todos
+                    </button>
+                </div>
                 <div id="container-materias-checkboxes" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 p-3.5 bg-slate-50 border border-slate-200 rounded-xl max-h-64 overflow-y-auto">
                     <!-- Gerado dinamicamente via JS de acordo com o cargo -->
                 </div>
@@ -93,7 +98,7 @@
             </div>
         </div>
 
-        <!-- Bloco de Resultado Final (Separado para preservar o DOM do Quiz) -->
+        <!-- Bloco de Resultado Final -->
         <div id="painel-resultado" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hidden"></div>
 
     </main>
@@ -160,21 +165,20 @@
             banco_infra_bd: typeof banco_infra_bd !== 'undefined' ? banco_infra_bd : []
         }[id] || []);
 
-        // Vincula automaticamente os textos-base às questões dependentes antes de embaralhar
         function vincularTextosBase(idBanco, listaQuestoes) {
             const copia = listaQuestoes.map(q => ({ ...q }));
             if (idBanco !== 'banco_pt') return copia;
 
             const intervalosTextoBase = [
                 [9, 16],  // Crônica de Rachel de Queiroz
-                [17, 18], // Poema 'Vela' (Sophia de Mello Breyner)
-                [19, 23], // Crônica 'Beijinho, beijinho' (Verissimo)
+                [17, 18], // Poema 'Vela'
+                [19, 23], // Crônica 'Beijinho, beijinho'
                 [24, 28], // Texto de Rafael Brisque Neiva
-                [29, 38], // Conto 'A velha contrabandista' (Stanislaw Ponte Preta)
-                [39, 48], // Texto sobre 'récorde' (Sérgio Rodrigues)
-                [49, 58], // Crônica 'No ônibus' (Carlos Drummond de Andrade)
-                [59, 65], // Texto 1 (José Manuel Diogo)
-                [66, 76]  // Texto 2 (Clécio Branco)
+                [29, 38], // Conto 'A velha contrabandista'
+                [39, 48], // Texto sobre 'récorde'
+                [49, 58], // Crônica 'No ônibus'
+                [59, 65], // Texto 1
+                [66, 76]  // Texto 2
             ];
 
             intervalosTextoBase.forEach(([inicio, fim]) => {
@@ -256,6 +260,29 @@
             atualizarTotalQuestoes();
         }
 
+        // Funcionalidade do botão Selecionar / Desmarcar Todos
+        document.getElementById('btn-selecionar-todos').addEventListener('click', () => {
+            const checkboxes = document.querySelectorAll('input[name="materia-filtro"]:not(:disabled)');
+            if (checkboxes.length === 0) return;
+
+            // Verifica se todos estão marcados; se sim, desmarca todos. Caso contrário, marca todos.
+            const todosMarcados = Array.from(checkboxes.every(cb => cb.checked));
+            const acaoMarcar = !todosMarcados;
+
+            checkboxes.forEach(cb => {
+                cb.checked = acaoMarcar;
+                const numInput = document.getElementById(`qtd-${cb.value}`);
+                if (numInput) {
+                    numInput.disabled = !acaoMarcar;
+                    if (acaoMarcar && (parseInt(numInput.value, 10) || 0) === 0) {
+                        const maxVal = parseInt(numInput.max, 10) || 5;
+                        numInput.value = Math.min(5, maxVal);
+                    }
+                }
+            });
+            atualizarTotalQuestoes();
+        });
+
         document.getElementById('select-cargo').addEventListener('change', atualizarCheckboxesMaterias);
         window.addEventListener('DOMContentLoaded', atualizarCheckboxesMaterias);
 
@@ -286,7 +313,6 @@
                 if (Array.isArray(bancoOriginal) && bancoOriginal.length > 0) {
                     const qComMateria = bancoOriginal.map(q => ({ ...q, materiaOrigem: nomeMateria }));
                     
-                    // Algoritmo Fisher-Yates para sorteio uniforme dentro de cada matéria
                     for (let i = qComMateria.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
                         [qComMateria[i], qComMateria[j]] = [qComMateria[j], qComMateria[i]];
