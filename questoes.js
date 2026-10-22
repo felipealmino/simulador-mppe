@@ -2133,6 +2133,108 @@ const banco_legis_mppe = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Correto. O Corregedor-Geral é eleito pelo Colégio de Procuradores de Justiça dentre os integrantes da segunda instância (Procuradores de Justiça) para mandato de dois anos."
+    },
+    {
+        topic: "Lei Orgânica Nacional do MP (Garantias)",
+        supportText: "",
+        q: "Clara é Promotora de Justiça. Diante dessa informação, com base na Lei Orgânica Nacional do Ministério Público (Lei Federal nº 8.625/1993), é correto afirmar que", //[cite: 14]
+        options: [
+            "Clara poderá ter revista sua remuneração através e na forma que a lei federal dispuser.",
+            "Clara terá o vencimento fixado com diferença não excedente a quinze por cento de uma para outra entrância ou categoria.",
+            "Clara está sujeita a regime jurídico especial e tem, entre outras, a garantia da inamovibilidade, salvo por motivo de interesse público.",
+            "Clara poderá usufruir de dez dias de licença após contrair casamento.",
+            "Clara possui como prerrogativa, no exercício de sua função, promover inspeções e diligências investigatórias junto às autoridades, órgãos e entidades, após autorização do Procurador-Geral de Justiça."
+        ],
+        answer: 2,
+        disclaimer: "Nos termos do art. 38, II, da LONMP (Lei nº 8.625/93), os membros do MP gozam da garantia de inamovibilidade, salvo por motivo de interesse público, mediante decisão do órgão colegiado competente." //[cite: 14]
+    },
+    {
+        topic: "Código de Ética do Ministério Público (CNMP)",
+        supportText: "",
+        q: "A Resolução nº 261/2023, do Conselho Nacional do Ministério Público (CNMP), instituiu o Código de Ética do Ministério Público brasileiro. Com base na citada resolução, assinale a alternativa correta.", //[cite: 14]
+        options: [
+            "Não configura ato atentatório ao decoro do cargo e à dignidade das funções institucionais conduta do membro do Ministério Público que caracterize tratamento injusto ou arbitrário em face de determinada pessoa.",
+            "Considera-se atividade político-partidária exercida pelo membro do Ministério Público a prática de atos de apoio público e direto a determinado candidato ou partido político.",
+            "A integridade de conduta do membro do Ministério Público, realizada fora do âmbito da atividade funcional, não é pertinente para a contribuição da fundada confiança dos cidadãos na Instituição.",
+            "Não é dever do membro do Ministério Público zelar pela razoável duração dos processos judiciais sob sua responsabilidade, considerando que eles tramitam sob a gerência do Poder Judiciário.",
+            "O membro do Ministério Público não exercerá atividade empresarial, ainda que na condição de acionista ou cotista, mesmo que não seja o controlador ou gerente."
+        ],
+        answer: 1,
+        disclaimer: "O Código de Ética do MP (Res. 261/2023) veda expressamente a manifestação de apoio público a candidatos ou partidos, caracterizando atividade político-partidária. O membro do MP pode ser acionista ou cotista de empresa, desde que não atue na administração/gerência." //[cite: 14]
+    },
+    {
+        topic: "Lei Orgânica Nacional do MP (Organização)",
+        supportText: "",
+        q: "A respeito da Lei Orgânica Nacional do Ministério Público, é correto afirmar que é órgão da Administração Superior do Ministério Público", //[cite: 15]
+        options: [
+            "Centro de Apoio Operacional.",
+            "Órgão de Apoio Administrativo.",
+            "Corregedoria-Geral do Ministério Público.",
+            "Centro de Estudos e Aperfeiçoamento Funcional.",
+            "Comissão de Concurso Público."
+        ],
+        answer: 2,
+        disclaimer: "São órgãos da Administração Superior do MP (art. 12 a 17 da LONMP): a Procuradoria-Geral de Justiça, o Colégio de Procuradores, o Conselho Superior do MP e a Corregedoria-Geral." //[cite: 15]
+    },
+    {
+        topic: "Conselho Nacional do Ministério Público (CNMP)",
+        supportText: "",
+        q: "No que concerne ao Conselho Nacional do Ministério Público (CNMP), assinale a alternativa correta.", //[cite: 15]
+        options: [
+            "O CNMP é composto por quinze membros nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Congresso Nacional.",
+            "O CNMP é composto por quinze membros nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.",
+            "O CNMP é composto por quatorze membros nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Congresso Nacional.",
+            "O CNMP é composto por quinze membros nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria relativa do Senado Federal.",
+            "O CNMP é composto por quatorze membros nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal."
+        ],
+        answer: 1,
+        disclaimer: "Conforme o art. 130-A da Constituição Federal, o CNMP compõe-se de 15 membros nomeados pelo Presidente da República, após aprovação da escolha pela maioria absoluta do Senado Federal, para mandato de dois anos." //[cite: 15]
+    },
+    {
+        topic: "Disposições Constitucionais sobre o MP",
+        supportText: "Acerca das disposições constitucionais sobre o Ministério Público, informe se é verdadeiro (V) ou falso (F) o que se afirma a seguir:\n( ) O Ministério Público elaborará sua proposta orçamentária dentro dos limites estabelecidos na lei orçamentária anual.\n( ) Os Procuradores-Gerais nos Estados e no Distrito Federal e Territórios poderão ser destituídos por deliberação da maioria absoluta do Poder Legislativo, na forma da lei complementar respectiva.\n( ) Ressalvada a forma de investidura, aos membros do Ministério Público junto aos Tribunais de Contas aplicam-se as mesmas disposições constitucionais aplicadas aos demais membros do Ministério Público, inclusive quanto aos direitos e às vedações.\n( ) A destituição do Procurador-Geral da República, por iniciativa do Presidente da República, deverá ser precedida de autorização da maioria absoluta do Senado Federal.", //[cite: 17]
+        q: "Assinale a alternativa com a sequência correta.", //[cite: 17]
+        options: [
+            "F - F - V - F.",
+            "V - F - V - F.",
+            "V - V - F - F.",
+            "F - F - V - V.",
+            "F - V - F - V."
+        ],
+        answer: 4,
+        disclaimer: "Item I é falso (os limites são fixados na Lei de Diretrizes Orçamentárias - LDO, e não na LOA). Item III é falso porque a CF não ressalva a forma de investidura (Art. 130: 'aplicam-se as disposições [...] pertinentes a direitos, vedações e forma de investidura'). Sequência: F, V, F, V." //[cite: 17]
+    },
+    {
+        topic: "Política Nacional do Ministério Público Digital",
+        supportText: "",
+        q: "Assinale a alternativa correta no que diz respeito à Resolução nº 276/2023, do Conselho Nacional do Ministério Público, que dispõe sobre a Política Nacional do Ministério Público Digital.", //[cite: 18]
+        options: [
+            "Os ramos e unidades do Ministério Público que fizerem uso dos dados disponibilizados na Plataforma não serão responsáveis pelo registro de sua origem e preservação de sua segurança e qualidade.",
+            "O Manual do MP Digital será objeto de revisão, sempre que houver necessidade, mediante alteração da Resolução nº 276/2023, após parecer do Comitê Gestor do MP Digital sobre o mérito.",
+            "Caberá ao Comitê Gestor do MP Digital a elaboração do Manual do MP Digital, a ser finalizado no prazo máximo de um ano, respeitadas as informações mínimas solicitadas na Resolução nº 276/2023.",
+            "O Catálogo de Soluções Digitais reunirá informações sobre as soluções tecnológicas implementadas e utilizadas, excluídas as soluções tecnológicas ainda em desenvolvimento em cada ramo ou unidade do Ministério Público.",
+            "Será dispensada a celebração de convênio, acordo de cooperação técnica ou instrumento congênere para compartilhamento de dados e serviços de integração entre os ramos e unidades do Ministério Público que tiverem aderido à Plataforma MP Digital."
+        ],
+        answer: 4,
+        disclaimer: "No âmbito da desburocratização digital promovida pelo CNMP, a adesão à Plataforma MP Digital já supre a necessidade de convênios bilaterais para o compartilhamento e integração de dados entre os MPs." //[cite: 18]
+    },
+    {
+        topic: "Órgãos do Ministério Público",
+        type: "vf",
+        supportText: "",
+        q: "Ao Colégio de Procuradores de Justiça, composto por todos os procuradores de justiça, compete julgar recurso contra decisão de vitaliciamento de membro do Ministério Público e decisão condenatória em procedimento administrativo disciplinar.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Nos termos da Lei nº 8.625/1993 (LONMP), o Conselho Superior é quem decide o vitaliciamento e aplica as penas disciplinares originariamente, cabendo ao Colégio de Procuradores o julgamento dos eventuais recursos contra essas decisões (art. 12, X e XI)." //[cite: 25]
+    },
+    {
+        topic: "Garantias Institucionais (Prisão de Membro do MP)",
+        type: "vf",
+        supportText: "",
+        q: "Membro do Ministério Público somente poderá ser preso por ordem judicial escrita, salvo no caso de flagrante pela prática de crime inafiançável, hipótese em que a autoridade deverá, no prazo máximo de 24 horas, realizar a comunicação da prisão e apresentar o membro do Ministério Público ao procurador-geral de justiça.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "É a literalidade da prerrogativa estampada no art. 40, inciso III, da Lei Orgânica Nacional do Ministério Público (Lei nº 8.625/1993)." //[cite: 25]
     }
 ];
 
@@ -3137,6 +3239,213 @@ const banco_noc_adm = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Correto. No BPMN, círculos representam Eventos, retângulos de cantos arredondados representam Atividades/Tarefas e losangos representam Gateways (decisões/controle de fluxo)."
+    },
+    {
+        topic: "Ética e Função Pública",
+        type: "vf",
+        supportText: "",
+        q: "O exercício da função pública deve se orientar pelos preceitos legais e, também, pela busca de assegurar as condições do livre exercício da cidadania.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A atuação do agente público não se restringe à mera legalidade fria, devendo buscar o bem comum e a garantia dos direitos fundamentais e do livre exercício da cidadania." //[cite: 25]
+    },
+    {
+        topic: "Ética e Moral",
+        type: "vf",
+        supportText: "",
+        q: "A ética é restrita à ciência teórica e concebida como estudo valorativo das regras ou dos costumes de uma comunidade específica.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A ética não é restrita à ciência teórica; ela orienta a conduta prática e a tomada de decisões morais. O estudo valorativo das regras e costumes locais é, por definição, o campo da moral." //[cite: 25]
+    },
+    {
+        topic: "Cidadania",
+        type: "vf",
+        supportText: "",
+        q: "O exercício da cidadania é fundamental para que a natureza da ação coletiva não se restrinja à disputa de poder, a fim de atender ao bem comum na solução dos problemas sociais.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O pleno exercício da cidadania eleva o debate público para além de interesses políticos ou disputas de poder, focando na resolução conjunta das demandas e no bem-estar da coletividade." //[cite: 25]
+    },
+    {
+        topic: "Ética nas Instituições Públicas",
+        type: "vf",
+        supportText: "",
+        q: "As modificações sobre valores vivenciadas na sociedade contemporânea são restritas à vida particular, deixando de trazer reflexos evolutivos nas instituições públicas.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Os valores da sociedade impactam diretamente as instituições públicas, que devem evoluir para refletir as novas demandas sociais de transparência, diversidade, sustentabilidade e ética." //[cite: 25]
+    },
+    {
+        topic: "Funções Administrativas (Direção)",
+        type: "vf",
+        supportText: "",
+        q: "A finalidade da direção é fazer com que todas as atividades de uma empresa sejam operadas de forma autônoma, para que os resultados comuns sejam alcançados.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A direção coordena, guia e orienta a execução, atuando como liderança para alinhar os esforços. Operações totalmente 'autônomas' podem levar ao desalinhamento estratégico." //[cite: 25]
+    },
+    {
+        topic: "Funções Administrativas (Controle)",
+        type: "vf",
+        supportText: "",
+        q: "As informações e decisões de controle permitem manter uma organização ou um sistema orientado para o cumprimento dos objetivos.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O controle existe para monitorar resultados, aplicar correções de rota preventivas ou corretivas e assegurar o atingimento das metas e objetivos propostos no planejamento." //[cite: 25]
+    },
+    {
+        topic: "Planejamento Tático",
+        type: "vf",
+        supportText: "",
+        q: "O plano de marketing, o plano de recursos humanos e o plano financeiro são exemplos de planos táticos.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O planejamento tático ocorre no nível intermediário (médio prazo) e abrange cada departamento ou área funcional da empresa de forma específica." //[cite: 26]
+    },
+    {
+        topic: "Planejamento Estratégico (Missão)",
+        type: "vf",
+        supportText: "",
+        q: "A declaração da missão documenta o propósito da existência de uma organização e define explicitamente as responsabilidades para com seus principais grupos de interesse.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A missão responde à pergunta 'Para que existimos?'. É a razão de ser da organização e seu papel na sociedade perante os stakeholders." //[cite: 26]
+    },
+    {
+        topic: "Análise SWOT",
+        type: "vf",
+        supportText: "",
+        q: "Na análise SWOT, as ameaças são situações externas ou internas, atuais ou futuras, que, se não eliminadas, minimizadas ou evitadas pela organização, podem afetá-la negativamente.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Na matriz SWOT, Ameaças e Oportunidades referem-se única e exclusivamente ao ambiente EXTERNO (cenário incontrolável). O ambiente interno é composto por Forças e Fraquezas." //[cite: 26]
+    },
+    {
+        topic: "Departamentalização Funcional",
+        type: "vf",
+        supportText: "",
+        q: "As desvantagens da departamentalização funcional são o princípio da especialização ocupacional e a simplificação do treinamento e da supervisão dos subordinados.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A especialização ocupacional e a simplificação do treinamento são, na verdade, as principais VANTAGENS da departamentalização por funções." //[cite: 26]
+    },
+    {
+        topic: "Departamentalização por Clientes",
+        type: "vf",
+        supportText: "",
+        q: "O critério de departamentalização por cliente é apropriado quando a organização atende a diferentes tipos de clientes com necessidades muito distintas ou quando os clientes são iguais, mas têm necessidades diferentes.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Esta modelagem agrupa as atividades conforme o público-alvo, permitindo foco total na satisfação das necessidades específicas de cada nicho de clientes." //[cite: 26]
+    },
+    {
+        topic: "Gestão de Processos",
+        type: "vf",
+        supportText: "",
+        q: "Os processos que não são ajustados não agregam valor ao projeto ou aos resultados e, ao mesmo tempo, aumentam o custo e o prazo de execução do cronograma.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A ausência de otimização (melhoria contínua) e adequação dos processos gera burocracia desnecessária, desperdício de recursos e atrasos operacionais." //[cite: 26]
+    },
+    {
+        topic: "Estrutura Analítica do Projeto (EAP)",
+        type: "vf",
+        supportText: "",
+        q: "As equipes do projeto definem processos que permitem a conclusão de tarefas e as atribuições de trabalho, de forma que podem concordar com um processo de decomposição ao utilizarem uma estrutura analítica do projeto (EAP), uma lista de pendências ou um quadro de tarefas.", //[cite: 26]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A EAP fraciona o trabalho total do projeto em componentes menores (pacotes de trabalho) mais fáceis de gerenciar, estimar e atribuir." //[cite: 26]
+    },
+    {
+        topic: "Gestão de Desempenho (OKR)",
+        type: "vf",
+        supportText: "",
+        q: "Os indicadores-chave de desempenho são usados no âmbito da metodologia OKR e caracterizam-se por serem objetivos, mensuráveis, práticos e consensuais dentro da organização.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Os OKRs (Objectives and Key Results) apoiam-se em Key Results (resultados-chave), que funcionam como métricas e indicadores concretos para avaliar o alinhamento com o objetivo." //[cite: 27]
+    },
+    {
+        topic: "Planejamento Tático",
+        type: "vf",
+        supportText: "",
+        q: "O planejamento tático é projetado para médio prazo e abrange cada departamento da organização, de modo que se preocupa em atingir os objetivos departamentais.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O planejamento divide-se em Estratégico (institucional/longo prazo), Tático (departamental/médio prazo) e Operacional (tarefas rotineiras/curto prazo)." //[cite: 27]
+    },
+    {
+        topic: "Análise PESTEL",
+        type: "vf",
+        supportText: "",
+        q: "Na análise do ambiente externo, o uso da ferramenta PESTEL é adequado, pois ela abrange variáveis externas, tais como políticas, econômicas e sociais, não sendo contemplada a dimensão tecnológica, por esta ser uma variável de âmbito interno.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A sigla PESTEL representa Fatores Políticos, Econômicos, Sociais, Tecnológicos, Ecológicos e Legais. A dimensão tecnológica é, portanto, contemplada no escopo macroambiental (externo)." //[cite: 27]
+    },
+    {
+        topic: "Qualidade de Vida no Trabalho (QVT)",
+        type: "vf",
+        supportText: "",
+        q: "A autonomia dos colaboradores influencia negativamente a qualidade de vida no trabalho, pois a ausência de direcionamento e controle por parte da gestão provoca um frequente adoecimento psicológico dos funcionários.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "O enriquecimento do cargo e a concessão de autonomia são pilares motivacionais (conforme a teoria de Hackman & Oldham) que melhoram significativamente a Qualidade de Vida no Trabalho (QVT)." //[cite: 27]
+    },
+    {
+        topic: "Modelos Administrativos (Abordagem Clássica)",
+        type: "vf",
+        supportText: "",
+        q: "As abordagens clássica e burocrática são mais adequadas para ambientes complexos e de instabilidade, já que estruturas mais organizadas e bem documentadas favorecem mudanças organizacionais cada vez mais rápidas.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Abordagens mecanistas (Clássica/Burocrática) são altamente rígidas, indicadas apenas para ambientes estáveis. Elas são ineficientes em cenários complexos, instáveis e de rápidas mudanças." //[cite: 27]
+    },
+    {
+        topic: "Gestão do Conhecimento",
+        type: "vf",
+        supportText: "",
+        q: "A aprendizagem contínua e a requalificação tornam-se cada vez mais importantes ao se considerar o contexto digital, o qual exige constante aprendizado e rápida atualização.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Em ambientes disruptivos e digitais, conceitos como upskilling, reskilling e lifelong learning (aprendizado contínuo) são vitais para a sobrevivência e competitividade das organizações." //[cite: 27]
+    },
+    {
+        topic: "Evolução da Administração Pública no Brasil",
+        type: "vf",
+        supportText: "",
+        q: "A criação do Ministério da Administração e Reforma do Estado durante o governo de Getúlio Vargas, em 1938, foi responsável por estruturar o serviço público e implementar o modelo burocrático no Brasil.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Vargas implementou o modelo burocrático em 1938 através do DASP (Departamento Administrativo do Serviço Público). O MARE foi criado muito tempo depois, na década de 1990 (Governo FHC), para implantar o modelo gerencial." //[cite: 27]
+    },
+    {
+        topic: "Gestão de Projetos (EAP)",
+        type: "vf",
+        supportText: "",
+        q: "No planejamento de um projeto, a estrutura analítica do projeto é essencial para decompor o escopo do projeto em partes menores e gerenciáveis, bem como para garantir que todas as entregas sejam contempladas.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A Estrutura Analítica do Projeto (EAP/WBS) cumpre exatamente o papel de subdivisão hierárquica e visual dos pacotes de trabalho e validação do escopo total." //[cite: 27]
+    },
+    {
+        topic: "Gestão da Qualidade (Ciclo PDCA)",
+        type: "vf",
+        supportText: "",
+        q: "Na fase de agir do ciclo PDCA, é preciso capacitar os colaboradores para que ocorra a implementação do que foi planejado na gestão de processos.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A capacitação dos colaboradores e a implementação das ações ocorrem na fase de Execução (DO - Fazer). A fase de Agir (ACT) lida com as correções de desvios após a checagem ou com a padronização do que deu certo." //[cite: 27]
+    },
+    {
+        topic: "Inovação (Design Thinking)",
+        type: "vf",
+        supportText: "",
+        q: "O design thinking é uma ferramenta utilizada pelas organizações para a resolução de problemas, sobretudo os complexos, que envolvem cenários imprevisíveis e exigem respostas mais rápidas e assertivas ao desafio enfrentado.", //[cite: 27]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Abordagem colaborativa e orientada à empatia, o Design Thinking busca a inovação para dores complexas focando na centralidade do ser humano e em respostas rápidas via prototipação." //[cite: 27]
     }
 ];
 
