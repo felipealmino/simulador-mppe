@@ -1934,6 +1934,48 @@ const banco_seg_ti = [
         options: ["Certo", "Errado"], 
         answer: 0, 
         disclaimer: "Correto. O Authorization Code com PKCE (Proof Key for Code Exchange) mitiga ataques de interceptação do código de autorização tanto em clientes públicos quanto confidenciais." 
+    },
+    {
+        topic: "Segurança da Informação (LGPD)",
+        supportText: "",
+        q: "A Lei Geral de Proteção de Dados Pessoais (LGPD) estabelece princípios que orientam o tratamento de dados pessoais, buscando assegurar direitos fundamentais como a privacidade, a autodeterminação informativa e a minimização dos dados. Sobre este último princípio, uma prática que o exemplifica, é",
+        options: [
+            "coletar e tratar somente os dados de fato necessários para a realização do serviço.",
+            "garantir que todos os dados pessoais sejam criptografados.",
+            "compartilhar dados com terceiros apenas mediante contrato formal.",
+            "manter todos os dados pessoais armazenados pelo prazo máximo legal possível.",
+            "obter consentimento por escrito antes de qualquer mínimo tratamento dos dados."
+        ],
+        answer: 0,
+        disclaimer: "O princípio da minimização (art. 6º, III, da LGPD) restringe o tratamento ao mínimo necessário para a realização das finalidades, abrangendo dados pertinentes, proporcionais e não excessivos."
+    },
+    {
+        topic: "Segurança e Criptografia",
+        supportText: "",
+        q: "Uma fintech está desenvolvendo um aplicativo que utiliza criptografia assimétrica para autenticar transações financeiras. Cada usuário possui um par de chaves gerado localmente (privada e pública). No entanto, um usuário perdeu o dispositivo onde sua chave privada estava armazenada, mas ainda possui a chave pública registrada no servidor. Assinale a opção que apresenta o impacto mais provável dessa situação.",
+        options: [
+            "O usuário poderá continuar realizando transações normalmente, pois a chave pública é suficiente para assinar digitalmente.",
+            "O usuário não conseguirá assinar novas transações, pois a assinatura requer a chave privada, que foi perdida.",
+            "O servidor poderá gerar uma nova chave privada, a partir da chave pública, para restaurar o acesso.",
+            "Um atacante (hacker) poderá descriptografar mensagens futuras enviadas para o usuário, se conseguir acesso à chave pública.",
+            "A chave pública será automaticamente invalidada pelo sistema, sem necessidade de intervenção manual."
+        ],
+        answer: 1,
+        disclaimer: "Na criptografia assimétrica, a assinatura digital é gerada utilizando a chave privada do remetente (garantindo autenticidade e não-repúdio). Sem a chave privada, é impossível gerar novas assinaturas válidas."
+    },
+    {
+        topic: "Autorização e Gestão de Identidades (OAuth)",
+        supportText: "",
+        q: "Uma equipe de desenvolvimento está criando um aplicativo móvel, que permite aos usuários publicar fotos diretamente no seu perfil de uma rede social, sem precisar fornecer login e senha da conta. O time opta por utilizar OAuth 2.0. Nesse cenário, a principal vantagem dessa abordagem é",
+        options: [
+            "permitir que o aplicativo armazene as credenciais do usuário para reutilização posterior, evitando novas autenticações.",
+            "prover um canal de comunicação criptografado ponto a ponto entre o aplicativo e a rede social.",
+            "garantir que o aplicativo tenha acesso apenas aos recursos autorizados pelo usuário, sem conhecer suas credenciais.",
+            "substituir o protocolo HTTPS para reduzir o custo de transmissão de dados.",
+            "impedir que a rede social armazene qualquer informação do usuário, durante o uso do aplicativo."
+        ],
+        answer: 2,
+        disclaimer: "O OAuth 2.0 é um protocolo de autorização que permite a aplicativos de terceiros acessarem recursos protegidos em nome do usuário sem exigir que o usuário compartilhe suas credenciais originais."
     }
 ];
 
@@ -2005,6 +2047,188 @@ const banco_eng_soft_ia = [
         options: ["Certo", "Errado"], 
         answer: 1, 
         disclaimer: "Errado. Decorar os dados de treino (erro baixo no treino) e falhar nos dados novos de teste (erro alto no teste) caracteriza o 'Overfitting' (sobreajuste)." 
+    },
+    {
+        topic: "Metodologias de Desenvolvimento",
+        supportText: "",
+        q: "Apesar da ampla adoção de metodologias ágeis, o modelo Cascata (Waterfall) ainda é a abordagem mais indicada para cenários específicos. Assinale a opção em que o cenário descrito apresenta o projeto mais adequado para a utilização do modelo Cascata.",
+        options: [
+            "Criação de uma nova rede social para competir em um mercado dinâmico, onde as funcionalidades precisam ser constantemente ajustadas com base no feedback dos primeiros usuários para garantir a adesão do público.",
+            "Desenvolvimento do Produto Mínimo Viável (MVP) de um aplicativo para uma startup, onde a velocidade de lançamento no mercado é o fator crítico para validar a ideia de negócio e garantir uma rodada de investimentos.",
+            "Manutenção de um grande portal de notícias, que exige a publicação diária de conteúdo e a implementação semanal de novas integrações com APIs de parceiros, para se manter competitivo.",
+            "Desenvolvimento de um sistema de controle de tráfego aéreo, onde os requisitos são imutáveis por questões de segurança e a documentação detalhada de cada fase é uma exigência para a certificação governamental.",
+            "Construção de um protótipo interativo de alta fidelidade, para uma única apresentação a um grupo de investidores, onde o impacto visual e a demonstração de um fluxo de usuário completo, são os únicos objetivos."
+        ],
+        answer: 3,
+        disclaimer: "Sistemas críticos com requisitos rígidos, imutáveis e que exigem alta rastreabilidade e certificação governamental beneficiam-se do rigor preditivo e documental do modelo Cascata."
+    },
+    {
+        topic: "Metodologias Ágeis (Scrum)",
+        supportText: "",
+        q: "Em um projeto de desenvolvimento de software utilizando Scrum, durante a execução de uma sprint , o cliente solicita mudanças de requisitos. A abordagem mais alinhada às boas práticas ágeis, para lidar com essas solicitações, é",
+        options: [
+            "adicionar as novas solicitações diretamente na sprint atual, solicitando apoio do Scrum Master para avaliar o impacto.",
+            "rejeitar todas as mudanças após o início da sprint, para proteger o time de interrupções.",
+            "discutir e priorizar as novas solicitações, junto ao product owner, para registrá-las no Product Backlog e avaliá-las para sprints futuras.",
+            "criar um documento formal de controle de mudanças, que deve ser aprovado por um comitê antes de qualquer alteração no Backlog.",
+            "pedir ao cliente para esperar até o final da sprint, para sugerir novas funcionalidades."
+        ],
+        answer: 2,
+        disclaimer: "No Scrum, o escopo da Sprint não deve sofrer alterações que coloquem em risco a Meta da Sprint. Novos requisitos devem ser avaliados e priorizados pelo Product Owner no Product Backlog."
+    },
+    {
+        topic: "Testes de Software",
+        supportText: "",
+        q: "Durante o desenvolvimento de um sistema de gestão hospitalar, a equipe de desenvolvimento precisa garantir a corretude da função de cálculo de doses de medicamentos. Ao testar, foi identificado que a função retorna valores incorretos quando o peso do paciente é inserido em libras ao invés de quilogramas. Para garantir a lógica interna e o correto tratamento dos dados de entrada, o teste mais apropriado e eficiente para identificar esse tipo de falha é o",
+        options: [
+            "Teste de Integração, pois verifica a comunicação e a passagem de dados entre a função de cálculo e o módulo de cadastro de pacientes.",
+            "Teste de Sistema, pois valida se o requisito funcional de cálculo de doses está em conformidade com a especificação completa do sistema.",
+            "Teste de Aceitação, pois foca na validação dos requisitos e da usabilidade sob a perspectiva do usuário final.",
+            "Teste de Unidade, pois avalia a lógica interna da função de cálculo de forma isolada, com diversas entradas de dados.",
+            "Teste de Performance, pois mede a velocidade com que o cálculo é realizado sob diferentes cargas de trabalho."
+        ],
+        answer: 3,
+        disclaimer: "O Teste de Unidade atua no menor nível de código testável (uma função ou método isolado), garantindo que a lógica matemática interna de conversão e cálculo funcione corretamente para diferentes inputs."
+    },
+    {
+        topic: "Algoritmos e Grafos",
+        supportText: "",
+        q: "Em um grafo ponderado, não-direcionado, conexo com n vértices, a árvore geradora mínima (MST) possui sempre",
+        options: [
+            "as n arestas de menor peso do grafo que não formam ciclo.",
+            "n+1 arestas e o menor caminho entre qualquer par de vértices na árvore.",
+            "a garantia de excluir a aresta de maior peso do grafo original, independentemente da quantidade de arestas.",
+            "o mesmo número de arestas que o grafo original, com a garantia de menor caminho entre qualquer par de vértices na árvore.",
+            "n-1 arestas, cuja soma dos pesos das arestas é a menor possível."
+        ],
+        answer: 4,
+        disclaimer: "Por definição, qualquer árvore geradora em um grafo conexo de 'n' vértices terá exatamente 'n-1' arestas sem formar ciclos."
+    },
+    {
+        topic: "Controle de Versão (Git)",
+        supportText: "",
+        q: "Durante o desenvolvimento colaborativo em um projeto Git, pode surgir a demanda de integrar alterações de diferentes branches. Neste contexto, dois comandos são muito comuns para lidar com essa necessidade: git merge e git rebase. Assinale a situação em que o comando git rebase é mais indicado do que git merge.",
+        options: [
+            "Quando precisa manter o contexto histórico de quando as branches foram unidas.",
+            "Quando deseja preservar a estrutura ramificada do desenvolvimento.",
+            "Quando deseja ignorar commits antigos.",
+            "Quando deseja manter um histórico linear, reescrevendo a base dos commits.",
+            "Quando precisa excluir branches antigos após união."
+        ],
+        answer: 3,
+        disclaimer: "O 'git rebase' move a base do branch atual para a ponta do branch de destino, reescrevendo o histórico para criar uma linha do tempo reta e linear, evitando commits de merge extras."
+    },
+    {
+        topic: "Complexidade de Algoritmos",
+        supportText: "",
+        q: "A distinção entre a dificuldade de encontrar uma solução e a facilidade de verificá-la, é um pilar da teoria da complexidade. Um problema que exibe a característica de ter uma verificação de solução computacionalmente rápida (tempo polinomial), em contraste com um processo de busca da solução que pode ser extremamente lento (tempo exponencial), se enquadra na definição da classe de complexidade",
+        options: [
+            "P.",
+            "NP.",
+            "EXPTIME.",
+            "NP-Difícil.",
+            "NP-Completo."
+        ],
+        answer: 1,
+        disclaimer: "A classe NP (Nondeterministic Polynomial time) agrupa os problemas de decisão para os quais as instâncias com resposta afirmativa possuem demonstrações que podem ser verificadas em tempo polinomial."
+    },
+    {
+        topic: "Padrões de Projeto (Design Patterns)",
+        supportText: "",
+        q: "Uma empresa está criando um sistema de composição de interfaces gráficas, onde elementos como janelas, botões e painéis podem conter outros elementos, formando uma estrutura hierárquica. É necessário que todos os elementos, independentemente de serem simples ou compostos, sejam tratados de maneira uniforme pelo cliente. Neste contexto, o padrão de projeto mais indicado é o",
+        options: [
+            "Decorator, para adicionar funcionalidades extras a cada elemento de interface.",
+            "Bridge, para desacoplar a abstração da implementação gráfica.",
+            "Flyweight, para reduzir o consumo de memória compartilhando dados comuns.",
+            "Prototype, para clonar rapidamente elementos da interface com suas propriedades.",
+            "Composite, para tratar objetos individuais e composições de forma uniforme, permitindo operações recursivas sobre a estrutura."
+        ],
+        answer: 4,
+        disclaimer: "O padrão estrutural Composite permite compor objetos em estruturas de árvore para representar hierarquias partes-todo, permitindo que os clientes tratem objetos individuais e composições de forma uniforme."
+    },
+    {
+        topic: "Desenvolvimento Web (HTML e Formulários)",
+        supportText: "Um desenvolvedor está criando um formulário de inscrição em HTML que envia dados para o servidor via método POST. Durante os testes, percebeu que, mesmo preenchendo todos os campos, o backend não estava recebendo o valor do campo de e-mail. O campo no HTML é:\n<input type=\"email\" placeholder=\"Digite seu e-mail\">",
+        q: "A solução que corrigiria de forma mais adequada o problema, sem prejudicar a funcionalidade atual é",
+        options: [
+            "Adicionar name=\"email\" ao elemento <input>.",
+            "Alterar o atributo placeholder para label.",
+            "Trocar type=\"email\" para type=\"text\".",
+            "Adicionar id=\"email\" e vincular via JavaScript.",
+            "Usar <textarea> no lugar de <input>."
+        ],
+        answer: 0,
+        disclaimer: "Em formulários HTML padrão enviados ao servidor, apenas os elementos de input que possuem o atributo 'name' terão os seus valores passados no payload do request POST."
+    },
+    {
+        topic: "Desenvolvimento Mobile (Flutter)",
+        supportText: "",
+        q: "Uma startup decidiu criar um aplicativo híbrido usando Flutter para Android e iOS. Durante os testes, usuários relataram que a interface está lenta e apresenta travamentos ao rolar listas longas com imagens. Dentre as práticas de otimização a seguir, indique a mais adequada para este cenário.",
+        options: [
+            "Usar ListView.builder com carregamento preguiçoso (lazy loading) e cache de imagens para reduzir o uso de memória.",
+            "Renderizar todos os elementos da lista de uma só vez, para evitar carregamento dinâmico.",
+            "Aumentar a resolução das imagens, para que fiquem mais nítidas em telas de alta densidade.",
+            "Substituir ListView por Column com SingleChildScrollView, para maior controle da rolagem.",
+            "Este é um caso clássico em que a melhor solução é converter o aplicativo para nativo puro, para melhorar o desempenho."
+        ],
+        answer: 0,
+        disclaimer: "O 'ListView.builder' no Flutter constrói os itens sob demanda (apenas quando estão prestes a aparecer na tela), poupando memória e processamento em listas longas."
+    },
+    {
+        topic: "Programação e Lógica (Python)",
+        supportText: "Considere o código a seguir escrito na linguagem Python:\nnums = [1, 2, 3]\nres = [lambda: n * 2 for n in nums]\nprint(res[0](), res[1](), res[2]())",
+        q: "Indique a opção que apresenta o que será exibido após a execução do código.",
+        options: [
+            "2 4 6",
+            "6 6 6",
+            "1 2 3",
+            "Erro: lista de lambdas não pode ser executada",
+            "None None None"
+        ],
+        answer: 1,
+        disclaimer: "Em Python, closures (como os lambdas dentro da list comprehension) realizam 'late binding'. Eles capturam a referência da variável 'n', não o seu valor na iteração. Ao final do loop, 'n' será 3, resultando em 6 6 6."
+    },
+    {
+        topic: "Web Services e API REST",
+        supportText: "",
+        q: "Uma API REST foi projetada para operações críticas de alta concorrência. Durante testes, percebe-se que múltiplas requisições PUT concorrentes estão sobrescrevendo dados indevidamente. Com o intuito de mitigar este problema, considerando que o método HTTP usado será o mesmo, a técnica mais adequada será",
+        options: [
+            "usar o método PATCH em vez de PUT, assumindo que atualizações parciais evitam condições de corrida.",
+            "ativar HTTP/2 para a API, confiando que o protocolo resolverá automaticamente conflitos de escrita concorrente.",
+            "adicionar um cabeçalho Idempotency-Key nas requisições, garantindo que requisições repetidas não resultem em múltiplas atualizações.",
+            "usar exclusivamente autenticação básica (Basic Auth), presumindo que a identificação do usuário impedirá sobrescritas indevidas.",
+            "implementar controle de versão de recursos com ETags e cabeçalhos If-Match, rejeitando atualizações quando a versão enviada pelo cliente não corresponder à versão atual do recurso."
+        ],
+        answer: 4,
+        disclaimer: "O controle de concorrência otimista via ETags (Entity Tags) associado ao cabeçalho If-Match assegura que a atualização (PUT) só terá sucesso se o recurso no servidor não tiver sido modificado por terceiros desde a leitura."
+    },
+    {
+        topic: "Programação Concorrente (Java)",
+        supportText: "Em um sistema de monitoramento em tempo real, várias threads trabalham em paralelo: algumas coletam dados de sensores, enquanto outra thread central precisa verificar constantemente uma variável booleana denominada ativo, para decidir se deve continuar o processamento ou encerrar a execução. Para evitar que uma thread leia um valor desatualizado em cache da CPU, o desenvolvedor declarou essa variável como volatile.",
+        q: "No contexto do Java Memory Model, é possível afirmar que a palavra-chave volatile",
+        options: [
+            "assegura que, uma vez atribuído um valor, a variável não poderá ser modificada, estabelecendo um comportamento de imutabilidade.",
+            "assegura que a escrita em uma variável seja imediatamente visível para outras threads, sem garantir a atomicidade de operações compostas.",
+            "garante que operações compostas, como incremento (i++), sejam executadas como um passo único e indivisível por qualquer thread.",
+            "provê garantias simultâneas de visibilidade entre threads, e de atomicidade completa para todas as operações sobre a variável.",
+            "impede o acesso concorrente à variável, funcionando como um lock que permite a apenas uma thread obter acesso exclusivo por vez."
+        ],
+        answer: 1,
+        disclaimer: "Em Java, a keyword 'volatile' garante que a leitura e a escrita ocorram diretamente na memória principal (garantindo visibilidade entre threads), mas não garante a atomicidade em operações compostas."
+    },
+    {
+        topic: "Programação e Lógica (JavaScript)",
+        supportText: "Uma API retorna dados de usuários de forma assíncrona. O desenvolvedor implementou o código JavaScript a seguir.\nasync function getUsuario(id) {\n  return await fetch(`/api/usuario/${id}`).then(res => res.json());\n}\nlet usuario = getUsuario(5);\nconsole.log(usuario.nome);\nAo executar, ocorre o erro:\nTypeError: Cannot read properties of undefined (reading 'nome')",
+        q: "Neste contexto, assinale a opção que melhor explica o problema.",
+        options: [
+            "usuario é uma Promise, não o objeto; a solução é usar await getUsuario(5) ou .then(...) antes de acessar nome.",
+            "O problema é que fetch não retorna JSON válido; adicionar JSON.parse() resolve.",
+            "A função precisa de try...catch para capturar o erro antes de acessar nome.",
+            "O método await não pode ser usado dentro de funções assíncronas.",
+            "É necessário inicializar usuario como objeto vazio para evitar undefined."
+        ],
+        answer: 0,
+        disclaimer: "Uma função declarada como 'async' no JavaScript sempre retorna uma Promise. Como a chamada em 'let usuario' não utiliza 'await' (pois está fora de um escopo assíncrono), ela recebe a Promise pendente, que não possui a propriedade 'nome'."
     }
 ];
 
@@ -2077,6 +2301,48 @@ const banco_infra_bd = [
         answer: 1, 
         disclaimer: "Errado. 'FOR EACH STATEMENT' dispara a trigger apenas UMA única vez por comando SQL executado, independentemente de quantas linhas foram alteradas. Para disparar a cada linha alterada, utiliza-se 'FOR EACH ROW'." 
     },
+    {
+        topic: "Banco de Dados (SQL)",
+        supportText: "Considere a tabela MySQL denominada vendas, que contém as colunas:\nid_vendedor (identificador do vendedor, tipo inteiro, sem valores nulos)\nvalor (valor da venda, tipo float, sem valores nulos)\nAnalise a consulta MySQL a seguir.\nSELECT id_vendedor, AVG(valor) AS media_vendas_vendedor\nFROM vendas\nGROUP BY id_vendedor\nHAVING AVG(valor) > ( SELECT AVG(valor) FROM vendas );",
+        q: "Com base nessas informações, assinale a opção que descreve com maior precisão o resultado retornado por esta consulta.",
+        options: [
+            "Identifica as linhas de venda cujo valor ultrapassa a média geral da tabela e, em seguida, exibe os vendedores únicos associados a essas linhas.",
+            "Compara a média de vendas de cada vendedor com a média geral (calculada sobre todas as vendas) e retorna apenas os vendedores cuja média individual é superior.",
+            "Seleciona os vendedores cuja venda de maior valor é superior à média de vendas de toda a empresa.",
+            "Agrupa as vendas por vendedor e, dentro de cada grupo, retorna apenas aqueles em que a venda de maior valor foi superior à média de vendas do próprio grupo.",
+            "Para cada vendedor, compara sua média de vendas com a média das médias individuais de vendas de todos os outros vendedores, retornando aqueles que estão acima."
+        ],
+        answer: 1,
+        disclaimer: "A cláusula GROUP BY agrupa os dados por vendedor, calculando a média individual. A cláusula HAVING compara essa média individual com o resultado da subquery (a média geral de todas as vendas)."
+    },
+    {
+        topic: "Arquitetura em Nuvem (AWS)",
+        supportText: "",
+        q: "Uma equipe de desenvolvimento precisa processar imagens que são enviadas para um bucket no Amazon S3. A cada nova imagem, uma função deve ser executada para gerar uma versão em miniatura (thumbnail). O volume de imagens é imprevisível, podendo variar de zero a milhares por dia. A equipe quer uma solução que não exija gerenciamento de servidores e cujo custo seja calculado apenas com base nas execuções realizadas. O serviço da AWS mais indicado para atender a esses requisitos é o",
+        options: [
+            "Amazon EC2, configurando instâncias para monitorar o bucket e processar as imagens.",
+            "Amazon S3, utilizando seus recursos internos para gerar versões em miniatura das imagens.",
+            "AWS Batch, configurado para processar as imagens em lotes programados.",
+            "AWS Lambda, com gatilho para eventos de criação de objetos no bucket S3.",
+            "Amazon ECS, executando contêineres que realizam o processamento sob demanda."
+        ],
+        answer: 3,
+        disclaimer: "O AWS Lambda é o serviço serverless (sem gerenciamento de servidores) orientado a eventos da AWS. Ele escala automaticamente sob demanda e cobra apenas pelo tempo de computação consumido."
+    },
+    {
+        topic: "Contêineres e Orquestração (Docker)",
+        supportText: "",
+        q: "Em um projeto de desenvolvimento que utiliza Docker Compose, é comum organizar múltiplos serviços dentro de um arquivo docker-compose.yml ou compose.yaml. Para que esses serviços possam interagir entre si de forma transparente, o Docker adota uma configuração de rede padrão que define como a comunicação ocorrerá entre os contêineres do projeto. Nesse contexto, marque a opção que apresenta a forma como essa comunicação acontece por padrão.",
+        options: [
+            "Eles utilizam a rede host, compartilhando a interface de rede do host e se comunicando por meio de portas diferentes no mesmo IP.",
+            "Eles se comunicam através do localhost, pois compartilham o mesmo namespace de rede do host.",
+            "Eles são colocados automaticamente em uma única rede bridge, criada especificamente para o projeto, permitindo a comunicação usando os nomes dos serviços como hostnames.",
+            "É necessário criar manualmente uma rede do tipo overlay e anexar cada serviço a ela para permitir a comunicação.",
+            "A comunicação não é possível por padrão; é necessário expor as portas de cada serviço para o host e comunicar-se através do IP do host."
+        ],
+        answer: 2,
+        disclaimer: "Por padrão, o Docker Compose configura uma única rede do tipo 'bridge' para o aplicativo inteiro. Cada contêiner junta-se a essa rede e pode alcançar outros contêineres utilizando os nomes dos serviços como alias de rede."
+    }
 ];
 
 // ---------------------------------------------------------
