@@ -1095,7 +1095,161 @@ const banco_pt = [
         ],
         answer: 0,
         disclaimer: "De acordo com o MRPR, o vocativo 'Excelentíssimo Senhor' é restrito apenas aos Chefes de Poder (Presidente da República, Presidente do Congresso Nacional e Presidente do STF). Para todas as demais autoridades (incluindo Ministros de Estado, Ministros de Tribunais Superiores e Senadores), emprega-se 'Senhor' seguido do cargo ('Senhor Ministro,', 'Senhor Senador,')."
+    },    
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        type: "vf",
+        supportText: "Texto CG2A1\nUm dos principais benefícios da comunicação não violenta (CNV) é a promoção da empatia e da compaixão entre as pessoas. Ao reconhecer as necessidades e os sentimentos dos outros, somos capazes de nos colocar em seus lugares e compreender suas perspectivas, o que facilita a resolução de conflitos e a construção de relações mais saudáveis. Como afirma Marshall Bertram Rosenberg, em sua obra Comunicação não violenta, \"a CNV nos guia na reformulação do nosso modo de expressão e escuta dos outros, pela concentração em quatro áreas: o que observamos, o que sentimos, do que necessitamos e o que pedimos para nos enriquecer a vida\". A CNV promove uma escuta, um respeito e uma empatia profundos. Algumas pessoas usam a CNV para reagir compassivamente a si mesmas; outras, para estabelecer maior profundidade em suas relações pessoais, e outras, ainda, para gerar relacionamentos eficazes no trabalho ou na política. No mundo inteiro, utiliza-se a CNV para mediar disputas e conflitos em todos os níveis.\nParticularmente no que se refere à função ministerial, é preciso que se evite o que o autor chama de comunicação alienante da vida, isto é, \"os juízos morais, que atribuem erro ou ruindade às pessoas que não agem conforme certos valores\". Com efeito, um órgão acusatório inevitavelmente terá que formular, de modo técnico, imputações acerca da prática de ilícitos (uma denúncia criminal narrará a prática de uma conduta que se amolda a um tipo penal), o que não significa, contudo, que os agentes públicos que integram a instituição estejam autorizados a proferir julgamentos morais. No modelo de um Ministério Público dialógico, ou seja, aquele que efetivamente se abre à interlocução com a sociedade, a CNV é fator que transforma o discurso em prática, pois propicia o diálogo face a face com os mais diferentes e antagônicos setores e, a partir disso, a construção de confiança e o desenvolvimento do compromisso e da compreensão comuns entre os atores envolvidos.",
+        q: "Infere-se do segundo parágrafo do texto que a relevância da CNV no contexto do Ministério Público reside em impedir que acusações formuladas por seus agentes sejam influenciadas por divergências axiológicas entre as partes.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "O texto afirma que a relevância está em evitar 'juízos morais' ao formular imputações técnicas, não indicando que o objetivo seja impedir influência de divergências axiológicas entre as partes." //[cite: 24]
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        type: "vf",
+        supportText: "",
+        q: "Segundo o texto, uma das vantagens do uso da CNV é propiciar a empatia entre as pessoas.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O primeiro período do texto afirma literalmente: 'Um dos principais benefícios da comunicação não violenta (CNV) é a promoção da empatia e da compaixão entre as pessoas'." //[cite: 24]
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        type: "vf",
+        supportText: "",
+        q: "As aplicações da CNV em diversos âmbitos, como o psicológico, o interpessoal ou o profissional, visam impedir o surgimento de conflitos.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "O texto menciona que a CNV facilita a 'resolução de conflitos' e serve para 'mediar disputas', não tendo o condão de 'impedir o surgimento' deles." //[cite: 24]
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        type: "vf",
+        supportText: "",
+        q: "Entende-se da leitura do texto que, no contexto do modelo dialógico de Ministério Público, a CNV favorece a conformidade entre palavras e ações.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O texto corrobora essa afirmação ao dizer que a CNV é 'fator que transforma o discurso em prática'." //[cite: 24]
+    },
+    {
+        topic: "Coesão Referencial",
+        type: "vf",
+        supportText: "",
+        q: "O termo \"autor\" (primeiro período do segundo parágrafo) faz referência a \"Marshall Bertram Rosenberg\" (terceiro período do primeiro parágrafo).", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "'Autor' retoma a referência do criador da obra mencionado explicitamente no parágrafo anterior." //[cite: 24]
+    },
+    {
+        topic: "Coesão e Relações Lógico-Semânticas",
+        type: "vf",
+        supportText: "",
+        q: "Mediante o emprego da expressão \"Com efeito\", no segundo período do segundo parágrafo, os autores reforçam a ideia apresentada no período anterior.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A locução adverbial 'com efeito' tem o valor semântico de confirmação, ênfase ou reforço de uma ideia (equivale a 'de fato')." //[cite: 24]
+    },
+    {
+        topic: "Coesão Referencial",
+        type: "vf",
+        supportText: "",
+        q: "No último período do texto, o pronome presente na forma contraída \"disso\", em \"a partir disso\", retoma \"fator que transforma o discurso em prática\".", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "O pronome anafórico 'disso' retoma a ideia imediatamente anterior: o 'diálogo face a face com os mais diferentes e antagônicos setores'." //[cite: 24]
+    },
+    {
+        topic: "Colocação Pronominal",
+        type: "vf",
+        supportText: "",
+        q: "No segmento \"que efetivamente se abre\" (último período do texto), o deslocamento do pronome \"se\" para a posição enclítica — que efetivamente abre-se — manteria a correção gramatical do texto.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A presença do pronome relativo 'que' e do advérbio 'efetivamente' constituem palavras atrativas que exigem obrigatoriamente a próclise." //[cite: 24]
+    },
+    {
+        topic: "Morfologia e Classes de Palavras",
+        type: "vf",
+        supportText: "",
+        q: "No penúltimo período do primeiro parágrafo, o termo \"ainda\" expressa circunstância de tempo.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "No trecho 'outras, ainda, para gerar relacionamentos', a palavra 'ainda' tem valor de inclusão/adição, e não temporal." //[cite: 24]
+    },
+    {
+        topic: "Tempos e Modos Verbais",
+        type: "vf",
+        supportText: "",
+        q: "O tempo e o modo verbais empregados em \"narrará\" (segundo período do segundo parágrafo) sinalizam a provável ocorrência da ação de narrar.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "O futuro do presente do indicativo ('narrará') expressa um fato futuro tido como certo/categórico no contexto da frase, e não uma mera probabilidade." //[cite: 24]
+    },
+    {
+        topic: "Pontuação e Figuras de Linguagem",
+        type: "vf",
+        supportText: "",
+        q: "No trecho \"outras, para estabelecer maior profundidade em suas relações pessoais\" (penúltimo período do primeiro parágrafo), a vírgula indica supressão de palavras.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A vírgula após 'outras' marca a elipse (zeugma) da expressão 'usam a CNV' explícita na oração anterior." //[cite: 24]
+    },
+    {
+        topic: "Sintaxe",
+        type: "vf",
+        supportText: "",
+        q: "Na citação apresentada no terceiro período do primeiro parágrafo, o segmento 'dos outros' complementa o sentido dos substantivos 'expressão' e 'escuta'.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "O termo 'dos outros' atua como complemento nominal apenas do substantivo 'escuta' (escuta dos outros). Não há ligação sintática ou de sentido com 'expressão'." //[cite: 24]
+    },
+    {
+        topic: "Regência",
+        type: "vf",
+        supportText: "",
+        q: "No segmento \"terá que formular\" (segundo período do segundo parágrafo), a substituição do vocábulo \"que\" por de comprometeria a correção gramatical do texto.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A substituição está correta. As locuções verbais 'ter que' e 'ter de' são sinônimas e igualmente aceitas na norma-padrão." //[cite: 24]
+    },
+    {
+        topic: "Redação Oficial",
+        type: "vf",
+        supportText: "",
+        q: "Na correspondência oficial, a formalidade de tratamento está associada tanto à civilidade quanto à necessidade de uniformização das comunicações.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "De acordo com o Manual de Redação da Presidência da República, a formalidade abrange a polidez, a civilidade e a uniformidade das comunicações." //[cite: 24]
+    },
+    {
+        topic: "Redação Oficial",
+        type: "vf",
+        supportText: "",
+        q: "Por ser a concisão uma das principais características da redação oficial, recomenda-se que o texto de documentos oficiais seja composto de, no máximo, quatro parágrafos.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "A concisão é obrigatória, mas o Manual não estipula limite máximo de parágrafos para os documentos oficiais." //[cite: 24]
+    },
+    {
+        topic: "Redação Oficial",
+        type: "vf",
+        supportText: "",
+        q: "Em comunicações internas, via email, entre autoridades de mesma hierarquia, deve-se empregar o fecho Atenciosamente.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "O MRPR estabelece o uso de 'Atenciosamente' para autoridades de mesma hierarquia ou de hierarquia inferior." //[cite: 24]
+    },
+    {
+        topic: "Redação Oficial",
+        type: "vf",
+        supportText: "",
+        q: "Cada parágrafo de um expediente oficial deve ser numerado, mediante o uso de números romanos, ainda que o documento apresente um único parágrafo.", //[cite: 24]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Quando o documento contém apenas um parágrafo, não há numeração. Quando há mais de um, numeram-se com algarismos arábicos, e não romanos." //[cite: 24]
     }
+    
 ];
 
 const banco_info = [
@@ -1330,6 +1484,76 @@ const banco_info = [
         ],
         answer: 0,
         disclaimer: "Pelo art. 41, § 2º da LGPD, cabe ao Encarregado (DPO) aceitar reclamações dos titulares (I), receber comunicações da ANPD (II), orientar funcionários (III) e executar demais atribuições de proteção de dados determinadas pelo controlador (IV). Revisar contratos com foco em cláusulas comerciais não é atribuição legal do DPO."
+    },
+    {
+        topic: "Correio Eletrônico (Clientes de E-mail)",
+        supportText: "",
+        q: "Os softwares utilitários são programas que oferecem funcionalidades específicas para melhorar o desempenho, a segurança ou a usabilidade de um sistema computacional. Entre esses utilitários, existem aqueles voltados para a gestão de e-mails. Assinale a alternativa que apresenta um software classificado como cliente de e-mail.", //[cite: 6]
+        options: [
+            "IrfanView.",
+            "Microsoft Outlook.",
+            "Google Meet.",
+            "VLC Media Player.",
+            "Kaspersky."
+        ],
+        answer: 1,
+        disclaimer: "O Microsoft Outlook é um cliente de e-mail e gerenciador de informações pessoais da Microsoft." //[cite: 6]
+    },
+    {
+        topic: "Sistema Operacional (Windows 11)",
+        supportText: "",
+        q: "Ao utilizar o sistema operacional Microsoft Windows 11 (em português), é possível nomear pastas e arquivos, entretanto alguns caracteres e nomes são reservados do sistema operacional e, portanto, não podem ser utilizados. Considerando essa informação, assinale a alternativa que apresenta um nome de pasta permitido, ou seja, que não é reservado do sistema operacional.", //[cite: 6]
+        options: [
+            "AUX",
+            "COM2",
+            "LPT4",
+            "AHL",
+            "CON"
+        ],
+        answer: 3,
+        disclaimer: "Herança do antigo MS-DOS, o Windows proíbe o uso de nomes de dispositivos reservados como CON, PRN, AUX, NUL, COM1-COM9 e LPT1-LPT9. Portanto, 'AHL' é o único permitido." //[cite: 6]
+    },
+    {
+        topic: "Hardware (Dispositivos de Armazenamento)",
+        supportText: "Os discos de armazenamento são dispositivos utilizados para guardar dados de forma permanente ou temporária, sendo essenciais para o funcionamento de qualquer computador ou sistema digital. Considerando alguns desses discos de armazenamento, informe se é verdadeiro (V) ou falso (F) o que se afirma a seguir:\n( ) Um SSD (Solid State Drive) utiliza discos magnéticos e cabeças de leitura para acessar os dados.\n( ) Um HDD (Hard Disk Drive) armazena dados usando memória flash, sem partes móveis.\n( ) O pendrive tem armazenamento portátil com memória flash.", //[cite: 6]
+        q: "Assinale a alternativa com a sequência correta.", //[cite: 6]
+        options: [
+            "V - V - V.",
+            "F - F - F.",
+            "V - F - V.",
+            "F - F - V.",
+            "V - F - F."
+        ],
+        answer: 3,
+        disclaimer: "A banca inverteu os conceitos nas duas primeiras: o HDD é que usa discos magnéticos e cabeças móveis; o SSD usa memória flash (chips) sem partes móveis, assim como o pendrive. Sequência: F - F - V." //[cite: 6]
+    },
+    {
+        topic: "Navegadores (Google Chrome)",
+        supportText: "",
+        q: "Durante uma verificação de rotina nos sites institucionais, um servidor do MPRS identificou que algumas páginas oficiais apresentavam lentidão e erros de exibição ao serem acessadas pelo Google Chrome (em português). Ao perceber que o problema persistia mesmo após limpar os dados de navegação e reiniciar o navegador, o servidor decidiu informar o ocorrido diretamente à equipe de suporte do navegador, utilizando o formulário de feedback. Para isso, ele utilizou qual dos seguintes atalhos do teclado?", //[cite: 6]
+        options: [
+            "Ctrl + Shift + g",
+            "Ctrl + Shift + j",
+            "Ctrl + Shift + m",
+            "Alt + Shift + a",
+            "Alt + Shift + i"
+        ],
+        answer: 4,
+        disclaimer: "No Google Chrome, o atalho de teclado padrão para abrir a janela de 'Enviar feedback' (informar um problema) é Alt + Shift + i." //[cite: 6]
+    },
+    {
+        topic: "Segurança da Informação (LGPD)",
+        supportText: "",
+        q: "De acordo com a Lei Geral de Proteção de Dados (LGPD), Lei nº 13.709/2018 - Cap. IV - Dos Agentes de Tratamento de Dados Pessoais, Seção I - Do Encarregado pelo Tratamento de Dados Pessoais, Art. 41, § 2º, as atividades do encarregado consistem em, EXCETO", //[cite: 6]
+        options: [
+            "revisar contratos jurídicos da empresa com foco em cláusulas comerciais.",
+            "executar as demais atribuições determinadas pelo controlador ou estabelecidas em normas complementares.",
+            "orientar os funcionários e os contratados da entidade a respeito das práticas a serem tomadas em relação à proteção de dados pessoais.",
+            "receber comunicações da autoridade nacional e adotar providências.",
+            "aceitar reclamações e comunicações dos titulares, prestar esclarecimentos e adotar providências."
+        ],
+        answer: 0,
+        disclaimer: "Revisar contratos com foco puramente comercial foge do escopo legal de atuação do DPO (Encarregado), que deve focar na conformidade de privacidade e proteção de dados." //[cite: 6]
     }
 ];
 
@@ -1722,6 +1946,130 @@ const banco_rlm = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Correto. Como a ordem importa (cargos distintos), trata-se de um Arranjo de 5 elementos tomados 2 a 2: 5 x 4 = 20 maneiras distintas."
+    },
+        {
+        topic: "Sequências Lógicas",
+        supportText: "",
+        q: "Ao realizar os registros das quantidades de correspondências expedidas pelo MP em cada um dos seis dias úteis de trabalho, um técnico registrou a seguinte sequência numérica: (2, 5, 10, 17, 26, x), sendo x um número inteiro e que representa a quantidade de correspondências expedidas no sexto dia útil, mas que não foi possível ser identificado no momento da leitura desses registros. Sabendo que os elementos dessa sequência obedecem a uma lei de formação, então a quantidade de correspondências expedidas no sexto dia, ou seja, o valor de x, é igual a", //[cite: 7]
+        options: [
+            "15.",
+            "26.",
+            "37.",
+            "48.",
+            "59."
+        ],
+        answer: 2,
+        disclaimer: "A sequência cresce somando os números ímpares sucessivos: +3, +5, +7, +9. O próximo incremento deve ser +11. Logo, 26 + 11 = 37." //[cite: 7]
+    },
+    {
+        topic: "Regra de Três Composta",
+        supportText: "",
+        q: "Considere que 3 técnicos do MP, dedicando 2 horas diárias de trabalho, realizam o fichamento de 75 processos no período de 5 dias. O número de dias necessários para 5 técnicos, com a mesma eficiência dos técnicos mencionados anteriormente, realizarem o fichamento de 300 processos, dedicando 3 horas diárias de trabalho, será de", //[cite: 7]
+        options: [
+            "10 dias.",
+            "4 dias.",
+            "16 dias.",
+            "2 dias.",
+            "8 dias."
+        ],
+        answer: 4,
+        disclaimer: "Montando as proporções da regra de três composta, chega-se ao resultado de 8 dias." //[cite: 7]
+    },
+    {
+        topic: "Associação Lógica",
+        supportText: "Os técnicos André, Bete e Clóvis atuam em um setor do MP, sendo que cada um deles exerce uma atividade diferente: digitação de relatórios, fichamento de arquivos e coleta de dados para pesquisas, não necessariamente nessa ordem. Considere que somente uma das seguintes afirmações seja verdadeira:\n- André exerce a atividade de digitação de relatórios;\n- Bete não exerce a atividade de digitação de relatórios;\n- Clóvis não exerce a atividade de coleta de dados para pesquisas.", //[cite: 7]
+        q: "Com base nessas informações, é correto afirmar que as respectivas atividades exercidas, nesse setor, por Bete e Clóvis são:", //[cite: 7]
+        options: [
+            "digitação de relatórios e fichamento de arquivos.",
+            "digitação de relatórios e coleta de dados para pesquisas.",
+            "fichamento de arquivos e coleta de dados para pesquisas.",
+            "coleta de dados para pesquisas e digitação de relatórios.",
+            "coleta de dados para pesquisas e fichamento de arquivos."
+        ],
+        answer: 0,
+        disclaimer: "Testando as hipóteses para encontrar a única verdadeira, conclui-se que a afirmação sobre Clóvis é a única verdadeira. Logo, Bete cuida da digitação e Clóvis do fichamento." //[cite: 7]
+    },
+    {
+        topic: "Teoria dos Conjuntos",
+        supportText: "Em determinado dia de trabalho no MP, foram realizadas 400 pesquisas em bancos de dados eletrônicos. Essas pesquisas abrangeram assuntos administrativos especificamente relacionados às áreas de pessoal, patrimonial ou financeira ou trataram de outros temas. As seguintes informações são conhecidas:\n- 200 pesquisas trataram de questões de pessoal;\n- 180 pesquisas abordaram questões patrimoniais;\n- 150 pesquisas envolveram questões financeiras;\n- 70 pesquisas trataram de exatamente duas das três áreas administrativas;\n- 50 pesquisas foram referentes a outros assuntos (não administrativos);\n- A quantidade de pesquisas que se referem exclusivamente à área de pessoal é o dobro da quantidade de pesquisas que se refere exclusivamente à área financeira.", //[cite: 8]
+        q: "Com base nessas informações, a quantidade de pesquisas que abordaram simultaneamente as três áreas administrativas (pessoal, patrimonial e financeira) é igual a", //[cite: 8]
+        options: [
+            "25.",
+            "30.",
+            "45.",
+            "55.",
+            "60."
+        ],
+        answer: 3,
+        disclaimer: "Aplicando as fórmulas de diagramas de Venn, a intersecção tripla resulta em 55." //[cite: 8]
+    },
+    {
+        topic: "Problemas Aritméticos e Equações",
+        supportText: "Analisando os tempos de carreira atuais de dois técnicos atuantes no MP, sabe-se que:\n- Wilson tem o dobro do tempo de carreira de Fernando acrescido de 4 anos;\n- Daqui a 10 anos, a soma do tempo de carreira de ambos será 42 anos.", //[cite: 8]
+        q: "Diante dessas informações, qual é o tempo de carreira atual do Técnico Wilson?", //[cite: 8]
+        options: [
+            "18 anos.",
+            "16 anos.",
+            "14 anos.",
+            "12 anos.",
+            "10 anos."
+        ],
+        answer: 1,
+        disclaimer: "Montando o sistema de equações lineares: W = 2F + 4 e (W + 10) + (F + 10) = 42. Resolvendo, acha-se F = 6 e W = 16." //[cite: 8]
+    },
+    {
+        topic: "Funções de 1º Grau",
+        type: "vf",
+        supportText: "Ao supervisionar um estudo de caso em certa repartição, um técnico ministerial observou que o número de processos autuados no mês x de certo ano, em que x=1,2,3,..., poderia ser calculado por meio da função f(x)=325-7x em que x=1 corresponde ao mês de janeiro.", //[cite: 25]
+        q: "O número de processos autuados no primeiro mês correspondeu a menos de 10% do número total de processos autuados no ano sob análise.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Em f(1) foram 318 autuações. A soma total do ano é superior a 3.350. Como 10% do total é ~335, os 318 representam menos de 10%." //[cite: 25]
+    },
+    {
+        topic: "Progressão Aritmética (PA)",
+        type: "vf",
+        supportText: "Ao supervisionar um estudo de caso em certa repartição, um técnico ministerial observou que o número de processos autuados no mês x de certo ano, em que x=1,2,3,..., poderia ser calculado por meio da função f(x)=325-7x em que x=1 corresponde ao mês de janeiro.", //[cite: 25]
+        q: "A sequência formada pelo número de processos autuados mês a mês é uma progressão aritmética.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Trata-se de uma PA decrescente, com razão r = -7." //[cite: 25]
+    },
+    {
+        topic: "Geometria Analítica e Gráficos",
+        type: "vf",
+        supportText: "Ao supervisionar um estudo de caso em certa repartição, um técnico ministerial observou que o número de processos autuados no mês x de certo ano, em que x=1,2,3,..., poderia ser calculado por meio da função f(x)=325-7x em que x=1 corresponde ao mês de janeiro.", //[cite: 25]
+        q: "Ao se plotar, em um sistema de coordenadas cartesianas, os pares ordenados formados por um número associado ao mês e pelo número associado ao número de processos autuados naquele mês, tem-se que tais pontos estarão sobre uma reta.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "A função dada é do tipo afim ou de 1º grau, cuja representação gráfica sempre descreve uma reta." //[cite: 25]
+    },
+    {
+        topic: "Equações",
+        type: "vf",
+        supportText: "Ao supervisionar um estudo de caso em certa repartição, um técnico ministerial observou que o número de processos autuados no mês x de certo ano, em que x=1,2,3,..., poderia ser calculado por meio da função f(x)=325-7x em que x=1 corresponde ao mês de janeiro.", //[cite: 25]
+        q: "Existe um mês em que foram autuados exatamente 120 processos.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Igualando a função a 120: 325 - 7x = 120 => 7x = 205 => x = 29,28. Como o mês deve ser um número inteiro, a afirmação está errada." //[cite: 25]
+    },
+    {
+        topic: "Funções",
+        type: "vf",
+        supportText: "Ao supervisionar um estudo de caso em certa repartição, um técnico ministerial observou que o número de processos autuados no mês x de certo ano, em que x=1,2,3,..., poderia ser calculado por meio da função f(x)=325-7x em que x=1 corresponde ao mês de janeiro.", //[cite: 25]
+        q: "No nono mês daquele ano, foram autuados menos de 250 processos.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Substituindo x por 9: f(9) = 325 - 7(9) = 325 - 63 = 262. Como 262 não é menor que 250, a afirmativa está errada." //[cite: 25]
+    },
+    {
+        topic: "Probabilidade",
+        type: "vf",
+        supportText: "Ao supervisionar um estudo de caso em certa repartição, um técnico ministerial observou que o número de processos autuados no mês x de certo ano, em que x=1,2,3,..., poderia ser calculado por meio da função f(x)=325-7x em que x=1 corresponde ao mês de janeiro.", //[cite: 25]
+        q: "Ao se selecionar ao acaso um processo autuado no ano em questão, a probabilidade de ele ter sido autuado no primeiro semestre é igual à probabilidade de ter sido autuado no segundo semestre desse ano.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Como a função decresce ao longo do tempo (razão negativa), o total de processos do primeiro semestre é maior que o do segundo. Logo, as probabilidades são desiguais." //[cite: 25]
     }
 ];
 
@@ -1848,12 +2196,85 @@ const banco_const = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Correto. O art. 134, §§ 2º e 3º da CF/88 assegura expressamente a autonomia funcional, administrativa e a iniciativa orçamentária às Defensorias Públicas."
+    },
+    {
+        topic: "Poder Judiciário e Funções Essenciais à Justiça",
+        type: "vf",
+        supportText: "",
+        q: "São princípios institucionais do Ministério Público a pluralidade, a diversidade e a independência funcional.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Os princípios institucionais do Ministério Público (art. 127, § 1º, da CF) são a unidade, a indivisibilidade e a independência funcional."
+    },
+    {
+        topic: "Poder Judiciário",
+        type: "vf",
+        supportText: "",
+        q: "O Supremo Tribunal Federal (STF) e os demais tribunais superiores têm jurisdição apenas na capital federal.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O STF e os tribunais superiores têm sede na capital federal, mas a sua jurisdição abrange todo o território nacional (art. 92, § 1º, da CF)."
+    },
+    {
+        topic: "Servidores Públicos",
+        type: "vf",
+        supportText: "",
+        q: "O servidor que possa ser submetido à readaptação não tem direito subjetivo à aposentadoria por incapacidade.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Conforme o art. 37, § 13, da CF, o servidor será mantido neste cargo até que seja julgado apto para a readaptação, sendo a aposentadoria por incapacidade permanente a última rácio."
+    },
+    {
+        topic: "Competências do Poder Judiciário",
+        type: "vf",
+        supportText: "",
+        q: "Compete ao Supremo Tribunal Federal (STF) julgar os mandados de segurança impetrados contra ato de ministro de Estado.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O julgamento de mandado de segurança contra ato de Ministro de Estado é competência originária do Superior Tribunal de Justiça (STJ), conforme o art. 105, I, 'b', da CF."
+    },
+    {
+        topic: "Competências do Poder Judiciário",
+        type: "vf",
+        supportText: "",
+        q: "Compete aos tribunais regionais federais julgar, em grau de recurso, as causas decididas pelos juízes estaduais no exercício da competência federal da área de sua jurisdição.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). É a literalidade do art. 108, II, da CF/88."
+    },
+    {
+        topic: "Direitos Políticos",
+        type: "vf",
+        supportText: "",
+        q: "É possível, de acordo com o texto constitucional, que um cidadão preencha as condições de elegibilidade para ser vereador, mas não as condições de elegibilidade para ser deputado federal.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A idade mínima para vereador é de 18 anos, enquanto para deputado federal é de 21 anos (art. 14, § 3º, VI, da CF)."
+    },
+    {
+        topic: "Direitos e Garantias Fundamentais",
+        type: "vf",
+        supportText: "",
+        q: "A CF admite a pena de morte em caso de guerra declarada.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Nos termos do art. 5º, XLVII, 'a', da Constituição Federal, não haverá penas de morte, salvo em caso de guerra declarada."
+    },
+    {
+        topic: "Nacionalidade e Direitos Políticos",
+        type: "vf",
+        supportText: "",
+        q: "A CF trata de forma igual os brasileiros natos e naturalizados.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O art. 5º, § 2º, veda distinções entre brasileiros natos e naturalizados, mas estabelece exceções expressas na própria Constituição (ex: cargos privativos, extradição)."
     }
 ];
 
 const banco_adm = [
     {
         topic: "Atos Administrativos (Atributos e Extinção)",
+        type: "multipla",
         supportText: "",
         q: "Quando a Administração Pública retira do mundo jurídico um ato administrativo válido e legítimo por motivos de conveniência e oportunidade, respeitando os direitos adquiridos e produzindo efeitos prospectivos (ex nunc), ocorre a:",
         options: [
@@ -1868,6 +2289,7 @@ const banco_adm = [
     },
     {
         topic: "Nova Lei de Licitações (Lei nº 14.133/2021)",
+        type: "multipla",
         supportText: "",
         q: "De acordo com a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), são modalidades de licitação previstas na referida norma, EXCETO:",
         options: [
@@ -1882,6 +2304,7 @@ const banco_adm = [
     },
     {
         topic: "Improbidade Administrativa (Lei nº 8.429/1992 atualizada)",
+        type: "multipla",
         supportText: "",
         q: "Com base na Lei de Improbidade Administrativa (Lei nº 8.429/1992, com a redação dada pela Lei nº 14.230/2021), assinale a alternativa correta:",
         options: [
@@ -1911,12 +2334,174 @@ const banco_adm = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Errado. Embora a autoexecutoriedade seja atributo do poder de polícia, ela não está presente em todos os atos: a cobrança coativa de multas administrativas não pagas exige intervenção do Poder Judiciário (execução fiscal)."
+    },
+    {
+        topic: "Poderes da Administração Pública",
+        type: "multipla",
+        supportText: "",
+        q: "O Município Beta editou ato normativo da espécie 'resolução' visando ordenar, reorganizar e coordenar o bom funcionamento dos serviços prestados pelos servidores de determinado órgão público. À luz do direito administrativo, é correto afirmar que o ato deriva do poder",
+        options: [
+            "hierárquico.",
+            "regulamentar.",
+            "normativo.",
+            "disciplinar.",
+            "discricionário."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPRS 2025 (AOCP). A organização e coordenação interna do funcionamento dos serviços públicos decorrem do poder hierárquico."
+    },
+    {
+        topic: "Atos Administrativos",
+        type: "vf",
+        supportText: "",
+        q: "O motivo do ato administrativo discricionário está sujeito a controle jurisdicional.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O Poder Judiciário pode analisar a legalidade e a veracidade dos motivos declarados pela administração (Teoria dos Motivos Determinantes)."
+    },
+    {
+        topic: "Improbidade Administrativa",
+        type: "multipla",
+        supportText: "",
+        q: "Acerca da Lei de Improbidade Administrativa (Lei nº 8.429/1992), assinale a alternativa correta.",
+        options: [
+            "O mero exercício da função ou desempenho de competências públicas, sem comprovação de ato doloso com fim ilícito, não é capaz de afastar a responsabilidade por ato de improbidade administrativa.",
+            "Por possuir um regramento próprio, a lei de improbidade administrativa não garante a aplicação dos princípios constitucionais do direito administrativo sancionador.",
+            "Consideram-se atos de improbidade administrativa as condutas dolosas ou culposas tipificadas nos arts. 9º, 10 e 11 da lei de improbidade administrativa, ressalvados os tipos previstos em leis especiais.",
+            "A responsabilidade sucessória prevista na lei de improbidade administrativa não é cabível quando decorrer de sucessão provocada por meio de fusão ou cisão societária.",
+            "As disposições da lei de improbidade administrativa são aplicáveis, no que couber, àquele que, mesmo não sendo agente público, induzir ou concorrer dolosamente para a prática do ato de improbidade."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída da prova do MPRS 2025 (AOCP). As disposições da LIA são aplicáveis a quem, mesmo não sendo agente público, induza ou concorra dolosamente para a prática do ato (art. 3º)."
+    },
+    {
+        topic: "Processo Administrativo",
+        type: "vf",
+        supportText: "",
+        q: "O princípio da gratuidade do processo administrativo proíbe a cobrança de despesas processuais, ressalvadas as previstas em lei.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Nos termos da Lei nº 9.784/1999 (art. 2º, parágrafo único, XI), é proibida a cobrança de despesas processuais, ressalvadas as previstas em lei."
+    },
+    {
+        topic: "Organização da Administração Pública",
+        type: "vf",
+        supportText: "",
+        q: "Sob o aspecto subjetivo da administração pública estatal, o MPCE, como instituição permanente essencial à função jurisdicional do Estado, integra a administração indireta.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O Ministério Público é um órgão independente (desprovido de personalidade jurídica própria), não integrando nem a administração direta submetida ao Executivo nem a indireta."
+    },
+    {
+        topic: "Atos Administrativos",
+        type: "vf",
+        supportText: "",
+        q: "O ato administrativo por meio do qual os órgãos consultivos da administração emitem opinião sobre assuntos técnicos de sua competência denomina-se parecer.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O parecer é, de facto, o ato enunciativo pelo qual os órgãos consultivos se pronunciam tecnicamente."
+    },
+    {
+        topic: "Licitações (Lei nº 14.133/2021)",
+        type: "vf",
+        supportText: "",
+        q: "Leilão é a modalidade de licitação para a alienação de bens imóveis ou de bens móveis inservíveis ou legalmente apreendidos a quem oferecer o maior lance, podendo ser executado por leiloeiro oficial ou por servidor designado pela autoridade competente da administração.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Trata-se da definição legal da modalidade Leilão prevista no art. 6º, XL, e art. 31, § 1º, da Nova Lei de Licitações (Lei 14.133/2021)."
+    },
+    {
+        topic: "Licitações e Contratos",
+        type: "vf",
+        supportText: "",
+        q: "A autoridade competente para homologar o pregão não poderá revogá-lo por razões de interesse público, por motivo de fato superveniente devidamente comprovado.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A administração tem o poder-dever de revogar a licitação (em qualquer modalidade) por razões de interesse público decorrentes de facto superveniente (art. 71, II, da Lei 14.133/2021)."
+    },
+    {
+        topic: "Poderes Administrativos",
+        type: "vf",
+        supportText: "",
+        q: "O poder hierárquico permite, em caráter excepcional e por motivos relevantes devidamente justificados, a avocação por tempo indeterminado de competência atribuída a órgão hierarquicamente inferior.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A avocação, embora permitida excecionalmente, deve ser sempre TEMPORÁRIA, e nunca por tempo indeterminado (art. 15 da Lei 9.784/1999)."
+    },
+    {
+        topic: "Improbidade Administrativa",
+        type: "vf",
+        supportText: "",
+        q: "Quem induz a prática de ato de improbidade somente poderá ser responsabilizado pela ocorrência do ilícito se for agente público.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O particular (terceiro) que induz ou concorre dolosamente para a prática do ato também responde pela improbidade, conforme o art. 3º da Lei 8.429/1992."
+    },
+    {
+        topic: "Responsabilidade Civil do Estado",
+        type: "vf",
+        supportText: "",
+        q: "A responsabilidade civil das pessoas jurídicas de direito privado prestadoras de serviço público é objetiva em relação a terceiros usuários e não usuários do serviço prestado.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Este é o entendimento pacificado do STF (RE 591874), aplicando-se a responsabilidade objetiva também em relação a terceiros não utilizadores do serviço (ex: peão atropelado por autocarro de transporte público)."
+    },
+    {
+        topic: "Lei de Acesso à Informação (Lei nº 12.527/2011)",
+        supportText: "Um cidadão, com mais com 75 anos de idade, solicitou, perante determinado órgão público, informações sobre assunto de interesse público municipal.", //[cite: 22]
+        q: "Considerando essa situação e com base na Lei de Acesso à Informação (Lei nº 12.527/2011), é correto afirmar que", //[cite: 22]
+        options: [
+            "para a obtenção da informação postulada pelo cidadão, vedam-se quaisquer exigências relativas aos motivos determinantes da solicitação, considerando se tratar de informações de interesse público.",
+            "sem prejuízo da segurança e da proteção das informações e do cumprimento da legislação aplicável, é obrigatório ao órgão ou entidade oferecer meios para que o próprio requerente possa pesquisar a informação de que necessitar.",
+            "em razão da idade do requerente, a Lei de Acesso à Informação lhe garante prioridade no atendimento de sua solicitação, devendo a informação ser prestada em no máximo cinco dias.",
+            "no caso de indeferimento de acesso a informações ou às razões da negativa do acesso, poderá o cidadão interpor recurso contra a decisão no prazo de quinze dias a contar da sua ciência.",
+            "não sendo possível conceder o acesso imediato à informação disponível, o órgão ou entidade que receber o pedido deverá, em prazo não superior a trinta dias, comunicar data, local e modo para se realizar a consulta, efetuar a reprodução ou obter a certidão."
+        ],
+        answer: 0,
+        disclaimer: "Conforme o art. 10, § 3º, da LAI: 'São vedadas quaisquer exigências relativas aos motivos determinantes da solicitação de informações de interesse público'." //[cite: 22]
+    },
+    {
+        topic: "Improbidade Administrativa (Lei nº 8.429/1992)",
+        type: "vf", // Mantemos o type: "vf" apenas nestas porque o seu código original precisa dele para as opções de "Certo" e "Errado".
+        supportText: "",
+        q: "O agente público que recebe vantagem econômica para tolerar a prática de contrabando comete ato de improbidade administrativa que causa prejuízo ao erário.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Receber vantagem econômica indevida caracteriza ato de improbidade que importa Enriquecimento Ilícito (art. 9º, I, da LIA), e não dano ao erário (art. 10)." //[cite: 25]
+    },
+    {
+        topic: "Improbidade Administrativa (Lei nº 8.429/1992)",
+        type: "vf",
+        supportText: "",
+        q: "Para a configuração de ato de improbidade administrativa que atenta contra os princípios da administração pública, é indispensável que o agente tenha a finalidade de obtenção de proveito indevido para si ou para outrem.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Após a reforma da Lei 14.230/2021, o caput do art. 11 passou a exigir expressamente o dolo com 'o fim de obter proveito ou benefício indevido para si ou para outra pessoa ou entidade'." //[cite: 25]
+    },
+    {
+        topic: "Improbidade Administrativa (Lei nº 8.429/1992)",
+        type: "vf",
+        supportText: "",
+        q: "A responsabilidade do sucessor daquele que se enriqueceu ilicitamente está limitada à reparação do valor do patrimônio transferido.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "É a literalidade do art. 8º da LIA: o sucessor ou herdeiro sujeita-se à obrigação de repará-lo até o limite do valor da herança ou do patrimônio transferido." //[cite: 25]
+    },
+    {
+        topic: "Improbidade Administrativa (Lei nº 8.429/1992)",
+        type: "vf",
+        supportText: "",
+        q: "A ação negligente do agente público que resultar em lesão patrimonial ao erário é suficiente para a caracterização da improbidade administrativa.", //[cite: 25]
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Com as alterações da Lei nº 14.230/2021, foi extinta a modalidade culposa de improbidade. Exige-se sempre o dolo (vontade livre e consciente de alcançar o resultado ilícito)." //[cite: 25]
     }
 ];
 
 const banco_civil = [
     {
         topic: "Lei de Introdução às Normas do Direito Brasileiro (LINDB)",
+        type: "multipla",
         supportText: "",
         q: "De acordo com o Decreto-Lei nº 4.657/1942 (LINDB), salvo disposição contrária, a lei começa a vigorar em todo o país:",
         options: [
@@ -1931,6 +2516,7 @@ const banco_civil = [
     },
     {
         topic: "Parte Geral do Código Civil (Defeitos do Negócio Jurídico)",
+        type: "multipla",
         supportText: "",
         q: "Segundo o Código Civil (Lei nº 10.406/2002), quando uma pessoa, sob premente necessidade, ou por inexperiência, se obriga a prestação manifestamente desproporcional ao valor da prestação oposta, configura-se o defeito do negócio jurídico denominado:",
         options: [
@@ -1945,6 +2531,7 @@ const banco_civil = [
     },
     {
         topic: "Prescrição e Decadência",
+        type: "multipla",
         supportText: "",
         q: "A respeito dos institutos da prescrição e da decadência no Código Civil Brasileiro, assinale a alternativa correta:",
         options: [
@@ -1974,12 +2561,109 @@ const banco_civil = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Errado. Pela Súmula 486 do STJ, 'É impenhorável o único imóvel residencial do devedor que esteja locado a terceiros, desde que a renda obtida com a locação seja revertida para a subsistência ou a moradia da sua família'."
+    },
+    {
+        topic: "Bens Públicos e Privados",
+        type: "multipla",
+        supportText: "",
+        q: "Quanto aos bens, na forma disciplinada pelo Código Civil, é correto afirmar que",
+        options: [
+            "perdem o caráter de imóveis os materiais provisoriamente separados de um prédio, ainda que para nele se reempregar.",
+            "o uso comum do bem público não pode ser objeto de retribuição, devendo ser assegurado o uso gratuito.",
+            "consideram-se bens imóveis o solo e tudo quanto se lhe incorporar, desde que a incorporação seja por ato voluntário.",
+            "é permitida a alienação de bens públicos dominicais, observadas as exigências da lei.",
+            "as benfeitorias úteis são as que têm por finalidade conservar o bem ou evitar que se deteriore."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova do MPRS 2025 (AOCP). Segundo o art. 101 do CC, os bens públicos dominicais podem ser alienados, observadas as exigências da lei. As benfeitorias que evitam deterioração são necessárias, não úteis."
+    },
+    {
+        topic: "Defeitos do Negócio Jurídico e Invalidade",
+        type: "multipla",
+        supportText: "",
+        q: "Assinale a alternativa correta a respeito dos defeitos dos negócios jurídicos, na forma das disposições do Código Civil.",
+        options: [
+            "Quando a lei dispuser que determinado ato é anulável, sem estabelecer prazo para pleitear a anulação, este será de dois anos, contados da data do conhecimento do motivo que ensejou o pedido de anulação.",
+            "A invalidade do instrumento induz a invalidade do negócio jurídico, ainda que este pudesse provar-se por outro modo.",
+            "O falso motivo só vicia a declaração de vontade quando expresso como razão determinante.",
+            "O negócio jurídico nulo não é suscetível de confirmação, mas poderá se convalescer pelo decurso do tempo.",
+            "É nulo o negócio jurídico celebrado mediante fraude contra credores."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova do MPRS 2025 (AOCP). O art. 140 do CC estabelece que o falso motivo só vicia a declaração de vontade quando expresso como razão determinante."
+    },
+    {
+        topic: "Pessoas Naturais (Ausência)",
+        type: "multipla",
+        supportText: "",
+        q: "Em relação às pessoas naturais, no que concerne à ausência, na forma disciplinada pelo Código Civil, assinale a alternativa correta.",
+        options: [
+            "Decorridos dez anos da arrecadação dos bens do ausente, poderão os interessados requerer a abertura da sucessão definitiva.",
+            "Na falta de cônjuge, a curadoria dos bens do ausente incumbe aos pais ou aos descendentes, sendo que, quanto aos descendentes, os mais velhos precedem os mais novos.",
+            "A sentença que determinar a abertura da sucessão provisória produzirá efeitos noventa dias após publicação na imprensa.",
+            "Os imóveis do ausente só se poderão alienar, não sendo por desapropriação, ou hipotecar, quando o ordene o juiz, para lhes evitar a ruína.",
+            "A abertura da sucessão definitiva também pode ser requerida se comprovado que o ausente contava com setenta e cinco anos de idade e que já se passaram cinco anos desde as últimas notícias dele."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPRS 2025 (AOCP). Conforme o art. 25 do CC, o cônjuge do ausente, sempre que não esteja separado de fato, será o seu legítimo curador; em sua falta, a curadoria incumbe aos pais ou descendentes."
+    },
+    {
+        topic: "Prescrição",
+        type: "multipla",
+        supportText: "",
+        q: "De acordo com o Código Civil, assinale a alternativa que apresenta uma pretensão, cuja prescrição ocorre no prazo de 3 (três) anos.",
+        options: [
+            "A pretensão para receber prestações vencidas de rendas temporárias ou vitalícias.",
+            "A pretensão do segurado contra o segurador, ou a deste contra aquele.",
+            "A pretensão relativa à tutela, a contar da data da aprovação das contas.",
+            "A pretensão do vencedor para haver do vencido o que despendeu em juízo.",
+            "A pretensão dos tabeliães dos árbitros e peritos pela percepção dos honorários."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPRS 2025 (AOCP). Nos termos do art. 206, § 3º, II, do CC, prescreve em 3 anos a pretensão para receber prestações vencidas de rendas temporárias ou vitalícias."
+    },
+    {
+        topic: "Capacidade e Curatela (Estatuto da Pessoa com Deficiência)",
+        type: "vf",
+        supportText: "",
+        q: "Ao ser submetida à curatela, a pessoa com deficiência adulta apenas poderá ser considerada relativamente capaz, não mais se admitindo o reconhecimento da sua incapacidade absoluta.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Com o Estatuto da Pessoa com Deficiência, os absolutamente incapazes são apenas os menores de 16 anos. A curatela afeta apenas atos de natureza patrimonial e negocial, tornando a pessoa, no máximo, relativamente incapaz."
+    },
+    {
+        topic: "Direito de Família (Alimentos)",
+        type: "vf",
+        supportText: "",
+        q: "A legitimidade ativa do Ministério Público para ajuizar ação de alimentos em proveito de criança ou adolescente exige a demonstração de que o menor esteja em situação de risco, como na hipótese de omissão dos pais ou responsável.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O STJ pacificou (Súmula 594) que o MP tem legitimidade ativa para ajuizar ação de alimentos em proveito de criança/adolescente independentemente da demonstração de situação de risco."
+    },
+    {
+        topic: "Direito do Consumidor e Desconsideração da Personalidade Jurídica",
+        type: "vf",
+        supportText: "",
+        q: "A teoria menor da desconsideração da personalidade jurídica pode ser aplicada quando a personalidade jurídica representar um obstáculo ao ressarcimento de prejuízos causados aos consumidores.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). É o texto exato do art. 28, § 5º, do CDC, que consagra a Teoria Menor, bastando o mero obstáculo ao ressarcimento, sem exigir desvio de finalidade ou confusão patrimonial."
+    },
+    {
+        topic: "Direito do Consumidor (Proteção ao Crédito)",
+        type: "vf",
+        supportText: "",
+        q: "A notificação prévia do consumidor acerca do registro do seu nome no cadastro de proteção ao crédito deve ser realizada pessoalmente, fazendo-se necessária a comprovação do envio e da entrega da notificação.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A Súmula 404 do STJ define que é dispensável o Aviso de Recebimento (AR) na carta de comunicação ao consumidor sobre a negativação de seu nome, não sendo exigida notificação pessoal."
     }
 ];
 
 const banco_proc_civil = [
     {
         topic: "Tutelas Provisórias (CPC/2015)",
+        type: "multipla",
         supportText: "",
         q: "Nos termos do Código de Processo Civil (Lei nº 13.105/2015), a tutela provisória que independe da demonstração de perigo de dano ou de risco ao resultado útil do processo, sendo concedida, por exemplo, quando ficar caracterizado o abuso do direito de defesa ou o manifesto propósito protelatório da parte, denomina-se:",
         options: [
@@ -1994,6 +2678,7 @@ const banco_proc_civil = [
     },
     {
         topic: "Prazos Processuais e Fazenda Pública / MP / Defensoria",
+        type: "multipla",
         supportText: "",
         q: "Segundo o Código de Processo Civil de 2015, gozam de prazo em dobro para todas as suas manifestações processuais (salvo quando a lei estabelecer, de forma expressa, prazo próprio):",
         options: [
@@ -2008,6 +2693,7 @@ const banco_proc_civil = [
     },
     {
         topic: "Recursos no Processo Civil",
+        type: "multipla",
         supportText: "",
         q: "No sistema recursal do CPC/2015, excetuados os embargos de declaração (cujo prazo é de 5 dias úteis), o prazo unificado para interpor e para responder aos recursos cíveis (como Apelação, Agravo de Instrumento, Recurso Especial e Recurso Extraordinário) é de:",
         options: [
@@ -2037,6 +2723,60 @@ const banco_proc_civil = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Errado. Pelo art. 496, § 3º, II do CPC, não se aplica a remessa necessária quando a condenação ou o proveito econômico obtido na causa for de valor certo e líquido inferior a 500 salários-mínimos para os Estados."
+    },
+    {
+        topic: "Ação Civil Pública e Inquérito Civil",
+        type: "vf",
+        supportText: "",
+        q: "O inquérito civil é pressuposto para a propositura da ação civil pública, mas a sua falta pode ser suprida por documentos expedidos por organismo público, tais como certidões, informações, exames ou perícias ou outro documento que confirme a lesão aos direitos protegidos por esse tipo de ação.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O inquérito civil é um procedimento administrativo FACULTATIVO. Se o MP já possuir elementos suficientes (justa causa), pode dispensá-lo e ajuizar a ação civil pública diretamente."
+    },
+    {
+        topic: "Atuação do Ministério Público e Recursos",
+        type: "vf",
+        supportText: "",
+        q: "Considere que, em determinada ação, o juiz tenha julgado procedente o pedido de divórcio e partilha de bens, mas improcedente o pedido de guarda formulado pela requerente, não tendo esta recorrido da decisão. Nesse caso, o Ministério Público tem legitimidade para interpor recurso de apelação contra a sentença proferida.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Como o feito envolve interesse de incapazes (guarda), o MP atua como fiscal da ordem jurídica (custos legis) e possui legitimidade para recorrer, independentemente das partes (art. 179, II, e art. 996 do CPC)."
+    },
+    {
+        topic: "Impedimento e Suspeição",
+        type: "vf",
+        supportText: "",
+        q: "Os motivos que provocam o impedimento e a suspeição dos juízes são os mesmos que provocam o impedimento e a suspeição dos promotores de justiça e advogados das partes.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O CPC aplica os motivos de impedimento e suspeição do juiz aos membros do MP e aos auxiliares da justiça, mas NÃO se aplicam aos advogados das partes (que representam interesses parciais)."
+    },
+    {
+        topic: "Poderes e Deveres do Juiz (Prazos Processuais)",
+        type: "vf",
+        supportText: "Em uma ação ordinária proposta por pais contra o município buscando assegurar matrícula e frequência escolar adequada de crianças com deficiência na rede pública municipal, o juiz identificou a necessidade de reorganizar a ordem de produção das provas para melhor compreensão dos fatos controvertidos.",
+        q: "O juiz poderá dilatar prazos processuais mesmo após o encerramento do prazo regular, se entender que tal medida é necessária para conferir maior efetividade à tutela jurisdicional.",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O art. 139, parágrafo único, do CPC, determina que a dilação de prazos somente pode ser determinada ANTES de encerrado o prazo regular."
+    },
+    {
+        topic: "Intervenção de Terceiros e Recursos",
+        type: "vf",
+        supportText: "Em uma ação judicial proposta por Júlia contra uma clínica médica, pleiteando indenização por danos materiais e morais, o juiz proferiu sentença condenando a clínica apenas ao pagamento de indenização por danos morais. [...] João, funcionário da clínica que não participou diretamente do processo, mas que teve sua conduta profissional mencionada desfavoravelmente na sentença, pretende desta recorrer na condição de terceiro prejudicado.",
+        q: "João poderá interpor recurso contra a sentença, desde que demonstre objetivamente que a decisão judicial afeta diretamente direito seu ou interesse jurídico legítimo.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). É a regra do terceiro prejudicado prevista no art. 996, parágrafo único, do CPC, que exige a demonstração do nexo de interdependência entre o seu interesse e a relação jurídica submetida à apreciação judicial."
+    },
+    {
+        topic: "Recursos (Desistência)",
+        type: "vf",
+        supportText: "Em uma ação judicial proposta por Júlia contra uma clínica médica, pleiteando indenização por danos materiais e morais, o juiz proferiu sentença condenando a clínica apenas ao pagamento de indenização por danos morais.",
+        q: "A clínica médica, caso decida interpor recurso, poderá desistir dele posteriormente, sem necessidade de anuência da parte contrária ou de eventuais litisconsortes.",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Conforme expressa o art. 998 do CPC: 'O recorrente poderá, a qualquer tempo, sem a anuência do recorrido ou dos litisconsortes, desistir do recurso'."
     }
 ];
 
@@ -2100,6 +2840,87 @@ const banco_penal = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Correto. A Súmula 599 do STJ dispõe expressamente: 'O princípio da insignificância é inaplicável aos crimes contra a administração pública'."
+    },
+    {
+        topic: "Aplicação da Lei Penal",
+        type: "vf",
+        supportText: "",
+        q: "A lei penal posterior mais benéfica retroagirá, respeitando-se, porém, a coisa julgada, definida pelo trânsito em julgado de sentença penal condenatória.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A lei penal mais benigna (novatio legis in mellius) retroage inclusivamente aos casos já transitados em julgado, desconstituindo a coisa julgada neste aspeto (art. 2º, parágrafo único, do CP e Súmula 611 do STF).[cite: 29]"
+    },
+    {
+        topic: "Princípios do Direito Penal",
+        type: "vf",
+        supportText: "",
+        q: "A vedação da analogia no direito penal decorre do próprio princípio da legalidade, pois não se admite outra fonte que não a lei para o que é prescrito como crime e pena.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Em estrito cumprimento ao princípio da legalidade, é vedada a criação de crimes ou agravamento de penas por analogia (analogia in malam partem).[cite: 29]"
+    },
+    {
+        topic: "Princípios do Direito Penal",
+        type: "vf",
+        supportText: "",
+        q: "A teoria dos poderes implícitos excepciona o princípio da legalidade estrita, pois, como a lei permite ao juiz aplicar pena mais severa, entende-se, por extensão, que é aplicável pena mais branda, ainda que esta não venha positivada na legislação penal de modo expresso.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O princípio da legalidade estrita no Direito Penal não comporta a criação de penas (mesmo que mais brandas) por via da teoria dos poderes implícitos, carecendo de previsão legal expressa.[cite: 29]"
+    },
+    {
+        topic: "Crimes contra a Administração Pública",
+        type: "vf",
+        supportText: "",
+        q: "O uso indevido de bem público por servidor que lhe detenha posse legítima é suficiente para a consumação do crime de peculato na modalidade apropriação, o que difere da apropriação indébita, crime patrimonial comum para cuja configuração é exigido o dolo de integração do bem como parte de seu patrimônio.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O mero uso indevido de bem público (peculato de uso) não configura crime penal (exceto para Prefeitos), carecendo do dolo específico de apropriação definitiva do bem (animus rem sibi habendi).[cite: 29]"
+    },
+    {
+        topic: "Crimes contra o Património",
+        type: "vf",
+        supportText: "",
+        q: "Configura furto mediante fraude a ação do agente que se passe por mecânico para ludibriar a vítima e, após receber o carro, dele se aproprie.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A entrega voluntária da coisa pela vítima ludibriada caracteriza estelionato (art. 171, CP), e não furto mediante fraude, no qual a fraude serve apenas para diminuir a vigilância sobre a coisa subtraída.[cite: 29]"
+    },
+    {
+        topic: "Crimes contra o Património e Consunção",
+        type: "vf",
+        supportText: "",
+        q: "O dano a determinado patrimônio, quando praticado exclusivamente para o furto de outro bem, pode ser integrado ao crime de furto na forma de qualificadora, sendo imprópria a imputação de crime de dano em concurso com o de furto.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O crime-meio (dano) é absorvido pelo crime-fim (furto), qualificando o furto pelo rompimento de obstáculo à subtração da coisa (princípio da consunção).[cite: 29]"
+    },
+    {
+        topic: "Crimes contra a Dignidade Sexual",
+        type: "vf",
+        supportText: "",
+        q: "O agente que simule participação de celebridade em fotografias ou vídeos de ato sexual, ainda que se valendo tão somente do rosto da vítima na montagem das imagens, pratica crime de registro não autorizado da intimidade sexual.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A criação de montagens (deepfakes) que incluam o rosto da vítima em cena de nudez ou ato sexual está tipificada no art. 216-B, parágrafo único, do CP.[cite: 29]"
+    },
+    {
+        topic: "Crimes contra a Dignidade Sexual",
+        type: "vf",
+        supportText: "",
+        q: "Para configuração do crime de estupro, bastam olhares voluptuosos que notadamente reflitam desejo sexual do agente, independentemente da existência de contato físico ou de relação de autoridade entre agente e vítima.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O estupro exige que a conjunção carnal ou ato libidinoso diverso ocorra mediante violência ou grave ameaça (art. 213, CP). Olhares voluptuosos não preenchem a elementar da violência ou ameaça.[cite: 29]"
+    },
+    {
+        topic: "Crimes contra a Vida",
+        type: "vf",
+        supportText: "Abelardo, membro de organização criminosa voltada à prática de furto e roubo de veículos, foi encarregado de matar Carla, sua comparsa de crime, porque ela teria prestado, em interrogatório policial de inquérito no qual era investigada, informações relevantes à investigação policial sobre a organização.[cite: 28]",
+        q: "Caso Abelardo mate Carla, a ele deverá ser imputado o tipo penal feminicídio.[cite: 28]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O homicídio, neste caso hipotético, foi praticado como 'queima de arquivo' motivado pelas informações prestadas no inquérito, e não por razões da condição de sexo feminino (menosprezo ou discriminação), descaracterizando a qualificadora de feminicídio.[cite: 28]"
     }
 ];
 
@@ -2163,6 +2984,96 @@ const banco_proc_penal = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Correto. É a literalidade do art. 157, caput e § 1º do Código de Processo Penal."
+    },
+    {
+        topic: "Inquérito Policial e Provas",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular, sem ter obtido consentimento para acesso ao conteúdo do dispositivo.[cite: 29]",
+        q: "No curso da investigação criminal, cabe ao delegado de polícia requisitar perícia no aparelho celular apreendido, porém, quando o investigado não a autoriza com base no direito fundamental à vida privada e à intimidade, a perícia fica condicionada a autorização judicial.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O acesso aos dados e comunicações armazenadas em telemóveis apreendidos depende de prévia ordem judicial (jurisprudência consolidada do STJ/STF).[cite: 29]"
+    },
+    {
+        topic: "Provas (Exame de Corpo de Delito)",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular.[cite: 29]",
+        q: "A confissão de Heitor em depoimento formal em sede policial não desobriga a realização de exame de corpo de delito para comprovação da lesão corporal, caso esta tenha deixado vestígios.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). É regra expressa no art. 158 do CPP: quando a infração deixar vestígios, o exame de corpo de delito direto ou indireto é indispensável, não o suprindo a confissão do arguido.[cite: 29]"
+    },
+    {
+        topic: "Prisão em Flagrante",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular.[cite: 29]",
+        q: "A prisão de Heitor em flagrante delito foi ilegal, devido exclusivamente à ausência de prova da materialidade da lesão corporal nos autos.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A prisão em flagrante por lesão corporal que ocorreu três meses antes é ilegal não pela ausência momentânea da materialidade, mas pelo facto de já não haver qualquer estado de flagrância (art. 302, CPP).[cite: 29]"
+    },
+    {
+        topic: "Prisão Cautelar (Prisão Preventiva)",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular.[cite: 29]",
+        q: "Em eventual audiência de custódia, o juiz poderá determinar, de ofício, a prisão preventiva de Heitor, a despeito de ausência de representação por parte da autoridade policial ou de pedido de membro do Ministério Público nesse sentido.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Após a Lei nº 13.964/2019 (Pacote Anticrime), o juiz não pode converter a prisão em flagrante em preventiva de ofício durante a audiência de custódia.[cite: 29]"
+    },
+    {
+        topic: "Medidas Cautelares Diversas da Prisão",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular.[cite: 29]",
+        q: "Se houver requerimento das partes e justificação fundamentada de que a prisão preventiva de Heitor pode ser substituída por outras medidas cautelares, o juiz poderá determinar sua liberdade provisória e aplicar, de forma cumulativa, medidas como a proibição de manter contato com Carlos e de frequentar bloquinhos de carnaval.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). As medidas cautelares previstas no art. 319 do CPP podem ser aplicadas de forma isolada ou cumulativa (art. 282, § 1º, CPP).[cite: 29]"
+    },
+    {
+        topic: "Provas (Cadeia de Custódia)",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular.[cite: 29]",
+        q: "Caso Heitor, quando de sua prisão, tivesse entregado o canivete diretamente à autoridade policial, o princípio da fé pública dispensaria a aplicação das regras relativas à cadeia de custódia da prova em relação ao objeto apreendido.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A apreensão direta pela autoridade policial não afasta as regras da cadeia de custódia (art. 158-A e seguintes, CPP), sob pena de se quebrar a rastreabilidade probatória.[cite: 29]"
+    },
+    {
+        topic: "Ação Penal (Juizados Especiais Criminais)",
+        type: "vf",
+        supportText: "",
+        q: "Nos termos da Lei n.º 9.099/1995, o crime de lesão corporal leve é processado mediante ação penal privada, perante o juizado especial criminal, após oferecimento de queixa-crime por advogado contratado ou por defensor público.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O crime de lesão corporal leve, com o advento da Lei nº 9.099/1995, passou a exigir representação da vítima, sendo, portanto, de ação penal pública condicionada (art. 88 da referida lei).[cite: 29]"
+    },
+    {
+        topic: "Prisão Temporária",
+        type: "vf",
+        supportText: "Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular.[cite: 29]",
+        q: "Caso Heitor, intimado para comparecimento à delegacia a fim de prestar esclarecimentos, decidisse não atender à intimação, o delegado não poderia determinar sua prisão temporária, pois este é um poder que apenas a autoridade judicial pode exercer.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Nos termos da Lei nº 7.960/1989, a prisão temporária só pode ser decretada pelo Juiz, mediante representação da autoridade policial ou a requerimento do Ministério Público.[cite: 29]"
+    },
+    {
+        topic: "Princípios Constitucionais no Inquérito Policial",
+        type: "vf",
+        supportText: "",
+        q: "No curso das investigações policiais, dada a natureza administrativa e não judicial, mitigam-se os princípios constitucionais da presunção de inocência e da não autoincriminação, de forma que o delegado pode, por exemplo, exigir do agente a colaboração em reconhecimento de pessoas e na cessão de senha para desbloqueio de aparelho celular.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 1,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O princípio nemo tenetur se detegere (não autoincriminação) aplica-se plenamente ao inquérito policial. O arguido não pode ser forçado a ceder senhas ou a colaborar de modo ativo para a sua própria incriminação.[cite: 29]"
+    },
+    {
+        topic: "Juiz das Garantias",
+        type: "vf",
+        supportText: "",
+        q: "As normas relativas ao juiz de garantias não se aplicam aos procedimentos de competência dos juizados especiais criminais.[cite: 29]",
+        options: ["Certo", "Errado"],
+        answer: 0,
+        disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A inaplicabilidade do juiz das garantias aos juizados especiais criminais está textualmente prevista no art. 3º-C, § 1º, inciso I, do CPP.[cite: 29]"
     }
 ];
 
