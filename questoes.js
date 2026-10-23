@@ -1388,6 +1388,314 @@ const banco_pt = [
         ],
         answer: 0,
         disclaimer: "Extraído e limpo via painel de contribuição."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Leia com atenção o texto a seguir.\nProcessamento de dados é a conversão de dados brutos em informações úteis por meio de etapas estruturadas, como coleta, preparação, análise e armazenamento de dados. As organizações podem ter insights praticáveis e informar a tomada de decisão processando dados de forma eficaz.\nHistoricamente, as empresas dependiam de processamento de dados e calculadoras para gerenciar conjuntos de dados menores. Como as empresas geravam volumes cada vez maiores de dados, tornaram-se essenciais os métodos avançados de processamento de dados.\nKRANTZ, Tom. JONKER, Alexandra. O que é processamento de dados? IBM.2025.",
+        q: "As opções a seguir apresentam observações corretas sobre esse pequeno texto, à exceção de uma. Assinale-a.",
+        options: [
+            "O texto se inicia pela definição de “processamento de dados”.",
+            "As duas ocorrências do conectivo “como” possuem o mesmo significado.",
+            "Por meio do processamento de dados, informações úteis resultam da conversão de dados brutos.",
+            "De acordo com o texto, os métodos avançados de processamento são respostas a uma necessidade.",
+            "O advérbio “historicamente” se refere a realidades passadas no terreno do processamento de dados."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). As ocorrências da palavra 'como' exercem funções diferentes: na primeira ('como coleta, preparação'), introduz exemplificação; na segunda ('Como as empresas geravam volumes...'), atua como conjunção subordinativa causal, com sentido de 'já que' ou 'visto que'."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Leia com atenção o trecho a seguir.\n“Se os navios geralmente vão melhor do que os Estados, isso ocorre pela única razão de que naqueles cada um aceita a parte que lhe compete, enquanto nestes, na maioria das vezes, quanto menos se sabe, mais se tem o desejo de comandar.”",
+        q: "Sobre esse trecho, assinale a afirmativa correta.",
+        options: [
+            "A conjunção “Se” inicial indica uma condição.",
+            "O pronome demonstrativo “naqueles” tem como referente os navios.",
+            "O advérbio “geralmente” se opõe semanticamente à expressão “na maioria das vezes”.",
+            "Na comparação entre navios e Estados, o trecho indica a superioridade dos Estados sobre os navios.",
+            "Enquanto o demonstrativo “isso” se refere a algo já dito, o pronome “cada um” se refere a algo futuro do trecho."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Em enumerações, o pronome 'aquele(s)' retoma o termo mencionado em primeiro lugar no discurso (o mais distante), que neste caso é 'navios'. 'Este(s)' retomaria o mais próximo ('Estados')."
+    },
+    {
+        topic: "Coesão Referencial",
+        supportText: "No texto a seguir, os pronomes demonstrativos sublinhados estão bem empregados.\nSe os navios geralmente vão melhor do que os Estados, isso ocorre pela única razão de que naqueles cada um aceita a parte que lhe compete, enquanto nestes, na maioria das vezes, quanto menos se sabe, mais se tem o desejo de comandar.",
+        q: "Assinale a opção que mostra a frase em que o demonstrativo está erradamente empregado.",
+        options: [
+            "Esta é a regra de ouro dos governantes: respeitem os votos dos eleitores.",
+            "Antigamente, as leis eram observadas com mais rigor, mas, naqueles tempos tudo era diferente.",
+            "Os advogados devem manter sigilo sobre seus clientes e isso deve ser rigorosamente respeitado.",
+            "Dicionários e enciclopédias fazem parte de boas bibliotecas, mas entre estes e aqueles há diferença de volume.",
+            "Para os que não conseguem governar a própria casa nem os povos, uma boa desculpa é dizer que estes são ingovernáveis."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Ocorreu erro de concordância. 'Enciclopédias' é um substantivo feminino e é o termo antecedente mais próximo, logo, deveria ser retomado por 'estas' (feminino), e não por 'estes'."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Leia o texto a seguir.\nQuem governa uma instituição pública ou privada é sempre objeto do ódio e das queixas dos governados. Os homens estão sempre descontentes porque estão sempre infelizes. Por isso ficam descontentes com o próprio Estado, e também por isso ficam descontentes com quem o governa... Entretanto, no que concerne ao ato de governar, infelizmente existem apenas duas alternativas realmente sensatas: ou abster-se do governo, seja ele público ou privado, ou administrá-lo totalmente em vantagem própria e não dos governados.\nLeopardi, Giácomo. Ensaísta italiano.",
+        q: "As opções a seguir apresentam observações de caráter linguístico sobre o texto. Assinale a única observação incorreta.",
+        options: [
+            "Os adjetivos “pública ou privada” são de conteúdo subjetivo, expressando uma opinião do enunciador do texto.",
+            "O segundo período do texto traz uma justificativa para o que é afirmado no período anterior.",
+            "O termo “e também” traz uma redundância, que é normalmente aceita.",
+            "As duas ocorrências de “por isso” mostram o mesmo antecedente.",
+            "O termo “Entretanto” traz o valor de oposição."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). 'Pública' e 'privada' são adjetivos relacionais/objetivos que delimitam a natureza institucional. Eles não expressam apreciação pessoal, julgamento ou juízo de valor subjetivo do autor."
+    },
+    {
+        topic: "Concordância Verbal e Nominal",
+        supportText: "Os que trabalham em espaços profissionais em que inserem textos devem preocupar-se com a correção gramatical.",
+        q: "Entre as frases a seguir, assinale a que se mostra integralmente correta.",
+        options: [
+            "Vimos hoje aqui depois das aulas.",
+            "Vieram ela e eu para a festa no mesmo táxi.",
+            "Os policiais requiseram nossos documentos.",
+            "Não restou nenhum segredo entre eu e meu advogado.",
+            "As autoridades interviram nos problemas políticos surgidos na semana passada."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A forma 'vimos' está perfeitamente correta como presente do indicativo do verbo vir ('nós vimos pedir'). Os erros das demais são: B (o correto é 'viemos ela e eu'), C ('requereram', pois não deriva de querer), D ('entre mim e meu'), E ('intervieram', pois deriva de vir)."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "",
+        q: "Assinale a opção que apresenta o único texto coerente.",
+        options: [
+            "Na Europa, nesta época, faz muito frio: vamos comprar roupas mais leves.",
+            "A verdade é que ninguém pretende descobrir nada com essas investigações.",
+            "A despeito dos altos preços dos restaurantes, não comemos fora durante a semana.",
+            "Nessas situações há duas coisas a fazer: dirigir-se imediatamente a uma delegacia.",
+            "Ela não sabia desde que momento de sua vida ela trazia aquela marca de nascença na testa."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A opção B apresenta coerência lógica e coesão. Nas demais há contradições lógicas: frio/roupas leves (A); 'A despeito de' (apesar de) quebra a lógica, deveria ser causa (C); anunciar duas coisas e listar uma (D); marca de nascença, por definição, está lá desde o nascimento (E)."
+    },
+    {
+        topic: "Coesão Referencial",
+        supportText: "As frases a seguir mostram um termo sublinhado que se refere a um termo anterior, estabelecendo coesão na frase.",
+        q: "Assinale a opção em que a identificação do antecedente do termo sublinhado está correta.",
+        options: [
+            "A morte é um jeito de a natureza LHE dizer para pegar leve. / a natureza.",
+            "Que apertada é a porta e que estreito o caminho QUE conduz à vida. / a porta.",
+            "Todo homem deveria ser incendiário até os 25 anos de idade e bombeiro DAÍ em diante. / 25 anos.",
+            "O jovem não raciocina, age; o velho raciocina e põe os outros para agirem em SEU lugar. / o jovem.",
+            "Qual pode ser a vida que começa pelos gritos da mãe, que A dá, e os choros do filho que A recebe. / a vida."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Na opção E, os pronomes oblíquos átonos ('que a dá', 'que a recebe') atuam como objetos diretos resgatando o núcleo substantivo 'vida' mencionado no início da estrutura."
+    },
+    {
+        topic: "Morfologia e Classes de Palavras",
+        supportText: "As opções a seguir apresentam frases em que há a repetição de uma mesma palavra.",
+        q: "Assinale aquela em que as palavras mostram sentidos diferentes.",
+        options: [
+            "Morrer por uma causa não faz com que essa causa seja justa.",
+            "Para mim, velho é aquele sujeito 15 anos mais velho do que eu.",
+            "Depois dos 70, tudo se resume a remendar, remendar, remendar.",
+            "Fala-se muito em loucuras da juventude; não sei, porém, porque nada se diz das loucuras da velhice.",
+            "Quarenta anos é uma idade terrível. Porque é a idade em que chegamos a ser o que somos."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Na primeira ocorrência, a palavra 'velho' é um substantivo que designa o indivíduo idoso. Na segunda ocorrência, atua como adjetivo qualificando a idade do sujeito em comparação."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Leia o texto abaixo, sobre gestão e governança.\nA governança não se confunde com gestão: enquanto a gestão executa atividades e processos, a governança direciona, define políticas, estabelece prioridades e supervisiona resultados, garantindo que os objetivos organizacionais da empresa sejam alcançados de forma ética e eficiente. Ela envolve a definição de responsabilidades, a alocação de recursos e a criação de mecanismos de controle de atividades e monitoramento.",
+        q: "Sobre a estruturação desse texto, assinale a afirmativa correta.",
+        options: [
+            "O texto tem a finalidade de definir os dois processos.",
+            "O texto pretende mostrar a superioridade da governança sobre a gestão.",
+            "O texto pretende mostrar objetivamente a diferença entre gestão e governança.",
+            "O texto pode ser definido como argumentativo, pois expõe opiniões do enunciador do texto.",
+            "O texto indica uma série de atividades da governança em ordem cronológica, montando um texto narrativo."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A finalidade central (o propósito comunicativo primário do autor ao iniciar com 'não se confunde com' e usar o conector de contraste 'enquanto') é traçar um paralelo estritamente objetivo que diferencia os papéis."
+    },
+    {
+        topic: "Sintaxe",
+        supportText: "Leia o texto abaixo, sobre gestão e governança.\nA governança não se confunde com gestão: enquanto a gestão executa atividades e processos, a governança direciona, define políticas, estabelece prioridades e supervisiona resultados, garantindo que os objetivos organizacionais da empresa sejam alcançados de forma ética e eficiente. Ela envolve a definição de responsabilidades, a alocação de recursos e a criação de mecanismos de controle de atividades e monitoramento.",
+        q: "Nas opções a seguir, assinale aquela que traz uma função diferente do conectivo de.",
+        options: [
+            "objetivos organizacionais da empresa.",
+            "definição de responsabilidades.",
+            "alocação de recursos.",
+            "criação de mecanismos.",
+            "controle de atividades."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Em 'objetivos da empresa', o termo preposicionado exerce função de Adjunto Adnominal com valor de posse (os objetivos pertencem à empresa). Nas demais opções, as locuções complementam substantivos abstratos derivados de ação com valor de paciente (Complemento Nominal: a responsabilidade é definida, o recurso é alocado)."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Um Analista de Negócios de TI desempenha um papel crucial em unir a tecnologia e os objetivos empresariais. Este profissional é responsável por garantir que as soluções de TI estejam alinhadas com as necessidades e objetivos empresariais, promovendo assim eficiência e inovação. Dentro da categoria de alinhamento entre TI e negócios, o Analista de Negócios de TI (IT BA) identifica áreas de melhoria, documenta requisitos e garante que as soluções tecnológicas sejam implementadas de forma eficaz para aprimorar os processos estruturais das empresas modernas.",
+        q: "Pela sua estrutura, esse pequeno texto deve ser classificado, quanto ao seu tipo, como",
+        options: [
+            "injuntivo.",
+            "informativo.",
+            "descritivo e narrativo.",
+            "descritivo e expositivo.",
+            "argumentativo e expositivo."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A tipologia é predominantemente expositiva (por conceituar de forma direta e informativa o que faz a profissão) e descritiva (por elencar as características, funções e atribuições estáticas inerentes ao cargo de IT BA)."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Um Analista de Negócios de TI desempenha um papel crucial em unir a tecnologia e os objetivos empresariais. Este profissional é responsável por garantir que as soluções de TI estejam alinhadas com as necessidades e objetivos empresariais, promovendo assim eficiência e inovação. Dentro da categoria de alinhamento entre TI e negócios, o Analista de Negócios de TI (IT BA) identifica áreas de melhoria, documenta requisitos e garante que as soluções tecnológicas sejam implementadas de forma eficaz para aprimorar os processos estruturais das empresas modernas.",
+        q: "Entre os adjetivos que aparecem nas opções abaixo, assinale aquele que mostra uma opinião do enunciador, indicando uma qualidade.",
+        options: [
+            "papel crucial.",
+            "objetivos empresariais.",
+            "soluções tecnológicas.",
+            "processos estruturais.",
+            "empresas modernas."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). 'Crucial' é um adjetivo valorativo (ou subjetivo), que denota o juízo de valor ou a apreciação que o autor faz a respeito da importância do papel. Os demais são adjetivos relacionais e de base mais estritamente objetiva."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "“Consideramos estas verdades como evidentes por si: que todos os homens são criados iguais; que são dotados pelo seu Criador de certos direitos inalienáveis; que entre esses direitos estão a vida, a liberdade e a procura da felicidade.”\nThomas Jefferson, Declaração de Independência dos EUA. (1776)",
+        q: "Sobre a significação e a estruturação desse segmento, assinale a afirmativa correta.",
+        options: [
+            "Os três direitos citados ao final do texto são todos os direitos inalienáveis dos homens.",
+            "O fato de a forma verbal “Consideramos” estar no plural indica que são vários os autores do texto.",
+            "O termo “estas verdades” se refere a algo dito anteriormente, que não está registrado neste segmento.",
+            "Ao afirmar que “todos os homens são criados iguais”, o texto indica que todos os homens têm os mesmos direitos.",
+            "Ao dizer que as verdades citadas são “evidentes por si”, o autor do texto indica que elas necessitam de demonstração."
+        ],
+        answer: 3,
+        disclaimer: "A afirmação de que 'todos os homens são criados iguais' sustenta logicamente a premissa de igualdade de direitos inalienáveis. A opção A é falsa pois o texto diz 'de CERTOS direitos', e não de 'todos'. A opção C é falsa pois 'estas verdades' é uma referência catafórica (aponta para o que vem a seguir, após os dois-pontos)."
+    },
+    {
+        topic: "Semântica e Reescrita de Frases",
+        supportText: "“O direito de voto para eleger representantes é o direito básico pelo qual os demais são protegidos. Retirar esse direito equivale a reduzir a pessoa à escravidão, pois escravidão consiste em estar sujeito à vontade de outrem.”\nThomas Paine. Dissertação sobre os Primeiros Princípios do Governo. (1795)",
+        q: "Sobre a significação ou a estruturação desse fragmento textual, assinale a afirmativa correta.",
+        options: [
+            "O termo “para eleger representantes” poderia ser adequadamente substituído por “para a eleição de representantes”.",
+            "Ao dizer que o direito de voto é “o direito básico”, o autor indica que a democracia é o melhor dos regimes.",
+            "O termo “os demais” se refere a todas as demais pessoas.",
+            "O termo “são protegidos” poderia ser passado para a voz ativa com a forma “pelo qual se protegiam”.",
+            "A parte final do texto mostra o entendimento pessoal que o autor do texto dá à palavra “escravidão”."
+        ],
+        answer: 0,
+        disclaimer: "A substituição da oração reduzida de infinitivo ('para eleger representantes') por um substantivo abstrato correspondente ('para a eleição de representantes') preserva perfeitamente a correção gramatical e a semântica original da frase."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "“As leis são como as teias de aranha: as simples mosquinhas e as pequenas borboletas se prendem nelas, enquanto as grandes varejeiras malfazejas as rompem e passam através.”",
+        q: "Sobre esse fragmento textual, assinale a afirmativa correta.",
+        options: [
+            "A condenação expressa no texto se utiliza de linguagem lógica.",
+            "O autor condena certas leis que não se dirigem a reais problemas da sociedade.",
+            "O fragmento textual acima condena os privilégios de uma classe social sobre outras.",
+            "No segmento “se prendem nelas”, o pronome pessoal “elas” se refere às “simples mosquinhas”.",
+            "Segundo o texto, as leis são como teias de aranha porque servem para prender todos os que cometem crimes."
+        ],
+        answer: 2,
+        disclaimer: "Através de uma linguagem figurada (conotativa), o autor critica a desigualdade e os privilégios sociais, onde os fracos ('mosquinhas') são punidos pela lei, enquanto os poderosos ('grandes varejeiras') conseguem escapar ilesos."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "",
+        q: "As frases a seguir têm as leis como tema; assinale a frase que mostra uma visão positiva das leis.",
+        options: [
+            "Em meio às armas, calam-se as leis.",
+            "Existem leis, mas não quem as proveja.",
+            "O mais corrupto dos Estados tem o maior número de leis.",
+            "A quem poderá ser aprazível uma cidade, se não lhe agradam as leis?",
+            "A lei é a razão humana, enquanto governa todos os povos da Terra."
+        ],
+        answer: 4,
+        disclaimer: "Na opção E, a lei é elevada ao status de 'razão humana' universal, conferindo-lhe uma conotação altamente positiva e organizadora da sociedade. As demais opções trazem visões cínicas, negativas ou de falência do sistema legal."
+    },
+    {
+        topic: "Compreensão e Interpretação de Textos",
+        supportText: "Leia o texto a seguir.\n“Não devemos fazer da lei um espantalho / Armado para assustar a aves de rapina, / Mas deixado sempre estático, de modo que com o hábito / Ele não seja mais o terror delas, e sim o seu poleiro.”\nShakespeare, William. Medida por Medida (Ato 2, Cena 1).",
+        q: "A afirmação correta sobre as leis, que está implícita no texto, é que elas devem",
+        options: [
+            "proteger a todos.",
+            "modificar-se conforme as circunstâncias.",
+            "funcionar, devido ao medo que provocam.",
+            "ser amplamente divulgadas entre os cidadãos.",
+            "ajudar a todos em sua tarefa de obter alimentação."
+        ],
+        answer: 2,
+        disclaimer: "A metáfora sugere que a lei não pode ser estática a ponto de virar um 'poleiro' (perdendo o respeito dos criminosos). Ela precisa manter a sua eficácia punitiva e o poder de 'assustar' (causar temor/medo nas aves de rapina) para funcionar corretamente."
+    },
+    {
+        topic: "Semântica e Vocabulário",
+        supportText: "Uma das marcas de um bom texto é a utilização de palavras em seu sentido adequado;",
+        q: "assinale a opção em que a palavra sublinhada está adequadamente empregada.",
+        options: [
+            "As leis CUMPRIDAS são difíceis de entender.",
+            "É uma autoridade EMINENTE e por isso ninguém o respeita.",
+            "A lei tem dois e apenas dois fundamentos: a EQUIDADE e a utilidade.",
+            "As leis são sempre úteis aos que possuem POSSES e nocivas aos que nada têm.",
+            "Quando vou a um país, não examino se tem boas leis, mas se as que lá existem são EXECUTADAS."
+        ],
+        answer: 2,
+        disclaimer: "Na opção C, a palavra 'equidade' (senso de justiça, imparcialidade) está perfeitamente bem empregada no contexto jurídico. Erros nas demais: 'cumpridas' (deveria ser compridas/extensas), eminente/respeito (se é notável, deveria ser respeitado, o 'por isso' quebra a lógica), 'possuem posses' (pleonasmo)."
+    },
+    {
+        topic: "Sintaxe e Norma Culta",
+        supportText: "",
+        q: "Assinale a opção que indica a frase que está rigorosamente dentro dos modelos da norma culta.",
+        options: [
+            "Todos os convidados vestiam trajes à rigor.",
+            "Os policiais estavam cara a cara com os delinquentes.",
+            "Os promotores ficaram receiosos ante seus adversários.",
+            "As festas beneficientes nem sempre produzem dinheiro.",
+            "Entreguei a Constituição as advogadas para que ficassem bem-informadas."
+        ],
+        answer: 1,
+        disclaimer: "A opção B está correta (não se usa crase entre palavras repetidas como 'cara a cara'). Erros nas demais: A ('a rigor' não tem crase, pois 'rigor' é masculino), D (o correto é 'beneficentes', sem o 'i'), E (falta a crase: entreguei 'às advogadas')."
+    },
+    {
+        topic: "Semântica e Reescrita de Frases",
+        supportText: "As opções a seguir mostram duas formas corretas de uma mesma frase, à exceção de uma.",
+        q: "Assinale-a.",
+        options: [
+            "Voltamos de Alagoas. / Voltamos das Alagoas.",
+            "Vá até o tribunal e procure o Juiz. / Vá até ao tribunal e procure o Juiz.",
+            "Houve um acidente grave durante o julgamento. / Houve um incidente grave durante o julgamento.",
+            "A Constituição foi criada a 13 de junho de 1888. / A Constituição foi criada em 13 de junho de 1888.",
+            "À exceção de Bernardo, todos estiveram presentes. / Com exceção de Bernardo, todos estiveram presentes."
+        ],
+        answer: 2,
+        disclaimer: "A opção C altera drasticamente o sentido da frase original. 'Acidente' denota um evento trágico, fatalidade ou desastre, enquanto 'incidente' refere-se a um episódio secundário, contratempo ou atrito."
+    },
+    {
+        topic: "Coesão Referencial",
+        supportText: "Leia o segmento a seguir.\n“Agora que expliquei o título, passo a escrever o livro. Antes disso, porém, digamos os motivos que me põem a pena na mão. Vivo só, com um criado. A casa em que moro é própria; fi-la construir de propósito, levado de um desejo tão particular, que me vexa imprimi-lo, mas vá lá.\nUm dia, há bastantes anos, lembrou-me reproduzir no Engenho Novo a casa em que me criei na Rua de Matacavalos, dando-lhe o mesmo aspecto e economia daquela outra, que desapareceu.”\nMachado de Assis. Dom Casmurro. Livraria Garnier. 1ª ed. em 1899.",
+        q: "Sobre a estruturação ou a significação desse texto, assinale a afirmativa incorreta.",
+        options: [
+            "O segmento inicial “Agora que expliquei o título” se refere a algo já dito anteriormente.",
+            "O pronome “isso”, na expressão “Antes disso” se refere à ação de explicar o título do livro.",
+            "O pronome relativo “que” no segmento “que me põem a pena na mão” se refere ao substantivo “motivos”.
+            "A frase “Vivo só, com um criado” mudaria de sentido se retirássemos a vírgula.",
+            "O pronome indefinido “outra” e o pronome relativo “que” no segmento “daquela outra, que desapareceu” mostram o mesmo antecedente."
+        ],
+        answer: 1,
+        disclaimer: "A opção B está incorreta. No trecho 'passo a escrever o livro. Antes disso, porém, digamos...', o pronome demonstrativo anafórico 'disso' recupera a ideia imediatamente anterior ('escrever o livro'), e não a de explicar o título."
+    },
+    {
+        topic: "Tipologia Textual",
+        supportText: "Os segmentos textuais a seguir foram retirados do romance Dom Casmurro.",
+        q: "Assinale aquele que exemplifica o modo descritivo de organização discursiva.",
+        options: [
+            "Agora que expliquei o título, passo a escrever o livro.",
+            "Fiquei tão alegre com esta ideia, que ainda agora me treme a pena na mão.",
+            "Ia entrar na sala de visitas, quando ouvi proferir o meu nome e escondi-me atrás da porta.",
+            "Cumprimentou-se, sentou-se ao pé de mim, falou da lua e dos ministros e acabou recitando-me versos.",
+            "Não consultes dicionários. Casmurro não está aqui no sentido que eles lhe dão, mas no que lhe pôs o vulgo de homem calado e metido consigo."
+        ],
+        answer: 4,
+        disclaimer: "A opção E apresenta uma pausa na ação para qualificar, explicar as características e descrever o significado atribuído à palavra/personagem 'Casmurro'. As demais opções são essencialmente narrativas, focadas em sucessão de ações e verbos de movimento/acontecimento."
     }
     
 ];
@@ -1764,6 +2072,34 @@ const banco_info = [
         ],
         answer: 0,
         disclaimer: "Extraído e limpo via painel de contribuição."
+    },
+    {
+        topic: "Lei Geral de Proteção de Dados (LGPD)",
+        supportText: "Um órgão federal está organizando um concurso público para provimento de cargos de nível superior e precisa publicar o resultado preliminar das provas objetivas e a lista de candidatos que concorrem às vagas reservadas para Pessoas com Deficiência (PcD), bem como daqueles que solicitaram atendimento especial por razões de saúde. De forma a garantir a transparência do certame, a Comissão do Concurso planejou publicar na internet uma planilha contendo o nome completo, o número completo do CPF, o relatório médico detalhado e o diagnóstico CID (Classificação Internacional de Doenças) de cada candidato aprovado nessa cota.\nO Encarregado pelo Tratamento de Dados Pessoais (DPO) do órgão interveio, ressaltando que o diagnóstico de saúde constitui dado pessoal sensível e que a exposição integral de dados de identificação extrapola o limite necessário para a finalidade de controle social do concurso.",
+        q: "Considerando os preceitos da Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 – LGPD), assinale a opção que apresenta a solução correta que o órgão deve adotar para conciliar a transparência do concurso com a proteção de dados dos candidatos:",
+        options: [
+            "A Comissão do Concurso pode manter a publicação integral com laudos e CPFs completos sem qualquer alteração, tendo em vista que a LGPD não se aplica às autarquias federais quando agem no exercício do poder de império e na realização de concursos públicos.",
+            "O órgão deve decretar o sigilo absoluto de todo o resultado da cota de Pessoas com Deficiência, divulgando apenas o resultado geral da ampla concorrência no Portal da Transparência, encaminhando o resultado da cota de forma individual e privada ao e-mail de cada candidato.",
+            "O órgão deve aplicar os princípios da necessidade e da minimização de dados, publicando a lista oficial apenas com informações indispensáveis (como nome/inscrição, CPF parcialmente mascarado e a condição de 'deferido/aprovado' na cota), franqueando o acesso ao laudo médico detalhado estritamente ao próprio candidato e à banca examinadora.",
+            "O órgão deve exigir o consentimento prévio, escrito e inequívoco de todos os candidatos participantes da cota para publicar seus laudos e diagnósticos médicos completos, sob pena de eliminação sumária do concurso caso o candidato se recuse a assinar o termo de autorização.",
+            "O órgão deve promover a anonimização irreversível e definitiva de todos os dados dos candidatos na lista pública e no sistema interno do concurso, de modo que nem mesmo a comissão examinadora consiga vincular a nota do exame ao indivíduo titular."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). O princípio da minimização (Art. 6º, III, da LGPD) exige que o tratamento seja limitado ao mínimo necessário para a realização de suas finalidades. A publicação de diagnósticos (dados sensíveis) de forma irrestrita viola a privacidade, bastando a divulgação da condição de deferimento/indeferimento."
+    },
+    {
+        topic: "Lei Geral de Proteção de Dados (LGPD)",
+        supportText: "Com base na Lei Geral de Proteção de Dados Pessoais – LGPD, (Lei nº 13.709/2018), no que diz respeito à segurança e às boas práticas, à fiscalização e à Autoridade Nacional de Proteção de Dados (ANPD), analise as afirmativas a seguir.\nI. Os controladores e operadores podem formular regras de boas práticas e de governança relacionadas ao tratamento de dados pessoais.\nII. Compete à ANPD, entre outras atribuições previstas na LGPD, zelar pela proteção dos dados pessoais, fiscalizar e aplicar sanções nos casos de tratamento realizado em descumprimento à legislação e promover o conhecimento sobre proteção de dados pessoais e privacidade.\nIII. Na aplicação das sanções administrativas, a ANPD considera a gravidade da infração e o dano causado, desconsiderando a adoção de mecanismos internos de prevenção e de medidas corretivas pelo infrator.",
+        q: "Está correto o que se afirma em",
+        options: [
+            "I, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). A afirmativa III está incorreta, pois o Art. 52, § 1º, incisos VIII e IX, da LGPD expressamente determina que a ANPD deve considerar a adoção de mecanismos e procedimentos internos de proteção, bem como a pronta adoção de medidas corretivas, como atenuantes na aplicação das sanções."
     }
 ];
 
@@ -1863,6 +2199,90 @@ const banco_gov_ti = [
         ],
         answer: 1,
         disclaimer: "O alinhamento estratégico garante que os investimentos em tecnologia apoiem diretamente a missão institucional e os objetivos de negócio do órgão público."
+    },
+    {
+        topic: "Gestão de Processos (BPMN)",
+        supportText: "",
+        q: "Em relação aos conceitos de gestão e modelagem de processos de negócio, assinale a afirmativa correta.",
+        options: [
+            "O modelo TO-BE descreve a situação atual de um processo organizacional, com o objetivo de identificar falhas, gargalos e oportunidades imediatas de correção.",
+            "O BPM (Business Process Management) constitui uma notação padronizada para a representação gráfica de fluxos de trabalho, permitindo mapear atividades, eventos e decisões de um processo.",
+            "Um processo de negócio é um conjunto de atividades estruturadas que transforma entradas em saídas, caracterizando-se, obrigatoriamente, pelo retorno financeiro direto gerado para a organização.",
+            "A modelagem de processos compreende o gerenciamento contínuo dos processos organizacionais, abrangendo sua execução, seu monitoramento e a implementação das ações necessárias à melhoria de seu desempenho.",
+            "Na notação BPMN (Business Process Model and Notation), os gateways são utilizados para controlar a divergência e a convergência do fluxo de sequência, enquanto as lanes subdividem um pool, permitindo organizar as atividades de acordo com funções ou papéis desempenhados no processo."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A afirmativa A está incorreta pois TO-BE refere-se ao futuro otimizado (o atual é AS-IS). A B confunde BPM (disciplina de gestão) com BPMN (notação). A E define exatamente as funções de Gateways e Lanes na notação BPMN."
+    },
+    {
+        topic: "Gestão de Processos (BPMN)",
+        supportText: "Uma organização utiliza a BPMN para modelar o tratamento de incidentes de segurança da informação. Após a classificação, o fluxo segue caminhos distintos conforme a criticidade do incidente.",
+        q: "Considerando os elementos da notação BPMN, assinale a afirmativa correta.",
+        options: [
+            "Um evento intermediário deve ser utilizado para representar qualquer decisão do processo, pois eventos possuem a função de selecionar caminhos alternativos.",
+            "Um gateway pode ser utilizado para controlar a divergência do fluxo, direcionando sua continuidade conforme a condição associada à criticidade do incidente.",
+            "Uma lane deve ser utilizada para representar a decisão relativa à criticidade, pois esse elemento determina qual caminho será seguido conforme uma condição.",
+            "Um pool distinto deve ser criado para cada caminho resultante da decisão, pois a BPMN não permite representar fluxos alternativos dentro de um mesmo participante.",
+            "Um fluxo de mensagem deve ser utilizado para representar caminhos alternativos dentro de um mesmo participante, ainda que não exista troca de mensagens entre participantes distintos."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O Gateway (desenhado como um losango) é o elemento exato do BPMN utilizado para tratar decisões e divisões condicionais (divergência ou convergência) no fluxo de sequência."
+    },
+    {
+        topic: "Gestão de Projetos (PMBOK)",
+        supportText: "O PMBOK constitui um conjunto de melhores práticas em gerenciamento de projetos e define projeto como um esforço temporário empreendido para criar um produto, serviço ou resultado exclusivo.\nDe acordo com o PMBOK, analise as afirmativas a seguir.\nI. Em um portfólio, todos os programas e os projetos que o compõem devem ser interdependentes.\nII. A entrega de valor deve ser feita de acordo com as expectativas das partes interessadas. O gerente do projeto deve ter a sensibilidade necessária para identificar as partes interessadas, gerenciar conflitos e se comunicar de forma eficaz.\nIII. Todos os riscos que podem acontecer em um projeto devem ser identificados, no início do projeto, por meio de reuniões, entrevistas, pesquisas e análise de documentos da sociedade empresária.",
+        q: "Está correto o que se afirma em",
+        options: [
+            "II, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). I é falsa: Itens num portfólio agrupam-se por objetivos estratégicos, não requerendo interdependência direta. III é falsa: É virtualmente impossível mapear 'todos os riscos' no início; riscos são continuamente descobertos de forma iterativa."
+    },
+    {
+        topic: "Gerenciamento de Serviços de TI (ITIL 4)",
+        supportText: "Fornecer serviços de TI de forma eficiente requer boas práticas e processos bem definidos. A ITIL v4 é um framework de boas práticas amplamente utilizadas que ajudam milhares de organizações a entregar valor a seus clientes.\nDe acordo com a ITIL v4, analise as afirmativas a seguir.\nI. Na ITIL v4, as práticas de gerenciamento de serviços estão divididas em três categorias: práticas de gerenciamento geral, práticas de gerenciamento de serviço e práticas de gerenciamento técnico.\nII. A estrutura ITIL v4 possui quatro dimensões: organizações e pessoas, informação e tecnologia, parceiros e fornecedores, fluxo de valor e processos.\nIII. A ITIL v4 introduz o conceito de Sistema de Valor de Serviço (SVS) para impulsionar a geração de valor via produtos e serviços, retirando o foco excessivo do mapeamento engessado de processos para o entendimento integral dos fatores que geram valor de ponta a ponta.",
+        q: "Está correto o que se afirma em",
+        options: [
+            "I, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Todas estão corretas. A transição da ITIL v3 para a v4 substituiu o ciclo de vida fixo pelo modelo SVS, baseando-se nas quatro dimensões para uma visão holística e organizando os antigos 'processos' em 34 'práticas' (divididas em gerais, de serviço e técnicas)."
+    },
+    {
+        topic: "Governança de TI (COBIT 2019)",
+        supportText: "Para melhorar a governança e a gestão de TI de uma organização, é importante adotar normas e boas práticas reconhecidas internacionalmente. Uma boa opção é o framework COBIT 2019.",
+        q: "Sobre esse framework, assinale a afirmativa correta.",
+        options: [
+            "ITIL e PMBOK são práticas com as quais o COBIT não está alinhado.",
+            "Criação de valor e otimização de riscos e recursos são benefícios gerados pela correta implementação da Governança de TI.",
+            "O framework COBIT mapeia todo o ambiente de TI, considerando recursos humanos, equipamentos de TI e infraestrutura organizacional.",
+            "O COBIT pode ser amplamente aplicado e utilizado exceto em pequenas organizações. Nesses casos, não é possível aplicar todas as boas práticas recomendadas.",
+            "Todos os processos de negócio podem ser baseados em boas práticas fornecidas no COBIT, incluindo como serão os fornecimentos de serviço de TI e as vendas de softwares."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O objetivo principal da Governança de TI e do COBIT 2019 (seu sistema de governança) é focado estritamente na Criação de Valor, desdobrada em três componentes: entrega de benefícios, otimização de riscos e otimização de recursos."
+    },
+    {
+        topic: "Gestão de Riscos de TI",
+        supportText: "Maria, que trabalha no departamento de TI de um órgão público, faz parte de uma equipe que foi designada para adquirir novos equipamentos de rede para serem integrados àqueles já existentes no datacenter do órgão.\nCom base em conceitos básicos de gestão de riscos em TI, analise as afirmativas a seguir.\nI. As estratégias de gestão dos riscos que por ventura possam surgir em uma contratação/aquisição isolada não precisam estar integrados à Política de Gestão de Riscos da organização.\nII. Identificação, análise e planejamento de respostas aos riscos são etapas do gerenciamento de riscos.\nIII. Os riscos identificados em uma contratação/aquisição devem estar registrados no Mapa de Gerenciamento de Riscos, todavia, as estratégias de mitigação não devem estar no Mapa.",
+        q: "Está correto o que se afirma em",
+        options: [
+            "II, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A I é falsa: projetos isolados precisam se alinhar à política global de riscos. A III é falsa: o Mapa (ou Registro) de Riscos precisa OBRIGATORIAMENTE conter as respostas e estratégias de mitigação, não apenas a listagem dos riscos."
     }
 ];
 
@@ -1976,6 +2396,146 @@ const banco_seg_ti = [
         ],
         answer: 2,
         disclaimer: "O OAuth 2.0 é um protocolo de autorização que permite a aplicativos de terceiros acessarem recursos protegidos em nome do usuário sem exigir que o usuário compartilhe suas credenciais originais."
+    },
+    {
+        topic: "Segurança da Informação (Princípios Básicos)",
+        supportText: "Um Analista de Segurança da Informação registrou dois incidentes relacionados aos sistemas da sociedade empresária.\nI. Após um volume anormal de requisições simultâneas, um sistema utilizado para prestação de serviços aos cidadãos permaneceu inacessível aos usuários legítimos durante várias horas, sem evidências de alteração dos dados armazenados.\nII. Um relatório com dados cadastrais e financeiros confidenciais foi enviado por falha operacional e acessado por destinatários que não possuíam nível de permissão para visualizá-lo, embora o conteúdo do documento não tenha sofrido qualquer modificação.",
+        q: "Considerando os princípios fundamentais da Segurança da Informação, os incidentes I e II violaram, respectivamente, os princípios de",
+        options: [
+            "integridade e autenticidade.",
+            "confidencialidade e disponibilidade.",
+            "disponibilidade e confidencialidade.",
+            "confidencialidade e integridade.",
+            "disponibilidade e autenticidade."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O incidente I (sistema inacessível) fere a Disponibilidade. O incidente II (acesso por pessoas não autorizadas a dados confidenciais) fere a Confidencialidade."
+    },
+    {
+        topic: "Normas ISO (27001 e 27002)",
+        supportText: "",
+        q: "Uma sociedade empresária está revisando seu Sistema de Gestão de Segurança da Informação (SGSI) com base nas normas ABNT NBR ISO/IEC 27001:2022 e ABNT NBR ISO/IEC 27002:2022. Considerando as disposições das referidas normas, assinale a afirmativa correta.",
+        options: [
+            "A ABNT NBR ISO/IEC 27001:2022 tem como finalidade principal fornecer diretrizes e orientações detalhadas para a implementação dos controles de segurança da informação descritos no Anexo A.",
+            "A ABNT NBR ISO/IEC 27001:2022 exige a implementação compulsória e integral de todos os 93 controles listados em seu Anexo A, para que uma organização obtenha a certificação de seu SGSI.",
+            "A edição de 2022 da ABNT NBR ISO/IEC 27002 introduziu atributos para classificação dos controles, utilizando exclusivamente os princípios de confidencialidade, integridade e disponibilidade como critério de categorização.",
+            "A ABNT NBR ISO/IEC 27002:2022 estabelece os requisitos auditáveis para a certificação de um SGSI, enquanto a ABNT NBR ISO/IEC 27001:2022 possui caráter estritamente orientativo.",
+            "Os controles necessários ao tratamento dos riscos devem ser comparados com os do Anexo A da ABNT NBR ISO/IEC 27001:2022, a fim de verificar possíveis omissões e subsidiar a Declaração de Aplicabilidade."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A ISO 27001 contém os requisitos (é ela que é certificável) e exige que a organização compare seus controles com o Anexo A para gerar a Declaração de Aplicabilidade (SoA). A ISO 27002 é o código de prática (guia orientativo)."
+    },
+    {
+        topic: "Controle de Acesso e Identidade (OAuth e SSO)",
+        supportText: "Um analista de redes do DATAPREV está avaliando a implementação de mecanismos de controle de acesso para um portal governamental com uma arquitetura de software distribuída.\nNesse contexto, analise as afirmativas a seguir e assinale (V) para a verdadeira e (F) para a falsa.\n( ) Uma vez implementado o mecanismo de Single Sign-On, as aplicações cliente que o utilizam precisam manter seu próprio banco de dados de credenciais de usuários finais e implementar formulários de login.\n( ) O OAuth 2.0 é um framework de autorização que opera sobre HTTP/HTTPS, permitindo que uma aplicação cliente obtenha acesso limitado aos recursos de um proprietário de recurso mediante delegação de autorização.\n( ) Com o Single Sign-On implementado, a responsabilidade de autenticar o usuário final e gerenciar sua sessão é delegada a cada servidor de aplicação.",
+        q: "As afirmativas são, respectivamente,",
+        options: [
+            "F – V – F.",
+            "F – F – F.",
+            "V – F – V.",
+            "V – F – F.",
+            "F – V – V."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Falsa: No SSO, as aplicações confiam em um Provedor de Identidade (IdP) central, não mantendo bases próprias. Verdadeira: Conceito exato do OAuth 2.0. Falsa: A responsabilidade de autenticar é centralizada no IdP, e não delegada a cada servidor de aplicação."
+    },
+    {
+        topic: "Segurança de Aplicações Web (OWASP)",
+        supportText: "Com a crescente adoção de softwares altamente configuráveis, a categoria Security Misconfiguration subiu da 5ª para a 2ª posição no OWASP Top 10:2025, um documento padrão de conscientização que apresenta os maiores riscos de segurança para aplicações web.\nDiante desse cenário, analise as afirmativas a seguir.\nI. Os dados fornecidos pelo usuário não são validados, filtrados ou higienizados pelo aplicativo.\nII. Funcionalidades desnecessárias estão instaladas ou habilitadas (ex.: portas, serviços, contas, frameworks de teste ou privilégios desnecessários).\nIII. Contas-padrão e suas respectivas senhas permanecem habilitadas e inalteradas.",
+        q: "De acordo com a OWASP Top 10:2025, assinale a opção que indica, corretamente, os itens que são apresentados como condições que podem caracterizar Security Misconfiguration.",
+        options: [
+            "II, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O item I refere-se a vulnerabilidades de Injeção (Injection) ou XSS, e não a falhas de configuração. Os itens II (recursos desnecessários abertos) e III (senhas padrão) são exemplos clássicos de Security Misconfiguration."
+    },
+    {
+        topic: "Testes de Segurança (SAST e DAST)",
+        supportText: "No contexto do desenvolvimento seguro de software, ferramentas de análise de segurança, como Static Application Security Testing (SAST) e Dynamic Application Security Testing (DAST), são utilizadas para identificar vulnerabilidades em diferentes momentos do ciclo de desenvolvimento, contribuindo para a redução dos riscos de segurança das aplicações.",
+        q: "Com base nesse cenário, assinale a afirmativa correta.",
+        options: [
+            "DAST tem como foco a análise de código estático.",
+            "DAST requer acesso total ao código-fonte da aplicação para realizar a análise.",
+            "SAST identifica problemas em tempo de execução, como falhas de autenticação ou configurações incorretas.",
+            "Por atuar estaticamente, SAST não se integra bem com ambientes de desenvolvimento integrados (IDEs) e pipelines de CI/CD.",
+            "SAST analisa código-fonte, bytecode ou binários para identificar vulnerabilidades de segurança, geralmente no início do ciclo de vida de desenvolvimento de software."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O SAST (Static) analisa o código-fonte/binário sem executá-lo (caixa-branca), ideal para as fases iniciais. O DAST (Dynamic) interage com a aplicação em execução (caixa-preta), sem precisar do código-fonte."
+    },
+    {
+        topic: "Testes de Segurança (Análise Estática)",
+        supportText: "No contexto do desenvolvimento seguro de software, a equipe de sistemas da DATAPREV decidiu incorporar ferramentas de análise estática de código ao processo de desenvolvimento, com o objetivo de identificar vulnerabilidades e problemas de qualidade antes da execução das aplicações.",
+        q: "Considerando as características da análise estática de código, assinale a afirmativa correta.",
+        options: [
+            "Caracteriza-se, em geral, por apresentar baixas taxas de falsos positivos.",
+            "Possui como ponto fraco a identificação de vulnerabilidades como buffer overflow e SQL injection.",
+            "É realizada, geralmente, como parte de testes caixa-preta, não sendo recomendada para testes caixa-branca.",
+            "Não pode ser executada na fase de implementação de um ciclo de vida de desenvolvimento seguro (SDL).",
+            "Apresenta como técnicas características a análise de fluxo de dados (data flow analysis) e análise de contaminação (taint analysis)."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A análise estática (SAST) é conhecida por utilizar taint analysis (rastrear dados não confiáveis) e análise de fluxo de dados. Seus pontos fracos incluem, na verdade, altas taxas de falsos positivos."
+    },
+    {
+        topic: "Segurança de Aplicações e APIs",
+        supportText: "Uma instituição pública passou a expor parte de seus serviços por meio de APIs usadas na comunicação entre sistemas internos e aplicações externas.\nEm uma revisão de segurança, a equipe técnica avaliou diferentes medidas de proteção dos recursos expostos, considerando aspectos ligados a controle de acesso, proteção das comunicações, tratamento das requisições recebidas e limitação do uso dos serviços.",
+        q: "Para esse contexto, assinale a opção que apresenta uma medida tecnicamente adequada.",
+        options: [
+            "Adotar a utilização de certificados digitais no servidor nas requisições entre clientes e serviços, de modo a garantir que apenas clientes autorizados tenham acesso aos endpoints disponíveis.",
+            "Adotar tokens de longa duração como medida de segurança, a fim de reduzir a frequência de renovação e, com isso, diminuir a exposição da API a falhas associadas ao processo de reautenticação.",
+            "Dispensar mecanismos específicos de autorização quando a API utilizar OAuth 2.0 ou JWT emitido por servidor confiável, pois a validade do token já é suficiente para legitimar o acesso aos recursos expostos.",
+            "Implementar validação e saneamento dos dados de entrada recebidos pelas APIs, com verificação dos parâmetros e do payload da requisição, a fim de mitigar ataques de injeção e outros efeitos decorrentes do processamento de entradas maliciosas.",
+            "Dispensar o uso de rate limiting nos servidores de recursos de APIs que adotam OAuth 2.0, uma vez que o controle de consumo por contador exige manutenção de estado entre requisições, contrariando o princípio de comunicação sem estado do protocolo OAuth."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova MPES (FGV). A filtragem e higienização (saneamento) estrita dos dados de entrada (input validation) é a medida fundamental para prevenir ataques de injeção (SQLi, XSS). Rate limiting, renovação curta de tokens e verificação de escopos de autorização (além do JWT) também são fundamentais."
+    },
+    {
+        topic: "Desenvolvimento Seguro e Documentação (Swagger)",
+        supportText: "Uma equipe mantém uma API REST documentada por meio de uma especificação OpenAPI 3.x, exibida no Swagger UI. Parte dos endpoints exige autenticação por token do tipo bearer no formato JWT, enviado no cabeçalho Authorization. Contudo, na interface gerada, essas operações não exibem o botão Authorize nem ficam corretamente marcadas como protegidas.\nSem alterar a implementação da API e atuando apenas na especificação OpenAPI, a equipe precisa configurar a documentação para que o Swagger UI reconheça formalmente esse mecanismo de segurança e permita seu uso nas operações protegidas.",
+        q: "Nesse contexto, assinale a opção que apresenta a medida tecnicamente mais adequada.",
+        options: [
+            "Definir, em components/securitySchemes, um esquema de segurança do tipo http com scheme: bearer, podendo indicar bearerFormat: JWT, e aplicá-lo por meio de security no nível global ou apenas nas operações protegidas.",
+            "Declarar, em components/schemas, um objeto chamado Authorization, com um campo obrigatório token, e referenciá-lo nas operações que exigem autenticação.",
+            "Adicionar, em cada operação protegida, um parâmetro em header com o nome Authorization, sem definir esquema de segurança específico na especificação.",
+            "Definir, em components/securitySchemes, um esquema do tipo apiToken, com in: header e name: Authorization, e associá-lo às operações protegidas por meio de security.",
+            "Definir, em components/securitySchemes, um esquema do tipo http com scheme: basic e associá-lo às operações protegidas, informando que o token JWT será enviado no cabeçalho Authorization."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova MPES (FGV). No OpenAPI 3, a autenticação baseada em tokens Bearer/JWT é configurada no objeto 'securitySchemes' definindo o tipo como 'http' e o esquema (scheme) explicitamente como 'bearer'."
+    },
+    {
+        topic: "Análise de Vulnerabilidades (DAST)",
+        supportText: "Um estudante de segurança da informação realizou uma avaliação de segurança de uma aplicação web em ambiente de testes, e acessou a aplicação por meio de um navegador, inserindo o seguinte código em um campo de entrada de dados:\n<script>alert('teste')</script>\nAo submeter a requisição, a aplicação retornou uma resposta que resultou na exibição de um alerta no navegador, evidenciando a execução do script inserido.",
+        q: "A técnica empregada caracteriza um tipo de análise de software conhecido como",
+        options: [
+            "análise estática de código, pois o comportamento da aplicação foi avaliado sem a necessidade de execução.",
+            "revisão de código manual, com foco na identificação de vulnerabilidades diretamente no código-fonte.",
+            "análise dinâmica de software, baseada na interação com a aplicação em execução e a avaliação de seu comportamento em tempo de execução.",
+            "uso de linters, para identificação de falhas sintáticas e más práticas de programação.",
+            "teste unitário, voltado à validação de componentes isolados do sistema."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova MPES (FGV). Embora a exploração represente um ataque Cross-Site Scripting (XSS), a técnica de análise descrita (inserir payloads através do navegador em uma aplicação viva e observar o resultado em execução) define a Análise Dinâmica de Segurança de Aplicações (DAST - Dynamic Application Security Testing)."
+    },
+    {
+        topic: "Vulnerabilidades Web (OWASP)",
+        supportText: "O OWASP Top 10:2025 apresenta as principais categorias de riscos de segurança em aplicações web, incluindo falhas relacionadas à manipulação inadequada de entradas fornecidas pelo usuário.\nUma aplicação web, hospedada no endereço http://www.eth0123.com, permite acesso a informações jornalísticas por meio do seguinte endereço:\nhttp://www.eth0123.com/acesso.php?arq=jornal\nDurante uma análise de segurança, verificou-se que o parâmetro “arq” é utilizado pela aplicação para carregar conteúdos armazenados no servidor. Em razão de falha na validação de entradas fornecidas pelo usuário, foi possível manipular o endereço de acesso conforme apresentado a seguir, permitindo visualizar o conteúdo de um arquivo sensível do sistema:\nhttp://www.eth0123.com/acesso.php?arq=../../etc/passwd",
+        q: "Assinale a opção que apresenta a técnica de exploração utilizada nesse cenário.",
+        options: [
+            "SQL Injection",
+            "LFI – Local File Inclusion",
+            "XSS – Cross-Site Scripting",
+            "RFI – Remote File Inclusion",
+            "FPD – Full Path Disclosure"
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova MPES (FGV). A exploração manipula caminhos de diretório (Directory Traversal - '../') para incluir e ler arquivos locais sensíveis do próprio servidor host (ex: /etc/passwd), caracterizando um Local File Inclusion (LFI)."
     }
 ];
 
@@ -2229,6 +2789,244 @@ const banco_eng_soft_ia = [
         ],
         answer: 0,
         disclaimer: "Uma função declarada como 'async' no JavaScript sempre retorna uma Promise. Como a chamada em 'let usuario' não utiliza 'await' (pois está fora de um escopo assíncrono), ela recebe a Promise pendente, que não possui a propriedade 'nome'."
+    },
+    {
+        topic: "Metodologias Ágeis (Kanban)",
+        supportText: "Uma equipe de TI, diante do acúmulo de demandas em andamento, adota o método Kanban para visualizar o fluxo de trabalho e estabelecer limites de trabalho em andamento (WIP).",
+        q: "Sobre o método Kanban, assinale a afirmativa correta.",
+        options: [
+            "A existência de um limite de WIP impede a entrada de qualquer nova demanda enquanto houver ao menos uma atividade ainda não concluída no fluxo.",
+            "A adoção do Kanban exige que as demandas sejam agrupadas em ciclos de duração fixa, ao final dos quais todos os itens selecionados devem estar concluídos.",
+            "A utilização de um quadro Kanban torna desnecessário o acompanhamento do tempo de fluxo, pois a representação visual das atividades é suficiente para assegurar a melhoria contínua.",
+            "Os limites de WIP têm como finalidade assegurar que todos os integrantes da equipe permaneçam continuamente ocupados, ainda que isso implique aumentar a quantidade de demandas iniciadas.",
+            "O estabelecimento de limites de WIP restringe a quantidade de itens que podem permanecer simultaneamente em determinadas etapas do fluxo, contribuindo para evidenciar gargalos e favorecer a conclusão do trabalho iniciado."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Limitar o Work In Progress (WIP) previne a sobrecarga de tarefas simultâneas, facilitando a identificação de gargalos (bottlenecks) no processo."
+    },
+    {
+        topic: "Engenharia de Requisitos",
+        supportText: "A Engenharia de Requisitos compreende atividades relacionadas à descoberta, análise, documentação, avaliação e evolução dos requisitos de um sistema, sendo comum que algumas dessas atividades se sobreponham ao longo do processo.\nDurante o desenvolvimento de um sistema de gestão acadêmica, a equipe já havia realizado a elicitação e produzido uma especificação dos requisitos. Em seguida, antes que esses requisitos servissem de base às etapas posteriores do desenvolvimento, foram realizadas revisões com os stakeholders, construído um protótipo das principais interfaces para avaliação pelos usuários e elaborados casos de teste a partir dos requisitos.\nO objetivo era identificar problemas relacionados à validade, consistência, completude, ambiguidade, realismo e verificabilidade do conjunto de requisitos documentados.",
+        q: "Nesse contexto, assinale a opção que indica a atividade do processo de Engenharia de Requisitos caracterizada pelas atividades descritas.",
+        options: [
+            "Elicitação de requisitos, cujo objetivo principal é descobrir as necessidades, expectativas e restrições dos stakeholders.",
+            "Especificação de requisitos, responsável por registrar e organizar os requisitos identificados em representações adequas.",
+            "Estudo de viabilidade, destinado a avaliar, em nível preliminar, se o desenvolvimento pretendido é justificável e realizável diante das principais restrições existentes.",
+            "Gerenciamento de requisitos, destinado principalmente a acompanhar a evolução dos requisitos, manter sua rastreabilidade e controlar mudanças ao longo do projeto.",
+            "Validação de requisitos, destinada a avaliar se os requisitos documentados representam adequadamente o sistema necessário e apresentam qualidade suficiente para fundamentar o desenvolvimento."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O uso de protótipos, revisão e elaboração de casos de teste para checar completude e ambiguidade visam garantir que a especificação reflete a necessidade real. Isso define a etapa de Validação."
+    },
+    {
+        topic: "Engenharia de Requisitos",
+        supportText: "A seleção de uma técnica de elicitação deve considerar características como o número e a distribuição dos stakeholders, o tipo de informação pretendida, os recursos disponíveis e a forma de análise dos dados obtidos.\nUma organização pública com atuação em todo o território nacional pretende levantar requisitos para um novo sistema de atendimento ao cidadão. Os principais usuários são aproximadamente dois mil atendentes, distribuídos em centenas de unidades nos diversos estados. A equipe de requisitos dispõe de prazo curto e orçamento limitado para deslocamentos e necessita, nessa etapa inicial, obter, de forma padronizada, a opinião dos atendentes sobre um conjunto preliminar de funcionalidades candidatas, de modo que os resultados possam ser tabulados e comparados estatisticamente.",
+        q: "Considerando especificamente essas condições, assinale a opção que indica a técnica de elicitação de requisitos mais adequada, bem como à justificativa do uso.",
+        options: [
+            "Prototipação, por permitir que os usuários interajam com uma representação preliminar da solução e forneçam feedback sobre suas características.",
+            "Etnografia, por permitir a observação direta das práticas reais de atendimento no ambiente de trabalho e facilitar a identificação de requisitos implícitos.",
+            "Workshop de requisitos, por reunir stakeholders em sessões colaborativas conduzidas por um facilitador, favorecendo discussão, negociação e resolução de conflitos.",
+            "Questionário, por permitir coletar informações padronizadas de um grande número de pessoas geograficamente dispersas, com possibilidade de tabulação e tratamento quantitativo das respostas.",
+            "Entrevista aberta, por permitir que cada atendente apresente livremente suas necessidades e que o entrevistador aprofunde individualmente os temas identificados durante o diálogo."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Questionários são a única técnica viável de elicitação quando há milhares de stakeholders dispersos geograficamente e se necessita de tratamento estatístico padronizado, sob restrição de prazo e orçamento."
+    },
+    {
+        topic: "Práticas Ágeis de Engenharia (TDD)",
+        supportText: "No contexto das práticas de desenvolvimento de software, considere o fluxo de trabalho a seguir.\n• Escreva uma lista dos cenários de teste que você deseja cobrir;\n• Transforme exatamente um item da lista em um teste real, concreto e executável;\n• Altere o código para fazer o teste (e todos os testes anteriores) passar;\n• Opcionalmente, refatore para melhorar o design da implementação; e\n• Até que a lista esteja vazia, volte ao passo 2.",
+        q: "O fluxo de trabalho descrito corresponde à abordagem denominada",
+        options: [
+            "BDD.",
+            "DDD.",
+            "TDD.",
+            "FDD.",
+            "RESTful."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Esse é o clássico ciclo Red-Green-Refactor do TDD (Test-Driven Development): escreve-se um teste que falha, cria-se o código para passar, e refatora-se a seguir."
+    },
+    {
+        topic: "Arquitetura e Integração de Sistemas (SOA)",
+        supportText: "As aplicações baseadas em SOA (Arquitetura Orientada a Serviços) organizam o software em blocos independentes, ou serviços.",
+        q: "As opções a seguir apresentam características de serviços SOA, à exceção de uma. Assinale-a.",
+        options: [
+            "Cada serviço pode ser usado por uma única aplicação.",
+            "Os serviços podem comunicar-se entre si mesmo usando plataformas diferentes.",
+            "Um cliente usa o serviço sem precisar conhecer detalhes internos de sua programação.",
+            "Os serviços possuem pouca dependência entre si, permitindo alterar um bloco sem influenciar em outros.",
+            "Os serviços empregam um barramento centralizado para gerenciar a comunicação e a troca de mensagens."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O pilar fundamental do SOA é justamente o *reuso*. Os serviços são desenhados para serem agnósticos e reutilizados por múltiplas aplicações diferentes da corporação."
+    },
+    {
+        topic: "Testes de Software e Java (JUnit)",
+        supportText: "Considere a seguinte classe Java:\npublic class CartaoService {\n  public double realizarCompra(double limite, double valor) {\n    if (valor > limite) {\n      throw new IllegalArgumentException(\"Limite insuficiente\");\n    }\n    return limite - valor;\n  }\n}\nUm desenvolvedor deseja criar um teste utilizando JUnit para verificar que uma compra de valor superior ao limite disponível produz uma IllegalArgumentException, e que a mensagem da exceção é \"Limite insuficiente\". O teste foi iniciado da seguinte forma:\nimport static org.junit.jupiter.api.Assertions.*;\nimport org.junit.jupiter.api.*;\nclass CartaoServiceTest {\n  private final CartaoService service = new CartaoService();\n  @__________\n  void deveRejeitarCompraAcimaDoLimite() {\n    var excecao = __________(\n      IllegalArgumentException.class,\n      () -> service.realizarCompra(1000, 1500));\n    __________(\"Limite insuficiente\", excecao.getMessage());\n  }\n}",
+        q: "Assinale a opção que apresenta, respectivamente, os termos que preenchem as lacunas para que o teste esteja correto.",
+        options: [
+            "Test — assertThrows — assertEquals",
+            "TestInstance— assertException — assertSame",
+            "TestInstance— assertEquals — assertEquals",
+            "Tag — assertThrows — assertTrue",
+            "Test — assertEquals — assertThrows"
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). O método precisa da anotação '@Test' para ser reconhecido. A asserção para capturar exceções é 'assertThrows()', e a verificação do texto da mensagem utiliza 'assertEquals()'."
+    },
+    {
+        topic: "Frameworks e ORM (JPA e Hibernate)",
+        supportText: "Um desenvolvedor de software da DATAPREV está definindo a pilha tecnológica para um novo sistema corporativo desenvolvido em Java.\nAo propor o uso de ferramentas de Mapeamento Objeto-Relacional (ORM) para a persistência de dados, surgiu um debate na equipe de arquitetura sobre as diferenças conceituais e de implementação entre a JPA e o Hibernate.",
+        q: "Considerando as características e a relação entre essas duas tecnologias, assinale a afirmativa correta.",
+        options: [
+            "A adoção exclusiva do Hibernate em um projeto impede o uso de anotações, forçando o desenvolvedor a utilizar arquivos XML para realizar todo o mapeamento relacional das entidades de domínio.",
+            "JPA é um framework autônomo que realiza a persistência direta no banco de dados, enquanto o Hibernate atua apenas como uma interface de abstração (API) sem implementação própria, dependendo de contêineres externos.",
+            "JPA exige obrigatoriamente que o servidor de aplicação contenha um banco de dados em memória nativo para a criação das tabelas em tempo de execução, funcionalidade que o Hibernate, atuando de forma isolada (standalone), não suporta.",
+            "As interfaces principais para controle de transações e manipulação de entidades na especificação JPA são Session e SessionFactory, enquanto as interfaces EntityManager e EntityManagerFactory pertencem exclusivamente à API nativa do Hibernate.",
+            "JPA define uma especificação padronizada para persistência de dados e mapeamento objeto-relacional em aplicações Java, ao passo que o Hibernate é um framework que, além de implementar essa especificação, oferece recursos e anotações específicas que vão além do padrão."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). JPA (Java Persistence API) é apenas a especificação (interface/padrão abstrato). O Hibernate é o provedor (implementação) que torna a persistência real, além de oferecer funcionalidades nativas extras."
+    },
+    {
+        topic: "Programação e Lógica (Java)",
+        supportText: "Analise o código Java a seguir:\npublic class ExemploDataprev {\n  public static void main(String[] args) {\n    int limite = 10;\n    Runnable r = () -> System.out.println(limite);\n    limite = 20;\n    r.run();\n  }\n}",
+        q: "Considerando as regras da linguagem Java para expressões lambda, assinale a afirmativa correta.",
+        options: [
+            "O código não compila, pois a variável local limite, utilizada pela expressão lambda, não é final nem effectively final.",
+            "O código compila e imprime 10, pois a expressão lambda captura o valor da variável local no momento em que lambda é criada.",
+            "O código compila e imprime 20, pois a expressão lambda acessa o valor atualizado da variável local no momento de sua execução.",
+            "O código não compila porque Runnable não é uma interface funcional e, portanto, não pode ser utilizada como alvo de uma expressão lambda.",
+            "O código compila, mas a chamada r.run() provoca uma exceção em tempo de execução, porque o valor de limite foi alterado após a criação da expressão lambda."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Para que uma variável local seja utilizada dentro de uma função Lambda, ela deve ser 'final' ou efetivamente final (não sofrer reatribuição após a declaração). Ao definir 'limite = 20', o compilador aponta erro de compilação."
+    },
+    {
+        topic: "Desenvolvimento Web (HTML e CSS)",
+        supportText: "Considere o seguinte trecho de código:\n<style>\n.container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.item:nth-child(2n) {\n  background-color: lightblue;\n}\n</style>\n<div class=\"container\">\n  <div class=\"item\">A</div>\n  <div class=\"item\">B</div>\n  <div class=\"item\">C</div>\n  <div class=\"item\">D</div>\n</div>",
+        q: "Sobre o código apresentado, considerando o comportamento padrão dos navegadores modernos compatíveis com as especificações do W3C, assinale a afirmativa correta.",
+        options: [
+            "A propriedade justify-content: space-between distribui os itens com espaçamento igual entre eles e também nas extremidades do contêiner, deixando margens laterais iguais aos espaços internos.",
+            "O seletor .item:nth-child(2n) aplicará a cor de fundo lightblue apenas aos itens \"A\" e \"C\", pois eles ocupam as posições ímpares dentro do contêiner.",
+            "A propriedade align-items: center alinha os itens horizontalmente ao centro do eixo principal do contêiner flexível.",
+            "O seletor .item:nth-child(2n) aplicará a cor de fundo lightblue aos itens \"B\" e \"D\", pois corresponde aos elementos filhos cujas posições são múltiplos de 2.",
+            "Para que o Flexbox funcione corretamente, seria obrigatório declarar também a propriedade flex-direction: row, caso contrário os itens seriam empilhados verticalmente por padrão."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova MPES (FGV). A pseudoclasse :nth-child(2n) seleciona os elementos pares (2, 4, 6...), que no caso são os itens 'B' e 'D'. A opção A descreve space-evenly, não space-between. A opção C descreve justify-content, pois align-items age no eixo cruzado (cross axis)."
+    },
+    {
+        topic: "Frameworks (Spring Boot)",
+        supportText: "Considere o seguinte trecho de código utilizando Spring Boot:\n@RestController\n@RequestMapping(\"/produtos\")\npublic class ProdutoController {\n  @Autowired\n  private ProdutoService produtoService;\n  \n  @GetMapping(\"/{id}\")\n  public ResponseEntity<Produto> buscarPorId(@PathVariable Long id) {\n    Produto produto = produtoService.buscarPorId(id);\n    return ResponseEntity.ok(produto);\n  }\n}",
+        q: "Sobre o código apresentado, considerando os conceitos do Spring Framework e o comportamento padrão do Spring Boot, assinale a afirmativa correta.",
+        options: [
+            "A anotação @PathVariable no método buscarPorId captura parâmetros enviados no corpo da requisição HTTP, funcionando de forma idêntica à anotação @RequestBody.",
+            "A anotação @PostMapping configura o método salvar para responder a requisições do tipo HTTP GET, sendo apenas um alias sintático para @GetMapping com semântica de criação.",
+            "A anotação @Autowired realiza a instanciação manual do objeto ProdutoService, exigindo que o desenvolvedor implemente explicitamente o padrão de projeto Factory para que a injeção funcione.",
+            "A anotação @RestController é equivalente à combinação das anotações @Controller e @ResponseBody, fazendo com que os métodos da classe retornem os dados diretamente no corpo da resposta HTTP, por padrão em formato JSON.",
+            "A anotação @RequestMapping(\"/produtos\") aplicada à classe exige que cada método declare novamente o caminho completo / produtos em suas respectivas anotações de mapeamento, caso contrário os endpoints não serão registrados."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova MPES (FGV). A anotação @RestController é uma anotação de conveniência no Spring que combina @Controller (que marca a classe como um componente web) e @ResponseBody (que indica que o retorno dos métodos deve ser serializado diretamente no corpo da resposta HTTP, geralmente em JSON)."
+    },
+    {
+        topic: "Arquitetura de Software (MVC)",
+        supportText: "Uma equipe mantém uma aplicação web estruturada segundo o modelo MVC (Modelo-Visão-Controlador). Após sucessivas evoluções, os controladores passaram a concentrar validações de negócio, cálculos, verificação de permissões e decisões sobre transições de estado.\nComo consequência, regras semelhantes começaram a ser repetidas em diferentes controladores, e mudanças em uma mesma política funcional passaram a exigir alterações em vários pontos do sistema. Em uma revisão arquitetural, decidiu-se promover uma refatoração para reduzir esse problema mantendo a separação de responsabilidades e favorecendo a reusabilidade.",
+        q: "Nesse contexto, de acordo com o modelo MVC, assinale a opção que apresenta a medida mais adequada.",
+        options: [
+            "Transferir as regras repetidas para as visões, de modo que cada interface trate localmente as decisões necessárias ao seu fluxo específico.",
+            "Manter as regras nos controladores, mas reorganizar os métodos por caso de uso, a fim de tornar a manutenção mais previsível.",
+            "Transferir a lógica de negócio e gestão de estado para a camada de modelo, usando abstrações para evitar a duplicação e delegando a coordenação do fluxo aos controladores.",
+            "Concentrar validações e decisões de estado em um único controlador central, para eliminar divergências entre os demais controladores.",
+            "Restringir os modelos à representação de dados e deslocar para os controladores as regras remanescentes, uniformizando o padrão já adotado."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova MPES (FGV). O padrão arquitetural MVC prevê 'Fat Models, Skinny Controllers'. A camada de Modelo (Model) é a verdadeira responsável pela lógica de negócios, estado e persistência, cabendo ao Controlador apenas orquestrar as requisições entre a View e o Model."
+    },
+    {
+        topic: "Arquitetura Orientada a Serviços (Microsserviços)",
+        supportText: "Uma organização iniciou a modernização de seu sistema corporativo. A aplicação, antes monolítica, foi gradualmente dividida em serviços independentes para atender módulos como autenticação, faturamento e catálogo.\nDurante a transição, parte da integração entre sistemas legados permaneceu baseada em contratos formais descritos em XML, enquanto os novos serviços passaram a expor APIs HTTP com troca de mensagens em JSON.",
+        q: "Com base nesse cenário, avalie as afirmativas a seguir.\nI. A coexistência, no mesmo ambiente, de serviços que utilizam contratos formais em XML e de APIs HTTP com JSON é compatível com um processo de transição arquitetural, não sendo suficiente, por si só, para descaracterizar uma adoção de microsserviços.\nII. Em uma arquitetura de microsserviços, a divisão do sistema em vários serviços garante baixo acoplamento e independência de evolução, mesmo que todos compartilhem o mesmo banco de dados e dependam de mudanças coordenadas no esquema relacional.\nIII. Os microsserviços podem ser compreendidos como uma abordagem específica de arquitetura orientada a serviços, de modo que nem toda solução orientada a serviços caracteriza, necessariamente, uma arquitetura de microsserviços.",
+        options: [
+            "I, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova MPES (FGV). A afirmativa II está errada, pois compartilhar o mesmo banco de dados (Shared Database) cria forte acoplamento (database integration), o que viola o princípio de independência de evolução dos microsserviços (onde cada um deve ter seu próprio banco - Database per Service)."
+    },
+    {
+        topic: "Web Services e API REST",
+        supportText: "Considerando boas práticas de arquitetura de APIs REST, avalie as afirmativas a seguir e assinale (V) para a verdadeira e (F) para a falsa.\n( ) Em APIs REST, a semântica do método HTTP integra o contrato da operação, de modo que a leitura de um recurso não deve ser modelada com método cujo significado indique alteração de estado.\n( ) A criação de novos recursos em uma coleção pode ser realizada por meio de requisição PUT dirigida ao endpoint correspondente à coleção, com retorno de um novo identificador gerado pelo servidor.\n( ) Em APIs REST, a utilização de um código HTTP uniforme para respostas de êxito e de falha não compromete a semântica da interação, desde que o corpo da mensagem descreva adequadamente o resultado da requisição.",
+        q: "As afirmativas são, respectivamente,",
+        options: [
+            "V – V – V.",
+            "V – V – F.",
+            "V – F – F.",
+            "F – V – F.",
+            "F – F – V."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova MPES (FGV). 1) V: Leitura é GET, que é idempotente e seguro, não devendo usar POST/PUT. 2) F: A criação onde o servidor gera o ID é feita com POST. O PUT é usado quando o cliente já conhece ou gera a URI completa do recurso. 3) F: Utilizar apenas código HTTP 200 (uniforme) viola a semântica do REST, que exige o uso adequado dos Status Codes (404, 500, 201, etc)."
+    },
+    {
+        topic: "Qualidade de Software (Teste de Sistema)",
+        supportText: "Um Engenheiro de Testes acaba de receber uma demanda para conduzir um teste de sistema com sua equipe.",
+        q: "Sobre esse tipo de teste, analise as afirmativas a seguir.\nI. Deve ser conduzido antes dos testes de integração e conduzido preferencialmente por uma equipe de testes.\nII. Tem como objetivo confrontar o software em funcionamento com seus requisitos funcionais e não funcionais, sendo executado em um ambiente muito semelhante ao de produção.\nIII. Pode ser dividido em fases alfa (em ambiente de desenvolvimento) e beta (em ambiente que emula a produção) e realizado integralmente pela equipe de testes.",
+        options: [
+            "I, apenas.",
+            "II, apenas.",
+            "III, apenas.",
+            "I e II, apenas.",
+            "II e III, apenas."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova MPES (FGV). I é falso: O Teste de Sistema ocorre DEPOIS dos testes de unidade e de integração. III é falso: Testes Alfa e Beta são Testes de Aceitação, realizados pelos usuários finais ou clientes, e não 'integralmente pela equipe de testes'."
+    },
+    {
+        topic: "Metodologias Ágeis (BDD)",
+        supportText: "As metodologias de desenvolvimento de software evoluíram de abordagens rígidas e sequenciais, como o modelo em cascata, para modelos iterativos e incrementais, que favorecem as mudanças e a redução de riscos. Com as práticas ágeis, passaram a priorizar ciclos curtos, feedback contínuo e maior integração entre desenvolvimento e validação.\nNesse contexto, surgem metodologias que colocam os testes no centro do desenvolvimento, não apenas para verificação, mas como guia para construção do software, melhorando qualidade e alinhamento com o negócio. Em uma delas, utilizam-se especificações em linguagem natural, o que permite o entendimento entre clientes, analistas e desenvolvedores; surge também a chamada living documentation, que se mantém atualizada por ser executável como testes automatizados.",
+        q: "Assinale a opção que indica a metodologia em questão.",
+        options: [
+            "TDD (Test Driven Development).",
+            "BDD (Behavior Driven Development).",
+            "DDT (Data Driven Development).",
+            "RUP (Rational Unifed Process).",
+            "UCD (User-Centered Design)."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova MPES (FGV). A utilização de linguagem natural (ex: Gherkin - Given/When/Then), foco no comportamento do negócio e geração de documentação viva (living documentation) são características definidoras do BDD (Behavior Driven Development)."
+    },
+    {
+        topic: "Engenharia de Requisitos",
+        supportText: "Ao projetar um sistema, o cliente apresentou uma lista de requisitos a serem implementados.\nRelacione os requisitos listados a seguir à sua classificação como Funcionais (RF) ou Não Funcionais (RNF).\n1. Requisito Funcional (RF)\n2. Requisito Não Funcional (RNF)\n( ) Emitir relatórios diários de indicadores de performance.\n( ) Armazenar dados temporais estritamente sob o padrão da ISO 8601.\n( ) Adaptar a interface dinamicamente para dispositivos móveis e desktops.",
+        q: "Assinale a opção que indica a relação correta, segundo a ordem apresentada.",
+        options: [
+            "1, 1 e 2.",
+            "1, 2 e 2.",
+            "1, 1 e 1.",
+            "2, 1 e 1.",
+            "2, 2 e 2."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova MPES (FGV). Emitir relatório é uma funcionalidade (RF). Seguir um padrão específico de formatação de dados e garantir adaptabilidade/responsividade de interface são restrições ou qualidades do sistema (RNF)."
+    },
+    {
+        topic: "Métricas de Software (Análise de Pontos de Função)",
+        supportText: "O sistema e-Gampes (Sistema de Gestão de Autos) do MPES é a principal ferramenta de gestão de autos finalísticos.\nEle digitalizou o fluxo de trabalho extrajudicial (inquéritos civis, notícias de fato), eliminando o uso de papel e proporcionando agilidade, segurança e transparência na tramitação. Nele é possível cadastrar, alterar e excluir autos, executar relatórios analíticos e listar os autos cadastrados em uma consulta simples.",
+        q: "Com base na Análise de Pontos de Função (APF), as funcionalidades citadas acima serão contadas, respectivamente, como",
+        options: [
+            "Entrada Externa, Saída Externa e Consulta Externa.",
+            "Saída Externa, Consulta Externa e Arquivo de Interface Externo.",
+            "Saída Externa, Saída Externa e Consulta Externa.",
+            "Arquivo Lógico Interno, Consulta Externa e Entrada Externa.",
+            "Entrada Externa, Saída Externa e Saída Externa."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova MPES (FGV). 1) Cadastrar/Alterar/Excluir alteram o estado do sistema (Entrada Externa - EE). 2) Relatórios analíticos contêm dados derivados ou matemática (Saída Externa - SE). 3) Listar em consulta simples, sem cálculos, apenas recupera dados (Consulta Externa - CE)."
     }
 ];
 
@@ -2342,6 +3140,104 @@ const banco_infra_bd = [
         ],
         answer: 2,
         disclaimer: "Por padrão, o Docker Compose configura uma única rede do tipo 'bridge' para o aplicativo inteiro. Cada contêiner junta-se a essa rede e pode alcançar outros contêineres utilizando os nomes dos serviços como alias de rede."
+    },
+    {
+        topic: "Modelagem de Dados (Normalização)",
+        supportText: "Considere a tabela Projeto_Engenheiro com a seguinte estrutura de colunas: CodigoEngenheiro, CodigoProjeto, HorasAlocadas, NomeEngenheiro e EspecialidadeEngenheiro.\nSabe-se que a chave primária da tabela é composta conjuntamente por (CodigoEngenheiro, CodigoProjeto). Ao analisar as dependências funcionais, verifica-se que NomeEngenheiro e EspecialidadeEngenheiro são funcionalmente determinados apenas por CodigoEngenheiro, que corresponde à parte da chave primária composta.",
+        q: "Assinale a opção que avalia corretamente a adequação dessa estrutura à 2ª Forma Normal (2FN).",
+        options: [
+            "A estrutura viola a 2FN devido à dependência parcial dos atributos do engenheiro.",
+            "A tabela já se encontra na 2FN, uma vez que a dependência transitiva existente deve ser sanada apenas na 3FN.",
+            "A estrutura viola a 2FN, enquanto a chave composta não for substituída por um identificador sequencial simples.",
+            "A estrutura viola a 2FN, devendo-se corrigir o problema movendo o atributo de horas alocadas para uma tabela à parte.",
+            "A tabela já se encontra na 2FN, dado que a única exigência estrutural desse nível de normalização é a existência de uma chave primária composta bem definida."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A Segunda Forma Normal (2FN) proíbe dependências parciais. Se a chave primária é composta e um atributo não-chave depende de apenas uma parte dessa chave, a 2FN é violada."
+    },
+    {
+        topic: "Banco de Dados (Integridade Referencial)",
+        supportText: "Considere as tabelas Cliente e Pedido, em que Cliente.CodigoCliente é a chave primária e Pedido.CodigoCliente é uma chave estrangeira que referencia essa coluna.\nAnalise as duas definições a seguir:\nI - FOREIGN KEY (CodigoCliente) REFERENCES Cliente(CodigoCliente) ON DELETE CASCADE\nII - FOREIGN KEY (CodigoCliente) REFERENCES Cliente(CodigoCliente) ON DELETE NO ACTION",
+        q: "Assinale a opção que apresenta corretamente a diferença entre os comportamentos das duas definições.",
+        options: [
+            "Na definição I, a exclusão de um pedido pode provocar a exclusão do cliente; na definição II, essa operação é impedida.",
+            "Na definição I e na definição II, a exclusão do cliente produz o mesmo resultado, pois CASCADE e NO ACTION apenas documentam a intenção da regra.",
+            "Na definição I, os pedidos permanecem e passam a referenciar automaticamente outro cliente; na definição II, os pedidos são excluídos juntamente com o cliente.",
+            "Na definição I, a exclusão do cliente é permitida apenas quando não houver pedidos associados; na definição II, os pedidos associados são removidos automaticamente.",
+            "Na definição I, a exclusão de um cliente provoca a exclusão dos pedidos que o referenciam; na definição II, a exclusão do cliente é impedida enquanto existirem pedidos que o referenciem."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). 'ON DELETE CASCADE' propaga a exclusão (deletar o pai deleta os filhos). 'ON DELETE NO ACTION' (ou RESTRICT) impede a exclusão do pai se houver filhos atrelados a ele."
+    },
+    {
+        topic: "Data Warehouse e BI",
+        supportText: "Uma organização possui um data warehouse, que é usado para produzir indicadores financeiros a partir de dados provenientes de diferentes sistemas operacionais. Durante uma auditoria, a equipe responsável analisou algumas informações relacionadas ao ambiente.\nI. A tabela FATO_VENDAS possui o atributo valor_liquido, definido como um número decimal com duas casas decimais, e esse atributo não pode receber valores nulos.\nII. O indicador “venda líquida” representa o valor bruto das vendas após a dedução dos descontos e das devoluções, conforme a regra estabelecida pela organização.\nIII. O processo de carga da tabela FATO_VENDAS é executado diariamente às 2h. Na última execução, foram extraídos 1.253.428 registros, dos quais 1.251.936 foram carregados com sucesso.",
+        q: "Considerando as características dos metadados em ambientes de data warehouse, assinale a opção que apresenta a classificação correta das informações I, II e III, respectivamente.",
+        options: [
+            "de negócio; de processo; técnico.",
+            "de negócio; técnico; de processo.",
+            "de processo; de negócio; técnico.",
+            "técnico; de negócio; de processo.",
+            "técnico; de processo; de negócio."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Metadados técnicos descrevem a estrutura (tipos de dados, nullability). Metadados de negócio descrevem as regras e conceitos (cálculo de venda). Metadados de processo registram o histórico e estatísticas de execução (ETL carga, horários)."
+    },
+    {
+        topic: "Data Warehouse e BI",
+        supportText: "Considere um modelo dimensional destinado à análise de vendas, composto pelas tabelas FatoVenda, DimProduto, DimCliente e DimData.\nA tabela FatoVenda possui as colunas: CodigoProduto, CodigoCliente, CodigoData, Quantidade e ValorVenda. As três primeiras colunas referenciam, respectivamente, as chaves das tabelas DimProduto, DimCliente e DimData.",
+        q: "Sobre a forma como os relacionamentos entre a tabela fato e as dimensões são materializados nesse modelo, assinale a afirmativa correta.",
+        options: [
+            "Os relacionamentos são materializados pelas chaves estrangeiras existentes na tabela fato, que referenciam as chaves das respectivas dimensões.",
+            "Cada dimensão deve possuir uma chave primária composta pela combinação de sua própria chave e das chaves das demais dimensões utilizadas pela tabela fato.",
+            "Os relacionamentos entre fato e dimensões são definidos apenas conceitualmente e não precisam ser representados por chaves nas tabelas do modelo dimensional.",
+            "As dimensões devem armazenar as chaves estrangeiras que identificam as ocorrências correspondentes na tabela fato, estabelecendo a associação entre as tabelas.",
+            "Deve ser criada uma tabela associativa para cada relacionamento entre FatoVenda e uma dimensão, contendo as chaves primárias das duas tabelas relacionadas."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Em um esquema estrela (Star Schema), a tabela Fato fica no centro e conecta-se às Dimensões armazenando as chaves primárias destas como chaves estrangeiras (FK)."
+    },
+    {
+        topic: "Bancos de Dados NoSQL",
+        supportText: "Uma instituição pretende implantar uma aplicação projetada para armazenar informações sobre os itens pertencentes ao seu patrimônio. Os itens pertencem a diferentes categorias e podem apresentar conjuntos distintos de atributos.\nAlém disso, novos tipos de itens e novos atributos podem ser incorporados frequentemente, sem que seja desejável modificar continuamente a estrutura global do banco de dados.\nA aplicação realizará principalmente operações de inserção, consulta e atualização de itens completos, sendo conveniente recuperar as informações de cada item como uma unidade de dados.",
+        q: "Considerando essas características, assinale a opção que apresenta a abordagem de banco de dados mais adequada ao cenário descrito.",
+        options: [
+            "Relacional, utilizando tabelas normalizadas e relacionamentos entre elas.",
+            "Orientado a grafos, usando nós e arestas para representar os itens e seus relacionamentos.",
+            "Objeto-relacional, utilizando tipos definidos pelo usuário para representar os diferentes itens.",
+            "Orientado a documentos, permitindo armazenar documentos com estruturas de atributos distintas e flexíveis.",
+            "Relacional, utilizando uma tabela única para os produtos, com colunas opcionais para acomodar os atributos específicos de cada categoria."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Bancos de dados orientados a documentos (como MongoDB) permitem schema flexível (schemaless), sendo ideais para itens heterogêneos recuperados como uma unidade inteira (documento JSON/BSON)."
+    },
+    {
+        topic: "Linguagem SQL",
+        supportText: "Considere o modelo relacional de uma transportadora composto pelas tabelas Veiculo e Viagem.\nA tabela Veiculo possui as colunas CodigoVeiculo (PK) e KmAtual, contendo 50 veículos cadastrados. O atributo kmAtual aceita valores nulos. Já a tabela Viagem possui as colunas CodigoViagem (PK), CodigoVeiculo (FK) e KmFinal, contendo os registros de viagens finalizadas.\nSabe-se que apenas 30 desses veículos possuem registros na tabela Viagem (os outros 20 são veículos recém-adquiridos que nunca viajaram).\nUm desenvolvedor executou a seguinte instrução SQL no banco de dados:\nUPDATE Veiculo V\nSET KmAtual = (SELECT MAX(Vi.KmFinal) FROM Viagem Vi WHERE Vi.CodigoVeiculo = V.CodigoVeiculo);",
+        q: "Assinale a alternativa que descreve corretamente o resultado da execução dessa instrução.",
+        options: [
+            "Ocorrerá um erro de sintaxe, pois uma subconsulta não pode ser utilizada diretamente para definir o valor de uma coluna em uma instrução UPDATE.",
+            "Ocorrerá um erro de sintaxe, pois o padrão ANSI SQL não permite o uso de funções de agregação, como MAX, dentro de uma subconsulta na cláusula SET.",
+            "Os 30 veículos que possuem registros na tabela Viagem receberão a sua maior quilometragem, enquanto os 20 restantes manterão o valor original de KmAtual inalterado.",
+            "Os 30 veículos que possuem registros na tabela Viagem receberão a sua maior quilometragem, enquanto os 20 restantes terão o valor de KmAtual sobrescrito como nulo (NULL).",
+            "Os 30 veículos que possuem registros na tabela Viagem receberão a sua maior quilometragem, enquanto os 20 veículos restantes receberão automaticamente o valor 0 (zero) na coluna KmAtual, pois MAX() converte o resultado de um conjunto vazio para zero durante uma operação UPDATE."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Como o UPDATE não possui a cláusula WHERE restringindo as linhas afetadas, todos os 50 veículos serão atualizados. Para os 20 veículos sem viagens, a subconsulta MAX() retornará um conjunto vazio, cujo resultado é injetado como NULL na coluna KmAtual."
+    },
+    {
+        topic: "Modelagem de Dados",
+        supportText: "A modelagem conceitual de bancos de dados é uma representação abstrata do negócio que visa identificar as entidades envolvidas e os relacionamentos entre elas.",
+        q: "No mapeamento de um relacionamento N:M identificado no modelo conceitual para o modelo relacional, deve-se",
+        options: [
+            "adicionar uma coluna do tipo array em uma das tabelas envolvidas.",
+            "converter uma das entidades em um atributo multivalorado na outra entidade.",
+            "criar uma tabela associativa contendo as chaves primárias das entidades originais como chaves estrangeiras.",
+            "inserir a chave primária de qualquer uma das duas entidades diretamente como chave estrangeira na outra.",
+            "mesclar os atributos das duas entidades em uma única tabela para eliminar a necessidade de relacionamento."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Relacionamentos Muitos-para-Muitos (N:M) no modelo conceitual originam o surgimento de uma nova tabela (tabela associativa ou de junção) no modelo lógico relacional, unindo as chaves primárias de ambas."
     }
 ];
 
@@ -2546,6 +3442,146 @@ const banco_rlm = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Como a função decresce ao longo do tempo (razão negativa), o total de processos do primeiro semestre é maior que o do segundo. Logo, as probabilidades são desiguais." //[cite: 25]
+    },
+    {
+        topic: "Equivalência Lógica",
+        supportText: "",
+        q: "Em determinado período de monitoramento, a equipe responsável por um centro de processamento adotou a regra a seguir.\n“Se a taxa de ocupação dos servidores for superior a 80%, então as rotinas não prioritárias serão transferidas para o período noturno.”\nConsiderando a lógica proposicional, essa regra é logicamente equivalente a",
+        options: [
+            "A taxa de ocupação dos servidores é inferior a 80% ou as rotinas não prioritárias serão transferidas para o período noturno.",
+            "A taxa de ocupação dos servidores é menor ou igual a 80% ou as rotinas não prioritárias serão transferidas para o período noturno.",
+            "A taxa de ocupação dos servidores é menor ou igual a 80% e as rotinas não prioritárias serão transferidas para o período noturno.",
+            "A taxa de ocupação dos servidores é superior a 80% ou as rotinas não prioritárias não serão transferidas para o período noturno.",
+            "Se as rotinas não prioritárias forem transferidas para o período noturno, então a taxa de ocupação dos servidores será superior a 80%."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A equivalência do condicional (P -> Q) pode ser dada pela regra do silogismo disjuntivo (~P v Q). A negação de 'superior a 80%' é 'menor ou igual a 80%', unindo-se pelo conectivo 'ou' ao consequente mantido."
+    },
+    {
+        topic: "Lógica de Argumentação",
+        supportText: "Em relação às alterações processadas por determinada organização, considere verdadeiras as seguintes afirmações:\n• toda alteração classificada como emergencial foi implantada no mesmo dia em que foi autorizada;\n• toda alteração implantada no mesmo dia em que foi autorizada foi submetida a uma revisão posterior.\nUma dessas alterações, denominada Alfa, não foi submetida a uma revisão posterior.",
+        q: "Com base exclusivamente nessas informações, conclui-se necessariamente que a alteração Alfa",
+        options: [
+            "não foi autorizada.",
+            "foi autorizada, mas não foi implantada.",
+            "não foi classificada como emergencial.",
+            "foi implantada em dia posterior ao de sua autorização.",
+            "foi classificada como emergencial, mas não foi implantada no mesmo dia em que foi autorizada."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Aplicando a regra do Modus Tollens de trás para frente: se não teve revisão, não foi implantada no mesmo dia. E se não foi implantada no mesmo dia, obrigatoriamente não foi classificada como emergencial."
+    },
+    {
+        topic: "Problemas Aritméticos",
+        supportText: "Um sistema utiliza um contador que apresenta inicialmente o número 1. A cada comando executado, o número exibido é substituído por um dos seguintes valores:\n• o número exibido acrescido de uma unidade;\n• o dobro do número exibido.",
+        q: "O menor número de comandos necessários para que o contador passe a exibir o número 100 é",
+        options: [
+            "6.",
+            "7.",
+            "8.",
+            "9.",
+            "10."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A forma mais rápida de descobrir é fazendo o caminho inverso a partir do 100, dividindo por 2 quando for par e subtraindo 1 quando for ímpar: 100 -> 50 -> 25 -> 24 -> 12 -> 6 -> 3 -> 2 -> 1. Total de 8 etapas/comandos."
+    },
+    {
+        topic: "Lógica Sentencial",
+        supportText: "Um sistema de monitoramento utiliza dois sensores e pode operar em modo de manutenção.\nConsidere as proposições:\n• p: o sensor A detecta uma anomalia;\n• q: o sensor B detecta uma anomalia; e\n• r: o modo de manutenção está ativado.\nO sistema aciona um alerta quando pelo menos um dos sensores detecta uma anomalia e o modo de manutenção não está ativado, ou quando ambos os sensores detectam uma anomalia.",
+        q: "A proposição que representa o acionamento do alerta é",
+        options: [
+            "[(p∨q)∧¬r]∨(p∧q)",
+            "[(p∧q)∧¬r]∨(p∧q)",
+            "[(p∨q)∧r]∨(p∧¬q)",
+            "[(p∨q)∨¬r]∨(p∧q)",
+            "[(p∨q)∧¬r]∧(p∨q)"
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). Traduzindo o enunciado para os símbolos lógicos: 'pelo menos um' = (p v q); 'E' = ^; 'não está ativado' = ~r; 'OU' = v; 'ambos' = (p ^ q). Unindo tudo, chegamos à estrutura [(p v q) ^ ~r] v (p ^ q)."
+    },
+    {
+        topic: "Lógica de Primeira Ordem",
+        supportText: "Considere o conjunto não vazio dos equipamentos examinados durante uma conferência patrimonial. Ao término do procedimento, foi apresentada a afirmação a seguir.\n“Todos os equipamentos examinados receberam etiqueta patrimonial e tiveram sua localização registrada no inventário.”",
+        q: "Assinale a opção que apresenta a negação lógica dessa afirmação.",
+        options: [
+            "Pelo menos um equipamento examinado recebeu etiqueta patrimonial e teve sua localização registrada no inventário.",
+            "Nenhum equipamento examinado recebeu etiqueta patrimonial nem teve sua localização registrada no inventário.",
+            "Nenhum equipamento examinado recebeu simultaneamente etiqueta patrimonial e teve sua localização registrada no inventário.",
+            "Pelo menos um equipamento examinado não recebeu etiqueta patrimonial e não teve sua localização registrada no inventário.",
+            "Pelo menos um equipamento examinado não recebeu etiqueta patrimonial ou não teve sua localização registrada no inventário."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída do concurso DATAPREV (FGV). A negação do quantificador universal ('Todos') exige o quantificador existencial ('Pelo menos um' ou 'Existe'). Ao mesmo tempo, pela Lei de De Morgan, nega-se a conjunção ('E') trocando-a por uma disjunção ('OU') e negando ambas as partes envolvidas."
+    },
+    {
+        topic: "Associação Lógica",
+        supportText: "Um sistema de criptografia atribuiu valores numéricos às letras do alfabeto. Cada letra recebeu um único valor. Letras distintas têm valores distintos.\nNesse sistema:\n• a soma das letras da palavra NARA é 19;\n• a soma das letras da palavra MARIA é 25;\n• a soma das letras da palavra MAIARA é 27;\n• a soma das letras da palavra MARIANA é 31.",
+        q: "Com base nessas informações, é correto afirmar que a valor atribuído a R foi",
+        options: [
+            "10.",
+            "11.",
+            "12.",
+            "13.",
+            "14."
+        ],
+        answer: 1,
+        disclaimer: "MAIARA (27) é MARIA (25) + A. Logo, A = 2. A palavra MARIANA (31) é MARIA (25) + N + A. Se A = 2, então 25 + N + 2 = 31 => N = 4. Sabendo que NARA = 19, temos: N + 2A + R = 19 => 4 + 4 + R = 19 => R = 11."
+    },
+    {
+        topic: "Geometria Plana",
+        supportText: "A figura a seguir ilustra dois retângulos, A e B, dispostos lado a lado de duas formas diferentes.\nNa Figura 1, o menor lado de B está encostado no maior lado de A, de modo que o maior lado de B, na sua parte inferior, está perfeitamente alinhado com o menor lado de A, na sua parte inferior, formando uma figura em L cujo perímetro é 32 cm.\nNa Figura 2, o maior lado de B está encostado no maior lado de A, de modo que o menor lado de B, na sua parte inferior, está perfeitamente alinhado com o menor lado de A, na sua parte inferior, formando uma nova figura cujo perímetro é 26 cm.",
+        q: "No retângulo B, a diferença entre as medidas do maior lado e do menor lado vale",
+        options: [
+            "7,5 cm.",
+            "6,0 cm.",
+            "4,5 cm.",
+            "3,0 cm.",
+            "1,5 cm."
+        ],
+        answer: 3,
+        disclaimer: "Resolvendo o sistema linear montado pelos perímetros das duas figuras combinadas, a diferença matemática direta entre o maior e o menor lado do retângulo B equivale a 3,0 cm."
+    },
+    {
+        topic: "Análise Combinatória",
+        supportText: "Em um jogo, sorteiam-se ao acaso, sucessivamente e sem reposição, números do conjunto {1,2,3,4,5,6,7,8}. Cada jogador recebe uma cartela com 6 números distintos desse conjunto. Duas cartelas quaisquer nunca têm exatamente os mesmos 6 números.",
+        q: "A quantidade máxima de cartelas distintas que se pode ter nesse jogo é",
+        options: [
+            "28.",
+            "36.",
+            "42.",
+            "48.",
+            "56."
+        ],
+        answer: 0,
+        disclaimer: "Trata-se de uma combinação simples de 8 elementos tomados 6 a 6, pois a ordem dos números na cartela não importa. C(8,6) é equivalente a C(8,2). O cálculo é: (8 * 7) / (2 * 1) = 56 / 2 = 28."
+    },
+    {
+        topic: "Proporcionalidade e Misturas",
+        supportText: "O \"grau\" do álcool doméstico indica a concentração de etanol presente na mistura com água. No Brasil, essa medida é expressa em INPM. Por exemplo, o álcool 46° INPM possui, a cada 100 gramas de produto, 46 gramas de etanol e 54 gramas de água e outros componentes.",
+        q: "Misturando-se 200g de álcool 46° INPM com 300 gramas de álcool 70° INPM, produz-se 500g de álcool com concentração INPM igual a",
+        options: [
+            "59,4°.",
+            "59,6°.",
+            "59,8°.",
+            "60,2°.",
+            "60,4°."
+        ],
+        answer: 4,
+        disclaimer: "Calculando a massa de etanol puro: (200 * 0,46) + (300 * 0,70) = 92g + 210g = 302g. Dividindo a massa de etanol pela massa total da nova mistura: 302 / 500 = 0,604 ou 60,4°."
+    },
+    {
+        topic: "Lógica Sentencial (Negação)",
+        supportText: "Considere a proposição P dada por:\n“Pelo menos um livro da minha biblioteca é sobre Matemática e nenhum dos discos da minha discoteca é importado.”",
+        q: "Assinale a opção que contém a negação de P.",
+        options: [
+            "Pelo menos um livro da minha biblioteca não é sobre Matemática e algum disco da minha discoteca é importado.",
+            "Pelo menos um livro da minha biblioteca não é sobre Matemática ou algum disco da minha discoteca é importado.",
+            "Pelo menos um livro da minha biblioteca não é sobre Matemática e todos os discos da minha discoteca são importados.",
+            "Nenhum livro da minha biblioteca é sobre Matemática ou algum disco da minha discoteca é importado.",
+            "Nenhum livro da minha biblioteca é sobre Matemática e algum disco da minha discoteca é importado."
+        ],
+        answer: 3,
+        disclaimer: "Aplicando a Lei de De Morgan (A ^ B) = ~A v ~B. A negação de 'Pelo menos um é' torna-se 'Nenhum é'. O conectivo 'E' vira 'OU'. A negação de 'Nenhum é' torna-se 'Pelo menos um (algum) é'. Resultado: Nenhum livro é sobre Matemática OU algum disco é importado."
     }
 ];
 
@@ -2846,6 +3882,48 @@ const banco_const = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). O art. 5º, § 2º, veda distinções entre brasileiros natos e naturalizados, mas estabelece exceções expressas na própria Constituição (ex: cargos privativos, extradição)."
+    },
+    {
+        topic: "Direito Constitucional (Aplicabilidade das Normas)",
+        supportText: "Foi submetido a um advogado da DATAPREV a situação a seguir.\nA Emenda Constitucional nº X (ECX) veiculou um direito fundamental de segunda dimensão em norma de natureza programática, norma esta que versa sobre a temática submetida à apreciação do referido advogado no Processo Administrativo Y, o que exigia um posicionamento em relação aos efeitos que seriam produzidos.",
+        q: "Ao analisar o caso, o advogado da DATAPREV concluiu corretamente que a ECX",
+        options: [
+            "carece de regulamentação pela legislação infraconstitucional para que produza algum efeito.",
+            "tem eficácia plena e aplicabilidade imediata, na medida em que consagra direito fundamental.",
+            "pode ser considerada no caso concreto, mas apenas em conjunto com outra norma constitucional.",
+            "influi na interpretação das demais normas constitucionais e na recepção da legislação preexistente, independentemente de regulamentação.",
+            "produz a plenitude dos seus efeitos, independentemente de regulamentação, pois tem por objeto direito fundamental de segunda dimensão."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Normas programáticas possuem eficácia limitada, mas possuem eficácia jurídica imediata negativa (paralisante) e interpretativa. Elas servem de vetor de interpretação e impedem a recepção de normas infraconstitucionais contrárias, mesmo sem regulamentação."
+    },
+    {
+        topic: "Poder Judiciário e Funções Essenciais",
+        supportText: "Em determinado Mandado de Segurança, processado e julgado originariamente pela 2ª Turma do Tribunal Regional Federal da Região X, a ordem foi denegada sob o argumento de que a Lei federal nº Y/1981 foi recepcionada pela Constituição de 1988 e que uma interpretação conforme não amparava a tese do impetrante. O impetrante ficou irresignado com o teor do acórdão.",
+        q: "Na situação descrita, é correto afirmar que é cabível",
+        options: [
+            "Reclamação, a ser julgada pelo Supremo Tribunal Federal.",
+            "Recurso Especial, a ser julgado pelo Superior Tribunal de Justiça.",
+            "Recurso Ordinário, a ser julgado pelo Superior Tribunal de Justiça.",
+            "Mandado de Segurança, a ser julgado pelo Supremo Tribunal Federal.",
+            "Recurso de Fundamentação Vinculada, a ser julgado pelo Supremo Tribunal Federal."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Nos termos do art. 105, II, 'b', da Constituição Federal, compete ao Superior Tribunal de Justiça (STJ) julgar em recurso ordinário (RO) os mandados de segurança decididos em única instância pelos Tribunais Regionais Federais quando a decisão for denegatória."
+    },
+    {
+        topic: "Organização do Estado (Repartição de Competências e Receitas)",
+        supportText: "Foi apresentada proposta, no âmbito do governo federal, na qual se sugeriu o encaminhamento de projeto de lei, pelo Chefe do Poder Executivo, visando à consolidação das ações governamentais na área de assistência social.\nA proposta, a ser reproduzida no projeto, tinha três diretrizes estruturais:\nI. utilização de recursos da seguridade social;\nII. centralização político-administrativa; e\nIII. vedação de vinculação, pelos estados e pelo Distrito Federal, de percentual da receita tributária líquida a programas de promoção social.\nUm grupo de trabalho constituído especialmente para esse fim analisou a proposta e concluiu, corretamente, em relação à conformidade constitucional das três diretrizes, que",
+        q: "Das diretrizes analisadas,",
+        options: [
+            "apenas a diretriz I é constitucional.",
+            "apenas as diretrizes I e II são constitucionais.",
+            "apenas as diretrizes I e III são constitucionais.",
+            "apenas as diretrizes II e III são constitucionais.",
+            "todas são constitucionais."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). A diretriz II é inconstitucional pois a CF estabelece a DESCENTRALIZAÇÃO político-administrativa da assistência social (Art. 204, I). A III é inconstitucional pois a CF PERMITE (e não veda) aos Estados vincular até 0,5% de sua receita tributária líquida a programas de inclusão social (Art. 204, parágrafo único)."
     }
 ];
 
@@ -3073,6 +4151,90 @@ const banco_adm = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Com as alterações da Lei nº 14.230/2021, foi extinta a modalidade culposa de improbidade. Exige-se sempre o dolo (vontade livre e consciente de alcançar o resultado ilícito)." //[cite: 25]
+    },
+    {
+        topic: "Controle da Administração Pública (TCU)",
+        supportText: "Maria, empregada pública com décadas de atuação na DATAPREV, cumpriu os requisitos de idade e tempo de contribuição exigidos para a aposentadoria voluntária, sendo o benefício previdenciário devidamente requerido e deferido pela estrutura de poder competente.",
+        q: "Na situação descrita, em relação à atuação do Tribunal de Contas da União, assinale a afirmativa correta.",
+        options: [
+            "Deve apreciar, para fins de registro, a legalidade do ato de aposentação.",
+            "Não deve apreciar, para fins de registro, o ato de aposentação.",
+            "Somente deve apreciar, para fins de registro, o ato de aposentação, caso haja requerimento de qualquer cidadão.",
+            "Deve concorrer para o aperfeiçoamento do ato de aposentação, sendo sua decisão condição de eficácia do ato.",
+            "Deve apreciar, para fins de registro, o ato de aposentação, caso Maria tenha ocupado cargo em comissão ou função de confiança no âmbito da DATAPREV."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). O STF (Tema 1238) fixou a tese de que o Tribunal de Contas NÃO possui competência para julgar a legalidade, para fins de registro, das concessões de aposentadoria a empregados de empresas públicas e sociedades de economia mista submetidos ao regime geral de previdência (celetistas)."
+    },
+    {
+        topic: "Princípios da Administração Pública",
+        supportText: "",
+        q: "Acerca do princípio da supremacia do interesse público, assinale a afirmativa correta.",
+        options: [
+            "O princípio é inerente ao regime jurídico-administrativo, aplicando-se exclusivamente às relações jurídicas submetidas integralmente ao Direito Público.",
+            "A identificação do interesse público decorre, em regra, da vontade predominante da coletividade, entendida, portanto, como a expressão dos interesses da maioria.",
+            "O princípio autoriza a prevalência dos interesses estatais sobre os interesses particulares, sempre que a medida adotada seja vantajosa para a Administração Pública.",
+            "O princípio autoriza a restrição de direitos individuais quando houver fundamento legal e conflito com interesse público, sendo dispensável, nessas hipóteses, a demonstração concreta das razões que justificam a medida adotada.",
+            "O princípio consagra a prevalência dos interesses públicos juridicamente reconhecidos sobre os interesses particulares, sem conferir à Administração Pública ou a seus agentes liberdade para definir, criar ou modificar o conteúdo do interesse público segundo critérios de conveniência subjetiva."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). O interesse público é aquele consagrado na lei (interesse primário da coletividade), não se confundindo com a mera vontade subjetiva do administrador público ou vantagens exclusivas da máquina estatal (interesse secundário)."
+    },
+    {
+        topic: "Responsabilidade Civil do Estado",
+        supportText: "Um servidor público estadual, durante o intervalo destinado ao almoço, ausentou-se das dependências do órgão em que exercia suas funções para resolver questões relacionadas à matrícula de seu filho em uma instituição de ensino.\nEnquanto conduzia seu veículo particular em via pública, desrespeitou a sinalização de trânsito e atropelou um pedestre, causando-lhe lesões corporais. A vítima ajuizou ação indenizatória em face do Estado, sustentando que o causador do dano era agente público em horário de almoço.",
+        q: "Sobre a ação indenizatória apresentada, assinale a afirmativa correta.",
+        options: [
+            "O Estado responde objetivamente pelos danos causados, pois o servidor encontrava-se dentro do horário regular de expediente quando ocorreu o acidente.",
+            "O Estado responde de forma subsidiária, cabendo-lhe indenizar a vítima caso o servidor não possua patrimônio suficiente para reparar integralmente os danos causados.",
+            "O Estado não responde pelos danos causados, pois, embora o causador fosse agente público, a conduta lesiva não foi praticada no exercício da função pública nem em razão dela.",
+            "O Estado responde objetivamente, uma vez que a condição de agente público do causador do dano é suficiente para atrair a responsabilidade estatal, independentemente das circunstâncias da conduta.",
+            "O Estado responde objetivamente, pois o dano foi causado por agente público durante período em que este permanecia funcionalmente vinculado à Administração, sendo irrelevante a finalidade particular do deslocamento."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Para incidir a responsabilidade objetiva do Estado (Art. 37, § 6º, da CF), é imprescindível que o agente tenha atuado na 'qualidade de agente público'. No caso, ele dirigia veículo particular resolvendo problemas estritamente pessoais."
+    },
+    {
+        topic: "Licitações e Contratos",
+        supportText: "Uma empresa pública pretende contratar diretamente determinada sociedade empresária para o fornecimento de equipamento destinado à modernização de sua infraestrutura. A área técnica justificou a contratação direta sob o fundamento de que a sociedade empresária indicada é a única representante, no território nacional, da fabricante estrangeira do equipamento pretendido. Para instruir o processo, foi apresentada declaração emitida pela própria fabricante informando que a sociedade empresária é sua representante autorizada no Brasil.\nDurante a instrução, contudo, verificou-se que o equipamento pretendido é produzido segundo especificações técnicas disponíveis no mercado e que a fabricante mantém outros distribuidores independentes no país, embora apenas a sociedade empresária indicada possua autorização para comercializar a marca diretamente. A área técnica sustentou que a preferência pela marca e a autorização formal da fabricante seriam suficientes para caracterizar a inviabilidade de competição.",
+        q: "A respeito da contratação direta, assinale a afirmativa correta.",
+        options: [
+            "É legítima, pois a representação exclusiva da fabricante no Brasil é suficiente para caracterizar a inviabilidade de competição.",
+            "É legítima, pois a justificativa técnica para a escolha da marca torna dispensável a demonstração de inviabilidade de competição.",
+            "É legítima, desde que a Administração demonstre que a aquisição por meio de representante autorizado oferece condições comerciais mais vantajosas.",
+            "Não se justifica, pois as empresas públicas estão obrigadas a realizar licitação para suas contratações, não lhes sendo aplicáveis as hipóteses de inexigibilidade.",
+            "Não se justifica pela mera existência de representante autorizado da fabricante, pois a inviabilidade de competição exige demonstração de exclusividade efetiva quanto ao fornecimento do objeto pretendido."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). A inexigibilidade baseia-se na inviabilidade fática e jurídica de competição. Se existem outros distribuidores do mesmo equipamento (sem exclusividade efetiva do objeto), a licitação é viável e exigível."
+    },
+    {
+        topic: "Organização da Administração Pública",
+        supportText: "O Estado pretende instituir uma sociedade de economia mista para atuar em determinada atividade de interesse coletivo. Durante a elaboração dos atos necessários à sua instituição, surgiram dúvidas quanto à necessidade de autorização legislativa, à vinculação da entidade às finalidades que justificaram sua criação e à possibilidade de sua extinção.",
+        q: "Considerando o regime jurídico aplicável às sociedades de economia mista, assinale a afirmativa correta.",
+        options: [
+            "É autorizada por lei específica, sendo sua constituição efetivada posteriormente mediante os atos próprios da sociedade, devendo a entidade observar as finalidades que justificaram sua instituição e dependendo sua extinção de autorização legislativa.",
+            "É criada diretamente por lei específica, que lhe confere personalidade jurídica e define sua finalidade, sendo dispensável a posterior adoção de atos constitutivos próprios.",
+            "Pode ser instituída por ato do Poder Executivo, desde que posteriormente submetida à apreciação do Poder Legislativo, pois a autorização legislativa não precisa ser prévia.",
+            "Não está vinculada às finalidades estabelecidas na lei que autorizou sua instituição, por possuir personalidade jurídica de direito privado, podendo alterar livremente seu objeto social por decisão de seus órgãos societários.",
+            "Pode ser extinta por deliberação de seus acionistas, independentemente de autorização legislativa, uma vez que sua personalidade jurídica é regida pelo direito privado."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Diferentemente das autarquias (que são criadas DIRETAMENTE por lei), as sociedades de economia mista são apenas AUTORIZADAS por lei. O seu surgimento legal se dá apenas com o registro de seus atos constitutivos no órgão competente."
+    },
+    {
+        topic: "Processo Administrativo",
+        supportText: "Acerca do silêncio administrativo e de sua disciplina no Direito Administrativo brasileiro, analise as afirmativas a seguir.\nI. Como regra, o silêncio administrativo não configura ato administrativo, pois não há exteriorização de manifestação de vontade da Administração apta a produzir comandos jurídicos.\nII. Na ausência de disposição legal que atribua efeito específico ao silêncio administrativo, a inércia da Administração após o decurso de prazo legal para decidir pode caracterizar ilegalidade ou abuso de poder, admitindo controle jurisdicional por instrumentos adequados.\nIII. Inexistindo prazo legal para decisão administrativa, o particular permanece desprovido de tutela jurisdicional, uma vez que o silêncio administrativo somente pode ser questionado judicialmente após descumprimento de prazo expressamente previsto em lei.",
+        q: "Está correto o que se afirma em",
+        options: [
+            "I, apenas.",
+            "I e II, apenas.",
+            "I e III, apenas.",
+            "II e III, apenas.",
+            "I, II e III."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). A afirmativa III está errada pois, em virtude do princípio da duração razoável do processo e do dever-poder de decidir, o silêncio desarrazoado pode ser combatido via mandado de segurança mesmo que a lei não fixe prazo numérico exato."
     }
 ];
 
@@ -3235,6 +4397,34 @@ const banco_civil = [
         options: ["Certo", "Errado"],
         answer: 1,
         disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). A Súmula 404 do STJ define que é dispensável o Aviso de Recebimento (AR) na carta de comunicação ao consumidor sobre a negativação de seu nome, não sendo exigida notificação pessoal."
+    },
+    {
+        topic: "Direito do Consumidor (Responsabilidade e Prazos)",
+        supportText: "Helena adquiriu da concessionária Horizonte um automóvel novo para uso particular.\nNo contrato de adesão, convencionou-se, em separado e mediante sua manifestação expressa, prazo de sessenta dias para o saneamento de eventuais vícios. Cinco meses após a entrega, manifestou-se vício oculto de fabricação. Laudo técnico, reconhecido pela concessionária, concluiu que, em razão da extensão do vício, a substituição das partes comprometidas, embora restabelecesse o funcionamento do veículo, reduziria seu valor de mercado. O problema não decorreu de desgaste normal, acidente ou uso inadequado.\nVinte dias após a manifestação do vício, Helena reclamou comprovadamente à concessionária e exigiu a restituição imediata do preço, mediante devolução do automóvel. A fornecedora recusou o pedido, alegando que havia transcorrido mais de noventa dias da entrega e que, de todo modo, teria direito ao prazo contratual para reparo.",
+        q: "Sobre o caso apresentado, à luz do Código de Defesa do Consumidor, assinale a afirmativa correta.",
+        options: [
+            "O pedido é tempestivo, e Helena pode exigir a restituição imediata, pois a substituição das partes viciadas reduziria o valor do veículo.",
+            "O pedido é intempestivo, pois o prazo para reclamar de vício em produto durável começa na entrega, ainda que o problema se manifeste posteriormente.",
+            "O pedido é tempestivo, mas a restituição depende do transcurso de sessenta dias, pois a ampliação do prazo foi expressamente convencionada em separado.",
+            "O pedido é intempestivo, pois o prazo de sessenta dias convencionado para saneamento também limita o período para reclamar de vícios, contado da entrega.",
+            "O pedido é tempestivo, mas a possibilidade de restabelecer o funcionamento limita Helena ao abatimento do preço correspondente à desvalorização decorrente do reparo."
+        ],
+        answer: 0,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Em se tratando de vício oculto, o prazo decadencial de 90 dias (bens duráveis) inicia-se no momento em que ficar evidenciado o defeito (Art. 26, § 3º). Além disso, o consumidor pode exigir a restituição IMEDIATA quando a substituição das partes viciadas comprometer as características ou o valor do produto (Art. 18, § 3º do CDC)."
+    },
+    {
+        topic: "Contratos (Resolução por Onerosidade Excessiva)",
+        supportText: "A sociedade empresária Alfa Componentes Ltda. vendeu para Horizonte Equipamentos S.A. um lote de componentes industriais, com entrega prevista para oito meses depois. A compradora pagou integralmente o preço na celebração do contrato.\nAntes da entrega, acontecimento extraordinário e imprevisível, estranho aos riscos ordinários do negócio, elevou drasticamente o custo de produção. A prova técnica demonstrou que o cumprimento permanecia possível, mas se tornara excessivamente oneroso para Alfa, com extrema vantagem para Horizonte.\nAlfa ajuizou ação de resolução contratual. Citada, Horizonte ofereceu complementação do preço em montante que, conforme a prova produzida, restabeleceria equitativamente as condições do contrato.\nAlfa rejeitou a proposta, sustentando que o ajuizamento da ação lhe assegurava o direito de extinguir o vínculo. Alegou, ainda, que o pagamento antecipado tornara o contrato unilateral, por restar apenas sua obrigação de entregar os componentes.",
+        q: "Nesse contexto, considerando o disposto no Código Civil, assinale a afirmativa correta.",
+        options: [
+            "A resolução deve ser decretada diante da recusa da autora, pois a modificação equitativa depende de sua concordância após o ajuizamento.",
+            "A resolução é incabível enquanto o cumprimento permanecer possível, pois a elevação do custo somente autoriza a alteração do modo de execução.",
+            "A resolution pode ser evitada pela oferta de modificação equitativa, pois o pagamento antecipado não transforma o contrato bilateral em unilateral.",
+            "A resolução, se decretada, retroage ao acontecimento extraordinário, pois esse é o momento em que surge o desequilíbrio entre as prestações.",
+            "A resolução deve ceder à redução da prestação pelo regime dos contratos unilaterais, pois o pagamento extinguiu a reciprocidade originária das obrigações."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Nos termos do art. 479 do Código Civil, a resolução por onerosidade excessiva pode ser evitada se o réu se oferecer para modificar equitativamente as condições do contrato. Ademais, o pagamento prévio não muda a essência sinalagmática e bilateral do contrato de compra e venda."
     }
 ];
 
@@ -3355,6 +4545,62 @@ const banco_proc_civil = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Questão extraída da prova do MPCE 2025 (CEBRASPE). Conforme expressa o art. 998 do CPC: 'O recorrente poderá, a qualquer tempo, sem a anuência do recorrido ou dos litisconsortes, desistir do recurso'."
+    },
+    {
+        topic: "Tutelas Provisórias",
+        supportText: "Mariana ajuizou ação de procedimento comum em face do Instituto Nacional do Seguro Social (INSS) e da DATAPREV perante Vara Federal, pleiteando a retificação de vínculos constantes de seu Cadastro Nacional de Informações Sociais (CNIS) e a concessão de benefício previdenciário.\nAo deferir a tutela provisória de urgência requerida pela autora, o Juízo determinou ao INSS a análise e a atualização cadastral pertinente e, à DATAPREV, que disponibilizasse, no prazo de 5 (cinco) dias úteis, os dados técnicos e registros eletrônicos sob sua guarda necessários ao processamento da ordem, sob pena de multa diária (astreintes) de R$ 1.000,00 (mil reais).",
+        q: "À luz da disciplina das tutelas provisórias e dos meios de coerção no Código de Processo Civil, bem como da jurisprudência do Superior Tribunal de Justiça, assinale a afirmativa correta.",
+        options: [
+            "A fixação de astreintes contra empresa pública é nula de pleno direito, cabendo apenas a responsabilização pessoal do agente público responsável pelo cumprimento da ordem judicial.",
+            "A decisão que defere tutela provisória de urgência é irrecorrível de imediato, desafiando impugnação apenas em preliminar de futuro e eventual recurso de apelação.",
+            "A multa diária, uma vez fixada, torna-se imutável por força da preclusão, quanto às parcelas vencidas e vincendas, sendo vedada posterior alteração de seu valor ou periodicidade.",
+            "A imposição de multa diária contra empresa pública para compelir ao cumprimento de tutela provisória é lícita, podendo o Juiz, de ofício ou a requerimento, modificar o valor ou a periodicidade da multa vincenda caso ela se revele insuficiente ou excessiva.",
+            "As restrições legais à concessão de tutela provisória contra o Poder Público estabelecem proibição absoluta de tutela antecipada em matéria previdenciária, impedindo, em qualquer hipótese, a imposição de obrigação de fazer em caráter liminar."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). É consolidada a possibilidade de fixação de astreintes contra a Fazenda Pública (incluindo estatais). O juiz pode, a qualquer tempo, alterar o valor da multa vincenda se esta for desproporcional (art. 537, § 1º, do CPC)."
+    },
+    {
+        topic: "Cumprimento de Sentença (Impugnação)",
+        supportText: "Em fase de cumprimento definitivo de sentença condenatória por perdas e danos transitada em julgado em face de empresa pública, a exequente apresentou memória de cálculo cobrando o montante de R$ 600.000,00 (seiscentos mil reais). Intimada nos termos do Art. 523 do CPC para efetuar o pagamento voluntário, a empresa pública executada deixou transcorrer o prazo de 15 (quinze) dias sem adimplir a obrigação.\nTempestivamente, no prazo previsto no Art. 525 do CPC, a empresa pública apresentou impugnação ao cumprimento de sentença fundamentada unicamente em excesso de execução, sustentando que a exequente utilizou índice de correção monetária diverso do previsto no título e computou juros de mora em duplicidade.\nContudo, a executada não declarou na petição o valor que reputava correto nem apresentou demonstrativo discriminado e atualizado de seu cálculo.",
+        q: "Diante do vício verificado na petição de impugnação, o Magistrado deve",
+        options: [
+            "converter a impugnação em embargos à execução, aplicando-se as regras do processo autônomo de execução por quantia certa.",
+            "declarar a iliquidez superveniente do título executivo e intimar a exequente para instaurar fase de liquidação da sentença.",
+            "determinar a intimação da executada para juntar a memória discriminada de cálculo no prazo de 15 (quinze) dias, sob pena de extinção da impugnação.",
+            "rejeitar liminarmente a impugnação ao cumprimento de sentença, sem abertura de prazo para que a executada emende a petição de impugnação.",
+            "conceder efeito suspensivo automático à impugnação e determinar a remessa obrigatória dos autos à contadoria judicial para apuração do valor devido."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). Trata-se de comando imperativo da lei (Art. 525, § 4º e § 5º, do CPC): quando a impugnação fundar-se em excesso de execução, o executado deve declarar de imediato o valor que entende correto e anexar o demonstrativo de cálculo, sob pena de indeferimento liminar."
+    },
+    {
+        topic: "Teoria Geral dos Recursos e Precedentes",
+        supportText: "Em demanda ajuizada por titular de dados pessoais contra a DATAPREV, o autor requereu indenização por danos morais, alegando que determinado portal governamental permaneceu indisponível durante um final de semana, em razão de manutenção preventiva previamente comunicada nos canais oficiais, o que teria postergado em 48 (quarenta e oito) horas o envio de requerimento administrativo.\nO respectivo Tribunal Regional Federal competente manteve a condenação da empresa pública por danos morais, amparando o acórdão essencialmente em precedente qualificado do Superior Tribunal de Justiça, firmado em recurso especial repetitivo a respeito da responsabilidade objetiva de instituições financeiras por fraudes praticadas por terceiros em ambiente eletrônico.\nA DATAPREV opôs embargos de declaração, demonstrando de forma pormenorizada a existência de distinção entre a indisponibilidade temporária decorrente de manutenção técnica programada e as fraudes de terceiros examinadas no precedente.\nTodavia, a Turma julgadora rejeitou os embargos, valendo-se de fundamentação genérica, afirmando apenas que o precedente repetitivo “aplica-se a todo e qualquer evento danoso originado no ambiente digital\".",
+        q: "Considerando a sistemática de precedentes obrigatórios, o dever de fundamentação analítica e o sistema recursal do Código de Processo Civil, assinale a afirmativa correta.",
+        options: [
+            "A decisão colegiada é formalmente hígida, pois a simples indicação do precedente repetitivo basta para atender ao dever constitucional de fundamentação.",
+            "O reconhecimento de distinguishing pelo Tribunal de origem implica a automática superação da tese vinculante, que deixa de produzir efeitos no âmbito regional.",
+            "Após o esgotamento das instâncias ordinárias, a parte pode ajuizar reclamação ao STJ para garantir a observância do entendimento firmado no recurso especial repetitivo.",
+            "A alegação de distinguishing somente pode ser apreciada se precedida da instauração de incidente de resolução de demandas repetitivas, que constitui requisito de admissibilidade da insurgência.",
+            "O acórdão padece de vício de fundamentação, pois o órgão julgador deve demonstrar a aderência entre os fundamentos determinantes do precedente e o caso concreto, bem como enfrentar a distinção relevantemente suscitada pela parte."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). De acordo com o art. 489, § 1º, VI, do CPC, não se considera fundamentada a decisão que deixar de seguir enunciado de súmula, jurisprudência ou precedente invocado pela parte, sem demonstrar a existência de distinção (distinguishing) ou superação (overruling)."
+    },
+    {
+        topic: "Julgamento Antecipado Parcial de Mérito",
+        supportText: "Em ação ajuizada contra a DATAPREV, a parte autora formulou dois pedidos cumulados: o primeiro, destinado à obtenção de determinada informação constante de banco de dados administrado pela empresa pública; o segundo, de condenação ao pagamento de indenização por danos morais decorrentes da alegada indisponibilidade indevida dessa informação.\nApós a apresentação da contestação, o Juízo verificou que o primeiro pedido se encontrava incontroverso e em condições de imediato julgamento, enquanto o pedido indenizatório ainda dependia da produção de prova pericial. Diante disso, proferiu decisão julgando procedente apenas o primeiro pedido e determinou o prosseguimento do processo quanto à pretensão indenizatória.",
+        q: "A respeito da decisão proferida, assinale a afirmativa correta.",
+        options: [
+            "O pronunciamento possui natureza de sentença parcial, sendo impugnável por apelação.",
+            "O julgamento parcial do mérito somente é admissível quando houver concordância expressa de ambas as partes.",
+            "A decisão que julga parcialmente o mérito sem encerrar a fase de conhecimento é impugnável por agravo de instrumento.",
+            "A decisão que resolve parcialmente o mérito é irrecorrível de imediato, devendo eventual insurgência ser suscitada em preliminar de apelação após a sentença final.",
+            "O julgamento parcial do mérito é vedado quando os pedidos cumulados possuírem naturezas distintas, devendo o Magistrado aguardar o encerramento integral da instrução."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova DATAPREV (FGV). De acordo com a sistemática do CPC/2015, a decisão que resolve parcialmente o mérito de forma antecipada (Art. 356) é uma decisão interlocutória, e o recurso cabível contra ela é o Agravo de Instrumento (Art. 356, § 5º)."
     }
 ];
 
