@@ -22,8 +22,8 @@
     <!-- Conteúdo Principal -->
     <main class="flex-1 max-w-4xl w-full mx-auto p-6 flex items-center justify-center">
         <div id="card-formulario" class="w-full bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h1 class="text-xl font-bold text-slate-900 mb-1">PROCESSE SUAS QUESTÕES</h1>
-            <p class="text-xs text-slate-500 mb-6">Cole o texto bruto da prova abaixo. O sistema fará a limpeza, separação e gerará um arquivo de texto com o código pronto para o questoes.js, além de enviar uma cópia para o webhook.</p>
+            <h1 class="text-xl font-bold text-slate-900 mb-1">ENVIE SUAS QUESTÕES</h1>
+            <p class="text-xs text-slate-500 mb-6">Aqui você pode contribuir com mais questões. Basta copiar uma prova e colar o texto completo abaixo. Não precisa se preocupar com a formatação.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <!-- Seleção de Cargo Alvo -->
@@ -40,22 +40,22 @@
                 <div>
                     <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Matéria (Opcional):</label>
                     <select id="input-materia" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:border-blue-600">
-                        <option value="auto">Detectar Automaticamente pelo Texto</option>
-                        <option value="banco_pt">Língua Portuguesa (banco_pt)</option>
-                        <option value="banco_rlm">Matemática e RLM (banco_rlm)</option>
-                        <option value="banco_info">Informática (banco_info)</option>
-                        <option value="banco_legis_mppe">Legislação MPPE (banco_legis_mppe)</option>
-                        <option value="banco_noc_adm">Noções de Administração (banco_noc_adm)</option>
-                        <option value="banco_const">Direito Constitucional (banco_const)</option>
-                        <option value="banco_adm">Direito Administrativo (banco_adm)</option>
-                        <option value="banco_civil">Direito Civil (banco_civil)</option>
-                        <option value="banco_proc_civil">Direito Processual Civil (banco_proc_civil)</option>
-                        <option value="banco_penal">Direito Penal (banco_penal)</option>
-                        <option value="banco_proc_penal">Direito Processual Penal (banco_proc_penal)</option>
-                        <option value="banco_gov_ti">Governança em TI (banco_gov_ti)</option>
-                        <option value="banco_seg_ti">Segurança, Risco e Continuidade (banco_seg_ti)</option>
-                        <option value="banco_eng_soft_ia">Engenharia de Software e IA (banco_eng_soft_ia)</option>
-                        <option value="banco_infra_bd">Infraestrutura e Banco de Dados (banco_infra_bd)</option>
+                        <option value="auto">Detectar Automaticamente pelo Texto (Recomendado)</option>
+                        <option value="banco_pt">Língua Portuguesa</option>
+                        <option value="banco_rlm">Matemática e RLM</option>
+                        <option value="banco_info">Informática</option>
+                        <option value="banco_legis_mppe">Legislação MPPE</option>
+                        <option value="banco_noc_adm">Noções de Administração</option>
+                        <option value="banco_const">Direito Constitucional</option>
+                        <option value="banco_adm">Direito Administrativo</option>
+                        <option value="banco_civil">Direito Civil</option>
+                        <option value="banco_proc_civil">Direito Processual Civil</option>
+                        <option value="banco_penal">Direito Penal</option>
+                        <option value="banco_proc_penal">Direito Processual Penal</option>
+                        <option value="banco_gov_ti">Governança em TI</option>
+                        <option value="banco_seg_ti">Segurança, Risco e Continuidade</option>
+                        <option value="banco_eng_soft_ia">Engenharia de Software e IA</option>
+                        <option value="banco_infra_bd">Infraestrutura e Banco de Dados</option>
                     </select>
                 </div>
             </div>
@@ -74,8 +74,8 @@
         <!-- Mensagem de Sucesso (Oculta Inicialmente) -->
         <div id="card-sucesso" class="w-full bg-white p-12 rounded-2xl shadow-sm border border-slate-200 text-center hidden">
             <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">✓</div>
-            <h2 class="text-xl font-bold text-slate-900 mb-2">Processamento Concluído!</h2>
-            <p class="text-xs text-slate-500 mb-6">Um arquivo de texto com as questões formatadas foi baixado no seu computador. Os dados também foram encaminhados via webhook.</p>
+            <h2 class="text-xl font-bold text-slate-900 mb-2">Contribuição Enviada com Sucesso!</h2>
+            <p class="text-xs text-slate-500 mb-6">Obrigado! O texto foi encaminhado. Em breve suas questões serão adicionadas!</p>
             <a href="index.html" class="inline-block bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl text-xs transition">
                 Voltar ao Simulador
             </a>
