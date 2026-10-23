@@ -2100,6 +2100,48 @@ const banco_info = [
         ],
         answer: 1,
         disclaimer: "Questão extraída da prova DATAPREV (FGV). A afirmativa III está incorreta, pois o Art. 52, § 1º, incisos VIII e IX, da LGPD expressamente determina que a ANPD deve considerar a adoção de mecanismos e procedimentos internos de proteção, bem como a pronta adoção de medidas corretivas, como atenuantes na aplicação das sanções."
+    },
+    {
+        topic: "Vozes Verbais",
+        supportText: "",
+        q: "Assinale a afirmativa em que a voz passiva pronominal (com o pronome se) foi corretamente transformada na voz passiva analítica (com o auxiliar ser).",
+        options: [
+            "Este ano se verá um cometa. / Este ano seria visto um cometa.",
+            "Utiliza-se a maracujina como calmante. / A maracujina era usada como calmante.",
+            "Descobriu-se finalmente o criminoso. / O criminoso foi finalmente descoberto.",
+            "Viu-se um helicóptero voando a grande altura. / Um helicóptero tinha sido visto voando a grande altura.",
+            "Derrubavam-se paredes em dois minutos. / Paredes foram derrubadas em dois minutos."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). A transposição de voz exige a manutenção rigorosa do tempo e modo verbal. 'Descobriu-se' (Pretérito Perfeito) transforma-se perfeitamente em 'foi descoberto' (Pretérito Perfeito). Nas demais, houve quebra temporal (ex: verá/seria visto; derrubavam/foram)."
+    },
+    {
+        topic: "Sintaxe (Orações Subordinadas Adjetivas)",
+        supportText: "",
+        q: "Assinale a opção em que a oração sublinhada é explicativa e, não, restritiva.",
+        options: [
+            "Os homens QUE FORAM PROCURAR LENHA PARA O FOGO estão reclamando seu pagamento.",
+            "Os alunos, QUE VIVIAM AFASTADOS DA CIDADE, chegaram tarde à escola.",
+            "Comemos a fruta QUE ESTAVA MADURA.",
+            "A menina, após uma semana, QUE TE APRESENTEI ONTEM, deseja saber mais sobre você.",
+            "O livro QUE ME FOI EMPRESTADO é muito interessante."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). As orações subordinadas adjetivas explicativas são sempre isoladas por vírgulas, pois adicionam um detalhe a um termo já universalmente definido, sem restringir o seu sentido."
+    },
+    {
+        topic: "Segurança da Informação",
+        supportText: "Um analista da procuradoria sabe que existem muitas ameaças à segurança da informação e que elas não se limitam ao ambiente digital. Ele reconhece que pequenos hábitos e boas práticas no local de trabalho são fundamentais para reduzir riscos de acesso não autorizado, perda ou danos a informações expostas em mesas, telas e outros espaços acessíveis.\nCom relação aos conceitos da segurança da informação e à importância da política de mesa limpa e tela limpa, analise as afirmativas a seguir.\nI. A integridade refere-se à garantia de as informações não serem alteradas, seja por agentes internos ou externos. Isso representa que a modificação das informações, maliciosa ou não intencional, prejudica a confiabilidade. Portanto, é recomendado desligar os computadores quando não estiverem em uso.\nII. A disponibilidade garante que uma informação esteja disponível a todo momento àqueles que são autorizados. Esse conceito depende diretamente da confidencialidade para atuar de forma correta. Portanto, é recomendado usar protetores de tela ativados por tempo e protegidos por senha.\nIII. A confidencialidade está ligada diretamente à privacidade dos dados. Nesse contexto, são englobadas todas as medidas que restringem o acesso a informações, a fim de evitar acessos não autorizados. Portanto, é recomendado posicionar os computadores de forma a evitar que pessoas não autorizadas consigam visualizar o conteúdo das telas.",
+        q: "Está correto o que se afirma em:",
+        options: [
+            "II e III, apenas.",
+            "I e III, apenas.",
+            "III, apenas.",
+            "II, apenas",
+            "I, II e III."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). Todas as associações estão corretas. A política de 'Mesa Limpa e Tela Limpa' (Clear Desk and Clear Screen Policy da ISO 27001) protege ativamente os três pilares da segurança (Confidencialidade, Integridade e Disponibilidade) mitigando engenharia social e acessos físicos indevidos."
     }
 ];
 
@@ -3582,6 +3624,34 @@ const banco_rlm = [
         ],
         answer: 3,
         disclaimer: "Aplicando a Lei de De Morgan (A ^ B) = ~A v ~B. A negação de 'Pelo menos um é' torna-se 'Nenhum é'. O conectivo 'E' vira 'OU'. A negação de 'Nenhum é' torna-se 'Pelo menos um (algum) é'. Resultado: Nenhum livro é sobre Matemática OU algum disco é importado."
+    },
+    {
+        topic: "Problemas Aritméticos (Vazão e Tempo)",
+        supportText: "",
+        q: "Uma cisterna tem capacidade de 7200 litros e está vazia. Uma bomba consegue jogar 100 litros de água na cisterna em, exatamente, 1 minuto e 20 segundos. Trabalhando continuamente, o tempo que a bomba levará para encher completamente a cisterna é de:",
+        options: [
+            "56 minutos.",
+            "1 hora e 4 minutos.",
+            "1 hora e 24 minutos.",
+            "1 hora e 36 minutos.",
+            "1 hora e 40 minutos."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). 1 min e 20 seg = 80 segundos. Vazão = 100 litros / 80 s = 1,25 L/s. Tempo total = 7200 L / 1,25 L/s = 5760 segundos. Dividindo por 60, temos 96 minutos, o que equivale a 1 hora e 36 minutos."
+    },
+    {
+        topic: "Lógica Sentencial (Negação Lógica)",
+        supportText: "Visitando certa cidade, João afirmou que:\n“Todos os táxis desta cidade são brancos”.",
+        q: "A negação lógica da afirmação de João é:",
+        options: [
+            "Nenhum táxi desta cidade é branco.",
+            "Todos os táxis desta cidade são amarelos.",
+            "Os táxis desta cidade possuem diversas cores.",
+            "Pelo menos um táxi desta cidade é amarelo.",
+            "Pelo menos um táxi desta cidade não é branco."
+        ],
+        answer: 4,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). A negação do quantificador universal ('Todos') faz-se com o quantificador existencial ('Pelo menos um', 'Algum' ou 'Existe') acompanhado da negação do predicado. Logo, 'Pelo menos um táxi não é branco'."
     }
 ];
 
@@ -4425,6 +4495,34 @@ const banco_civil = [
         ],
         answer: 2,
         disclaimer: "Questão extraída da prova DATAPREV (FGV). Nos termos do art. 479 do Código Civil, a resolução por onerosidade excessiva pode ser evitada se o réu se oferecer para modificar equitativamente as condições do contrato. Ademais, o pagamento prévio não muda a essência sinalagmática e bilateral do contrato de compra e venda."
+    },
+    {
+        topic: "Personalidade e Capacidade",
+        supportText: "Catarina tem 15 anos e cursa o Ensino Médio. Elias tem 17 anos e acabou de colar grau na faculdade de Física. Sandro, 17 anos, casou-se civilmente com Lorena, de 18 anos, devidamente autorizado por seus pais.",
+        q: "Com base nos dados hipotéticos apresentados, no que concerne à capacidade de exercício, Catarina, Elias e Sandro podem ser considerados, respectivamente,",
+        options: [
+            "absolutamente incapaz, relativamente incapaz e relativamente incapaz.",
+            "absolutamente incapaz, absolutamente capaz e absolutamente capaz.",
+            "relativamente incapaz, absolutamente capaz e absolutamente incapaz.",
+            "relativamente incapaz, absolutamente incapaz e absolutamente capaz.",
+            "absolutamente capaz, relativamente incapaz e absolutamente incapaz."
+        ],
+        answer: 1,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). Catarina (15) é menor de 16 anos (absolutamente incapaz - Art. 3º). Elias (17, colou grau superior) e Sandro (17, casado) atingiram a emancipação legal automática (Art. 5º, parágrafo único, incisos II e IV), tornando-se absolutamente capazes."
+    },
+    {
+        topic: "Ausência e Morte Presumida",
+        supportText: "Em março de 2025, um grave acidente de barco ocorreu durante uma tempestade no litoral do Rio de Janeiro. Nele estavam presentes João (25 anos), sua esposa, Ana (22 anos, grávida de 7 meses), o irmão de João, Pedro (17 anos, emancipado), e o tio de Ana, Carlos (50 anos). Todos desapareceram no mar, e os corpos não foram localizados após extensas buscas realizadas por autoridades marítimas e familiares durante mais de seis meses.\nA família de João e Pedro ingressou em juízo para requerer a abertura da sucessão definitiva. Já a família de Ana pleiteou judicialmente o reconhecimento da morte presumida dela.",
+        q: "Considerando os fatos narrados e a legislação aplicável, assinale a afirmativa correta.",
+        options: [
+            "Como todos desapareceram no mesmo acidente e não foi possível verificar quem faleceu primeiro, presume-se que morreram simultaneamente, autorizando a direta e imediata abertura da sucessão definitiva.",
+            "A morte presumida de João, Ana, Pedro e Carlos somente poderá ser declarada após dois anos do desaparecimento no mar, nos termos aplicáveis aos desaparecidos em campanha.",
+            "A morte presumida de João, Ana, Pedro e Carlos poderá ser declarada desde já, diante da extrema probabilidade de morte pelo naufrágio, desde que esgotadas as buscas, com fixação da data provável do falecimento.",
+            "Pedro, apesar de emancipado por instrumento público antes do acidente, não poderia ser considerado plenamente capaz, pois não havia alcançado dezoito anos completos.",
+            "O filho que Ana gerava no momento do acidente adquire personalidade civil, a qual será extinta com a declaração de morte presumida."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). De acordo com o Art. 7º, I, do Código Civil, a morte presumida pode ser declarada SEM decretação prévia de ausência se for extremamente provável a morte de quem estava em perigo de vida (naufrágio), desde que esgotadas as buscas."
     }
 ];
 
@@ -4601,6 +4699,34 @@ const banco_proc_civil = [
         ],
         answer: 2,
         disclaimer: "Questão extraída da prova DATAPREV (FGV). De acordo com a sistemática do CPC/2015, a decisão que resolve parcialmente o mérito de forma antecipada (Art. 356) é uma decisão interlocutória, e o recurso cabível contra ela é o Agravo de Instrumento (Art. 356, § 5º)."
+    },
+    {
+        topic: "Jurisdição",
+        supportText: "João e Maria, após sete anos de união estável, decidiram formalizar a partilha consensual dos bens adquiridos durante a convivência. Diante da ausência de filhos e da inexistência de litígio, protocolizaram petição conjunta perante o Juízo Cível da Comarca de sua residência, pugnando pela homologação judicial da divisão acordada.\nNo despacho inicial, o juiz destacou que, mesmo na ausência de controvérsia, caberia ao Judiciário exercer controle quanto à legalidade e à proteção do interesse público envolvido na partilha.",
+        q: "Com base na situação narrada, assinale a opção que indica o tipo de jurisdição exercida pelo Poder Judiciário em tal hipótese.",
+        options: [
+            "Jurisdição contenciosa, pois há pretensão resistida.",
+            "Jurisdição penal, pois o pedido foi feito judicialmente.",
+            "Jurisdição administrativa, pois se trata de homologação.",
+            "Jurisdição voluntária, pois não há litígio entre as partes.",
+            "Jurisdição arbitral, pois decorre de consenso."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). Processos baseados em consenso, petição conjunta e onde não há pretensão resistida (litígio), como homologações de acordos e partilhas amigáveis, configuram o exercício típico da Jurisdição Voluntária (ou graciosa)."
+    },
+    {
+        topic: "Provas (Confissão)",
+        supportText: "Durante a realização de audiência de instrução e julgamento no âmbito de ação de cobrança de aluguéis, o réu, ao ser interrogado sobre a dívida, afirmou: “Sim, estou devendo os valores mencionados. Reconheço que deixei de pagar por dificuldades financeiras”. Ainda em audiência, o advogado da parte autora imediatamente pugnou pelo julgamento antecipado da lide, com esteio na confissão realizada em audiência.",
+        q: "Diante da situação narrada, assinale a afirmativa que descreve corretamente os efeitos processuais da manifestação do réu.",
+        options: [
+            "A declaração do réu é irrelevante do ponto de vista processual, pois somente produziria efeitos se fosse ratificada por prova documental.",
+            "A manifestação do réu constitui confissão judicial de valor relativo, que exige homologação judicial para produzir efeitos processuais.",
+            "A manifestação do réu somente gera efeitos processuais de confissão se for acompanhada de prova testemunhal que a corrobore.",
+            "A declaração do réu configura confissão judicial e produz prova plena, devendo ser avaliada pelo juiz em contraste com as demais provas produzidas nos autos.",
+            "A confissão do réu não gera efeitos processuais se não estiver prevista em cláusula contratual."
+        ],
+        answer: 3,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). A confissão judicial faz prova plena contra o confitente (art. 389 do CPC), sendo suficiente para tornar o fato incontroverso, cabendo ao juiz avaliá-la e, via de regra, dispensar a produção de outras provas sobre o fato confessado."
     }
 ];
 
@@ -5168,6 +5294,20 @@ const banco_noc_adm = [
         options: ["Certo", "Errado"],
         answer: 0,
         disclaimer: "Abordagem colaborativa e orientada à empatia, o Design Thinking busca a inovação para dores complexas focando na centralidade do ser humano e em respostas rápidas via prototipação." //[cite: 27]
+    },
+    {
+        topic: "Modelos de Administração Pública",
+        supportText: "No Brasil e em outros países, a evolução dos modelos de gestão pública revela diferentes enfoques quanto ao papel do Estado e à forma de prestação dos serviços públicos, inserindo-se em um movimento mais amplo de reforma estatal.",
+        q: "Com base nos modelos de gestão da administração pública historicamente adotados no Brasil, assinale a afirmativa que apresenta corretamente a caracterização de um desses modelos.",
+        options: [
+            "O modelo burocrático caracteriza-se pela flexibilidade administrativa e pela descentralização de decisões, duas estratégias eficazes para enfrentar problemas relacionados à corrupção.",
+            "O modelo patrimonialista, que remonta aos anos 1930, estando vigente até os anos 1990, tem como marco inicial a criação do Departamento Administrativo do Serviço Público (DASP).",
+            "O modelo gerencial propõe a incorporação de práticas do setor privado para aumentar a eficiência dos serviços públicos e, consequentemente, é baseado em competição com foco em resultados.",
+            "A Reforma do Estado nos anos 1990 reforçou o modelo patrimonialista como referência para a administração pública moderna, introduzindo novos princípios estruturais de controle.",
+            "A Nova Gestão Pública, fundamentada na ideia de ordenamento e dominação legitimada pela existência de normas, defende que a eficácia do serviço público deve ser medida por indicadores racionais e internos."
+        ],
+        answer: 2,
+        disclaimer: "Questão extraída da prova PGM-RJ (FGV). O modelo Gerencial (Nova Gestão Pública) foca na eficiência, descentralização, controle por resultados (a posteriori) e importação de boas práticas do mercado. O DASP (anos 1930) introduziu o modelo Burocrático, e não o Patrimonialista."
     }
 ];
 
